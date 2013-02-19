@@ -2,29 +2,37 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".User_Options" >
+    tools:context=".User_Options"
+    android:background='@drawable/homescreen' >
 
     <Button
-        android:id="@+id/button1"
+        android:id="@+id/home"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="49dp"
-        android:onClick="GotoUserPhotoSelection"
-        android:text="Take a picture"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_toLeftOf="@+id/picture"
+        android:background="@drawable/clickedhome" />
+
+    <Button
+        android:id="@+id/gallery"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_toRightOf="@+id/picture"
+        android:background="@drawable/gallery"
+        android:onClick="GoToDatabase"
         tools:ignore="HardcodedText" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/picture"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/button1"
-        android:layout_alignRight="@+id/button1"
-        android:layout_below="@+id/button1"
-        android:layout_marginTop="90dp"
-        android:onClick="GoToDatabase"
-        android:text="online gallery"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/camera"
+        android:onClick="GotoUserPhotoSelection"
         tools:ignore="HardcodedText" />
 
 </RelativeLayout>
