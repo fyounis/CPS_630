@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.funnyface"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="8"
+        android:targetSdkVersion="17" />
+
+    <uses-feature android:name="android.hardware.camera" />
+	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name="com.example.funnyface.User_Options"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.example.funnyface.PictureEdit"
+            android:label="@string/title_activity_picture_edit" >
+        </activity>
+        <activity
+            android:name="com.example.funnyface.PhotoSelection"
+            android:label="@string/title_activity_photo_selection" >
+        </activity>
+        <activity
+            android:name="com.example.funnyface.UserPhotoSelection"
+            android:label="@string/title_activity_user_photo_selection" >
+        </activity>
+        <activity
+            android:name="com.example.funnyface.UserPhotoOptions"
+            android:label="@string/title_activity_user_photo_options"
+            android:parentActivityName="com.example.FunnyFace.User_Options" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.FunnyFace.User_Options" />
+        </activity>
+        <activity
+            android:name="com.example.funnyface.ViewDataBase"
+            android:label="@string/title_activity_view_data_base" >
+        </activity>
+        <activity
+            android:name="com.example.funnyface.PhotoEditing"
+            android:label="@string/title_activity_photo_editing" >
+        </activity>
+        <activity
+            android:name="com.example.funnyface.Testpic"
+            android:label="@string/title_activity_testpic"
+            android:configChanges="orientation|screenSize" >
+        </activity>
+    </application>
+
+</manifest>
