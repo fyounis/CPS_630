@@ -31,7 +31,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:background="@drawable/camera"
+        android:background="@drawable/edit"
         android:onClick="GotoUserPhotoSelection"
         tools:ignore="HardcodedText" />
 
