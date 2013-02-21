@@ -14,6 +14,7 @@ public class CustomView extends ImageView {
 
 	private static final int INVALID_POINTER_ID = -1;
 	protected static Bitmap mbitmap;
+	protected static Bitmap mbitmap2;
 	protected static Bitmap resizeImage;
 	private float dx, dy;
 	private float x, y;
