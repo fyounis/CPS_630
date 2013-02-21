@@ -23,7 +23,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
-
+//Committing to the fork (my fork). 
 public class UserPhotoOptions extends Activity
 {
     private static final int CAMERA_REQUEST= 1888;
