@@ -44,6 +44,7 @@ public class UserPhotoOptions extends Activity
 
             super.onCreate(savedInstanceState);
             
+            //new code
             File storageDir = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES).getAbsolutePath());
             storageDir.mkdirs( );
             picPath = new File(storageDir,"appPic");

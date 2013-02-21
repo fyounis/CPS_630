@@ -26,7 +26,7 @@ public class Testpic extends Activity
 		view = (ImageView) findViewById(R.id.imageView1);
 		if(Global.mode.equals("Camera"))
 		{
-			bmp = BitmapFactory.decodeFile("appPic");	//MUST FIX to make it work on all phones
+			bmp = BitmapFactory.decodeFile("appPic");	//Getting the path wrong. 
 			view.setImageBitmap(bmp);
 			
 		}
