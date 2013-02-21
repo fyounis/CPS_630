@@ -5,6 +5,7 @@ import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Paint;
+import android.graphics.drawable.Drawable;
 import android.support.v4.view.MotionEventCompat;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
@@ -14,7 +15,6 @@ public class CustomView extends ImageView {
 
 	private static final int INVALID_POINTER_ID = -1;
 	protected static Bitmap mbitmap;
-	protected static Bitmap mbitmap2;
 	protected static Bitmap resizeImage;
 	private float dx, dy;
 	private float x, y;
@@ -149,13 +149,16 @@ public class CustomView extends ImageView {
 	
 	@SuppressLint("DrawAllocation")
 	@Override
-	protected void onDraw(Canvas canvas) {
-		super.onDraw(canvas);
+	protected void onDraw(Canvas canvas)
+	{
+		super.onDraw(canvas);	
 		Paint paint = new Paint();
-		if (mbitmap!=null){
+		
+		if (mbitmap!=null)
+		{
 			resizeImage = Bitmap.createScaledBitmap(mbitmap, mbitmap.getWidth()+(int)distanceXfrommXLast*2, mbitmap.getHeight()+(int)distanceYfrommYLast*2, true);
-			canvas.drawBitmap(resizeImage, dx-(resizeImage.getWidth()/2), dy-(resizeImage.getHeight()/2), paint);
-		}	
+			canvas.drawBitmap(resizeImage, dx-(resizeImage.getWidth()/2), dy-(resizeImage.getHeight()/2),paint);
+		}
 		
 	}
 }

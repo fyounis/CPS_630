@@ -4,7 +4,6 @@ package com.example.funnyface;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
-import android.content.res.Configuration;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
@@ -27,7 +26,7 @@ public class Testpic extends Activity
 		view = (ImageView) findViewById(R.id.imageView1);
 		if(Global.mode.equals("Camera"))
 		{
-			bmp = BitmapFactory.decodeFile("/sdcard/myDir/myPicName");	//MUST FIX to make it work on all phones
+			bmp = BitmapFactory.decodeFile("appPic");	//MUST FIX to make it work on all phones
 			view.setImageBitmap(bmp);
 			
 		}

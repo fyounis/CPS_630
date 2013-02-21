@@ -31,6 +31,8 @@ public class UserPhotoOptions extends Activity
     Intent cameraIntent;
 	//private String cPath;
     File sdImageMainDirectory;
+    File storageDir;
+    File picPath;
 	@TargetApi(Build.VERSION_CODES.HONEYCOMB)
 	@Override
 	
@@ -40,10 +42,16 @@ public class UserPhotoOptions extends Activity
 		setContentView(R.layout.activity_user_photo_options);
 		try {
 
-            super.onCreate(savedInstanceState);         
+            super.onCreate(savedInstanceState);
+            
+            File storageDir = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES).getAbsolutePath());
+            storageDir.mkdirs( );
+            picPath = new File(storageDir,"appPic");
+            /*
             File root = new File(Environment.getExternalStorageDirectory() + File.separator + "myDir" + File.separator);
             root.mkdirs();
             sdImageMainDirectory = new File(root, "myPicName");
+			*/
         } catch (Exception e) {
             finish();
             Toast.makeText(this, "Error occured. Please try again later.",
@@ -125,7 +133,7 @@ public class UserPhotoOptions extends Activity
 	        case -1:
 	
 	            try {
-	                StoreImage(this, Uri.parse(data.toURI()), sdImageMainDirectory);
+	                StoreImage(this, Uri.parse(data.toURI()),  picPath);
 	            } catch (Exception e) {
 	                e.printStackTrace();
 	            }
