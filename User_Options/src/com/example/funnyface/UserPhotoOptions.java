@@ -35,7 +35,7 @@ public class UserPhotoOptions extends Activity
     File picPath;
 	@TargetApi(Build.VERSION_CODES.HONEYCOMB)
 	@Override
-	
+	//comment for testing
 	protected void onCreate(Bundle savedInstanceState)
 	{
 		super.onCreate(savedInstanceState);
