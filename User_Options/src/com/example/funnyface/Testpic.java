@@ -40,7 +40,8 @@ public class Testpic extends Activity
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
 				try {
-					CustomView.bitmap[CustomView.index] = new contents(BitmapFactory.decodeResource(getResources(), R.drawable.ic_launcher));
+					CustomView.mode="add_content";
+					CustomView.bitmap[CustomView.numberOfContents] = new contents(BitmapFactory.decodeResource(getResources(), R.drawable.ic_launcher));
 				} catch (NullPointerException e) {
 						
 				}
@@ -54,22 +55,24 @@ public class Testpic extends Activity
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
 				try {
-					CustomView.bitmap[CustomView.index] = new contents(BitmapFactory.decodeResource(getResources(), R.drawable.moustache));
+					CustomView.mode="add_content";
+					CustomView.bitmap[CustomView.numberOfContents] = new contents(BitmapFactory.decodeResource(getResources(), R.drawable.moustache));
 				} catch (NullPointerException e) {
 					
 				}
 			}
 		});
 		
-		final Button doneButton = (Button) findViewById(R.id.button7);
-		doneButton.setOnClickListener(new View.OnClickListener() {
+		final Button button3 = (Button) findViewById(R.id.button3);
+		button3.setOnClickListener(new View.OnClickListener() {
 			
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
-				CustomView.index+=1;
+				CustomView.mode = "paint";
 			}
 		});
+		
 	}
 
 	
