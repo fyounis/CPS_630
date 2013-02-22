@@ -88,11 +88,15 @@ public class CustomView extends ImageView {
 			
 			//If the mode is add content, add the the content in the array of contents (bitmap)
 			if (mode.equals("add_content")){
-				bitmap[numberOfContents].setXY(xFirst, yFirst);		
-				moveContent=false;
-				mode="move_content";
-				numberOfContents=numberOfContents+1;
-				break;
+				try {
+					bitmap[numberOfContents].setXY(xFirst, yFirst);		
+					moveContent=false;
+					mode="move_content";
+					numberOfContents=numberOfContents+1;
+				} catch (NullPointerException e){
+					
+				}
+				
 			}
 			//Else, if the mode selected is Move Contents around, then perform the following
 			else if (mode.equals("move_content")){
