@@ -1,7 +1,5 @@
 package com.example.funnyface;
 
-//import com.example.funnyface.CustomView;
-
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.graphics.Bitmap;
@@ -41,7 +39,11 @@ public class Testpic extends Activity
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
-				CustomView.mbitmap = BitmapFactory.decodeResource(getResources(), R.drawable.ic_launcher);
+				try {
+					CustomView.bitmap[CustomView.index] = new contents(BitmapFactory.decodeResource(getResources(), R.drawable.ic_launcher));
+				} catch (NullPointerException e) {
+						
+				}
 			}
 		});
 		
@@ -51,7 +53,11 @@ public class Testpic extends Activity
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
-				CustomView.mbitmap = BitmapFactory.decodeResource(getResources(), R.drawable.moustache);
+				try {
+					CustomView.bitmap[CustomView.index] = new contents(BitmapFactory.decodeResource(getResources(), R.drawable.moustache));
+				} catch (NullPointerException e) {
+					
+				}
 			}
 		});
 		
@@ -61,7 +67,7 @@ public class Testpic extends Activity
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
-				
+				CustomView.index+=1;
 			}
 		});
 	}

@@ -5,43 +5,52 @@ import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Paint;
-import android.graphics.drawable.Drawable;
 import android.support.v4.view.MotionEventCompat;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.widget.ImageView;
 
-public class CustomView extends ImageView {
 
+public class CustomView extends ImageView {
 	private static final int INVALID_POINTER_ID = -1;
-	protected static Bitmap mbitmap;
-	protected static Bitmap resizeImage;
-	private float dx, dy;
-	private float x, y;
-	private float x2=0, y2=0;
-	private int ptrID1=INVALID_POINTER_ID; 
-	private int ptrID2=INVALID_POINTER_ID;
-	private float xFirst, x2First, yFirst, y2First;
-	private float distanceXfrommXLast=0,distanceYfrommYLast=0;
 	
-	private boolean isScaling=false;
+	protected static contents[] bitmap = new contents[20];		//Extension of the class contents
+	private float dx, dy;	//Drawing coordinates used to draw of what's suppose to be drawn
+	private float x, y;		//Coordinates of the first finger
+	private float x2, y2;	//Coordinates of the second finger
+	private int ptrID1; 	//To store the pointer ID of the first finger touching the screen
+	private int ptrID2;		//To store the pointer ID of the second finger touching the screen
+	private float xFirst, yFirst;		//The coordinates of the first time the first finger touch (without dragging)
+	private float x2First, y2First;		//The coordinates of the first time the second finger touch <without dragging)
+	private float distanceXfrommXLast,distanceYfrommYLast;		//Distance used to see how far the finger has moved
+	protected static int index;		//To store the index of current content selected
 	
 	public CustomView(Context context) {
 		super(context);
-		dx=0;
-		dy=0;
+		init(context);
 	}
 	
 	public CustomView(Context context, AttributeSet attrs){
 		super(context,attrs);
-		dx=0;
-		dy=0;
+		init(context);
 	}
 	
 	public CustomView(Context context, AttributeSet attrs, int defStyle) {
 		super(context, attrs, defStyle);
+	}
+	
+	public void init(Context context){
 		dx=0;
 		dy=0;
+		x=0;
+		y=0;
+		x2=0;
+		y2=0;
+		distanceXfrommXLast=0;
+		distanceYfrommYLast=0;
+		index=0;
+		ptrID1=INVALID_POINTER_ID;
+		ptrID2=INVALID_POINTER_ID;
 	}
 	
 	@Override
@@ -51,22 +60,22 @@ public class CustomView extends ImageView {
 		
 		switch(action) {
 		case MotionEvent.ACTION_DOWN:
-			isScaling=false;
 			//Get the Action Index of the first finger
 			int pointerIndex = MotionEventCompat.getActionIndex(event);
 			x=MotionEventCompat.getX(event, pointerIndex);
 			y=MotionEventCompat.getY(event, pointerIndex);
 			
-			//keep track of the first coordinates touched
+			//keep track of the first coordinates touched from the first finger
 			xFirst=x;
 			yFirst=y;
 			
 			//Get the pointer ID of the first finger
 			ptrID1=MotionEventCompat.getPointerId(event,0);
 			ptrID1=INVALID_POINTER_ID;
+			
 			break;
+			
 		case MotionEvent.ACTION_POINTER_DOWN:
-			isScaling=true;
 			//Get the Action Index of the second finger
 			int pointerIndex2 = MotionEventCompat.getActionIndex(event);
 			x2=MotionEventCompat.getX(event, pointerIndex2);
@@ -76,13 +85,15 @@ public class CustomView extends ImageView {
 			x2First=x2;
 			y2First=y2;
 			
-			//Get the pointer ID of the first finger
+			//Get the pointer ID of the second finger
 			ptrID2=MotionEventCompat.getPointerId(event,pointerIndex2);
 			break;
+			
 		case MotionEvent.ACTION_MOVE:
-			//Do Drag, if only 1 fingers
-			ptrID1=event.getPointerId(0);
-			if (ptrID1 != INVALID_POINTER_ID && ptrID2 == INVALID_POINTER_ID && isScaling==false){
+			ptrID1=event.getPointerId(0);	//Get the pointer ID of the first finger
+			
+			//Do Drag, if only 1 finger is touching the screen
+			if (ptrID1 != INVALID_POINTER_ID && ptrID2 == INVALID_POINTER_ID){
 				pointerIndex = MotionEventCompat.findPointerIndex(event,  ptrID1);
 			   	try {
 			   		x=MotionEventCompat.getX(event, pointerIndex);	
@@ -92,22 +103,29 @@ public class CustomView extends ImageView {
 			   	}
 				dx=x;
 				dy=y;
+				try {
+					bitmap[index].setXY(dx, dy);
+				} catch (NullPointerException e) {
+					
+				}
 				invalidate();	//To force View to Redraw itself
 			}
-			//Do otherwise, if 2 fingers
-			else if (ptrID1 != INVALID_POINTER_ID && ptrID2 != INVALID_POINTER_ID && isScaling==true){
+			
+			//Do Scaling, if 2 fingers are on the screen
+			else if (ptrID1 != INVALID_POINTER_ID && ptrID2 != INVALID_POINTER_ID){
 				pointerIndex = MotionEventCompat.findPointerIndex(event,  ptrID1);
 				x=MotionEventCompat.getX(event, pointerIndex);
 				y=MotionEventCompat.getY(event, pointerIndex);
 				pointerIndex2 = MotionEventCompat.findPointerIndex(event,  ptrID2);
 				x2=MotionEventCompat.getX(event, pointerIndex2);
 				y2=MotionEventCompat.getY(event, pointerIndex2);
-
+				
+				//scale image
 				scaleImage(x,y,x2,y2);
 				
 			}
-			
 			break;
+			
 		case MotionEvent.ACTION_UP:
 			ptrID1 = INVALID_POINTER_ID;	
 			break;		
@@ -144,20 +162,38 @@ public class CustomView extends ImageView {
 				distanceYfrommYLast=0;
 			}
 		}
-		invalidate();
+		try {
+			if (bitmap[index].getBitmap()!=null){
+				//Set the resized Image
+				bitmap[index].setResizedBitmap(Bitmap.createScaledBitmap(bitmap[index].getBitmap(), bitmap[index].getBitmap().getWidth()+(int)distanceXfrommXLast*2, bitmap[index].getBitmap().getHeight()+(int)distanceYfrommYLast*2, true));
+				//Set the boolean of resized, inside the contents class to true (So we know when to draw the resized image or the original image otherwise)
+				bitmap[index].setBooleanResized(true);
+				invalidate();	//Force redraw
+			}	
+		}catch (NullPointerException e) {
+			
+		}
 	}
 	
 	@SuppressLint("DrawAllocation")
 	@Override
-	protected void onDraw(Canvas canvas)
-	{
-		super.onDraw(canvas);	
+	protected void onDraw(Canvas canvas) {
+		super.onDraw(canvas);
 		Paint paint = new Paint();
 		
-		if (mbitmap!=null)
-		{
-			resizeImage = Bitmap.createScaledBitmap(mbitmap, mbitmap.getWidth()+(int)distanceXfrommXLast*2, mbitmap.getHeight()+(int)distanceYfrommYLast*2, true);
-			canvas.drawBitmap(resizeImage, dx-(resizeImage.getWidth()/2), dy-(resizeImage.getHeight()/2),paint);
+		for (int i=0; i<=index; i++){
+			try {
+				//Draw Original image
+				if (bitmap[i].getBitmap()!=null && !bitmap[i].getBooleanResized()){
+					canvas.drawBitmap(bitmap[i].bitmap, bitmap[i].getX()-(bitmap[i].getBitmap().getWidth()/2), bitmap[i].getY()-(bitmap[i].getBitmap().getHeight()/2), paint);
+				}
+				//Else, draw the resized image
+				else if (bitmap[i].getResizedBitmap()!=null && bitmap[i].getBooleanResized()){
+					canvas.drawBitmap(bitmap[i].getResizedBitmap(), bitmap[i].getX()-(bitmap[i].getResizedBitmap().getWidth()/2), bitmap[i].getY()-(bitmap[i].getResizedBitmap().getHeight()/2), paint);
+				}
+			}
+			catch (NullPointerException e){
+			}
 		}
 		
 	}

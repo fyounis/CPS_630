@@ -23,7 +23,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
-//Committing to the fork (my fork). 
 public class UserPhotoOptions extends Activity
 {
     private static final int CAMERA_REQUEST= 1888;
@@ -35,7 +34,6 @@ public class UserPhotoOptions extends Activity
     File picPath;
 	@TargetApi(Build.VERSION_CODES.HONEYCOMB)
 	@Override
-	//comment for testing
 	protected void onCreate(Bundle savedInstanceState)
 	{
 		super.onCreate(savedInstanceState);
