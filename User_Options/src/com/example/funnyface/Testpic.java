@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 @SuppressLint("SdCardPath")
 public class Testpic extends Activity
@@ -87,9 +88,17 @@ public class Testpic extends Activity
 			{
 				try
 				{
-				//Will undo the last addition in the canvas.
-				CustomView.numberOfContents-=1;
-				}catch(NullPointerException e){
+					while(CustomView.numberOfContents != 0)
+					{
+						undoButton.setEnabled(true);
+						if(undoButton.isPressed( ))
+						{
+							CustomView.numberOfContents-=1;
+							Toast.makeText(getApplicationContext(), "Component Removed", Toast.LENGTH_LONG).show();
+						}
+					}
+				}
+				catch(NullPointerException e){
 					
 				}
 			}
