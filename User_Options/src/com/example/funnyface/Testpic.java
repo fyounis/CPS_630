@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 @SuppressLint("SdCardPath")
 public class Testpic extends Activity
@@ -40,7 +41,12 @@ public class Testpic extends Activity
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
 				try {
+<<<<<<< HEAD
 					CustomView.bitmap[CustomView.index] = new contents(BitmapFactory.decodeResource(getResources(), R.drawable.ic_launcher));
+=======
+					CustomView.mode="add_content";
+					CustomView.bitmap[CustomView.numberOfContents] = new contents(BitmapFactory.decodeResource(getResources(), R.drawable.ic_launcher));
+>>>>>>> upstream/master
 				} catch (NullPointerException e) {
 						
 				}
@@ -54,22 +60,62 @@ public class Testpic extends Activity
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
 				try {
+<<<<<<< HEAD
 					CustomView.bitmap[CustomView.index] = new contents(BitmapFactory.decodeResource(getResources(), R.drawable.moustache));
+=======
+					CustomView.mode="add_content";
+					CustomView.bitmap[CustomView.numberOfContents] = new contents(BitmapFactory.decodeResource(getResources(), R.drawable.moustache));
+>>>>>>> upstream/master
 				} catch (NullPointerException e) {
 					
 				}
 			}
 		});
 		
-		final Button doneButton = (Button) findViewById(R.id.button7);
-		doneButton.setOnClickListener(new View.OnClickListener() {
+		final Button button3 = (Button) findViewById(R.id.button3);
+		button3.setOnClickListener(new View.OnClickListener() {
 			
 			@Override
-			public void onClick(View v) {
+			public void onClick(View v) 
+			{
+				try
+				{
 				// TODO Auto-generated method stub
+<<<<<<< HEAD
 				CustomView.index+=1;
+=======
+				CustomView.mode = "paint";
+				}catch(NullPointerException e){
+					
+				}
 			}
 		});
+		
+		final Button undoButton = (Button) findViewById(R.id.button7);
+		undoButton.setOnClickListener(new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View v) 
+			{
+				try
+				{
+					while(CustomView.numberOfContents != 0)
+					{
+						undoButton.setEnabled(true);
+						if(undoButton.isPressed( ))
+						{
+							CustomView.numberOfContents-=1;
+							Toast.makeText(getApplicationContext(), "Component Removed", Toast.LENGTH_LONG).show();
+						}
+					}
+				}
+				catch(NullPointerException e){
+					
+				}
+>>>>>>> upstream/master
+			}
+		});
+		
 	}
 
 	
