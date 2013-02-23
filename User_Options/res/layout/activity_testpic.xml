@@ -66,4 +66,15 @@
           android:layout_height="fill_parent"
           android:layout_below="@+id/horizontalScrollView1" />
 
+      <Button
+          android:id="@+id/button7"
+          style="?android:attr/buttonStyleSmall"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_alignParentBottom="true"
+          android:layout_alignParentLeft="true"
+          android:layout_marginBottom="14dp"
+          android:layout_marginLeft="14dp"
+          android:text="Undo" />
+
 </RelativeLayout>

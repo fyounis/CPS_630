@@ -67,9 +67,31 @@ public class Testpic extends Activity
 		button3.setOnClickListener(new View.OnClickListener() {
 			
 			@Override
-			public void onClick(View v) {
+			public void onClick(View v) 
+			{
+				try
+				{
 				// TODO Auto-generated method stub
 				CustomView.mode = "paint";
+				}catch(NullPointerException e){
+					
+				}
+			}
+		});
+		
+		final Button undoButton = (Button) findViewById(R.id.button7);
+		undoButton.setOnClickListener(new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View v) 
+			{
+				try
+				{
+				//Will undo the last addition in the canvas.
+				CustomView.numberOfContents-=1;
+				}catch(NullPointerException e){
+					
+				}
 			}
 		});
 		
