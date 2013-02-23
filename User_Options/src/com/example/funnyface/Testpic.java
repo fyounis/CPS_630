@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 @SuppressLint("SdCardPath")
 public class Testpic extends Activity
@@ -67,9 +68,39 @@ public class Testpic extends Activity
 		button3.setOnClickListener(new View.OnClickListener() {
 			
 			@Override
-			public void onClick(View v) {
+			public void onClick(View v) 
+			{
+				try
+				{
 				// TODO Auto-generated method stub
 				CustomView.mode = "paint";
+				}catch(NullPointerException e){
+					
+				}
+			}
+		});
+		
+		final Button undoButton = (Button) findViewById(R.id.button7);
+		undoButton.setOnClickListener(new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View v) 
+			{
+				try
+				{
+					while(CustomView.numberOfContents != 0)
+					{
+						undoButton.setEnabled(true);
+						if(undoButton.isPressed( ))
+						{
+							CustomView.numberOfContents-=1;
+							Toast.makeText(getApplicationContext(), "Component Removed", Toast.LENGTH_LONG).show();
+						}
+					}
+				}
+				catch(NullPointerException e){
+					
+				}
 			}
 		});
 		
