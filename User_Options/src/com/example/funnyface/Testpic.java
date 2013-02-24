@@ -4,10 +4,12 @@ import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
+import android.widget.HorizontalScrollView;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.Toast;
@@ -103,6 +105,39 @@ public class Testpic extends Activity
 				}
 			}
 		});
+		  final Button toolsButton = (Button) findViewById(R.id.button8);
+          toolsButton.setOnLongClickListener(new View.OnLongClickListener()
+          {
+
+                  @Override
+                  public boolean onLongClick(View v)
+                  {
+                                  // TODO Auto-generated method stub
+                                  HorizontalScrollView hs1 =(HorizontalScrollView)findViewById(R.id.horizontalScrollView1);
+                                  hs1.setVisibility(View.INVISIBLE);
+                                  toolsButton.setTextColor(Color.parseColor("#00FF00"));
+                                  toolsButton.setText("ShowTools");
+                                  return true;
+                  }
+
+          });
+          toolsButton.setOnClickListener(new View.OnClickListener()
+          {
+                  @Override
+                  public void onClick(View v)
+                  {
+                          try
+                          {
+                                  // TODO Auto-generated method stub
+                                  HorizontalScrollView hs1 = (HorizontalScrollView)findViewById(R.id.horizontalScrollView1);
+                                  hs1.setVisibility(View.VISIBLE);
+                                  toolsButton.setTextColor(Color.parseColor("#FF0000"));
+                                  toolsButton.setText("HideTools");
+                          }
+                          catch(NullPointerException e){}
+                  }
+
+          });
 		
 	}
 
