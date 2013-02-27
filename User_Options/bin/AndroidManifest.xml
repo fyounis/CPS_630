@@ -9,10 +9,11 @@
         android:targetSdkVersion="17" />
 
     <uses-feature android:name="android.hardware.camera" />
-	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-	<uses-permission android:name="android.permission.WRITE_INTERNAL_STORAGE" />
-	<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-	<uses-permission android:name="android.permission.READ_INTERNAL_STORAGE" />
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_INTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_INTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.CAMERA" />
 
     <application
@@ -22,10 +23,9 @@
         android:theme="@style/AppTheme" >
         <activity
             android:name="com.example.funnyface.User_Options"
-            android:label="@string/app_name" 
             android:clearTaskOnLaunch="true"
-            android:theme="@android:style/Theme.NoTitleBar">
-     
+            android:label="@string/app_name"
+            android:theme="@android:style/Theme.NoTitleBar" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -34,13 +34,13 @@
         </activity>
         <activity
             android:name="com.example.funnyface.PictureEdit"
-            android:label="@string/title_activity_picture_edit" 
-            android:theme="@android:style/Theme.NoTitleBar">
+            android:label="@string/title_activity_picture_edit"
+            android:theme="@android:style/Theme.NoTitleBar" >
         </activity>
         <activity
             android:name="com.example.funnyface.PhotoSelection"
-            android:label="@string/title_activity_photo_selection" 
-            android:theme="@android:style/Theme.NoTitleBar">
+            android:label="@string/title_activity_photo_selection"
+            android:theme="@android:style/Theme.NoTitleBar" >
         </activity>
         <activity
             android:name="com.example.funnyface.UserPhotoSelection"
@@ -50,8 +50,8 @@
         <activity
             android:name="com.example.funnyface.UserPhotoOptions"
             android:label="@string/title_activity_user_photo_options"
-            android:theme="@android:style/Theme.NoTitleBar"
-            android:parentActivityName="com.example.FunnyFace.User_Options" >
+            android:parentActivityName="com.example.FunnyFace.User_Options"
+            android:theme="@android:style/Theme.NoTitleBar" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.FunnyFace.User_Options" />
@@ -68,9 +68,13 @@
         </activity>
         <activity
             android:name="com.example.funnyface.Testpic"
-            android:label="@string/title_activity_testpic" 
-            android:theme="@android:style/Theme.NoTitleBar"
-            android:configChanges="orientation|screenSize">
+            android:configChanges="orientation|screenSize"
+            android:label="@string/title_activity_testpic"
+            android:theme="@android:style/Theme.NoTitleBar" >
+        </activity>
+        <activity
+            android:name="com.example.funnyface.CameraIntent"
+            android:label="@string/title_activity_camera_intent" >
         </activity>
     </application>
 

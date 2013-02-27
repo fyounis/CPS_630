@@ -11,5 +11,6 @@
     <string name="title_activity_view_data_base">ViewDataBase</string>
     <string name="title_activity_photo_editing">PhotoEditing</string>
     <string name="title_activity_testpic">Testpic</string>
+    <string name="title_activity_camera_intent">CameraIntent</string>
 
 </resources>

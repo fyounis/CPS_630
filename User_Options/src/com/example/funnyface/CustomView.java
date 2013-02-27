@@ -100,7 +100,7 @@ public class CustomView extends ImageView {
 			}
 			//Else, if the mode selected is Move Contents around, then perform the following
 			else if (mode.equals("move_content")){
-				for (int i=0;i<=numberOfContents;i++){
+				for (int i=0;i<numberOfContents;i++){
 					try {
 						//When getting the x and y coordinates of the content, 
 						//it'll return the middle coordinates of the content.
@@ -203,6 +203,11 @@ public class CustomView extends ImageView {
 		points.add(point);	
 	}
 	
+	protected static void undo(){
+		numberOfContents = numberOfContents - 1;
+		
+	}
+	
 	
 	private void scaleImage(float x, float y, float x2, float y2){
 		if (x2>x){
@@ -250,12 +255,17 @@ public class CustomView extends ImageView {
 		Paint paint = new Paint();
 		paint.setColor(Color.BLACK);
 		
+		try {
+			canvas.drawBitmap(backgroundImage, 0, 0,paint);
+		} catch (NullPointerException e){}
+		
 		//Draw Point
 		for (Point point : points){
 			canvas.drawCircle(point.x, point.y, 2, paint); 
 		}
 		
-		for (int i=0; i<=numberOfContents; i++){
+		for (int i=0; i<numberOfContents; i++){
+			System.out.println("---index" + i);
 			try {
 				//Draw Original image
 				if (bitmap[i].getBitmap()!=null && !bitmap[i].getBooleanResized()){

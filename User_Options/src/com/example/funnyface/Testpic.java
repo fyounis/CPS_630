@@ -2,7 +2,6 @@ package com.example.funnyface;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
-import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -17,8 +16,8 @@ import android.widget.Toast;
 @SuppressLint("SdCardPath")
 public class Testpic extends Activity
 {
-	private ImageView view;
-	private Bitmap bmp;
+	private View view;
+	private boolean showToolBar=true;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -27,13 +26,16 @@ public class Testpic extends Activity
 		view = (ImageView) findViewById(R.id.imageView1);
 		if(Global.mode.equals("Camera"))
 		{
-			bmp = BitmapFactory.decodeFile("appPic");	//Getting the path wrong. 
-			view.setImageBitmap(bmp);
+			try {
+				CustomView.backgroundImage=BitmapFactory.decodeFile(Global.picturePath);
+			} catch (NullPointerException e){}
 			
 		}
 		else if(Global.mode.equals("Gallery"))
 		{
-				view.setImageBitmap(BitmapFactory.decodeFile(Global.picturePath));
+			try {
+			CustomView.backgroundImage=BitmapFactory.decodeFile(Global.picturePath);
+			} catch (NullPointerException e){}
 		}
 	
 		final ImageButton button = (ImageButton) findViewById(R.id.button1);
@@ -90,54 +92,53 @@ public class Testpic extends Activity
 			{
 				try
 				{
-					while(CustomView.numberOfContents != 0)
-					{
-						undoButton.setEnabled(true);
-						if(undoButton.isPressed( ))
-						{
-							CustomView.numberOfContents-=1;
+							System.out.println("*****before: " + CustomView.numberOfContents);
+							CustomView.bitmap[CustomView.numberOfContents]=null;
+							CustomView.numberOfContents=CustomView.numberOfContents-1;
+							System.out.println("******after: " + CustomView.numberOfContents);
+							if (CustomView.numberOfContents<=0){
+								CustomView.bitmap[0]=null;
+								CustomView.numberOfContents=0;
+							}
+							view.invalidate();
 							Toast.makeText(getApplicationContext(), "Component Removed", Toast.LENGTH_LONG).show();
-						}
-					}
 				}
 				catch(NullPointerException e){
 					
 				}
 			}
 		});
-		  final Button toolsButton = (Button) findViewById(R.id.button8);
-          toolsButton.setOnLongClickListener(new View.OnLongClickListener()
-          {
-
-                  @Override
-                  public boolean onLongClick(View v)
-                  {
-                                  // TODO Auto-generated method stub
-                                  HorizontalScrollView hs1 =(HorizontalScrollView)findViewById(R.id.horizontalScrollView1);
-                                  hs1.setVisibility(View.INVISIBLE);
-                                  toolsButton.setTextColor(Color.parseColor("#00FF00"));
-                                  toolsButton.setText("ShowTools");
-                                  return true;
-                  }
-
-          });
-          toolsButton.setOnClickListener(new View.OnClickListener()
-          {
-                  @Override
-                  public void onClick(View v)
-                  {
-                          try
-                          {
-                                  // TODO Auto-generated method stub
-                                  HorizontalScrollView hs1 = (HorizontalScrollView)findViewById(R.id.horizontalScrollView1);
-                                  hs1.setVisibility(View.VISIBLE);
-                                  toolsButton.setTextColor(Color.parseColor("#FF0000"));
-                                  toolsButton.setText("HideTools");
-                          }
-                          catch(NullPointerException e){}
-                  }
-
-          });
+		 
+		final Button toolsButton = (Button) findViewById(R.id.button8);
+        toolsButton.setTextColor(Color.parseColor("#FF0000"));
+        toolsButton.setText("HideTools");
+		toolsButton.setOnClickListener(new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View v) 
+			{
+				try
+				{
+					if (showToolBar==true){
+                    HorizontalScrollView hs1 =(HorizontalScrollView)findViewById(R.id.horizontalScrollView1);
+                    hs1.setVisibility(View.INVISIBLE);
+                    toolsButton.setTextColor(Color.parseColor("#00FF00"));
+                    toolsButton.setText("ShowTools");
+                    showToolBar=false;
+					}
+					else if (showToolBar==false) {
+                        HorizontalScrollView hs1 = (HorizontalScrollView)findViewById(R.id.horizontalScrollView1);
+                        hs1.setVisibility(View.VISIBLE);
+                        toolsButton.setTextColor(Color.parseColor("#FF0000"));
+                        toolsButton.setText("HideTools");
+                        showToolBar=true;
+					}
+				}catch(NullPointerException e){
+					
+				}
+			
+			}
+		});
 		
 	}
 
@@ -148,12 +149,6 @@ public class Testpic extends Activity
 		getMenuInflater().inflate(R.menu.activity_main, menu);
 		//getMenuInflater().inflate(R.menu.activity_testpic, menu);
 		return true;
-	}
-
-	
-	public void viewPic(View view)
-	{
-			
 	}
 	
 }

@@ -42,19 +42,22 @@ public final class R {
         public static final int textView2=0x7f070004;
     }
     public static final class layout {
-        public static final int activity_photo_editing=0x7f030000;
-        public static final int activity_testpic=0x7f030001;
-        public static final int activity_user_options=0x7f030002;
-        public static final int activity_user_photo_options=0x7f030003;
-        public static final int activity_view_data_base=0x7f030004;
+        public static final int activity_camera_intent=0x7f030000;
+        public static final int activity_photo_editing=0x7f030001;
+        public static final int activity_testpic=0x7f030002;
+        public static final int activity_user_options=0x7f030003;
+        public static final int activity_user_photo_options=0x7f030004;
+        public static final int activity_view_data_base=0x7f030005;
     }
     public static final class menu {
-        public static final int activity_main=0x7f060000;
+        public static final int activity_camera_intent=0x7f060000;
+        public static final int activity_main=0x7f060001;
     }
     public static final class string {
         public static final int app_name=0x7f040000;
         public static final int hello_world=0x7f040001;
         public static final int menu_settings=0x7f040002;
+        public static final int title_activity_camera_intent=0x7f04000a;
         public static final int title_activity_photo_editing=0x7f040008;
         public static final int title_activity_photo_selection=0x7f040004;
         public static final int title_activity_picture_edit=0x7f040003;
