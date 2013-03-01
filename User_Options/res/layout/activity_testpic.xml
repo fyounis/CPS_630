@@ -76,6 +76,14 @@
           android:layout_marginBottom="14dp"
           android:layout_marginLeft="14dp"
           android:text="Undo" />
+      
+      <Button
+          android:id="@+id/button9"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_alignTop="@+id/button7"
+          android:layout_toRightOf="@+id/button7"
+          android:text="deleteAll" />
 
       <Button
           android:id="@+id/button8"
@@ -86,5 +94,6 @@
           android:layout_alignTop="@+id/button7"
           android:layout_marginRight="16dp"
           android:text="Tools" />
+
 
 </RelativeLayout>

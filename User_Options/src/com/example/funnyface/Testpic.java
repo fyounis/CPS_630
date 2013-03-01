@@ -108,6 +108,34 @@ public class Testpic extends Activity
 				}
 			}
 		});
+		
+	    final Button UndoAllButton = (Button) findViewById(R.id.button9);
+        UndoAllButton.setOnClickListener(new View.OnClickListener() {
+
+                @Override
+                public void onClick(View v)
+                {
+                        try
+                        {
+                                        if(CustomView.numberOfContents != 0)
+                                        {
+                                                int i;
+                                                for(i=0;i<=CustomView.numberOfContents;i++)
+                                                {
+                                                        CustomView.bitmap[i]=null;
+                                                }
+                                                view.invalidate();
+                                                Toast.makeText(getApplicationContext(), "Components Removed",Toast.LENGTH_LONG).show();
+                                        }
+                                        else
+                                        {
+                                                Toast.makeText(getApplicationContext(), "No Components to Remove", Toast.LENGTH_LONG).show();
+                                        }
+                        }
+                        catch(NullPointerException e){
+                        }
+                }
+        });
 		 
 		final Button toolsButton = (Button) findViewById(R.id.button8);
         toolsButton.setTextColor(Color.parseColor("#FF0000"));
