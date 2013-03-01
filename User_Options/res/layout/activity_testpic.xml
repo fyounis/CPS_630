@@ -1,0 +1,90 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity" >
+
+    
+      <HorizontalScrollView
+        android:id="@+id/horizontalScrollView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+
+        <LinearLayout
+            android:layout_width="10dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+            
+            
+
+            <ImageButton
+                android:id="@+id/button1"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:background="@drawable/ic_launcher"
+                android:onClick="B1Activity"
+                android:text="B1" />
+            
+           	<ImageButton
+                android:id="@+id/button2"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:background="@drawable/moustache"
+                android:onClick="B2Activity"
+                android:text="B2" />
+                        
+           	<Button
+                android:id="@+id/button3"
+                android:layout_width="70dp"
+                android:layout_height="wrap_content"
+                android:text="Paint" />
+
+           	
+       	 	<Button
+                android:id="@+id/button4"
+                android:layout_width="70dp"
+                android:layout_height="wrap_content"
+                android:text="B4" />
+           	            
+         	<Button
+                android:id="@+id/button5"
+                android:layout_width="70dp"
+                android:layout_height="wrap_content"
+                android:text="B5" />
+         	
+        	<Button
+                android:id="@+id/button6"
+                android:layout_width="70dp"
+                android:layout_height="wrap_content"
+                android:text="B6" />
+        </LinearLayout>
+    </HorizontalScrollView>
+
+      <com.example.funnyface.CustomView
+          android:id="@+id/imageView1"
+          android:layout_width="fill_parent"
+          android:layout_height="fill_parent"
+          android:layout_below="@+id/horizontalScrollView1" />
+
+      <Button
+          android:id="@+id/button7"
+          style="?android:attr/buttonStyleSmall"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_alignParentBottom="true"
+          android:layout_alignParentLeft="true"
+          android:layout_marginBottom="14dp"
+          android:layout_marginLeft="14dp"
+          android:text="Undo" />
+
+      <Button
+          android:id="@+id/button8"
+          style="?android:attr/buttonStyleSmall"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_alignParentRight="true"
+          android:layout_alignTop="@+id/button7"
+          android:layout_marginRight="16dp"
+          android:text="Tools" />
+
+</RelativeLayout>
