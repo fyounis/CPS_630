@@ -30,7 +30,7 @@ public class CustomView extends ImageView {
 	private float x2First, y2First;		//The coordinates of the first time the second finger touch <without dragging)
 	private float distanceXfrommXLast,distanceYfrommYLast;		//Distance used to see how far the finger has moved
 	protected static int numberOfContents;		//To store the index of the last content. (number of contents in the array)
-	protected int currentContentIndex;		//To store the index of the current content selected
+	protected static int currentContentIndex;		//To store the index of the current content selected
 	protected boolean moveContent;			//Boolean to determine whether to move the content or not
 
 	protected static String mode;

@@ -117,44 +117,51 @@ public class Testpic extends Activity
 			{
 				try
 				{
-							if(CustomView.numberOfContents != 0){
-							   CustomView.bitmap[CustomView.currentContentIndex] = null;
-							   Toast.makeText(getApplicationContext(), "Component Removed", Toast.LENGTH_LONG).show();
-							   view.invalidate();
-							}
-							else{
-							   Toast.makeText(getApplicationContext(), "No Components to Remove", Toast.LENGTH_LONG).show();
-							}
-				}catch(NullPointerException e){
+					if(CustomView.numberOfContents != 0)
+					{
+						CustomView.bitmap[CustomView.currentContentIndex] = null;
+						Toast.makeText(getApplicationContext(), "Component Removed", Toast.LENGTH_LONG).show();
+						view.invalidate();
+					}
+					else
+					{
+						Toast.makeText(getApplicationContext(), "No Components to Remove", Toast.LENGTH_LONG).show();
+					}
+				}
+				catch(NullPointerException e)
+				{
 					
 				}
 			}
+			
 		});
 		
-	    final Button ResetButton = (Button) findViewById(R.id.button9);
-        ResetButton.setOnClickListener(new View.OnClickListener() {
+	    final Button UndoAllButton = (Button) findViewById(R.id.button9);
+        UndoAllButton.setOnClickListener(new View.OnClickListener() {
 
-           @Override
-           public void onClick(View v)
-           {
-                try
+                @Override
+                public void onClick(View v)
                 {
-                            if(CustomView.numberOfContents != 0){
-                               int i;
-                               for(i=0;i<=CustomView.numberOfContents;i++)
-                               {
-                                  CustomView.bitmap[i]=null;
-                               }
-                               view.invalidate();
-                               Toast.makeText(getApplicationContext(), "Components Removed",Toast.LENGTH_LONG).show();
-                            }
-                            else{
-                               Toast.makeText(getApplicationContext(), "No Components to Remove", Toast.LENGTH_LONG).show();
-                            }
-                }catch(NullPointerException e){
-                        
+                        try
+                        {
+                                        if(CustomView.numberOfContents != 0)
+                                        {
+                                                int i;
+                                                for(i=0;i<=CustomView.numberOfContents;i++)
+                                                {
+                                                        CustomView.bitmap[i]=null;
+                                                }
+                                                view.invalidate();
+                                                Toast.makeText(getApplicationContext(), "Components Removed",Toast.LENGTH_LONG).show();
+                                        }
+                                        else
+                                        {
+                                                Toast.makeText(getApplicationContext(), "No Components to Remove", Toast.LENGTH_LONG).show();
+                                        }
+                        }
+                        catch(NullPointerException e){
+                        }
                 }
-            }
         });
 		 
 		final Button toolsButton = (Button) findViewById(R.id.button8);
