@@ -2,6 +2,10 @@ package com.example.funnyface;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.app.Dialog;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -18,6 +22,7 @@ public class Testpic extends Activity
 {
 	private View view;
 	private boolean showToolBar=true;
+	private int buttonClicks;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -74,13 +79,16 @@ public class Testpic extends Activity
 			@Override
 			public void onClick(View v) 
 			{
-				try
-				{
+				try{
 				// TODO Auto-generated method stub
-				CustomView.mode = "paint";
-				}catch(NullPointerException e){
+					CustomView.mode = "paint";
+					CustomView.paint.setColor(Color.BLACK);
+				   }
+				   catch(NullPointerException e)
+				   {
 					
-				}
+				   }
+				
 			}
 		});
 		
@@ -156,6 +164,48 @@ public class Testpic extends Activity
                 }
             }
         });
+        
+        final Button newPictureButton = (Button) findViewById(R.id.button11);
+        newPictureButton.setOnClickListener(new View.OnClickListener()
+        {
+			@Override
+			public void onClick(View v)
+			{
+				AlertDialog newPic = new AlertDialog.Builder(Testpic.this).create();
+				newPic.setTitle("New Picture");
+				newPic.setMessage("Are you sure you want to exit Editor? Your data will be lost.");
+				newPic.setButton( Dialog.BUTTON_POSITIVE, "Yes", new DialogInterface.OnClickListener() 
+				{
+			        public void onClick(DialogInterface dialog, int which)
+			        { 
+			        	try
+			        	{
+			        		//Upon exiting activity, I don't think its returning the memory back.
+			        		//It fails when I try to pick a new pic
+			        		finish( );
+			        		Testpic.this.onDestroy();
+			        		Intent newPic = new Intent(Testpic.this, UserPhotoOptions.class);
+			        		startActivity(newPic);
+			    
+			        	}catch(Exception e){
+			        		
+			        	}
+			        }
+			     });
+				
+				newPic.setButton( Dialog.BUTTON_NEGATIVE, "No", new DialogInterface.OnClickListener() 
+				{
+			        public void onClick(DialogInterface dialog, int which)
+			        { 
+			            // Don't continue with delete
+			        }
+			     });
+				newPic.show();
+			}
+        	
+        });
+        
+        		
 		 
 		final Button toolsButton = (Button) findViewById(R.id.button8);
         toolsButton.setTextColor(Color.parseColor("#FF0000"));
