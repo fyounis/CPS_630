@@ -9,7 +9,9 @@ import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
+import android.graphics.Path;
 import android.graphics.Point;
+import android.graphics.RectF;
 import android.support.v4.view.MotionEventCompat;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
@@ -36,7 +38,6 @@ public class CustomView extends ImageView {
     protected static String colorValue;
 
 	protected static String mode;
-	List<Point> points = new ArrayList<Point>();
 	
 	public CustomView(Context context) {
 		super(context);
@@ -124,6 +125,10 @@ public class CustomView extends ImageView {
 				}
 			}
 			
+			else if (mode.equals("paint")){
+				path.moveTo(x, y);
+			}
+			
 			break;
 			
 		case MotionEvent.ACTION_POINTER_DOWN:
@@ -180,15 +185,12 @@ public class CustomView extends ImageView {
 				pointerIndex2 = MotionEventCompat.findPointerIndex(event,  ptrID2);
 				x2=MotionEventCompat.getX(event, pointerIndex2);
 				y2=MotionEventCompat.getY(event, pointerIndex2);
-				
-				//scale image
-				scaleImage(x,y,x2,y2);
-				
+					
 			}
 			break;
 			
 		case MotionEvent.ACTION_UP:
-			ptrID1 = INVALID_POINTER_ID;	
+			ptrID1 = INVALID_POINTER_ID;
 			break;		
 		case MotionEvent.ACTION_POINTER_UP:
 			ptrID2 = INVALID_POINTER_ID;
@@ -199,10 +201,7 @@ public class CustomView extends ImageView {
 	}
 	
 	private void paintOnScreen(float x, float y, MotionEvent event){
-		Point point = new Point();
-		point.x = (int) event.getX();
-		point.y = (int) event.getY();
-		points.add(point);	
+		path.lineTo(x, y);
 	}
 	
 	protected static void undo(){
@@ -210,50 +209,13 @@ public class CustomView extends ImageView {
 		
 	}
 	
-	
-	private void scaleImage(float x, float y, float x2, float y2){
-		if (x2>x){
-			distanceXfrommXLast=x2-x2First;
-			if (distanceXfrommXLast<0){
-				distanceXfrommXLast=0;
-			}
-		}
-		else if (x>x2){
-			distanceXfrommXLast=x-xFirst;
-			if (distanceXfrommXLast<0){
-				distanceXfrommXLast=0;
-			}
-		}
-		if (y2>y) {
-			distanceYfrommYLast=y2-y2First;
-			if (distanceYfrommYLast<0){
-				distanceYfrommYLast=0;
-			}
-		}
-		else if (y>y2){
-			distanceYfrommYLast=y-yFirst;
-			if (distanceYfrommYLast<0){
-				distanceYfrommYLast=0;
-			}
-		}
-		try {
-			if (bitmap[currentContentIndex].getBitmap()!=null){
-				//Set the resized Image
-				bitmap[currentContentIndex].setResizedBitmap(Bitmap.createScaledBitmap(bitmap[currentContentIndex].getBitmap(), bitmap[currentContentIndex].getBitmap().getWidth()+(int)distanceXfrommXLast*2, bitmap[currentContentIndex].getBitmap().getHeight()+(int)distanceYfrommYLast*2, true));
-				//Set the boolean of resized, inside the contents class to true (So we know when to draw the resized image or the original image otherwise)
-				bitmap[currentContentIndex].setBooleanResized(true);
-				invalidate();	//Force redraw
-			}	
-		}catch (NullPointerException e) {
-			
-		}
-	}
-	
+	Path path = new Path();
 	
 	@SuppressLint("DrawAllocation")
 	@Override
 	protected void onDraw(Canvas canvas) {
 		super.onDraw(canvas);
+<<<<<<< HEAD
 		Paint paint = new Paint();
 		try
 		{
@@ -302,27 +264,53 @@ public class CustomView extends ImageView {
 		{
 			
 		}
+=======
+		paint = new Paint();
+		paint.setAntiAlias(true);
+		
+>>>>>>> update
 		
 		try {
 			canvas.drawBitmap(backgroundImage, 0, 0,paint);
 		} catch (NullPointerException e){}
 		
-		//Draw Point
-		for (Point point : points){
-			canvas.drawCircle(point.x, point.y, 2, paint); 
-		}
+		paint = new Paint(Paint.ANTI_ALIAS_FLAG);
+		paint.setStyle(Paint.Style.STROKE);
+		paint.setStrokeWidth(2);
+		paint.setColor(Color.WHITE);
+		
+		//Draw Paint
+		
+	
+			canvas.drawPath(path, paint);
 		
 		for (int i=0; i<numberOfContents; i++){
 			System.out.println("---index" + i);
 			try {
 				//Draw Original image
 				if (bitmap[i].getBitmap()!=null && !bitmap[i].getBooleanResized()){
-					canvas.drawBitmap(bitmap[i].bitmap, bitmap[i].getX()-(bitmap[i].getBitmap().getWidth()/2), bitmap[i].getY()-(bitmap[i].getBitmap().getHeight()/2), paint);
+					if (i==currentContentIndex){
+						RectF targetBox=new RectF(bitmap[i].getX()-bitmap[i].bitmap.getWidth(), bitmap[i].getY()-bitmap[i].bitmap.getHeight(),bitmap[i].getX()+bitmap[i].bitmap.getWidth(), bitmap[i].getY()+bitmap[i].bitmap.getHeight());
+						canvas.drawBitmap(bitmap[i].bitmap, null, targetBox, paint);
+						canvas.drawRect(targetBox, paint);
+						paint.setStyle(Paint.Style.FILL);
+						canvas.drawCircle(bitmap[i].getX()-bitmap[i].bitmap.getWidth(), bitmap[i].getY()-bitmap[i].bitmap.getHeight(), 5, paint);
+						canvas.drawCircle(bitmap[i].getX()+bitmap[i].bitmap.getWidth(), bitmap[i].getY()-bitmap[i].bitmap.getHeight(), 5, paint);
+						canvas.drawCircle(bitmap[i].getX()+bitmap[i].bitmap.getWidth(), bitmap[i].getY()+bitmap[i].bitmap.getHeight(), 5, paint);
+						canvas.drawCircle(bitmap[i].getX()-bitmap[i].bitmap.getWidth(), bitmap[i].getY()+bitmap[i].bitmap.getHeight(), 5, paint);
+						
+					}
+					else {
+						canvas.drawBitmap(bitmap[i].bitmap, bitmap[i].getX()-(bitmap[i].getBitmap().getWidth()/2), bitmap[i].getY()-(bitmap[i].getBitmap().getHeight()/2), paint);
+					
+					}
 				}
 				//Else, draw the resized image
 				else if (bitmap[i].getResizedBitmap()!=null && bitmap[i].getBooleanResized()){
 					canvas.drawBitmap(bitmap[i].getResizedBitmap(), bitmap[i].getX()-(bitmap[i].getResizedBitmap().getWidth()/2), bitmap[i].getY()-(bitmap[i].getResizedBitmap().getHeight()/2), paint);
+				
 				}
+				
 			}
 			catch (NullPointerException e){
 			}

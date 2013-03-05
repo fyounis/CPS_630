@@ -322,6 +322,13 @@ public class Testpic extends Activity
 			        { 
 			        	try
 			        	{
+<<<<<<< HEAD
+=======
+			        		//Upon exiting activity, I don't think its returning the memory back.
+			        		//It fails when I try to pick a new pic
+			        		finish( );
+			        		Testpic.this.onDestroy();
+>>>>>>> update
 			        		CustomView.backgroundImage.recycle();
 			        		Intent newPic = new Intent(Testpic.this, UserPhotoOptions.class);
 			        		startActivity(newPic);
