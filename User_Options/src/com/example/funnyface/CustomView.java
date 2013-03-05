@@ -16,7 +16,6 @@ import android.support.v4.view.MotionEventCompat;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.widget.ImageView;
-import android.widget.Toast;
 
 
 public class CustomView extends ImageView {
@@ -215,10 +214,12 @@ public class CustomView extends ImageView {
 	@Override
 	protected void onDraw(Canvas canvas) {
 		super.onDraw(canvas);
-<<<<<<< HEAD
 		Paint paint = new Paint();
+		
 		try
 		{
+			canvas.drawBitmap(backgroundImage, 0, 0,paint);
+			
 			System.out.println(colorValue);
 			if(colorValue.equals("red"))
 			{
@@ -258,31 +259,15 @@ public class CustomView extends ImageView {
 				paint.setColor(Color.WHITE);
 			}
 			
+			paint.setAntiAlias(true);
+			paint.setStyle(Paint.Style.STROKE);
+			paint.setStrokeWidth(2);
 			
-		}
-		catch(Exception e)
-		{
-			
-		}
-=======
-		paint = new Paint();
-		paint.setAntiAlias(true);
-		
->>>>>>> update
-		
-		try {
-			canvas.drawBitmap(backgroundImage, 0, 0,paint);
-		} catch (NullPointerException e){}
-		
-		paint = new Paint(Paint.ANTI_ALIAS_FLAG);
-		paint.setStyle(Paint.Style.STROKE);
-		paint.setStrokeWidth(2);
-		paint.setColor(Color.WHITE);
-		
-		//Draw Paint
-		
-	
+			//Draw Paint
 			canvas.drawPath(path, paint);
+			
+		}
+		catch(Exception e){}
 		
 		for (int i=0; i<numberOfContents; i++){
 			System.out.println("---index" + i);
@@ -290,6 +275,7 @@ public class CustomView extends ImageView {
 				//Draw Original image
 				if (bitmap[i].getBitmap()!=null && !bitmap[i].getBooleanResized()){
 					if (i==currentContentIndex){
+						paint.setColor(Color.WHITE);
 						RectF targetBox=new RectF(bitmap[i].getX()-bitmap[i].bitmap.getWidth(), bitmap[i].getY()-bitmap[i].bitmap.getHeight(),bitmap[i].getX()+bitmap[i].bitmap.getWidth(), bitmap[i].getY()+bitmap[i].bitmap.getHeight());
 						canvas.drawBitmap(bitmap[i].bitmap, null, targetBox, paint);
 						canvas.drawRect(targetBox, paint);
@@ -312,10 +298,7 @@ public class CustomView extends ImageView {
 				}
 				
 			}
-			catch (NullPointerException e){
-			}
+			catch (NullPointerException e){}
 		}
-		
-		
 	}
 }
