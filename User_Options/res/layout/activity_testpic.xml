@@ -32,31 +32,80 @@
                 android:background="@drawable/moustache"
                 android:onClick="B2Activity"
                 android:text="B2" />
-                        
-           	<Button
-                android:id="@+id/button3"
-                android:layout_width="70dp"
-                android:layout_height="wrap_content"
-                android:text="Paint" />
-
            	
-       	 	<Button
-                android:id="@+id/button4"
-                android:layout_width="70dp"
-                android:layout_height="wrap_content"
-                android:text="B4" />
-           	            
-         	<Button
-                android:id="@+id/button5"
-                android:layout_width="70dp"
-                android:layout_height="wrap_content"
-                android:text="B5" />
-         	
-        	<Button
-                android:id="@+id/button6"
-                android:layout_width="70dp"
-                android:layout_height="wrap_content"
-                android:text="B6" />
+       <Button
+          android:id="@+id/button3"
+          style="?android:attr/buttonStyleSmall"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_alignParentTop="true"
+          android:layout_toRightOf="@+id/horizontalScrollView1"
+          android:text="BLACK" />
+
+      <Button
+          android:id="@+id/button20"
+          style="?android:attr/buttonStyleSmall"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_alignParentTop="true"
+          android:layout_toRightOf="@+id/button3"
+          android:text="WHITE" />
+      
+         <Button
+          android:id="@+id/button12"
+          style="?android:attr/buttonStyleSmall"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_alignParentTop="true"
+          android:layout_toRightOf="@+id/horizontalScrollView1"
+          android:text="RED" />
+
+      <Button
+          android:id="@+id/button13"
+          style="?android:attr/buttonStyleSmall"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_alignParentTop="true"
+          android:layout_toRightOf="@+id/button12"
+          android:text="BLUE" />
+      
+      <Button
+          android:id="@+id/button14"
+          style="?android:attr/buttonStyleSmall"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_alignParentTop="true"
+          android:layout_toRightOf="@+id/button13"
+          android:text="GREEN" />
+      
+      <Button
+          android:id="@+id/button15"
+          style="?android:attr/buttonStyleSmall"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_alignParentTop="true"
+          android:layout_toRightOf="@+id/button14"
+          android:text="GRAY" />
+      
+     <Button
+          android:id="@+id/button16"
+          style="?android:attr/buttonStyleSmall"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_alignParentTop="true"
+          android:layout_toRightOf="@+id/button15"
+          android:text="YELLOW" />
+     
+     <Button
+          android:id="@+id/button17"
+          style="?android:attr/buttonStyleSmall"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_alignParentTop="true"
+          android:layout_toRightOf="@+id/button16"
+          android:text="CYAN"/>
+   
+          
         </LinearLayout>
     </HorizontalScrollView>
 
@@ -65,6 +114,7 @@
           android:layout_width="fill_parent"
           android:layout_height="fill_parent"
           android:layout_below="@+id/horizontalScrollView1" />
+      
 
       <Button
           android:id="@+id/button7"
@@ -114,6 +164,4 @@
           android:layout_above="@+id/button7"
           android:layout_alignLeft="@+id/button7"
           android:text="UndoThis" />
-
-
 </RelativeLayout>

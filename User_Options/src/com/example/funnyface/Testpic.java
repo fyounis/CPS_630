@@ -22,7 +22,6 @@ public class Testpic extends Activity
 {
 	private View view;
 	private boolean showToolBar=true;
-	private int buttonClicks;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -74,15 +73,33 @@ public class Testpic extends Activity
 		});
 		
 		final Button button3 = (Button) findViewById(R.id.button3);
+		button3.setBackgroundColor(Color.BLACK);
+		button3.setTextColor(Color.WHITE);
+		final Button whiteColor = (Button) findViewById(R.id.button11);
+		whiteColor.setBackgroundColor(Color.WHITE);
+		final Button redColor = (Button) findViewById(R.id.button12);
+		redColor.setBackgroundColor(Color.RED);
+		final Button blueColor = (Button) findViewById(R.id.button13);
+		blueColor.setBackgroundColor(Color.BLUE);
+		final Button greenColor = (Button) findViewById(R.id.button14);
+		greenColor.setBackgroundColor(Color.GREEN);
+		final Button purpleColor = (Button) findViewById(R.id.button15);
+		purpleColor.setBackgroundColor(Color.MAGENTA);
+		final Button yellowColor = (Button) findViewById(R.id.button16);
+		yellowColor.setBackgroundColor(Color.YELLOW);
+		final Button cyanColor = (Button) findViewById(R.id.button17);
+		cyanColor.setBackgroundColor(Color.CYAN);
+	
 		button3.setOnClickListener(new View.OnClickListener() {
 			
 			@Override
 			public void onClick(View v) 
 			{
 				try{
-				// TODO Auto-generated method stub
-					CustomView.mode = "paint";
-					CustomView.paint.setColor(Color.BLACK);
+						CustomView.mode = "paint";
+						button3.setBackgroundColor(Color.BLACK);
+						button3.setTextColor(Color.WHITE);
+						CustomView.colorValue = "BLACK";
 				   }
 				   catch(NullPointerException e)
 				   {
@@ -91,6 +108,131 @@ public class Testpic extends Activity
 				
 			}
 		});
+		
+			whiteColor.setOnClickListener(new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View v) 
+			{
+				try{
+						CustomView.mode = "paint";
+						whiteColor.setBackgroundColor(Color.WHITE);
+						whiteColor.setTextColor(Color.BLACK);
+						CustomView.colorValue = "WHITE";
+				   }
+				   catch(NullPointerException e)
+				   {
+					
+				   }
+				
+			}
+		});
+		
+		redColor.setOnClickListener(new View.OnClickListener(){
+
+			@Override
+			public void onClick(View v)
+			{
+				try
+				{
+					CustomView.mode = "paint";
+					redColor.setBackgroundColor(Color.RED);
+					CustomView.colorValue = "red";
+				}
+				catch(NullPointerException e)
+				{
+					
+				}
+			}
+		
+		});
+
+		blueColor.setOnClickListener(new View.OnClickListener(){
+
+			@Override
+			public void onClick(View v)
+			{
+				try
+				{
+					CustomView.mode = "paint";
+					blueColor.setBackgroundColor(Color.BLUE);
+					CustomView.colorValue = "blue";
+				}
+				catch(NullPointerException e)
+				{
+					
+				}
+			}
+		});
+		greenColor.setOnClickListener(new View.OnClickListener(){
+
+			@Override
+			public void onClick(View v)
+			{
+				try
+				{
+					CustomView.mode = "paint";
+					greenColor.setBackgroundColor(Color.GREEN);
+					CustomView.colorValue = "green";
+				}
+				catch(NullPointerException e)
+				{
+					
+				}
+			}
+		});
+		yellowColor.setOnClickListener(new View.OnClickListener(){
+
+			@Override
+			public void onClick(View v)
+			{
+				try
+				{
+					CustomView.mode = "paint";			
+					yellowColor.setBackgroundColor(Color.YELLOW);
+					CustomView.colorValue = "yellow";
+				}
+				catch(NullPointerException e)
+				{
+					
+				}
+			}
+		});
+		purpleColor.setOnClickListener(new View.OnClickListener(){
+
+			@Override
+			public void onClick(View v)
+			{
+				try
+				{
+					CustomView.mode = "paint";
+					purpleColor.setBackgroundColor(Color.GRAY);
+					CustomView.colorValue = "purple";
+				}
+				catch(NullPointerException e)
+				{
+					
+				}
+			}
+		});
+		cyanColor.setOnClickListener(new View.OnClickListener(){
+
+			@Override
+			public void onClick(View v)
+			{
+				try
+				{
+					CustomView.mode = "paint";
+					cyanColor.setBackgroundColor(Color.CYAN);
+					CustomView.colorValue = "cyan";
+				}
+				catch(NullPointerException e)
+				{
+					
+				}
+			}
+		});
+
 		
 		final Button undoButton = (Button) findViewById(R.id.button7);
 		undoButton.setOnClickListener(new View.OnClickListener() {
@@ -180,10 +322,7 @@ public class Testpic extends Activity
 			        { 
 			        	try
 			        	{
-			        		//Upon exiting activity, I don't think its returning the memory back.
-			        		//It fails when I try to pick a new pic
-			        		finish( );
-			        		Testpic.this.onDestroy();
+			        		CustomView.backgroundImage.recycle();
 			        		Intent newPic = new Intent(Testpic.this, UserPhotoOptions.class);
 			        		startActivity(newPic);
 			    

@@ -14,6 +14,7 @@ import android.support.v4.view.MotionEventCompat;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 
 public class CustomView extends ImageView {
@@ -32,7 +33,7 @@ public class CustomView extends ImageView {
 	protected static int numberOfContents;		//To store the index of the last content. (number of contents in the array)
 	protected static int currentContentIndex;		//To store the index of the current content selected
 	protected boolean moveContent;			//Boolean to determine whether to move the content or not
-	protected static Paint paint;
+    protected static String colorValue;
 
 	protected static String mode;
 	List<Point> points = new ArrayList<Point>();
@@ -253,8 +254,54 @@ public class CustomView extends ImageView {
 	@Override
 	protected void onDraw(Canvas canvas) {
 		super.onDraw(canvas);
-		paint = new Paint();
-		
+		Paint paint = new Paint();
+		try
+		{
+			System.out.println(colorValue);
+			if(colorValue.equals("red"))
+			{
+				paint.setColor(Color.RED);
+				//Draw Point
+			}
+			else if(colorValue.equals("blue"))
+			{
+				paint.setColor(Color.BLUE);
+			}
+			else if(colorValue.equals("green"))
+			{
+				paint.setColor(Color.GREEN);
+			}
+			else if(colorValue.equals("blue"))
+			{
+				paint.setColor(Color.BLUE);
+			}
+			else if(colorValue.equals("pruple"))
+			{
+				paint.setColor(Color.MAGENTA);
+			}
+			else if(colorValue.equals("yellow"))
+			{
+				paint.setColor(Color.YELLOW);
+			}
+			else if(colorValue.equals("cyan"))
+			{
+				paint.setColor(Color.CYAN);
+			}
+			else if(colorValue.equals("black"))
+			{
+				paint.setColor(Color.BLACK);
+			}
+			else if(colorValue.equals("white"))
+			{
+				paint.setColor(Color.WHITE);
+			}
+			
+			
+		}
+		catch(Exception e)
+		{
+			
+		}
 		
 		try {
 			canvas.drawBitmap(backgroundImage, 0, 0,paint);
