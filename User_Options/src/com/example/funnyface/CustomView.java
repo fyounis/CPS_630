@@ -32,6 +32,7 @@ public class CustomView extends ImageView {
 	protected static int numberOfContents;		//To store the index of the last content. (number of contents in the array)
 	protected static int currentContentIndex;		//To store the index of the current content selected
 	protected boolean moveContent;			//Boolean to determine whether to move the content or not
+	protected static Paint paint;
 
 	protected static String mode;
 	List<Point> points = new ArrayList<Point>();
@@ -252,8 +253,8 @@ public class CustomView extends ImageView {
 	@Override
 	protected void onDraw(Canvas canvas) {
 		super.onDraw(canvas);
-		Paint paint = new Paint();
-		paint.setColor(Color.BLACK);
+		paint = new Paint();
+		
 		
 		try {
 			canvas.drawBitmap(backgroundImage, 0, 0,paint);
