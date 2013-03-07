@@ -68,7 +68,7 @@
         </activity>
         <activity
             android:name="com.example.funnyface.Testpic"
-            android:configChanges="orientation|screenSize"
+            android:screenOrientation="portrait"
             android:label="@string/title_activity_testpic"
             android:theme="@android:style/Theme.NoTitleBar" >
         </activity>

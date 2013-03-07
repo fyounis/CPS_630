@@ -8,6 +8,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
+import android.graphics.Path;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
@@ -89,6 +90,10 @@ public class Testpic extends Activity
 		yellowColor.setBackgroundColor(Color.YELLOW);
 		final Button cyanColor = (Button) findViewById(R.id.button17);
 		cyanColor.setBackgroundColor(Color.CYAN);
+		final Button ThinStroke = (Button) findViewById(R.id.button18);
+		final Button MediumStroke = (Button) findViewById(R.id.button19);
+		final Button ThickStroke = (Button) findViewById(R.id.button21);
+		
 	
 		button3.setOnClickListener(new View.OnClickListener() {
 			
@@ -232,7 +237,59 @@ public class Testpic extends Activity
 				}
 			}
 		});
+		ThinStroke.setOnClickListener(new View.OnClickListener(){
 
+			@Override
+			public void onClick(View v) 
+			{
+				try
+				{
+					CustomView.strokeSize = "Size1";
+				}
+				catch(Exception e)
+				{
+					
+				}
+				
+			}
+	
+		});
+		MediumStroke.setOnClickListener(new View.OnClickListener(){
+
+			@Override
+			public void onClick(View v) 
+			{
+				try
+				{
+					CustomView.strokeSize = "Size2";
+				}
+				catch(Exception e)
+				{
+					
+				}
+				
+			}
+	
+		});
+		ThickStroke.setOnClickListener(new View.OnClickListener(){
+
+			@Override
+			public void onClick(View v) 
+			{
+				try
+				{
+					
+					CustomView.strokeSize = "Size3";
+				}
+				catch(Exception e)
+				{
+					
+				}
+				
+			}
+	
+		});
+        
 		
 		final Button undoButton = (Button) findViewById(R.id.button7);
 		undoButton.setOnClickListener(new View.OnClickListener() {
@@ -289,18 +346,26 @@ public class Testpic extends Activity
            {
                 try
                 {
+                			for(Path p: CustomView.paths)
+                			{
+                					p.reset( ); 
+
+                			}
+                			
                             if(CustomView.numberOfContents != 0){
+                       
                                int i;
                                for(i=0;i<=CustomView.numberOfContents;i++)
                                {
                                   CustomView.bitmap[i]=null;
                                }
-                               view.invalidate();
+                      
                                Toast.makeText(getApplicationContext(), "Components Removed",Toast.LENGTH_LONG).show();
                             }
                             else{
                                Toast.makeText(getApplicationContext(), "No Components to Remove", Toast.LENGTH_LONG).show();
                             }
+                            view.invalidate();
                 }catch(NullPointerException e){
                         
                 }
