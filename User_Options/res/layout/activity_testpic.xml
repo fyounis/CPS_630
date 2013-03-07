@@ -104,6 +104,36 @@
           android:layout_alignParentTop="true"
           android:layout_toRightOf="@+id/button16"
           android:text="CYAN"/>
+     
+     <Button
+          android:id="@+id/button18"
+          style="?android:attr/buttonStyleSmall"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_alignParentTop="true"
+          android:layout_toRightOf="@+id/button17"
+          android:text="Thin"/>
+     
+     <Button
+          android:id="@+id/button19"
+          style="?android:attr/buttonStyleSmall"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_alignParentTop="true"
+          android:layout_toRightOf="@+id/button18"
+          android:text="Medium"/>
+     
+     <Button
+          android:id="@+id/button21"
+          style="?android:attr/buttonStyleSmall"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_alignParentTop="true"
+          android:layout_toRightOf="@+id/button19"
+          android:text="Thick"/>
+     
+     
+     
    
           
         </LinearLayout>

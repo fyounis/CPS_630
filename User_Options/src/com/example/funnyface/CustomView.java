@@ -34,11 +34,13 @@ public class CustomView extends ImageView {
 	protected static int currentContentIndex;		//To store the index of the current content selected
 	protected boolean moveContent;			//Boolean to determine whether to move the content or not
     protected static String colorValue;
+    protected static String strokeSize;
 	protected static String mode;
 	
-	private ArrayList<Path> paths;
-	private Path path;
+	protected static ArrayList<Path> paths;
+	protected static Path path;
 	private HashMap<Path, Integer> colorsMap; 
+	private HashMap<Path, Integer> strokeMap;
 	
 	public CustomView(Context context) {
 		super(context);
@@ -72,13 +74,14 @@ public class CustomView extends ImageView {
 		path = new Path();
 		paths = new ArrayList<Path>();
 		colorsMap = new HashMap<Path, Integer>();
+		strokeMap = new HashMap<Path, Integer>();
 	}
 	
 	@Override
 	public boolean onTouchEvent(MotionEvent event) {	
 		//Get Action event
 		int action = MotionEventCompat.getActionMasked(event);
-		
+
 		switch(action) {
 		case MotionEvent.ACTION_DOWN:
 			//Get the Action Index of the first finger
@@ -158,6 +161,26 @@ public class CustomView extends ImageView {
 					colorsMap.put(path,Color.BLACK);
 				else if(colorValue.equals("white"))
 					colorsMap.put(path,Color.WHITE);
+				try
+				{
+					strokeMap.put(path, 1);
+					if(strokeSize.equals("Size1"))
+					{
+						strokeMap.put(path, 1);
+					}
+					else if(strokeSize.equals("Size2"))
+					{
+						strokeMap.put(path, 5);
+					}
+					else
+					{
+						strokeMap.put(path, 15);
+					}
+				}
+				catch(Exception e)
+				{
+					
+				}
 			}
 			break;
 		case MotionEvent.ACTION_POINTER_DOWN:
@@ -260,19 +283,20 @@ public class CustomView extends ImageView {
 		try
 		{
 			canvas.drawBitmap(backgroundImage, 0, 0,paint);
-						
+			paint.setStyle(Paint.Style.STROKE);			
 			paint.setAntiAlias(true);
-			paint.setStyle(Paint.Style.STROKE);
-			paint.setStrokeWidth(3);
 			
 			//Draw Paint
 			for (Path p : paths){
 				paint.setColor(colorsMap.get(p));
+				paint.setStrokeWidth(strokeMap.get(p));
 				canvas.drawPath(p,paint);
+				
 			}	
+			
 		}
 		catch(Exception e){}
-		
+		paint.setStrokeWidth(1);
 		for (int i=0; i<numberOfContents; i++){
 			System.out.println("---index" + i);
 			try {
