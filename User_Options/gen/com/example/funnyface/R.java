@@ -25,35 +25,49 @@ public final class R {
     }
     public static final class id {
         public static final int button1=0x7f070000;
+        public static final int button10=0x7f070015;
+        public static final int button11=0x7f070014;
+        public static final int button12=0x7f070007;
+        public static final int button13=0x7f070008;
+        public static final int button14=0x7f070009;
+        public static final int button15=0x7f07000a;
+        public static final int button16=0x7f07000b;
+        public static final int button17=0x7f07000c;
+        public static final int button18=0x7f07000d;
+        public static final int button19=0x7f07000e;
         public static final int button2=0x7f070001;
+        public static final int button20=0x7f070006;
+        public static final int button21=0x7f07000f;
         public static final int button3=0x7f070005;
-        public static final int button4=0x7f070006;
-        public static final int button5=0x7f070007;
-        public static final int button6=0x7f070008;
-        public static final int button7=0x7f07000a;
-        public static final int gallery=0x7f07000d;
-        public static final int home=0x7f07000b;
+        public static final int button7=0x7f070011;
+        public static final int button8=0x7f070013;
+        public static final int button9=0x7f070012;
+        public static final int gallery=0x7f070018;
+        public static final int home=0x7f070016;
         public static final int horizontalScrollView1=0x7f070002;
-        public static final int imageView1=0x7f070009;
-        public static final int menu_settings=0x7f07000e;
-        public static final int picture=0x7f07000c;
+        public static final int imageView1=0x7f070010;
+        public static final int menu_settings=0x7f070019;
+        public static final int picture=0x7f070017;
         public static final int textView1=0x7f070003;
         public static final int textView2=0x7f070004;
     }
     public static final class layout {
-        public static final int activity_photo_editing=0x7f030000;
-        public static final int activity_testpic=0x7f030001;
-        public static final int activity_user_options=0x7f030002;
-        public static final int activity_user_photo_options=0x7f030003;
-        public static final int activity_view_data_base=0x7f030004;
+        public static final int activity_camera_intent=0x7f030000;
+        public static final int activity_photo_editing=0x7f030001;
+        public static final int activity_testpic=0x7f030002;
+        public static final int activity_user_options=0x7f030003;
+        public static final int activity_user_photo_options=0x7f030004;
+        public static final int activity_view_data_base=0x7f030005;
     }
     public static final class menu {
-        public static final int activity_main=0x7f060000;
+        public static final int activity_camera_intent=0x7f060000;
+        public static final int activity_main=0x7f060001;
     }
     public static final class string {
         public static final int app_name=0x7f040000;
         public static final int hello_world=0x7f040001;
         public static final int menu_settings=0x7f040002;
+        public static final int title_activity_camera_intent=0x7f04000a;
         public static final int title_activity_photo_editing=0x7f040008;
         public static final int title_activity_photo_selection=0x7f040004;
         public static final int title_activity_picture_edit=0x7f040003;
