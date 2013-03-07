@@ -1,7 +1,7 @@
 package com.example.funnyface;
 
 import java.util.ArrayList;
-import java.util.List;
+import java.util.HashMap;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -10,7 +10,6 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Path;
-import android.graphics.Point;
 import android.graphics.RectF;
 import android.support.v4.view.MotionEventCompat;
 import android.util.AttributeSet;
@@ -35,8 +34,11 @@ public class CustomView extends ImageView {
 	protected static int currentContentIndex;		//To store the index of the current content selected
 	protected boolean moveContent;			//Boolean to determine whether to move the content or not
     protected static String colorValue;
-
 	protected static String mode;
+	
+	private ArrayList<Path> paths;
+	private Path path;
+	private HashMap<Path, Integer> colorsMap; 
 	
 	public CustomView(Context context) {
 		super(context);
@@ -50,6 +52,7 @@ public class CustomView extends ImageView {
 	
 	public CustomView(Context context, AttributeSet attrs, int defStyle) {
 		super(context, attrs, defStyle);
+		init(context);
 	}
 	
 	public void init(Context context){
@@ -66,6 +69,9 @@ public class CustomView extends ImageView {
 		mode="add_content";
 		moveContent=false;
 		numberOfContents=0;
+		path = new Path();
+		paths = new ArrayList<Path>();
+		colorsMap = new HashMap<Path, Integer>();
 	}
 	
 	@Override
@@ -94,6 +100,7 @@ public class CustomView extends ImageView {
 					bitmap[numberOfContents].setXY(xFirst, yFirst);		
 					moveContent=false;
 					mode="move_content";
+					currentContentIndex=numberOfContents;
 					numberOfContents=numberOfContents+1;
 				} catch (NullPointerException e){
 					
@@ -124,12 +131,35 @@ public class CustomView extends ImageView {
 				}
 			}
 			
+			//Else, Do Paint
 			else if (mode.equals("paint")){
+				//Add initial point to path of points using the .moveTo method
 				path.moveTo(x, y);
+				//Add initial point to Path of Points
+				paths.add(path);
+				//Set Default Color to black
+				colorsMap.put(path,Color.BLACK);
+				//Color is selected if a button is pressed to select it
+				if(colorValue.equals("red")) 
+					colorsMap.put(path,Color.RED);
+				else if(colorValue.equals("blue"))
+					colorsMap.put(path,Color.BLUE);
+				else if(colorValue.equals("green"))
+					colorsMap.put(path,Color.GREEN);
+				else if(colorValue.equals("blue"))
+					colorsMap.put(path,Color.RED);
+				else if(colorValue.equals("pruple"))
+					colorsMap.put(path,Color.MAGENTA);
+				else if(colorValue.equals("yellow"))
+					colorsMap.put(path,Color.YELLOW);
+				else if(colorValue.equals("cyan"))
+					colorsMap.put(path,Color.CYAN);
+				else if(colorValue.equals("black"))
+					colorsMap.put(path,Color.BLACK);
+				else if(colorValue.equals("white"))
+					colorsMap.put(path,Color.WHITE);
 			}
-			
 			break;
-			
 		case MotionEvent.ACTION_POINTER_DOWN:
 			//Get the Action Index of the second finger
 			int pointerIndex2 = MotionEventCompat.getActionIndex(event);
@@ -162,6 +192,11 @@ public class CustomView extends ImageView {
 				//Do Drag (With Selected Content)
 				if (mode.equals("move_content") && moveContent==true){
 					try {
+						/*float curX=bitmap[currentContentIndex].getX();
+						float curY=bitmap[currentContentIndex].getY();
+						if (dx<=curX && dy <=curY){
+							bitmap[currentContentIndex].setXY(dx+(dx-curX), dy+(dy-curY));
+						}*/
 						bitmap[currentContentIndex].setXY(dx, dy);		//Set X and Y coordinates of the bitmap to be drawn
 						
 					}catch (NullPointerException e) {
@@ -169,7 +204,8 @@ public class CustomView extends ImageView {
 				}
 				//Else, Do Paint (Draw)
 				else if (mode.equals("paint")){
-					paintOnScreen(dx,dy,event);
+					//Adding point to path of points using the .lineTo method
+					path.lineTo(x, y);	//SLOWS DOWN CONSIDERABLY AFTER DRAWING FOR A LONG TIME
 				}
 			       
 				//To force View to Redraw itself
@@ -189,6 +225,18 @@ public class CustomView extends ImageView {
 			break;
 			
 		case MotionEvent.ACTION_UP:
+			if (mode.equals("move_content")){
+				moveContent=false;
+			}
+			else if (mode.equals("paint")){
+				pointerIndex = MotionEventCompat.getActionIndex(event);
+				x=MotionEventCompat.getX(event, pointerIndex);
+				y=MotionEventCompat.getY(event, pointerIndex);
+				path.lineTo(x,y);
+				paths.add(path);
+				//MUST create a new path object to make a new path of points, old object should get deleted automatically
+				path = new Path();
+			}
 			ptrID1 = INVALID_POINTER_ID;
 			break;		
 		case MotionEvent.ACTION_POINTER_UP:
@@ -199,16 +247,9 @@ public class CustomView extends ImageView {
 		return true;
 	}
 	
-	private void paintOnScreen(float x, float y, MotionEvent event){
-		path.lineTo(x, y);
-	}
-	
 	protected static void undo(){
 		numberOfContents = numberOfContents - 1;
-		
 	}
-	
-	Path path = new Path();
 	
 	@SuppressLint("DrawAllocation")
 	@Override
@@ -219,53 +260,16 @@ public class CustomView extends ImageView {
 		try
 		{
 			canvas.drawBitmap(backgroundImage, 0, 0,paint);
-			
-			System.out.println(colorValue);
-			if(colorValue.equals("red"))
-			{
-				paint.setColor(Color.RED);
-				//Draw Point
-			}
-			else if(colorValue.equals("blue"))
-			{
-				paint.setColor(Color.BLUE);
-			}
-			else if(colorValue.equals("green"))
-			{
-				paint.setColor(Color.GREEN);
-			}
-			else if(colorValue.equals("blue"))
-			{
-				paint.setColor(Color.BLUE);
-			}
-			else if(colorValue.equals("pruple"))
-			{
-				paint.setColor(Color.MAGENTA);
-			}
-			else if(colorValue.equals("yellow"))
-			{
-				paint.setColor(Color.YELLOW);
-			}
-			else if(colorValue.equals("cyan"))
-			{
-				paint.setColor(Color.CYAN);
-			}
-			else if(colorValue.equals("black"))
-			{
-				paint.setColor(Color.BLACK);
-			}
-			else if(colorValue.equals("white"))
-			{
-				paint.setColor(Color.WHITE);
-			}
-			
+						
 			paint.setAntiAlias(true);
 			paint.setStyle(Paint.Style.STROKE);
-			paint.setStrokeWidth(2);
+			paint.setStrokeWidth(3);
 			
 			//Draw Paint
-			canvas.drawPath(path, paint);
-			
+			for (Path p : paths){
+				paint.setColor(colorsMap.get(p));
+				canvas.drawPath(p,paint);
+			}	
 		}
 		catch(Exception e){}
 		
@@ -280,15 +284,14 @@ public class CustomView extends ImageView {
 						canvas.drawBitmap(bitmap[i].bitmap, null, targetBox, paint);
 						canvas.drawRect(targetBox, paint);
 						paint.setStyle(Paint.Style.FILL);
-						canvas.drawCircle(bitmap[i].getX()-bitmap[i].bitmap.getWidth(), bitmap[i].getY()-bitmap[i].bitmap.getHeight(), 5, paint);
-						canvas.drawCircle(bitmap[i].getX()+bitmap[i].bitmap.getWidth(), bitmap[i].getY()-bitmap[i].bitmap.getHeight(), 5, paint);
-						canvas.drawCircle(bitmap[i].getX()+bitmap[i].bitmap.getWidth(), bitmap[i].getY()+bitmap[i].bitmap.getHeight(), 5, paint);
-						canvas.drawCircle(bitmap[i].getX()-bitmap[i].bitmap.getWidth(), bitmap[i].getY()+bitmap[i].bitmap.getHeight(), 5, paint);
-						
+						canvas.drawCircle(bitmap[i].getX()-bitmap[i].bitmap.getWidth(), bitmap[i].getY()-bitmap[i].bitmap.getHeight(), 8, paint);
+						canvas.drawCircle(bitmap[i].getX()+bitmap[i].bitmap.getWidth(), bitmap[i].getY()-bitmap[i].bitmap.getHeight(), 8, paint);
+						canvas.drawCircle(bitmap[i].getX()+bitmap[i].bitmap.getWidth(), bitmap[i].getY()+bitmap[i].bitmap.getHeight(), 8, paint);
+						canvas.drawCircle(bitmap[i].getX()-bitmap[i].bitmap.getWidth(), bitmap[i].getY()+bitmap[i].bitmap.getHeight(), 8, paint);
+						paint.setStyle(Paint.Style.STROKE);
 					}
 					else {
 						canvas.drawBitmap(bitmap[i].bitmap, bitmap[i].getX()-(bitmap[i].getBitmap().getWidth()/2), bitmap[i].getY()-(bitmap[i].getBitmap().getHeight()/2), paint);
-					
 					}
 				}
 				//Else, draw the resized image
