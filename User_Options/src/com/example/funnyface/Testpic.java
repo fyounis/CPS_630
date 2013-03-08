@@ -50,12 +50,8 @@ public class Testpic extends Activity
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
 				try {
-<<<<<<< HEAD
-					CustomView.bitmap[CustomView.index] = new contents(BitmapFactory.decodeResource(getResources(), R.drawable.ic_launcher));
-=======
 					CustomView.mode="add_content";
 					CustomView.bitmap[CustomView.numberOfContents] = new contents(BitmapFactory.decodeResource(getResources(), R.drawable.ic_launcher));
->>>>>>> upstream/master
 				} catch (NullPointerException e) {
 						
 				}
@@ -69,12 +65,8 @@ public class Testpic extends Activity
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
 				try {
-<<<<<<< HEAD
-					CustomView.bitmap[CustomView.index] = new contents(BitmapFactory.decodeResource(getResources(), R.drawable.moustache));
-=======
 					CustomView.mode="add_content";
 					CustomView.bitmap[CustomView.numberOfContents] = new contents(BitmapFactory.decodeResource(getResources(), R.drawable.moustache));
->>>>>>> upstream/master
 				} catch (NullPointerException e) {
 					
 				}
@@ -148,14 +140,6 @@ public class Testpic extends Activity
 			{
 				try
 				{
-<<<<<<< HEAD
-				// TODO Auto-generated method stub
-<<<<<<< HEAD
-				CustomView.index+=1;
-=======
-				CustomView.mode = "paint";
-				}catch(NullPointerException e){
-=======
 					CustomView.mode = "paint";
 					redColor.setBackgroundColor(Color.RED);
 					CustomView.colorValue = "red";
@@ -249,7 +233,6 @@ public class Testpic extends Activity
 				}
 				catch(NullPointerException e)
 				{
->>>>>>> upstream/master
 					
 				}
 			}
@@ -330,7 +313,6 @@ public class Testpic extends Activity
 				catch(NullPointerException e){
 					
 				}
->>>>>>> upstream/master
 			}
 		});
 		
