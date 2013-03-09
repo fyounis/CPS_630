@@ -26,6 +26,10 @@ public class UserPhotoOptions extends Activity
 		setContentView(R.layout.activity_user_photo_options);
 		
 		//Camera Button
+<<<<<<< HEAD
+=======
+		try {
+>>>>>>> Update
 		Button buttonCamera= (Button) findViewById(R.id.cameraButton);
 		buttonCamera.setOnClickListener(new View.OnClickListener() {
 			
@@ -52,8 +56,13 @@ public class UserPhotoOptions extends Activity
 			}
 		    
 		});
+		}catch(NullPointerException e){}
 		
 		//Gallery Button
+<<<<<<< HEAD
+=======
+		try {
+>>>>>>> Update
 		Button buttonGallery= (Button) findViewById(R.id.galleryButton);
 		buttonGallery.setOnClickListener(new View.OnClickListener() {
 			
@@ -71,6 +80,7 @@ public class UserPhotoOptions extends Activity
 			}
 		    
 		});
+		}catch (NullPointerException e){}
 	}
 	
 	public void onActivityResult(int requestCode, int resultCode, Intent data)

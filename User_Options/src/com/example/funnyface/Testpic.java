@@ -6,6 +6,7 @@ import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.graphics.Path;
@@ -21,25 +22,30 @@ import android.widget.Toast;
 @SuppressLint("SdCardPath")
 public class Testpic extends Activity
 {
-	private View view;
+	private CustomView view;
 	private boolean showToolBar=true;
+	private Bitmap backgroundImage;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_testpic);
-		view = (ImageView) findViewById(R.id.imageView1);
+		view = (CustomView) findViewById(R.id.imageView1);
 		if(Global.mode.equals("Camera"))
 		{
 			try {
-				CustomView.backgroundImage=BitmapFactory.decodeFile(Global.picturePath);
+				//CustomView.backgroundImage=BitmapFactory.decodeFile(Global.picturePath);
+				backgroundImage=BitmapFactory.decodeFile(Global.picturePath);
+				view.setImageBitmap(backgroundImage);
 			} catch (NullPointerException e){}
 			
 		}
 		else if(Global.mode.equals("Gallery"))
 		{
 			try {
-			CustomView.backgroundImage=BitmapFactory.decodeFile(Global.picturePath);
+			//CustomView.backgroundImage=BitmapFactory.decodeFile(Global.picturePath);
+				backgroundImage=BitmapFactory.decodeFile(Global.picturePath);
+				view.setImageBitmap(backgroundImage);
 			} catch (NullPointerException e){}
 		}
 	

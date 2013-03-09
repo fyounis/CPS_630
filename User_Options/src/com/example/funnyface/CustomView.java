@@ -6,10 +6,12 @@ import java.util.HashMap;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Path;
+import android.graphics.Rect;
 import android.graphics.RectF;
 import android.support.v4.view.MotionEventCompat;
 import android.util.AttributeSet;
@@ -42,6 +44,12 @@ public class CustomView extends ImageView {
 	private HashMap<Path, Integer> colorsMap; 
 	private HashMap<Path, Integer> strokeMap;
 	
+	private RectF targetBox;
+	private Rect upperLeft;
+	private Rect lowerLeft;
+	private Rect lowerRight;
+	private Rect upperRight;
+	
 	public CustomView(Context context) {
 		super(context);
 		init(context);
@@ -58,6 +66,9 @@ public class CustomView extends ImageView {
 	}
 	
 	public void init(Context context){
+		BitmapFactory.Options options = new BitmapFactory.Options();
+		options.inPreferredConfig = Bitmap.Config.ARGB_8888;
+		
 		dx=0;
 		dy=0;
 		x=0;
@@ -75,6 +86,7 @@ public class CustomView extends ImageView {
 		paths = new ArrayList<Path>();
 		colorsMap = new HashMap<Path, Integer>();
 		strokeMap = new HashMap<Path, Integer>();
+		
 	}
 	
 	@Override
@@ -105,6 +117,7 @@ public class CustomView extends ImageView {
 					mode="move_content";
 					currentContentIndex=numberOfContents;
 					numberOfContents=numberOfContents+1;
+					//prepareContentToDraw(currentContentIndex);
 				} catch (NullPointerException e){
 					
 				}
@@ -128,6 +141,17 @@ public class CustomView extends ImageView {
 								currentContentIndex=i;
 								moveContent=true;
 						}
+						
+						if (lowerRight.right+10 > xFirst && lowerRight.left-10 < xFirst && lowerRight.top-10 < yFirst && lowerRight.bottom+10 > yFirst){
+							System.out.println("TOUCHED!!!!!");
+							moveContent=false;
+							mode="scale";
+							//scaleImage();
+							
+						}
+						
+						
+						
 					} catch (NullPointerException e){
 						
 					}
@@ -135,7 +159,7 @@ public class CustomView extends ImageView {
 			}
 			
 			//Else, Do Paint
-			else if (mode.equals("paint")){
+			if (mode.equals("paint")){
 				//Add initial point to path of points using the .moveTo method
 				path.moveTo(x, y);
 				//Add initial point to Path of Points
@@ -182,6 +206,7 @@ public class CustomView extends ImageView {
 					
 				}
 			}
+	
 			break;
 		case MotionEvent.ACTION_POINTER_DOWN:
 			//Get the Action Index of the second finger
@@ -215,15 +240,31 @@ public class CustomView extends ImageView {
 				//Do Drag (With Selected Content)
 				if (mode.equals("move_content") && moveContent==true){
 					try {
-						/*float curX=bitmap[currentContentIndex].getX();
-						float curY=bitmap[currentContentIndex].getY();
-						if (dx<=curX && dy <=curY){
-							bitmap[currentContentIndex].setXY(dx+(dx-curX), dy+(dy-curY));
-						}*/
-						bitmap[currentContentIndex].setXY(dx, dy);		//Set X and Y coordinates of the bitmap to be drawn
+						float differenceX=0;
+						differenceX=dx-xFirst;
+						float differenceY=0;
+						differenceY=dy-yFirst;
+						
+						bitmap[currentContentIndex].setXY(bitmap[currentContentIndex].getX()+differenceX, bitmap[currentContentIndex].getY()+differenceY);		//Set X and Y coordinates of the bitmap to be drawn		
+						
+						xFirst=dx;
+						yFirst=dy;
 						
 					}catch (NullPointerException e) {
 					}
+				}
+				else if (mode.equals("scale")) {
+					System.out.println("TOUCHED!!!!!");
+					float differenceX=0;
+					differenceX=dx-xFirst;
+					float differenceY=0;
+					differenceY=dy-yFirst;
+					
+					//bitmap[currentContentIndex].setXY(bitmap[currentContentIndex].getX()+differenceX, bitmap[currentContentIndex].getY()+differenceY);		//Set X and Y coordinates of the bitmap to be drawn		
+					//targetBox.set(targetBox.left+differenceX, targetBox.top+differenceY, targetBox.right+differenceX, targetBox.bottom+differenceY);
+					bitmap[currentContentIndex].bitmap=Bitmap.createScaledBitmap(bitmap[currentContentIndex].bitmap, (int)(bitmap[currentContentIndex].bitmap.getWidth()+differenceX), (int)(bitmap[currentContentIndex].bitmap.getHeight()+differenceY), false);
+					xFirst=dx;
+					yFirst=dy;
 				}
 				//Else, Do Paint (Draw)
 				else if (mode.equals("paint")){
@@ -260,6 +301,9 @@ public class CustomView extends ImageView {
 				//MUST create a new path object to make a new path of points, old object should get deleted automatically
 				path = new Path();
 			}
+			else if (mode.equals("scale")){
+				mode="move_content";
+			}
 			ptrID1 = INVALID_POINTER_ID;
 			break;		
 		case MotionEvent.ACTION_POINTER_UP:
@@ -274,15 +318,52 @@ public class CustomView extends ImageView {
 		numberOfContents = numberOfContents - 1;
 	}
 	
+	protected void prepareContentToDraw(int i){
+		float upperX=bitmap[i].getX()-bitmap[i].bitmap.getWidth();
+		float upperY=bitmap[i].getY()-bitmap[i].bitmap.getHeight();
+		float lowerX=bitmap[i].getX()+bitmap[i].bitmap.getWidth();
+		float lowerY=bitmap[i].getY()+bitmap[i].bitmap.getHeight();
+		
+		targetBox=new RectF(upperX,upperY,lowerX,lowerY);
+		
+		upperLeft=new Rect();
+		upperLeft.set((int)targetBox.left-5, (int)targetBox.top-5, (int)targetBox.left+5, (int)targetBox.top+5);
+		lowerLeft=new Rect();
+		lowerLeft.set((int)targetBox.left-5, (int)targetBox.bottom-5, (int)targetBox.left+5, (int)targetBox.bottom+5);
+		lowerRight=new Rect();
+		lowerRight.set((int)targetBox.right-5, (int)targetBox.bottom-5, (int)targetBox.right+5, (int)targetBox.bottom+5);
+		upperRight=new Rect();
+		upperRight.set((int)targetBox.right-5, (int)targetBox.top-5, (int)targetBox.right+5, (int)targetBox.top+5);
+	}
+	
+	protected void prepareContentToDrawScale(int i){
+		float upperX=bitmap[i].getX()-bitmap[i].bitmap.getWidth();
+		float upperY=bitmap[i].getY()-bitmap[i].bitmap.getHeight();
+		float lowerX=bitmap[i].getX()+bitmap[i].bitmap.getWidth();
+		float lowerY=bitmap[i].getY()+bitmap[i].bitmap.getHeight();
+		
+		targetBox=new RectF(upperX,upperY,lowerX,lowerY);
+		
+		upperLeft=new Rect();
+		upperLeft.set((int)targetBox.left-5, (int)targetBox.top-5, (int)targetBox.left+5, (int)targetBox.top+5);
+		lowerLeft=new Rect();
+		lowerLeft.set((int)targetBox.left-5, (int)targetBox.bottom-5, (int)targetBox.left+5, (int)targetBox.bottom+5);
+		lowerRight=new Rect();
+		lowerRight.set((int)targetBox.right-5, (int)targetBox.bottom-5, (int)targetBox.right+5, (int)targetBox.bottom+5);
+		upperRight=new Rect();
+		upperRight.set((int)targetBox.right-5, (int)targetBox.top-5, (int)targetBox.right+5, (int)targetBox.top+5);
+	}
+	
 	@SuppressLint("DrawAllocation")
 	@Override
 	protected void onDraw(Canvas canvas) {
 		super.onDraw(canvas);
 		Paint paint = new Paint();
 		
+		
 		try
 		{
-			canvas.drawBitmap(backgroundImage, 0, 0,paint);
+			//canvas.drawBitmap(backgroundImage, 0, 0,paint);
 			paint.setStyle(Paint.Style.STROKE);			
 			paint.setAntiAlias(true);
 			
@@ -298,30 +379,33 @@ public class CustomView extends ImageView {
 		catch(Exception e){}
 		paint.setStrokeWidth(1);
 		for (int i=0; i<numberOfContents; i++){
-			System.out.println("---index" + i);
 			try {
 				//Draw Original image
 				if (bitmap[i].getBitmap()!=null && !bitmap[i].getBooleanResized()){
 					if (i==currentContentIndex){
 						paint.setColor(Color.WHITE);
-						RectF targetBox=new RectF(bitmap[i].getX()-bitmap[i].bitmap.getWidth(), bitmap[i].getY()-bitmap[i].bitmap.getHeight(),bitmap[i].getX()+bitmap[i].bitmap.getWidth(), bitmap[i].getY()+bitmap[i].bitmap.getHeight());
+						
+						prepareContentToDraw(i);
+						
 						canvas.drawBitmap(bitmap[i].bitmap, null, targetBox, paint);
 						canvas.drawRect(targetBox, paint);
 						paint.setStyle(Paint.Style.FILL);
-						canvas.drawCircle(bitmap[i].getX()-bitmap[i].bitmap.getWidth(), bitmap[i].getY()-bitmap[i].bitmap.getHeight(), 8, paint);
-						canvas.drawCircle(bitmap[i].getX()+bitmap[i].bitmap.getWidth(), bitmap[i].getY()-bitmap[i].bitmap.getHeight(), 8, paint);
-						canvas.drawCircle(bitmap[i].getX()+bitmap[i].bitmap.getWidth(), bitmap[i].getY()+bitmap[i].bitmap.getHeight(), 8, paint);
-						canvas.drawCircle(bitmap[i].getX()-bitmap[i].bitmap.getWidth(), bitmap[i].getY()+bitmap[i].bitmap.getHeight(), 8, paint);
+						canvas.drawRect(upperLeft, paint);
+						canvas.drawRect(lowerLeft, paint);
+						canvas.drawRect(lowerRight, paint);
+						canvas.drawRect(upperRight, paint);
 						paint.setStyle(Paint.Style.STROKE);
 					}
 					else {
-						canvas.drawBitmap(bitmap[i].bitmap, bitmap[i].getX()-(bitmap[i].getBitmap().getWidth()/2), bitmap[i].getY()-(bitmap[i].getBitmap().getHeight()/2), paint);
+						prepareContentToDraw(i);
+						canvas.drawBitmap(bitmap[i].bitmap, null, targetBox, paint);
 					}
 				}
 				//Else, draw the resized image
 				else if (bitmap[i].getResizedBitmap()!=null && bitmap[i].getBooleanResized()){
-					canvas.drawBitmap(bitmap[i].getResizedBitmap(), bitmap[i].getX()-(bitmap[i].getResizedBitmap().getWidth()/2), bitmap[i].getY()-(bitmap[i].getResizedBitmap().getHeight()/2), paint);
-				
+					//canvas.drawBitmap(bitmap[i].getResizedBitmap(), bitmap[i].getX()-(bitmap[i].getResizedBitmap().getWidth()/2), bitmap[i].getY()-(bitmap[i].getResizedBitmap().getHeight()/2), paint);
+					prepareContentToDraw(i);
+					canvas.drawBitmap(bitmap[i].bitmap, null, targetBox, paint);
 				}
 				
 			}
