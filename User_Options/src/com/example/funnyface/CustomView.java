@@ -174,7 +174,7 @@ public class CustomView extends ImageView {
 					colorsMap.put(path,Color.GREEN);
 				else if(colorValue.equals("blue"))
 					colorsMap.put(path,Color.RED);
-				else if(colorValue.equals("pruple"))
+				else if(colorValue.equals("purple"))
 					colorsMap.put(path,Color.MAGENTA);
 				else if(colorValue.equals("yellow"))
 					colorsMap.put(path,Color.YELLOW);
