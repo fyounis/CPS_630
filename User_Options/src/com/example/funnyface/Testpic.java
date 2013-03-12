@@ -228,8 +228,8 @@ public class Testpic extends Activity
 		blueColor.setBackgroundColor(Color.BLUE);
 		final Button greenColor = (Button) findViewById(R.id.green);
 		greenColor.setBackgroundColor(Color.GREEN);
-		//final Button grayColor = (Button) findViewById(R.id.gray);
-		//grayColor.setBackgroundColor(Color.MAGENTA);
+		final Button purpleColor = (Button) findViewById(R.id.purple);
+		purpleColor.setBackgroundColor(Color.MAGENTA);
 		final Button yellowColor = (Button) findViewById(R.id.yellow);
 		yellowColor.setBackgroundColor(Color.YELLOW);
 		final Button cyanColor = (Button) findViewById(R.id.cyan);
@@ -251,7 +251,7 @@ public class Testpic extends Activity
 						CustomView.mode = "paint";
 						blackColor.setBackgroundColor(Color.BLACK);
 						blackColor.setTextColor(Color.WHITE);
-						CustomView.colorValue = "BLACK";
+						CustomView.colorValue = "black";
 				   }
 				   catch(NullPointerException e)
 				   {
@@ -271,7 +271,7 @@ public class Testpic extends Activity
 						CustomView.mode = "paint";
 						whiteColor.setBackgroundColor(Color.WHITE);
 						whiteColor.setTextColor(Color.BLACK);
-						CustomView.colorValue = "WHITE";
+						CustomView.colorValue = "white";
 				   }
 				   catch(NullPointerException e)
 				   {
@@ -355,7 +355,7 @@ public class Testpic extends Activity
 				}
 			}
 		});
-		/*grayColor.setOnClickListener(new View.OnClickListener(){
+		purpleColor.setOnClickListener(new View.OnClickListener(){
 
 			@Override
 			public void onClick(View v)
@@ -363,8 +363,8 @@ public class Testpic extends Activity
 				try
 				{
 					CustomView.mode = "paint";
-					grayColor.setBackgroundColor(Color.GRAY);
-					grayColor.setTextColor(Color.WHITE);
+					purpleColor.setBackgroundColor(Color.MAGENTA);
+					purpleColor.setTextColor(Color.WHITE);
 					CustomView.colorValue = "purple";
 				}
 				catch(NullPointerException e)
@@ -372,7 +372,7 @@ public class Testpic extends Activity
 					
 				}
 			}
-		});*/
+		});
 		cyanColor.setOnClickListener(new View.OnClickListener(){
 
 			@Override
@@ -653,7 +653,7 @@ public class Testpic extends Activity
 		      greenColor.setVisibility(view.GONE);
 		      yellowColor.setVisibility(view.GONE);
 		      cyanColor.setVisibility(view.GONE);
-		     // grayColor.setVisibility(view.GONE);
+		      purpleColor.setVisibility(view.GONE);
 		      ThinStroke.setVisibility(view.GONE);
 		      MediumStroke.setVisibility(view.GONE);
 		      ThickStroke.setVisibility(view.GONE);
@@ -682,7 +682,7 @@ public class Testpic extends Activity
 			    greenColor.setVisibility(view.GONE);
 			    yellowColor.setVisibility(view.GONE);
 			    cyanColor.setVisibility(view.GONE);
-			   // grayColor.setVisibility(view.GONE);
+			    purpleColor.setVisibility(view.GONE);
 			    ThinStroke.setVisibility(view.GONE);
 			    MediumStroke.setVisibility(view.GONE);
 			    ThickStroke.setVisibility(view.GONE);
