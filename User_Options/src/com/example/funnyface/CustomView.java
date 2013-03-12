@@ -86,7 +86,6 @@ public class CustomView extends ImageView {
 		paths = new ArrayList<Path>();
 		colorsMap = new HashMap<Path, Integer>();
 		strokeMap = new HashMap<Path, Integer>();
-		
 	}
 	
 	@Override
@@ -159,13 +158,13 @@ public class CustomView extends ImageView {
 			}
 			
 			//Else, Do Paint
-			if (mode.equals("paint")){
+			else if (mode.equals("paint")){
 				//Add initial point to path of points using the .moveTo method
 				path.moveTo(x, y);
 				//Add initial point to Path of Points
 				paths.add(path);
 				//Set Default Color to black
-				colorsMap.put(path,Color.BLACK);
+				colorsMap.put(path,Color.WHITE);
 				//Color is selected if a button is pressed to select it
 				if(colorValue.equals("red")) 
 					colorsMap.put(path,Color.RED);
@@ -206,7 +205,6 @@ public class CustomView extends ImageView {
 					
 				}
 			}
-	
 			break;
 		case MotionEvent.ACTION_POINTER_DOWN:
 			//Get the Action Index of the second finger
@@ -379,6 +377,7 @@ public class CustomView extends ImageView {
 		catch(Exception e){}
 		paint.setStrokeWidth(1);
 		for (int i=0; i<numberOfContents; i++){
+			System.out.println("---index" + i);
 			try {
 				//Draw Original image
 				if (bitmap[i].getBitmap()!=null && !bitmap[i].getBooleanResized()){

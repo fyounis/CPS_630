@@ -26,8 +26,7 @@ public class UserPhotoOptions extends Activity
 		setContentView(R.layout.activity_user_photo_options);
 		
 		//Camera Button
-		try {
-		Button buttonCamera= (Button) findViewById(R.id.cameraButton);
+		Button buttonCamera= (Button) findViewById(R.id.button1);
 		buttonCamera.setOnClickListener(new View.OnClickListener() {
 			
 			//Go to Camera Intent
@@ -53,11 +52,9 @@ public class UserPhotoOptions extends Activity
 			}
 		    
 		});
-		}catch(NullPointerException e){}
 		
 		//Gallery Button
-		try {
-		Button buttonGallery= (Button) findViewById(R.id.galleryButton);
+		Button buttonGallery= (Button) findViewById(R.id.button2);
 		buttonGallery.setOnClickListener(new View.OnClickListener() {
 			
 			//Go to Gallery, Implement the Intent that you want to load the image gallery
@@ -74,7 +71,6 @@ public class UserPhotoOptions extends Activity
 			}
 		    
 		});
-		}catch (NullPointerException e){}
 	}
 	
 	public void onActivityResult(int requestCode, int resultCode, Intent data)

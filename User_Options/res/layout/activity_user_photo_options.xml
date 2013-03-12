@@ -6,25 +6,26 @@
     tools:context=".UserPhotoOptions" >
 
     <Button
-        android:id="@+id/galleryButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/cameraButton"
-        android:layout_below="@+id/cameraButton"
-        android:layout_marginTop="84dp"
-        android:background="@drawable/gallery2"
-        
-        tools:ignore="HardcodedText" />
-
-    <Button
-        android:id="@+id/cameraButton"
+        android:id="@+id/button1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="130dp"
-        android:background="@drawable/camera2"
-        
+        android:layout_marginTop="107dp"
+        android:text="From camera"
+        android:onClick="TakePictureFromCamera"
+        tools:ignore="HardcodedText" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/button1"
+        android:layout_alignRight="@+id/button1"
+        android:layout_below="@+id/button1"
+        android:layout_marginTop="90dp"
+        android:text="From gallery"
+        android:onClick="TakePictureFromGallery"
         tools:ignore="HardcodedText" />
 
 </RelativeLayout>

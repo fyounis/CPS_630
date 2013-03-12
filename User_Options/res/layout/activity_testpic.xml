@@ -1,197 +1,257 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+ <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity" >
-
     
-      <HorizontalScrollView
-        android:id="@+id/horizontalScrollView1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" >
-
-        <LinearLayout
-            android:layout_width="10dp"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal" >
-            
-            
-
-            <ImageButton
-                android:id="@+id/button1"
-                android:layout_width="70dp"
-                android:layout_height="70dp"
-                android:background="@drawable/ic_launcher"
-                android:onClick="B1Activity"
-                android:text="B1" />
-            
-           	<ImageButton
-                android:id="@+id/button2"
-                android:layout_width="70dp"
-                android:layout_height="70dp"
-                android:background="@drawable/moustache"
-                android:onClick="B2Activity"
-                android:text="B2" />
-           	
-       <Button
-          android:id="@+id/button3"
-          style="?android:attr/buttonStyleSmall"
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:layout_alignParentTop="true"
-          android:layout_toRightOf="@+id/horizontalScrollView1"
-          android:text="BLACK" />
-
-      <Button
-          android:id="@+id/button20"
-          style="?android:attr/buttonStyleSmall"
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:layout_alignParentTop="true"
-          android:layout_toRightOf="@+id/button3"
-          android:text="WHITE" />
-      
-         <Button
-          android:id="@+id/button12"
-          style="?android:attr/buttonStyleSmall"
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:layout_alignParentTop="true"
-          android:layout_toRightOf="@+id/horizontalScrollView1"
-          android:text="RED" />
-
-      <Button
-          android:id="@+id/button13"
-          style="?android:attr/buttonStyleSmall"
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:layout_alignParentTop="true"
-          android:layout_toRightOf="@+id/button12"
-          android:text="BLUE" />
-      
-      <Button
-          android:id="@+id/button14"
-          style="?android:attr/buttonStyleSmall"
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:layout_alignParentTop="true"
-          android:layout_toRightOf="@+id/button13"
-          android:text="GREEN" />
-      
-      <Button
-          android:id="@+id/button15"
-          style="?android:attr/buttonStyleSmall"
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:layout_alignParentTop="true"
-          android:layout_toRightOf="@+id/button14"
-          android:text="GRAY" />
-      
-     <Button
-          android:id="@+id/button16"
-          style="?android:attr/buttonStyleSmall"
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:layout_alignParentTop="true"
-          android:layout_toRightOf="@+id/button15"
-          android:text="YELLOW" />
-     
-     <Button
-          android:id="@+id/button17"
-          style="?android:attr/buttonStyleSmall"
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:layout_alignParentTop="true"
-          android:layout_toRightOf="@+id/button16"
-          android:text="CYAN"/>
-     
-     <Button
-          android:id="@+id/button18"
-          style="?android:attr/buttonStyleSmall"
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:layout_alignParentTop="true"
-          android:layout_toRightOf="@+id/button17"
-          android:text="Thin"/>
-     
-     <Button
-          android:id="@+id/button19"
-          style="?android:attr/buttonStyleSmall"
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:layout_alignParentTop="true"
-          android:layout_toRightOf="@+id/button18"
-          android:text="Medium"/>
-     
-     <Button
-          android:id="@+id/button21"
-          style="?android:attr/buttonStyleSmall"
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:layout_alignParentTop="true"
-          android:layout_toRightOf="@+id/button19"
-          android:text="Thick"/>
-     
-     
-     
-   
-          
-        </LinearLayout>
-    </HorizontalScrollView>
 
       <com.example.funnyface.CustomView
           android:id="@+id/imageView1"
           android:layout_width="fill_parent"
-          android:layout_height="fill_parent"
-          android:layout_below="@+id/horizontalScrollView1" />
-      
+          android:layout_height="fill_parent" />
 
-      <Button
-          android:id="@+id/button7"
-          style="?android:attr/buttonStyleSmall"
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:layout_alignParentBottom="true"
-          android:layout_alignParentLeft="true"
-          android:layout_marginBottom="14dp"
-          android:layout_marginLeft="14dp"
-          android:text="Undo" />
-      
-         <Button
-          android:id="@+id/button9"
-          style="?android:attr/buttonStyleSmall"
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:layout_alignTop="@+id/button7"
-          android:layout_toRightOf="@+id/button7"
-          android:text="Reset" />
-     
+      <SlidingDrawer
+          android:id="@+id/slidingDrawer1"
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          android:layout_centerHorizontal="true"
+          android:layout_alignParentTop="true"
+          android:layout_marginTop="310dp"
+          android:content="@+id/content"
+          android:handle="@+id/handle" >
 
-      <Button
-          android:id="@+id/button8"
-          style="?android:attr/buttonStyleSmall"
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:layout_alignParentRight="true"
-          android:layout_alignTop="@+id/button7"
-          android:layout_marginRight="16dp"
-          android:text="Tools" />
-      
-      <Button
-          android:id="@+id/button11"
-          style="?android:attr/buttonStyleSmall"
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:layout_alignTop="@+id/button9"
-          android:layout_toRightOf="@+id/button9"
-          android:text="NewPicture" />
+          <Button
+              android:id="@+id/handle"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content" />
 
-      <Button
-          android:id="@+id/button10"
-          style="?android:attr/buttonStyleSmall"
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:layout_above="@+id/button7"
-          android:layout_alignLeft="@+id/button7"
-          android:text="UndoThis" />
+          <LinearLayout
+              android:id="@+id/content"
+              android:layout_width="match_parent"
+              android:background="@drawable/cloudsbg"
+              android:layout_height="match_parent" >
+
+              <LinearLayout
+                  android:layout_width="wrap_content"
+                  android:layout_height="match_parent"
+                  android:orientation="vertical" >
+
+                  <LinearLayout
+                      android:layout_width="match_parent"
+                      android:layout_height="wrap_content" >
+
+                      <HorizontalScrollView
+                          android:id="@+id/horizontalScrollView1"
+                          android:layout_width="wrap_content"
+                          android:layout_height="wrap_content" >
+
+                          <LinearLayout
+                              android:layout_width="match_parent"
+                              android:layout_height="match_parent"
+                              android:orientation="horizontal" >
+
+                              <Button
+                                  android:id="@+id/overlays"
+                                  android:layout_width="wrap_content"
+                                  android:layout_height="wrap_content" />
+
+                              <Button
+                                  android:id="@+id/paint"
+                                  android:layout_width="wrap_content"
+                                  android:layout_height="wrap_content"/>
+
+                              <Button
+                                  android:id="@+id/edit"
+                                  android:layout_width="wrap_content"
+                                  android:layout_height="wrap_content"/>
+
+                              <Button
+                                  android:id="@+id/newpic"
+                                  android:layout_width="wrap_content"
+                                  android:layout_height="wrap_content"/>
+
+                              <Button
+                                  android:id="@+id/save"
+                                  android:layout_width="wrap_content"
+                                  android:layout_height="wrap_content" />
+
+                              <Button
+                                  android:id="@+id/upload"
+                                  android:layout_width="wrap_content"
+                                  android:layout_height="wrap_content" />
+
+                          </LinearLayout>
+                      </HorizontalScrollView>
+
+                  </LinearLayout>
+
+                  <LinearLayout
+                      android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      android:orientation="vertical" >
+
+                      <HorizontalScrollView
+                          android:id="@+id/horizontalScrollView2"
+                          android:layout_width="wrap_content"
+                          android:layout_height="wrap_content" >
+
+                          <LinearLayout
+                              android:layout_width="match_parent"
+                              android:layout_height="match_parent"
+                              android:orientation="horizontal" >
+
+                               <ImageButton
+                                  android:id="@+id/mono"
+                                  android:layout_width="wrap_content"
+                                  android:layout_height="wrap_content"
+                                  android:text="Mono" />
+                               
+                                <ImageButton
+                                  android:id="@+id/moustache"
+                                  android:layout_width="wrap_content"
+                                  android:layout_height="wrap_content"
+                                  android:text="Moustache" />
+                                
+                                 <ImageButton
+                                  android:id="@+id/octopus"
+                                  android:layout_width="wrap_content"
+                                  android:layout_height="wrap_content"
+                                  android:text="Octopus" />
+                                 
+                                  <ImageButton
+                                  android:id="@+id/rain"
+                                  android:layout_width="wrap_content"
+                                  android:layout_height="wrap_content"
+                                  android:text="Rain" />
+                                  
+                                   <ImageButton
+                                  android:id="@+id/rainbow"
+                                  android:layout_width="wrap_content"
+                                  android:layout_height="wrap_content"
+                                  android:text="Rainbow" />
+                                   
+                                    <ImageButton
+                                  android:id="@+id/rainbow2"
+                                  android:layout_width="wrap_content"
+                                  android:layout_height="wrap_content"
+                                  android:text="Rainbow2" />
+                                    
+                                     <ImageButton
+                                  android:id="@+id/star"
+                                  android:layout_width="wrap_content"
+                                  android:layout_height="wrap_content"
+                                  android:text="Star" />
+                                     
+                                      <ImageButton
+                                  android:id="@+id/sung"
+                                  android:layout_width="wrap_content"
+                                  android:layout_height="wrap_content"
+                                  android:text="Sung" />
+                                      
+                                       <ImageButton
+                                  android:id="@+id/thought"
+                                  android:layout_width="wrap_content"
+                                  android:layout_height="wrap_content"
+                                  android:text="Thought" />
+                                       
+                                        <ImageButton
+                                  android:id="@+id/tongue"
+                                  android:layout_width="wrap_content"
+                                  android:layout_height="wrap_content"
+                                  android:text="Tongue" />
+                                        
+                                         <ImageButton
+                                  android:id="@+id/whiteg"
+                                  android:layout_width="wrap_content"
+                                  android:layout_height="wrap_content"
+                                  android:text="Whiteg" />
+                              
+                              <Button
+                                  android:id="@+id/black"
+                                  android:layout_width="80px"
+                                  android:layout_height="80px"
+ 								  />
+
+                              <Button
+                                  android:id="@+id/white"
+                               	  android:layout_width="80px"
+                                  android:layout_height="80px"
+                                   />
+
+                              <Button
+                                  android:id="@+id/red"
+                                   android:layout_width="80px"
+                                  android:layout_height="80px"
+                                  />
+
+                              <Button
+                                  android:id="@+id/blue"
+                                   android:layout_width="80px"
+                                  android:layout_height="80px"
+                                  />
+
+                              <Button
+                                  android:id="@+id/green"
+                                   android:layout_width="80px"
+                                  android:layout_height="80px"
+                                   />
+
+                              <Button
+                                  android:id="@+id/yellow"
+                                 android:layout_width="80px"
+                                  android:layout_height="80px"
+                                 />
+
+                              <Button
+                                  android:id="@+id/purple"
+                                 android:layout_width="80px"
+                                  android:layout_height="80px"
+                                 />
+                              
+                               <Button
+                                  android:id="@+id/cyan"
+                                  android:layout_width="80px"
+                                  android:layout_height="80px"
+                                />
+                               
+                                <Button
+                                  android:id="@+id/thin"
+                                  android:layout_width="90px"
+                                  android:layout_height="110px"/>
+                                
+                                 <Button
+                                  android:id="@+id/medium"
+                                  android:layout_width="90px"
+                                  android:layout_height="130px"/>
+                                 
+                                  <Button
+                                  android:id="@+id/thick"
+                                  android:layout_width="90px"
+                                  android:layout_height="140px"/>
+                                  
+                                   <Button
+                                  android:id="@+id/undoLast"
+                                  android:layout_width="wrap_content"
+                                  android:layout_height="wrap_content"/>
+                                   
+                                    <Button
+                                  android:id="@+id/undoThis"
+                                  android:layout_width="wrap_content"
+                                  android:layout_height="wrap_content"/>
+                                    
+                                     <Button
+                                  android:id="@+id/undoAll"
+                                  android:layout_width="wrap_content"
+                                  android:layout_height="wrap_content" />
+
+                          </LinearLayout>
+                      </HorizontalScrollView>
+
+                  </LinearLayout>
+
+              </LinearLayout>
+
+          </LinearLayout>
+      </SlidingDrawer>
+
 </RelativeLayout>

@@ -26,6 +26,7 @@ public class Testpic extends Activity
 	private boolean showToolBar=true;
 	private Bitmap backgroundImage;
 	
+	@SuppressWarnings("deprecation")
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -48,24 +49,34 @@ public class Testpic extends Activity
 				view.setImageBitmap(backgroundImage);
 			} catch (NullPointerException e){}
 		}
-	
-		final ImageButton button = (ImageButton) findViewById(R.id.button1);
-		button.setOnClickListener(new View.OnClickListener() {
+		
+			final ImageButton mono = (ImageButton) findViewById(R.id.mono);
+			final ImageButton moustache = (ImageButton) findViewById(R.id.moustache);
+			final ImageButton octopus = (ImageButton) findViewById(R.id.octopus);
+			final ImageButton rain = (ImageButton) findViewById(R.id.rain);
+			final ImageButton rainbow = (ImageButton) findViewById(R.id.rainbow);
+			final ImageButton rainbow2 = (ImageButton) findViewById(R.id.rainbow2);
+			final ImageButton star = (ImageButton) findViewById(R.id.star);
+			final ImageButton sung = (ImageButton) findViewById(R.id.sung);
+			final ImageButton thought = (ImageButton) findViewById(R.id.thought);
+			final ImageButton tongue = (ImageButton) findViewById(R.id.tongue);
+			final ImageButton whiteg = (ImageButton) findViewById(R.id.whiteg);
+		
+		mono.setOnClickListener(new View.OnClickListener() {
 			
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
 				try {
 					CustomView.mode="add_content";
-					CustomView.bitmap[CustomView.numberOfContents] = new contents(BitmapFactory.decodeResource(getResources(), R.drawable.ic_launcher));
+					CustomView.bitmap[CustomView.numberOfContents] = new contents(BitmapFactory.decodeResource(getResources(), R.drawable.mono));
 				} catch (NullPointerException e) {
 						
 				}
 			}
 		});
-		
-		final ImageButton button2 = (ImageButton) findViewById(R.id.button2);
-		button2.setOnClickListener(new View.OnClickListener() {
+	
+		moustache.setOnClickListener(new View.OnClickListener() {
 			
 			@Override
 			public void onClick(View v) {
@@ -74,42 +85,172 @@ public class Testpic extends Activity
 					CustomView.mode="add_content";
 					CustomView.bitmap[CustomView.numberOfContents] = new contents(BitmapFactory.decodeResource(getResources(), R.drawable.moustache));
 				} catch (NullPointerException e) {
-					
+						
 				}
 			}
 		});
 		
-		final Button button3 = (Button) findViewById(R.id.button3);
-		button3.setBackgroundColor(Color.BLACK);
-		button3.setTextColor(Color.WHITE);
-		final Button whiteColor = (Button) findViewById(R.id.button11);
-		whiteColor.setBackgroundColor(Color.WHITE);
-		final Button redColor = (Button) findViewById(R.id.button12);
-		redColor.setBackgroundColor(Color.RED);
-		final Button blueColor = (Button) findViewById(R.id.button13);
-		blueColor.setBackgroundColor(Color.BLUE);
-		final Button greenColor = (Button) findViewById(R.id.button14);
-		greenColor.setBackgroundColor(Color.GREEN);
-		final Button purpleColor = (Button) findViewById(R.id.button15);
-		purpleColor.setBackgroundColor(Color.MAGENTA);
-		final Button yellowColor = (Button) findViewById(R.id.button16);
-		yellowColor.setBackgroundColor(Color.YELLOW);
-		final Button cyanColor = (Button) findViewById(R.id.button17);
-		cyanColor.setBackgroundColor(Color.CYAN);
-		final Button ThinStroke = (Button) findViewById(R.id.button18);
-		final Button MediumStroke = (Button) findViewById(R.id.button19);
-		final Button ThickStroke = (Button) findViewById(R.id.button21);
+		octopus.setOnClickListener(new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				try {
+					CustomView.mode="add_content";
+					CustomView.bitmap[CustomView.numberOfContents] = new contents(BitmapFactory.decodeResource(getResources(), R.drawable.octopus));
+				} catch (NullPointerException e) {
+						
+				}
+			}
+		});
 		
+		rain.setOnClickListener(new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				try {
+					CustomView.mode="add_content";
+					CustomView.bitmap[CustomView.numberOfContents] = new contents(BitmapFactory.decodeResource(getResources(), R.drawable.rain));
+				} catch (NullPointerException e) {
+						
+				}
+			}
+		});
+		
+		rainbow.setOnClickListener(new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				try {
+					CustomView.mode="add_content";
+					CustomView.bitmap[CustomView.numberOfContents] = new contents(BitmapFactory.decodeResource(getResources(), R.drawable.rainbow));
+				} catch (NullPointerException e) {
+						
+				}
+			}
+		});
+		
+		rainbow2.setOnClickListener(new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				try {
+					CustomView.mode="add_content";
+					CustomView.bitmap[CustomView.numberOfContents] = new contents(BitmapFactory.decodeResource(getResources(), R.drawable.rainbow2));
+				} catch (NullPointerException e) {
+						
+				}
+			}
+		});
+		
+		star.setOnClickListener(new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				try {
+					CustomView.mode="add_content";
+					CustomView.bitmap[CustomView.numberOfContents] = new contents(BitmapFactory.decodeResource(getResources(), R.drawable.star));
+				} catch (NullPointerException e) {
+						
+				}
+			}
+		});
+		
+		sung.setOnClickListener(new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				try {
+					CustomView.mode="add_content";
+					CustomView.bitmap[CustomView.numberOfContents] = new contents(BitmapFactory.decodeResource(getResources(), R.drawable.sung));
+				} catch (NullPointerException e) {
+						
+				}
+			}
+		});
+		
+		thought.setOnClickListener(new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				try {
+					CustomView.mode="add_content";
+					CustomView.bitmap[CustomView.numberOfContents] = new contents(BitmapFactory.decodeResource(getResources(), R.drawable.thought));
+				} catch (NullPointerException e) {
+						
+				}
+			}
+		});
+		
+		tongue.setOnClickListener(new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				try {
+					CustomView.mode="add_content";
+					CustomView.bitmap[CustomView.numberOfContents] = new contents(BitmapFactory.decodeResource(getResources(), R.drawable.tongue));
+				} catch (NullPointerException e) {
+						
+				}
+			}
+		});
+		
+		whiteg.setOnClickListener(new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				try {
+					CustomView.mode="add_content";
+					CustomView.bitmap[CustomView.numberOfContents] = new contents(BitmapFactory.decodeResource(getResources(), R.drawable.whiteg));
+				} catch (NullPointerException e) {
+						
+				}
+			}
+		});
+		
+		
+		final Button blackColor = (Button) findViewById(R.id.black);
+		blackColor.setBackgroundColor(Color.BLACK);
+		blackColor.setTextColor(Color.WHITE);
+		final Button whiteColor = (Button) findViewById(R.id.white);
+		whiteColor.setBackgroundColor(Color.WHITE);
+		final Button redColor = (Button) findViewById(R.id.red);
+		redColor.setBackgroundColor(Color.RED);
+		final Button blueColor = (Button) findViewById(R.id.blue);
+		blueColor.setBackgroundColor(Color.BLUE);
+		final Button greenColor = (Button) findViewById(R.id.green);
+		greenColor.setBackgroundColor(Color.GREEN);
+		//final Button grayColor = (Button) findViewById(R.id.gray);
+		//grayColor.setBackgroundColor(Color.MAGENTA);
+		final Button yellowColor = (Button) findViewById(R.id.yellow);
+		yellowColor.setBackgroundColor(Color.YELLOW);
+		final Button cyanColor = (Button) findViewById(R.id.cyan);
+		cyanColor.setBackgroundColor(Color.CYAN);
+		final Button ThinStroke = (Button) findViewById(R.id.thin);
+		ThinStroke.setBackgroundDrawable(getResources().getDrawable(R.drawable.thinline));
+		final Button MediumStroke = (Button) findViewById(R.id.medium);
+		MediumStroke.setBackgroundDrawable(getResources().getDrawable(R.drawable.mediumline));
+		final Button ThickStroke = (Button) findViewById(R.id.thick);
+	    ThickStroke.setBackgroundDrawable(getResources().getDrawable(R.drawable.thickline));
+	    
 	
-		button3.setOnClickListener(new View.OnClickListener() {
+		blackColor.setOnClickListener(new View.OnClickListener() {
 			
 			@Override
 			public void onClick(View v) 
 			{
 				try{
 						CustomView.mode = "paint";
-						button3.setBackgroundColor(Color.BLACK);
-						button3.setTextColor(Color.WHITE);
+						blackColor.setBackgroundColor(Color.BLACK);
+						blackColor.setTextColor(Color.WHITE);
 						CustomView.colorValue = "BLACK";
 				   }
 				   catch(NullPointerException e)
@@ -125,6 +266,7 @@ public class Testpic extends Activity
 			@Override
 			public void onClick(View v) 
 			{
+				
 				try{
 						CustomView.mode = "paint";
 						whiteColor.setBackgroundColor(Color.WHITE);
@@ -148,6 +290,7 @@ public class Testpic extends Activity
 				{
 					CustomView.mode = "paint";
 					redColor.setBackgroundColor(Color.RED);
+					redColor.setTextColor(Color.WHITE);
 					CustomView.colorValue = "red";
 				}
 				catch(NullPointerException e)
@@ -167,6 +310,7 @@ public class Testpic extends Activity
 				{
 					CustomView.mode = "paint";
 					blueColor.setBackgroundColor(Color.BLUE);
+					blueColor.setTextColor(Color.WHITE);
 					CustomView.colorValue = "blue";
 				}
 				catch(NullPointerException e)
@@ -184,6 +328,7 @@ public class Testpic extends Activity
 				{
 					CustomView.mode = "paint";
 					greenColor.setBackgroundColor(Color.GREEN);
+					greenColor.setTextColor(Color.WHITE);
 					CustomView.colorValue = "green";
 				}
 				catch(NullPointerException e)
@@ -201,6 +346,7 @@ public class Testpic extends Activity
 				{
 					CustomView.mode = "paint";			
 					yellowColor.setBackgroundColor(Color.YELLOW);
+					yellowColor.setTextColor(Color.WHITE);
 					CustomView.colorValue = "yellow";
 				}
 				catch(NullPointerException e)
@@ -209,7 +355,7 @@ public class Testpic extends Activity
 				}
 			}
 		});
-		purpleColor.setOnClickListener(new View.OnClickListener(){
+		/*grayColor.setOnClickListener(new View.OnClickListener(){
 
 			@Override
 			public void onClick(View v)
@@ -217,7 +363,8 @@ public class Testpic extends Activity
 				try
 				{
 					CustomView.mode = "paint";
-					purpleColor.setBackgroundColor(Color.GRAY);
+					grayColor.setBackgroundColor(Color.GRAY);
+					grayColor.setTextColor(Color.WHITE);
 					CustomView.colorValue = "purple";
 				}
 				catch(NullPointerException e)
@@ -225,7 +372,7 @@ public class Testpic extends Activity
 					
 				}
 			}
-		});
+		});*/
 		cyanColor.setOnClickListener(new View.OnClickListener(){
 
 			@Override
@@ -235,6 +382,7 @@ public class Testpic extends Activity
 				{
 					CustomView.mode = "paint";
 					cyanColor.setBackgroundColor(Color.CYAN);
+					cyanColor.setTextColor(Color.WHITE);
 					CustomView.colorValue = "cyan";
 				}
 				catch(NullPointerException e)
@@ -295,9 +443,23 @@ public class Testpic extends Activity
 			}
 	
 		});
-        
-		
-		final Button undoButton = (Button) findViewById(R.id.button7);
+	 
+		final Button menuButton = (Button) findViewById(R.id.handle);
+		menuButton.setBackgroundDrawable(getResources().getDrawable(R.drawable.amenu));
+		menuButton.setOnClickListener(new View.OnClickListener()
+		{
+
+			@Override
+			public void onClick(View v) 
+			{
+				// TODO Auto-generated method stub
+				
+			}
+			
+		});
+
+		final Button undoButton = (Button) findViewById(R.id.undoLast);
+		undoButton.setBackgroundDrawable(getResources().getDrawable(R.drawable.undoprevious));
 		undoButton.setOnClickListener(new View.OnClickListener() {
 			
 			@Override
@@ -321,8 +483,11 @@ public class Testpic extends Activity
 				}
 			}
 		});
-		
-		final Button UndoThis = (Button) findViewById(R.id.button10);
+
+
+
+		final Button UndoThis = (Button) findViewById(R.id.undoThis);
+		UndoThis.setBackgroundDrawable(getResources().getDrawable(R.drawable.undopoint));
 		UndoThis.setOnClickListener(new View.OnClickListener( ) {
 
 			@Override
@@ -343,13 +508,16 @@ public class Testpic extends Activity
 				}
 			}
 		});
-		
-	    final Button ResetButton = (Button) findViewById(R.id.button9);
+	
+	
+	    final Button ResetButton = (Button) findViewById(R.id.undoAll);
+	    ResetButton.setBackgroundDrawable(getResources().getDrawable(R.drawable.reseting));
         ResetButton.setOnClickListener(new View.OnClickListener() {
 
            @Override
            public void onClick(View v)
            {
+        	    
                 try
                 {
                 			for(Path p: CustomView.paths)
@@ -377,8 +545,10 @@ public class Testpic extends Activity
                 }
             }
         });
+	
         
-        final Button newPictureButton = (Button) findViewById(R.id.button11);
+        final Button newPictureButton = (Button) findViewById(R.id.newpic);
+        newPictureButton.setBackgroundDrawable(getResources().getDrawable(R.drawable.newpicture));
         newPictureButton.setOnClickListener(new View.OnClickListener()
         {
 			@Override
@@ -408,7 +578,8 @@ public class Testpic extends Activity
 			        	}
 			        }
 			     });
-				
+			
+			
 				newPic.setButton( Dialog.BUTTON_NEGATIVE, "No", new DialogInterface.OnClickListener() 
 				{
 			        public void onClick(DialogInterface dialog, int which)
@@ -420,43 +591,212 @@ public class Testpic extends Activity
 			}
         	
         });
-        
-        		
-		 
-		final Button toolsButton = (Button) findViewById(R.id.button8);
-        toolsButton.setTextColor(Color.parseColor("#FF0000"));
-        toolsButton.setText("HideTools");
-		toolsButton.setOnClickListener(new View.OnClickListener() {
-			
-			@Override
-			public void onClick(View v) 
-			{
-				try
-				{
-					if (showToolBar==true){
-                    HorizontalScrollView hs1 =(HorizontalScrollView)findViewById(R.id.horizontalScrollView1);
-                    hs1.setVisibility(View.INVISIBLE);
-                    toolsButton.setTextColor(Color.parseColor("#00FF00"));
-                    toolsButton.setText("ShowTools");
-                    showToolBar=false;
-					}
-					else if (showToolBar==false) {
-                        HorizontalScrollView hs1 = (HorizontalScrollView)findViewById(R.id.horizontalScrollView1);
-                        hs1.setVisibility(View.VISIBLE);
-                        toolsButton.setTextColor(Color.parseColor("#FF0000"));
-                        toolsButton.setText("HideTools");
-                        showToolBar=true;
-					}
-				}catch(NullPointerException e){
-					
-				}
-			
-			}
-		});
-		
-	}
-
 	
+	
+	
+    final Button paintButton = (Button) findViewById(R.id.paint);
+    paintButton.setBackgroundDrawable(getResources().getDrawable(R.drawable.painting));
+    paintButton.setOnClickListener(new View.OnClickListener(){
+
+		@SuppressWarnings("static-access")
+		@Override
+		public void onClick(View v) 
+		{
+			 try
+			 {
+				 blackColor.setVisibility(view.VISIBLE);
+				 whiteColor.setVisibility(view.VISIBLE); 
+				 redColor.setVisibility(view.VISIBLE);
+			     blueColor.setVisibility(view.VISIBLE);
+			     greenColor.setVisibility(view.VISIBLE);
+			     yellowColor.setVisibility(view.VISIBLE);
+			     cyanColor.setVisibility(view.VISIBLE);
+			    // grayColor.setVisibility(view.VISIBLE);
+			     ThinStroke.setVisibility(view.VISIBLE);
+			     MediumStroke.setVisibility(view.VISIBLE);
+			     ThickStroke.setVisibility(view.VISIBLE);
+				 undoButton.setVisibility(view.GONE);
+				 UndoThis.setVisibility(view.GONE); 
+				 ResetButton.setVisibility(view.GONE);
+				 
+				 mono.setVisibility(view.GONE);
+				 moustache.setVisibility(view.GONE);
+				 octopus.setVisibility(view.GONE);
+				 rain.setVisibility(view.GONE);
+				 rainbow.setVisibility(view.GONE);
+				 rainbow2.setVisibility(view.GONE);
+				 star.setVisibility(view.GONE);
+				 sung.setVisibility(view.GONE);
+				 thought.setVisibility(view.GONE);
+				 tongue.setVisibility(view.GONE);
+				 whiteg.setVisibility(view.GONE);
+			 }
+			 catch(Exception e){}
+		}
+    });
+	
+      
+    final Button editButton = (Button) findViewById(R.id.edit);
+    editButton.setBackgroundDrawable(getResources().getDrawable(R.drawable.editing));
+    editButton.setOnClickListener(new View.OnClickListener(){
+
+		@SuppressWarnings("static-access")
+		@Override
+		public void onClick(View v) 
+		{
+			try
+			{
+			  blackColor.setVisibility(view.GONE);
+			  whiteColor.setVisibility(view.GONE); 
+			  redColor.setVisibility(view.GONE);
+		      blueColor.setVisibility(view.GONE);
+		      greenColor.setVisibility(view.GONE);
+		      yellowColor.setVisibility(view.GONE);
+		      cyanColor.setVisibility(view.GONE);
+		     // grayColor.setVisibility(view.GONE);
+		      ThinStroke.setVisibility(view.GONE);
+		      MediumStroke.setVisibility(view.GONE);
+		      ThickStroke.setVisibility(view.GONE);
+		      undoButton.setVisibility(view.VISIBLE);
+			  UndoThis.setVisibility(view.VISIBLE); 
+			  ResetButton.setVisibility(view.VISIBLE);
+			}
+			catch(Exception e){}
+		}
+    	
+    });
+    final Button OverlaysButton = (Button) findViewById(R.id.overlays);
+    OverlaysButton.setBackgroundDrawable(getResources().getDrawable(R.drawable.overlaying));
+    OverlaysButton.setOnClickListener(new View.OnClickListener(){
+
+		@SuppressWarnings("static-access")
+		@Override
+		public void onClick(View v) 
+		{
+			try
+			{
+				blackColor.setVisibility(view.GONE);
+				whiteColor.setVisibility(view.GONE); 
+				redColor.setVisibility(view.GONE);
+			    blueColor.setVisibility(view.GONE);
+			    greenColor.setVisibility(view.GONE);
+			    yellowColor.setVisibility(view.GONE);
+			    cyanColor.setVisibility(view.GONE);
+			   // grayColor.setVisibility(view.GONE);
+			    ThinStroke.setVisibility(view.GONE);
+			    MediumStroke.setVisibility(view.GONE);
+			    ThickStroke.setVisibility(view.GONE);
+				 
+				 mono.setVisibility(view.VISIBLE);
+				 moustache.setVisibility(view.VISIBLE);
+				 octopus.setVisibility(view.VISIBLE);
+				 rain.setVisibility(view.VISIBLE);
+				 rainbow.setVisibility(view.VISIBLE);
+				 rainbow2.setVisibility(view.VISIBLE);
+				 star.setVisibility(view.VISIBLE);
+				 sung.setVisibility(view.VISIBLE);
+				 thought.setVisibility(view.VISIBLE);
+				 tongue.setVisibility(view.VISIBLE);
+				 whiteg.setVisibility(view.VISIBLE);
+			}
+			catch(Exception e){}
+			
+		}
+    	
+    });
+    final Button SaveButton = (Button) findViewById(R.id.save);
+    SaveButton.setBackgroundDrawable(getResources().getDrawable(R.drawable.saving));
+    SaveButton.setOnClickListener(new View.OnClickListener(){
+
+		@SuppressWarnings("static-access")
+		@Override
+		public void onClick(View v) 
+		{
+			try
+			{
+				SaveButton.setEnabled(false);
+				OverlaysButton.setEnabled(false);
+				newPictureButton.setEnabled(false);
+				editButton.setEnabled(false);
+				paintButton.setEnabled(false);
+				HorizontalScrollView hs1 =(HorizontalScrollView)findViewById(R.id.horizontalScrollView2);hs1.setVisibility(View.INVISIBLE);
+				Toast.makeText(getApplicationContext(), "Saving ...",Toast.LENGTH_LONG).show();
+				//SAVING
+				//SAVING
+				//SAVING
+				Toast.makeText(getApplicationContext(), "Image saved to this location",Toast.LENGTH_LONG).show();
+				AlertDialog decision = new AlertDialog.Builder(Testpic.this).create();
+				decision.setTitle("Upload");
+				decision.setMessage("Your Image is being saved, but would you like to upload this image to the database");
+				decision.setButton( Dialog.BUTTON_POSITIVE, "Yes", new DialogInterface.OnClickListener()
+				{
+					public void onClick(DialogInterface dialog, int which)
+					{
+						try
+						{
+							Toast.makeText(getApplicationContext(), "Uploading ...",Toast.LENGTH_LONG).show();
+							//UploadCode
+							finish( );
+			        		Testpic.this.onDestroy();
+			        		CustomView.backgroundImage.recycle();
+			        		Intent newPic = new Intent(Testpic.this, UserPhotoOptions.class);
+			        		startActivity(newPic);
+						}
+						catch(Exception e)
+						{
+							
+						}
+			
+					
+					}
+				});
+				decision.setButton( Dialog.BUTTON_NEGATIVE, "No", new DialogInterface.OnClickListener() 
+				{
+					public void onClick(DialogInterface dialog, int which)
+					{
+						try
+						{
+							finish( );
+			        		Testpic.this.onDestroy();
+			        		CustomView.backgroundImage.recycle();
+			        		Intent newPic = new Intent(Testpic.this, UserPhotoOptions.class);
+			        		startActivity(newPic);
+						}
+						catch(Exception e)
+						{
+							
+						}
+					}
+				});
+				decision.show();
+			}
+			catch(Exception e)
+			{
+				
+			}
+		}
+    	
+    });
+    final Button UploadButton = (Button) findViewById(R.id.upload);
+    UploadButton.setBackgroundDrawable(getResources().getDrawable(R.drawable.uploading));
+    UploadButton.setOnClickListener(new View.OnClickListener(){
+
+		@Override
+		public void onClick(View v) 
+		{
+			try
+			{
+				
+			}
+			catch(Exception e)
+			{
+				
+			}
+			
+		}
+    
+	});
+}
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
