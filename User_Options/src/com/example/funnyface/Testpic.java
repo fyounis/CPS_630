@@ -1,5 +1,9 @@
 package com.example.funnyface;
 
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -8,9 +12,12 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Path;
 import android.os.Bundle;
+import android.os.Environment;
+import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
@@ -25,6 +32,7 @@ public class Testpic extends Activity
 	private CustomView view;
 	private boolean showToolBar=true;
 	private Bitmap backgroundImage;
+	FileOutputStream fos = null;
 	
 	@SuppressWarnings("deprecation")
 	@Override
@@ -51,16 +59,27 @@ public class Testpic extends Activity
 		}
 		
 			final ImageButton mono = (ImageButton) findViewById(R.id.mono);
+			mono.setBackgroundResource(R.drawable.mono);
 			final ImageButton moustache = (ImageButton) findViewById(R.id.moustache);
+			moustache.setBackgroundResource(R.drawable.moustache);
 			final ImageButton octopus = (ImageButton) findViewById(R.id.octopus);
+			octopus.setBackgroundResource(R.drawable.octopus);
 			final ImageButton rain = (ImageButton) findViewById(R.id.rain);
+			rain.setBackgroundResource(R.drawable.rain);
 			final ImageButton rainbow = (ImageButton) findViewById(R.id.rainbow);
+			rainbow.setBackgroundResource(R.drawable.rainbow);
 			final ImageButton rainbow2 = (ImageButton) findViewById(R.id.rainbow2);
+			rainbow2.setBackgroundResource(R.drawable.rainbow2);
 			final ImageButton star = (ImageButton) findViewById(R.id.star);
+			star.setBackgroundResource(R.drawable.star);
 			final ImageButton sung = (ImageButton) findViewById(R.id.sung);
+			sung.setBackgroundResource(R.drawable.sung);
 			final ImageButton thought = (ImageButton) findViewById(R.id.thought);
+			thought.setBackgroundResource(R.drawable.thought);
 			final ImageButton tongue = (ImageButton) findViewById(R.id.tongue);
+			tongue.setBackgroundResource(R.drawable.tongue);
 			final ImageButton whiteg = (ImageButton) findViewById(R.id.whiteg);
+			whiteg.setBackgroundResource(R.drawable.whiteg);
 		
 		mono.setOnClickListener(new View.OnClickListener() {
 			
@@ -70,6 +89,7 @@ public class Testpic extends Activity
 				try {
 					CustomView.mode="add_content";
 					CustomView.bitmap[CustomView.numberOfContents] = new contents(BitmapFactory.decodeResource(getResources(), R.drawable.mono));
+					CustomView.bitmap[CustomView.numberOfContents].originalBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.mono);
 				} catch (NullPointerException e) {
 						
 				}
@@ -84,6 +104,7 @@ public class Testpic extends Activity
 				try {
 					CustomView.mode="add_content";
 					CustomView.bitmap[CustomView.numberOfContents] = new contents(BitmapFactory.decodeResource(getResources(), R.drawable.moustache));
+					CustomView.bitmap[CustomView.numberOfContents].originalBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.moustache);
 				} catch (NullPointerException e) {
 						
 				}
@@ -98,6 +119,7 @@ public class Testpic extends Activity
 				try {
 					CustomView.mode="add_content";
 					CustomView.bitmap[CustomView.numberOfContents] = new contents(BitmapFactory.decodeResource(getResources(), R.drawable.octopus));
+					CustomView.bitmap[CustomView.numberOfContents].originalBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.octopus);
 				} catch (NullPointerException e) {
 						
 				}
@@ -112,6 +134,7 @@ public class Testpic extends Activity
 				try {
 					CustomView.mode="add_content";
 					CustomView.bitmap[CustomView.numberOfContents] = new contents(BitmapFactory.decodeResource(getResources(), R.drawable.rain));
+					CustomView.bitmap[CustomView.numberOfContents].originalBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.rain);
 				} catch (NullPointerException e) {
 						
 				}
@@ -126,6 +149,7 @@ public class Testpic extends Activity
 				try {
 					CustomView.mode="add_content";
 					CustomView.bitmap[CustomView.numberOfContents] = new contents(BitmapFactory.decodeResource(getResources(), R.drawable.rainbow));
+					CustomView.bitmap[CustomView.numberOfContents].originalBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.rainbow);
 				} catch (NullPointerException e) {
 						
 				}
@@ -140,6 +164,7 @@ public class Testpic extends Activity
 				try {
 					CustomView.mode="add_content";
 					CustomView.bitmap[CustomView.numberOfContents] = new contents(BitmapFactory.decodeResource(getResources(), R.drawable.rainbow2));
+					CustomView.bitmap[CustomView.numberOfContents].originalBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.rainbow2);
 				} catch (NullPointerException e) {
 						
 				}
@@ -154,6 +179,7 @@ public class Testpic extends Activity
 				try {
 					CustomView.mode="add_content";
 					CustomView.bitmap[CustomView.numberOfContents] = new contents(BitmapFactory.decodeResource(getResources(), R.drawable.star));
+					CustomView.bitmap[CustomView.numberOfContents].originalBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.star);
 				} catch (NullPointerException e) {
 						
 				}
@@ -168,6 +194,7 @@ public class Testpic extends Activity
 				try {
 					CustomView.mode="add_content";
 					CustomView.bitmap[CustomView.numberOfContents] = new contents(BitmapFactory.decodeResource(getResources(), R.drawable.sung));
+					CustomView.bitmap[CustomView.numberOfContents].originalBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.sung);
 				} catch (NullPointerException e) {
 						
 				}
@@ -182,6 +209,7 @@ public class Testpic extends Activity
 				try {
 					CustomView.mode="add_content";
 					CustomView.bitmap[CustomView.numberOfContents] = new contents(BitmapFactory.decodeResource(getResources(), R.drawable.thought));
+					CustomView.bitmap[CustomView.numberOfContents].originalBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.thought);
 				} catch (NullPointerException e) {
 						
 				}
@@ -196,6 +224,7 @@ public class Testpic extends Activity
 				try {
 					CustomView.mode="add_content";
 					CustomView.bitmap[CustomView.numberOfContents] = new contents(BitmapFactory.decodeResource(getResources(), R.drawable.tongue));
+					CustomView.bitmap[CustomView.numberOfContents].originalBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.tongue);
 				} catch (NullPointerException e) {
 						
 				}
@@ -210,6 +239,7 @@ public class Testpic extends Activity
 				try {
 					CustomView.mode="add_content";
 					CustomView.bitmap[CustomView.numberOfContents] = new contents(BitmapFactory.decodeResource(getResources(), R.drawable.whiteg));
+					CustomView.bitmap[CustomView.numberOfContents].originalBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.whiteg);
 				} catch (NullPointerException e) {
 						
 				}
@@ -217,30 +247,30 @@ public class Testpic extends Activity
 		});
 		
 		
-		final Button blackColor = (Button) findViewById(R.id.black);
+		final ImageButton blackColor = (ImageButton) findViewById(R.id.black);
 		blackColor.setBackgroundColor(Color.BLACK);
-		blackColor.setTextColor(Color.WHITE);
-		final Button whiteColor = (Button) findViewById(R.id.white);
+		//blackColor.setTextColor(Color.WHITE);
+		final ImageButton whiteColor = (ImageButton) findViewById(R.id.white);
 		whiteColor.setBackgroundColor(Color.WHITE);
-		final Button redColor = (Button) findViewById(R.id.red);
+		final ImageButton redColor = (ImageButton) findViewById(R.id.red);
 		redColor.setBackgroundColor(Color.RED);
-		final Button blueColor = (Button) findViewById(R.id.blue);
+		final ImageButton blueColor = (ImageButton) findViewById(R.id.blue);
 		blueColor.setBackgroundColor(Color.BLUE);
-		final Button greenColor = (Button) findViewById(R.id.green);
+		final ImageButton greenColor = (ImageButton) findViewById(R.id.green);
 		greenColor.setBackgroundColor(Color.GREEN);
-		final Button purpleColor = (Button) findViewById(R.id.purple);
+		final ImageButton purpleColor = (ImageButton) findViewById(R.id.purple);
 		purpleColor.setBackgroundColor(Color.MAGENTA);
-		final Button yellowColor = (Button) findViewById(R.id.yellow);
+		final ImageButton yellowColor = (ImageButton) findViewById(R.id.yellow);
 		yellowColor.setBackgroundColor(Color.YELLOW);
-		final Button cyanColor = (Button) findViewById(R.id.cyan);
+		final ImageButton cyanColor = (ImageButton) findViewById(R.id.cyan);
 		cyanColor.setBackgroundColor(Color.CYAN);
-		final Button ThinStroke = (Button) findViewById(R.id.thin);
-		ThinStroke.setBackgroundDrawable(getResources().getDrawable(R.drawable.thinline));
-		final Button MediumStroke = (Button) findViewById(R.id.medium);
-		MediumStroke.setBackgroundDrawable(getResources().getDrawable(R.drawable.mediumline));
-		final Button ThickStroke = (Button) findViewById(R.id.thick);
-	    ThickStroke.setBackgroundDrawable(getResources().getDrawable(R.drawable.thickline));
-	    
+		final ImageButton ThinStroke = (ImageButton) findViewById(R.id.thin);
+		ThinStroke.setBackgroundResource(R.drawable.thinline);
+		final ImageButton MediumStroke = (ImageButton) findViewById(R.id.medium);
+		MediumStroke.setBackgroundResource(R.drawable.mediumline);
+		final ImageButton ThickStroke = (ImageButton) findViewById(R.id.thick);
+		ThickStroke.setBackgroundResource(R.drawable.thickline);
+		
 	
 		blackColor.setOnClickListener(new View.OnClickListener() {
 			
@@ -249,8 +279,9 @@ public class Testpic extends Activity
 			{
 				try{
 						CustomView.mode = "paint";
-						blackColor.setBackgroundColor(Color.BLACK);
-						blackColor.setTextColor(Color.WHITE);
+						//blackColor.setBackgroundColor(Color.BLACK);
+						blackColor.setColorFilter(Color.WHITE);
+						//blackColor.setTextColor(Color.WHITE);
 						CustomView.colorValue = "black";
 				   }
 				   catch(NullPointerException e)
@@ -270,7 +301,7 @@ public class Testpic extends Activity
 				try{
 						CustomView.mode = "paint";
 						whiteColor.setBackgroundColor(Color.WHITE);
-						whiteColor.setTextColor(Color.BLACK);
+						//whiteColor.setTextColor(Color.BLACK);
 						CustomView.colorValue = "white";
 				   }
 				   catch(NullPointerException e)
@@ -290,7 +321,7 @@ public class Testpic extends Activity
 				{
 					CustomView.mode = "paint";
 					redColor.setBackgroundColor(Color.RED);
-					redColor.setTextColor(Color.WHITE);
+					//redColor.setTextColor(Color.WHITE);
 					CustomView.colorValue = "red";
 				}
 				catch(NullPointerException e)
@@ -310,7 +341,7 @@ public class Testpic extends Activity
 				{
 					CustomView.mode = "paint";
 					blueColor.setBackgroundColor(Color.BLUE);
-					blueColor.setTextColor(Color.WHITE);
+					//blueColor.setTextColor(Color.WHITE);
 					CustomView.colorValue = "blue";
 				}
 				catch(NullPointerException e)
@@ -328,7 +359,7 @@ public class Testpic extends Activity
 				{
 					CustomView.mode = "paint";
 					greenColor.setBackgroundColor(Color.GREEN);
-					greenColor.setTextColor(Color.WHITE);
+					//greenColor.setTextColor(Color.WHITE);
 					CustomView.colorValue = "green";
 				}
 				catch(NullPointerException e)
@@ -346,7 +377,7 @@ public class Testpic extends Activity
 				{
 					CustomView.mode = "paint";			
 					yellowColor.setBackgroundColor(Color.YELLOW);
-					yellowColor.setTextColor(Color.WHITE);
+					//yellowColor.setTextColor(Color.WHITE);
 					CustomView.colorValue = "yellow";
 				}
 				catch(NullPointerException e)
@@ -364,7 +395,7 @@ public class Testpic extends Activity
 				{
 					CustomView.mode = "paint";
 					purpleColor.setBackgroundColor(Color.MAGENTA);
-					purpleColor.setTextColor(Color.WHITE);
+					//purpleColor.setTextColor(Color.WHITE);
 					CustomView.colorValue = "purple";
 				}
 				catch(NullPointerException e)
@@ -382,7 +413,7 @@ public class Testpic extends Activity
 				{
 					CustomView.mode = "paint";
 					cyanColor.setBackgroundColor(Color.CYAN);
-					cyanColor.setTextColor(Color.WHITE);
+					//cyanColor.setTextColor(Color.WHITE);
 					CustomView.colorValue = "cyan";
 				}
 				catch(NullPointerException e)
@@ -660,6 +691,18 @@ public class Testpic extends Activity
 		      undoButton.setVisibility(view.VISIBLE);
 			  UndoThis.setVisibility(view.VISIBLE); 
 			  ResetButton.setVisibility(view.VISIBLE);
+			  
+				 mono.setVisibility(view.GONE);
+				 moustache.setVisibility(view.GONE);
+				 octopus.setVisibility(view.GONE);
+				 rain.setVisibility(view.GONE);
+				 rainbow.setVisibility(view.GONE);
+				 rainbow2.setVisibility(view.GONE);
+				 star.setVisibility(view.GONE);
+				 sung.setVisibility(view.GONE);
+				 thought.setVisibility(view.GONE);
+				 tongue.setVisibility(view.GONE);
+				 whiteg.setVisibility(view.GONE);
 			}
 			catch(Exception e){}
 		}
@@ -723,8 +766,33 @@ public class Testpic extends Activity
 				Toast.makeText(getApplicationContext(), "Saving ...",Toast.LENGTH_LONG).show();
 				//SAVING
 				//SAVING
+				/*try {
+					fos = new FileOutputStream(new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES), "pic1.png"));
+				CustomView.toDisk.compress(Bitmap.CompressFormat.PNG, 100, fos);
+				fos.flush();
+				fos.close();
+				fos=null;
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+				finally
+				{
+				    if (fos != null)
+				    {
+				        try
+				        {
+				            fos.close();
+				            fos = null;
+				        }
+				        catch (IOException e)
+				        {
+				            e.printStackTrace();
+				        }
+				    }
+				}*/
+				saveView(view);
 				//SAVING
-				Toast.makeText(getApplicationContext(), "Image saved to this location",Toast.LENGTH_LONG).show();
+				//Toast.makeText(getApplicationContext(), "Image saved to this location" + Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES),Toast.LENGTH_LONG).show();
 				AlertDialog decision = new AlertDialog.Builder(Testpic.this).create();
 				decision.setTitle("Upload");
 				decision.setMessage("Your Image is being saved, but would you like to upload this image to the database");
@@ -758,7 +826,8 @@ public class Testpic extends Activity
 						{
 							finish( );
 			        		Testpic.this.onDestroy();
-			        		CustomView.backgroundImage.recycle();
+			        		
+			        		backgroundImage.recycle();
 			        		Intent newPic = new Intent(Testpic.this, UserPhotoOptions.class);
 			        		startActivity(newPic);
 						}
@@ -797,6 +866,42 @@ public class Testpic extends Activity
     
 	});
 }
+	
+    private void saveView( View view ) 
+    { 
+       Bitmap  b = Bitmap.createBitmap( view.getWidth(), view.getHeight 
+(), Bitmap.Config.ARGB_8888); 
+
+       Canvas c = new Canvas( b ); 
+
+       view.draw( c ); 
+
+       FileOutputStream fos = null; 
+
+       try {    
+    	   File path = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES), "picture.png");
+    
+    	   fos = new FileOutputStream(path); 
+                
+                
+                       if ( fos != null ) 
+                       { 
+                    	   	Toast.makeText(getApplicationContext(), "REACHED file out stream! ..." +  path,Toast.LENGTH_LONG).show();
+                               b.compress(Bitmap.CompressFormat.PNG, 90, fos ); 
+                               fos.flush();
+                               fos.close(); 
+                       } 
+
+                       //backgroundImage.recycle();
+
+            } catch( Exception e ) 
+                            { 
+                            Log.e("testSaveView", "Exception: " + e.toString() ); 
+                            Toast.makeText(getApplicationContext(), "DID NOT SAVE!",Toast.LENGTH_LONG).show();
+                            } 
+
+    } 
+	
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.

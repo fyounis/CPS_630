@@ -5,10 +5,9 @@ import android.graphics.Bitmap;
 
 public class contents {
 	public Bitmap bitmap;
-	public Bitmap resizedBitmap;
+	public Bitmap originalBitmap;
 	public float x;
 	public float y;
-	public boolean resized=false;
 	
 	//Constructor sets bitmap image
 	public contents(Bitmap bitmap){
@@ -20,13 +19,13 @@ public class contents {
 		this.y = y;
 	}
 	
-	//Setter Method to store resized image
-	public void setResizedBitmap(Bitmap resizedBitmap){
-		this.resizedBitmap = resizedBitmap;
+	//Setter Method to store resized image	
+	public void setOriginalBitmap(Bitmap resizedBitmap){
+		this.originalBitmap = resizedBitmap;
 	}
 	
-	public Bitmap getResizedBitmap(){
-		return resizedBitmap;
+	public Bitmap getOriginalBitmap(){
+		return originalBitmap;
 	}
 	
 	public Bitmap getBitmap(){
@@ -39,15 +38,5 @@ public class contents {
 	
 	public float getY(){
 		return y;
-	}
-	
-	//Setter method to determine is bitmap has been resized
-	public void setBooleanResized(boolean resized){
-		this.resized=resized;
-	}
-	
-	//Getter method to return if the image has been resized or not
-	public boolean getBooleanResized(){
-		return resized;
 	}
 }

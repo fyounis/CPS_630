@@ -16,7 +16,7 @@
           android:layout_height="match_parent"
           android:layout_centerHorizontal="true"
           android:layout_alignParentTop="true"
-          android:layout_marginTop="310dp"
+          android:layout_marginTop="280dp"
           android:content="@+id/content"
           android:handle="@+id/handle" >
 
@@ -102,132 +102,132 @@
 
                                <ImageButton
                                   android:id="@+id/mono"
-                                  android:layout_width="wrap_content"
-                                  android:layout_height="wrap_content"
+                                  android:layout_width="80px"
+                                  android:layout_height="80px"
                                   android:text="Mono" />
                                
                                 <ImageButton
                                   android:id="@+id/moustache"
-                                  android:layout_width="wrap_content"
-                                  android:layout_height="wrap_content"
+                                  android:layout_width="80px"
+                                  android:layout_height="80px"
                                   android:text="Moustache" />
                                 
                                  <ImageButton
                                   android:id="@+id/octopus"
-                                  android:layout_width="wrap_content"
-                                  android:layout_height="wrap_content"
+                                  android:layout_width="80px"
+                                  android:layout_height="80px"
                                   android:text="Octopus" />
                                  
                                   <ImageButton
                                   android:id="@+id/rain"
-                                  android:layout_width="wrap_content"
-                                  android:layout_height="wrap_content"
+                                  android:layout_width="80px"
+                                  android:layout_height="80px"
                                   android:text="Rain" />
                                   
                                    <ImageButton
                                   android:id="@+id/rainbow"
-                                  android:layout_width="wrap_content"
-                                  android:layout_height="wrap_content"
+                                  android:layout_width="80px"
+                                  android:layout_height="80px"
                                   android:text="Rainbow" />
                                    
                                     <ImageButton
                                   android:id="@+id/rainbow2"
-                                  android:layout_width="wrap_content"
-                                  android:layout_height="wrap_content"
+                                  android:layout_width="80px"
+                                  android:layout_height="80px"
                                   android:text="Rainbow2" />
                                     
                                      <ImageButton
                                   android:id="@+id/star"
-                                  android:layout_width="wrap_content"
-                                  android:layout_height="wrap_content"
+                                  android:layout_width="80px"
+                                  android:layout_height="80px"
                                   android:text="Star" />
                                      
                                       <ImageButton
                                   android:id="@+id/sung"
-                                  android:layout_width="wrap_content"
-                                  android:layout_height="wrap_content"
+                                  android:layout_width="80px"
+                                  android:layout_height="80px"
                                   android:text="Sung" />
                                       
                                        <ImageButton
                                   android:id="@+id/thought"
-                                  android:layout_width="wrap_content"
-                                  android:layout_height="wrap_content"
+                                  android:layout_width="80px"
+                                  android:layout_height="80px"
                                   android:text="Thought" />
                                        
                                         <ImageButton
                                   android:id="@+id/tongue"
-                                  android:layout_width="wrap_content"
-                                  android:layout_height="wrap_content"
+                                  android:layout_width="80px"
+                                  android:layout_height="80px"
                                   android:text="Tongue" />
                                         
                                          <ImageButton
                                   android:id="@+id/whiteg"
-                                  android:layout_width="wrap_content"
-                                  android:layout_height="wrap_content"
+                                  android:layout_width="80px"
+                                  android:layout_height="80px"
                                   android:text="Whiteg" />
                               
-                              <Button
+                              <ImageButton
                                   android:id="@+id/black"
                                   android:layout_width="80px"
                                   android:layout_height="80px"
  								  />
 
-                              <Button
+                              <ImageButton
                                   android:id="@+id/white"
                                	  android:layout_width="80px"
                                   android:layout_height="80px"
                                    />
 
-                              <Button
+                              <ImageButton
                                   android:id="@+id/red"
                                    android:layout_width="80px"
                                   android:layout_height="80px"
                                   />
 
-                              <Button
+                              <ImageButton
                                   android:id="@+id/blue"
                                    android:layout_width="80px"
                                   android:layout_height="80px"
                                   />
 
-                              <Button
+                              <ImageButton
                                   android:id="@+id/green"
                                    android:layout_width="80px"
                                   android:layout_height="80px"
                                    />
 
-                              <Button
+                              <ImageButton
                                   android:id="@+id/yellow"
                                  android:layout_width="80px"
                                   android:layout_height="80px"
                                  />
 
-                              <Button
+                              <ImageButton
                                   android:id="@+id/purple"
                                  android:layout_width="80px"
                                   android:layout_height="80px"
                                  />
                               
-                               <Button
+                               <ImageButton
                                   android:id="@+id/cyan"
                                   android:layout_width="80px"
                                   android:layout_height="80px"
                                 />
                                
-                                <Button
+                                <ImageButton
                                   android:id="@+id/thin"
                                   android:layout_width="90px"
-                                  android:layout_height="110px"/>
+                                  android:layout_height="40px"/>
                                 
-                                 <Button
+                                 <ImageButton
                                   android:id="@+id/medium"
                                   android:layout_width="90px"
-                                  android:layout_height="130px"/>
+                                  android:layout_height="40px"/>
                                  
-                                  <Button
+                                  <ImageButton
                                   android:id="@+id/thick"
                                   android:layout_width="90px"
-                                  android:layout_height="140px"/>
+                                  android:layout_height="40px"/>
                                   
                                    <Button
                                   android:id="@+id/undoLast"

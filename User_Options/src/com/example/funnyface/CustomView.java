@@ -6,9 +6,9 @@ import java.util.HashMap;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Color;
+import android.graphics.Matrix;
 import android.graphics.Paint;
 import android.graphics.Path;
 import android.graphics.Rect;
@@ -26,12 +26,12 @@ public class CustomView extends ImageView {
 	protected static contents[] bitmap = new contents[20];		//Extension of the class contents
 	private float dx, dy;	//Drawing coordinates used to draw of what's suppose to be drawn
 	private float x, y;		//Coordinates of the first finger
-	private float x2, y2;	//Coordinates of the second finger
+	//private float x2, y2;	//Coordinates of the second finger
 	private int ptrID1; 	//To store the pointer ID of the first finger touching the screen
 	private int ptrID2;		//To store the pointer ID of the second finger touching the screen
 	private float xFirst, yFirst;		//The coordinates of the first time the first finger touch (without dragging)
-	private float x2First, y2First;		//The coordinates of the first time the second finger touch <without dragging)
-	private float distanceXfrommXLast,distanceYfrommYLast;		//Distance used to see how far the finger has moved
+	//private float x2First, y2First;		//The coordinates of the first time the second finger touch <without dragging)
+	//private float distanceXfrommXLast,distanceYfrommYLast;		//Distance used to see how far the finger has moved
 	protected static int numberOfContents;		//To store the index of the last content. (number of contents in the array)
 	protected static int currentContentIndex;		//To store the index of the current content selected
 	protected boolean moveContent;			//Boolean to determine whether to move the content or not
@@ -50,6 +50,9 @@ public class CustomView extends ImageView {
 	private Rect lowerRight;
 	private Rect upperRight;
 	
+	protected static Bitmap toDisk;
+	
+	
 	public CustomView(Context context) {
 		super(context);
 		init(context);
@@ -66,17 +69,11 @@ public class CustomView extends ImageView {
 	}
 	
 	public void init(Context context){
-		BitmapFactory.Options options = new BitmapFactory.Options();
-		options.inPreferredConfig = Bitmap.Config.ARGB_8888;
-		
 		dx=0;
 		dy=0;
 		x=0;
 		y=0;
-		x2=0;
-		y2=0;
-		distanceXfrommXLast=0;
-		distanceYfrommYLast=0;
+		
 		ptrID1=INVALID_POINTER_ID;
 		ptrID2=INVALID_POINTER_ID;
 		mode="add_content";
@@ -86,6 +83,7 @@ public class CustomView extends ImageView {
 		paths = new ArrayList<Path>();
 		colorsMap = new HashMap<Path, Integer>();
 		strokeMap = new HashMap<Path, Integer>();
+		
 	}
 	
 	@Override
@@ -142,14 +140,30 @@ public class CustomView extends ImageView {
 						}
 						
 						if (lowerRight.right+10 > xFirst && lowerRight.left-10 < xFirst && lowerRight.top-10 < yFirst && lowerRight.bottom+10 > yFirst){
-							System.out.println("TOUCHED!!!!!");
+							currentContentIndex=i;
 							moveContent=false;
 							mode="scale";
-							//scaleImage();
+							
+						}
+						else if (upperRight.right+10 > xFirst && upperRight.left-10 < xFirst && upperRight.top-10 < yFirst && upperRight.bottom+10 > yFirst){
+							currentContentIndex=i;
+							moveContent=false;
+							mode="scale";
 							
 						}
 						
+						else if (lowerLeft.right+10 > xFirst && lowerLeft.left-10 < xFirst && lowerLeft.top-10 < yFirst && lowerLeft.bottom+10 > yFirst){
+							currentContentIndex=i;
+							moveContent=false;
+							mode="scale";
 						
+						}
+						else if (upperLeft.right+10 > xFirst && upperLeft.left-10 < xFirst && upperLeft.top-10 < yFirst && upperLeft.bottom+10 > yFirst){
+							currentContentIndex=i;
+							moveContent=false;
+							mode="scale";
+							
+						}
 						
 					} catch (NullPointerException e){
 						
@@ -209,12 +223,12 @@ public class CustomView extends ImageView {
 		case MotionEvent.ACTION_POINTER_DOWN:
 			//Get the Action Index of the second finger
 			int pointerIndex2 = MotionEventCompat.getActionIndex(event);
-			x2=MotionEventCompat.getX(event, pointerIndex2);
-			y2=MotionEventCompat.getY(event, pointerIndex2);
+			//x2=MotionEventCompat.getX(event, pointerIndex2);
+			//y2=MotionEventCompat.getY(event, pointerIndex2);
 			
 			//keep track of the first coordinates touched from the second finger
-			x2First=x2;
-			y2First=y2;
+			//x2First=x2;
+			//y2First=y2;
 			
 			//Get the pointer ID of the second finger
 			ptrID2=MotionEventCompat.getPointerId(event,pointerIndex2);
@@ -252,15 +266,12 @@ public class CustomView extends ImageView {
 					}
 				}
 				else if (mode.equals("scale")) {
-					System.out.println("TOUCHED!!!!!");
 					float differenceX=0;
 					differenceX=dx-xFirst;
 					float differenceY=0;
 					differenceY=dy-yFirst;
 					
-					//bitmap[currentContentIndex].setXY(bitmap[currentContentIndex].getX()+differenceX, bitmap[currentContentIndex].getY()+differenceY);		//Set X and Y coordinates of the bitmap to be drawn		
-					//targetBox.set(targetBox.left+differenceX, targetBox.top+differenceY, targetBox.right+differenceX, targetBox.bottom+differenceY);
-					bitmap[currentContentIndex].bitmap=Bitmap.createScaledBitmap(bitmap[currentContentIndex].bitmap, (int)(bitmap[currentContentIndex].bitmap.getWidth()+differenceX), (int)(bitmap[currentContentIndex].bitmap.getHeight()+differenceY), false);
+					bitmap[currentContentIndex].bitmap=getResizedBitmap(bitmap[currentContentIndex].originalBitmap, (int)(bitmap[currentContentIndex].bitmap.getHeight()+differenceY), (int)(bitmap[currentContentIndex].bitmap.getWidth()+differenceX));
 					xFirst=dx;
 					yFirst=dy;
 				}
@@ -280,8 +291,8 @@ public class CustomView extends ImageView {
 				x=MotionEventCompat.getX(event, pointerIndex);
 				y=MotionEventCompat.getY(event, pointerIndex);
 				pointerIndex2 = MotionEventCompat.findPointerIndex(event,  ptrID2);
-				x2=MotionEventCompat.getX(event, pointerIndex2);
-				y2=MotionEventCompat.getY(event, pointerIndex2);
+				//x2=MotionEventCompat.getX(event, pointerIndex2);
+				//y2=MotionEventCompat.getY(event, pointerIndex2);
 					
 			}
 			break;
@@ -316,6 +327,29 @@ public class CustomView extends ImageView {
 		numberOfContents = numberOfContents - 1;
 	}
 	
+	public Bitmap getResizedBitmap(Bitmap bm, int newHeight, int newWidth){
+		
+		if (newHeight>0 && newWidth>0){
+			int width = bm.getWidth();
+			int height = bm.getHeight();
+			
+			float scaleWidth = ((float) newWidth) / width;
+			float scaleHeight = ((float) newHeight) / height;
+	
+			Matrix matrix = new Matrix();
+	
+			matrix.postScale(scaleWidth, scaleHeight);
+	
+			Bitmap resizedBitmap = Bitmap.createBitmap(bm, 0, 0, width, height, matrix, false);
+			return resizedBitmap;
+		}
+		else {
+			return bm;
+		}
+		
+		
+	}
+	
 	protected void prepareContentToDraw(int i){
 		float upperX=bitmap[i].getX()-bitmap[i].bitmap.getWidth();
 		float upperY=bitmap[i].getY()-bitmap[i].bitmap.getHeight();
@@ -334,28 +368,13 @@ public class CustomView extends ImageView {
 		upperRight.set((int)targetBox.right-5, (int)targetBox.top-5, (int)targetBox.right+5, (int)targetBox.top+5);
 	}
 	
-	protected void prepareContentToDrawScale(int i){
-		float upperX=bitmap[i].getX()-bitmap[i].bitmap.getWidth();
-		float upperY=bitmap[i].getY()-bitmap[i].bitmap.getHeight();
-		float lowerX=bitmap[i].getX()+bitmap[i].bitmap.getWidth();
-		float lowerY=bitmap[i].getY()+bitmap[i].bitmap.getHeight();
-		
-		targetBox=new RectF(upperX,upperY,lowerX,lowerY);
-		
-		upperLeft=new Rect();
-		upperLeft.set((int)targetBox.left-5, (int)targetBox.top-5, (int)targetBox.left+5, (int)targetBox.top+5);
-		lowerLeft=new Rect();
-		lowerLeft.set((int)targetBox.left-5, (int)targetBox.bottom-5, (int)targetBox.left+5, (int)targetBox.bottom+5);
-		lowerRight=new Rect();
-		lowerRight.set((int)targetBox.right-5, (int)targetBox.bottom-5, (int)targetBox.right+5, (int)targetBox.bottom+5);
-		upperRight=new Rect();
-		upperRight.set((int)targetBox.right-5, (int)targetBox.top-5, (int)targetBox.right+5, (int)targetBox.top+5);
-	}
 	
 	@SuppressLint("DrawAllocation")
 	@Override
 	protected void onDraw(Canvas canvas) {
 		super.onDraw(canvas);
+
+		this.getDrawingCache(true);
 		Paint paint = new Paint();
 		
 		
@@ -380,7 +399,7 @@ public class CustomView extends ImageView {
 			System.out.println("---index" + i);
 			try {
 				//Draw Original image
-				if (bitmap[i].getBitmap()!=null && !bitmap[i].getBooleanResized()){
+				if (bitmap[i].getBitmap()!=null){
 					if (i==currentContentIndex){
 						paint.setColor(Color.WHITE);
 						
@@ -400,15 +419,12 @@ public class CustomView extends ImageView {
 						canvas.drawBitmap(bitmap[i].bitmap, null, targetBox, paint);
 					}
 				}
-				//Else, draw the resized image
-				else if (bitmap[i].getResizedBitmap()!=null && bitmap[i].getBooleanResized()){
-					//canvas.drawBitmap(bitmap[i].getResizedBitmap(), bitmap[i].getX()-(bitmap[i].getResizedBitmap().getWidth()/2), bitmap[i].getY()-(bitmap[i].getResizedBitmap().getHeight()/2), paint);
-					prepareContentToDraw(i);
-					canvas.drawBitmap(bitmap[i].bitmap, null, targetBox, paint);
-				}
-				
+		
 			}
 			catch (NullPointerException e){}
 		}
+		
+		
+		
 	}
 }
