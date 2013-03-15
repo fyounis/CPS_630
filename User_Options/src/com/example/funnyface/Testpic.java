@@ -143,6 +143,7 @@ public class Testpic extends Activity
 				public void onClick(View v) {
 					// TODO Auto-generated method stub
 					try {
+						
 						CustomView.mode="add_content";
 						CustomView.bitmap[CustomView.numberOfContents] = new contents(BitmapFactory.decodeResource(getResources(), R.drawable.eyes));
 						CustomView.bitmap[CustomView.numberOfContents].originalBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.eyes);
@@ -849,7 +850,6 @@ public class Testpic extends Activity
 			     MediumStroke.setVisibility(view.VISIBLE);
 			     ThickStroke.setVisibility(view.VISIBLE);
 			     
-			     
 				 undoButton.setVisibility(view.GONE);
 				 UndoThis.setVisibility(view.GONE); 
 				 ResetButton.setVisibility(view.GONE);
@@ -990,6 +990,9 @@ public class Testpic extends Activity
 		}
     	
     });
+    
+
+    
     final Button SaveButton = (Button) findViewById(R.id.save);
     SaveButton.setBackgroundDrawable(getResources().getDrawable(R.drawable.saving));
     SaveButton.setOnClickListener(new View.OnClickListener(){
@@ -1005,6 +1008,7 @@ public class Testpic extends Activity
 				newPictureButton.setEnabled(false);
 				editButton.setEnabled(false);
 				paintButton.setEnabled(false);
+				
 				HorizontalScrollView hs1 =(HorizontalScrollView)findViewById(R.id.horizontalScrollView2);hs1.setVisibility(View.INVISIBLE);
 				Toast.makeText(getApplicationContext(), "Saving ...",Toast.LENGTH_LONG).show();
 				saveView(view);

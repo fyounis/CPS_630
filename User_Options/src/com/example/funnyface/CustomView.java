@@ -44,11 +44,11 @@ public class CustomView extends ImageView {
 	private HashMap<Path, Integer> colorsMap; 
 	private HashMap<Path, Integer> strokeMap;
 	
-	private RectF targetBox;
-	private Rect upperLeft;
-	private Rect lowerLeft;
-	private Rect lowerRight;
-	private Rect upperRight;
+	protected static RectF targetBox;
+    protected static Rect upperLeft;
+	protected static Rect lowerLeft;
+	protected static Rect lowerRight;
+	protected static Rect upperRight;
 	
 	protected static Bitmap toDisk;
 	
