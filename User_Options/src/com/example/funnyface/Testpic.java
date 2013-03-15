@@ -1,9 +1,9 @@
 package com.example.funnyface;
 
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
-import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
@@ -26,8 +26,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.HorizontalScrollView;
 import android.widget.ImageButton;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.Toast;
 
 @SuppressLint("SdCardPath")
@@ -1009,32 +1007,6 @@ public class Testpic extends Activity
 				paintButton.setEnabled(false);
 				HorizontalScrollView hs1 =(HorizontalScrollView)findViewById(R.id.horizontalScrollView2);hs1.setVisibility(View.INVISIBLE);
 				Toast.makeText(getApplicationContext(), "Saving ...",Toast.LENGTH_LONG).show();
-				//SAVING
-				//SAVING
-				/*try {
-					fos = new FileOutputStream(new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES), "pic1.png"));
-				CustomView.toDisk.compress(Bitmap.CompressFormat.PNG, 100, fos);
-				fos.flush();
-				fos.close();
-				fos=null;
-				} catch (IOException e) {
-					e.printStackTrace();
-				}
-				finally
-				{
-				    if (fos != null)
-				    {
-				        try
-				        {
-				            fos.close();
-				            fos = null;
-				        }
-				        catch (IOException e)
-				        {
-				            e.printStackTrace();
-				        }
-				    }
-				}*/
 				saveView(view);
 				sendBroadcast(new Intent(Intent.ACTION_MEDIA_MOUNTED, Uri.parse("file://" + Environment.getExternalStorageDirectory())));
 				//SAVING
@@ -1116,42 +1088,39 @@ public class Testpic extends Activity
 	
     private void saveView( View view ) 
     { 
-       Bitmap  b = Bitmap.createBitmap( view.getWidth(), view.getHeight 
-(), Bitmap.Config.ARGB_8888); 
-
+       Bitmap  b = Bitmap.createBitmap( view.getWidth(), view.getHeight (), Bitmap.Config.ARGB_8888); 
        Canvas c = new Canvas( b ); 
-
        view.draw( c ); 
-
        FileOutputStream fos; 
 
-       try {    
-    	   File path = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES), "picture112.png");
-    if (path.createNewFile()){
-    	Toast.makeText(getApplicationContext(), "New File Created in " +  path,Toast.LENGTH_LONG).show();
-    }
+       SimpleDateFormat time = new SimpleDateFormat("yyyyMMdd_HHmmss");
+       String  imageID = time.format(new Date());
+       String photoID = "EditMeNow_" + imageID + ".jpg";
+       
+       
+       try 
+       {    
+    	   File path = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES), photoID);
+    	   if (path.createNewFile())
+    	   {
+    		   Toast.makeText(getApplicationContext(), "New File Created in " +  path,Toast.LENGTH_LONG).show();
+    	   }
     	   
-    	   fos = new FileOutputStream(path); 
-                
-                
-                       if ( fos != null ) 
-                       { 
-                    	   	b.compress(Bitmap.CompressFormat.PNG, 90, fos ); 
-                    	   	
-
-                            MediaStore.Images.Media.insertImage(getContentResolver(),
-                                    path.getAbsolutePath(), path.getName(), path.getName());
-                    	   	
-                               fos.flush();
-                               fos.close(); 
-                       } 
-
-
-            } catch( Exception e ) 
-                            { 
-                            Log.e("testSaveView", "Exception: " + e.toString() ); 
-                            Toast.makeText(getApplicationContext(), "DID NOT SAVE!",Toast.LENGTH_LONG).show();
-                            } 
+    	   fos = new FileOutputStream(path);      
+           if ( fos != null ) 
+           { 
+                b.compress(Bitmap.CompressFormat.PNG, 90, fos ); 
+                MediaStore.Images.Media.insertImage(getContentResolver(),
+                path.getAbsolutePath(), path.getName(), path.getName());
+                fos.flush();
+                fos.close(); 
+           } 
+       } 
+       catch( Exception e ) 
+       { 
+           Log.e("testSaveView", "Exception: " + e.toString() ); 
+           Toast.makeText(getApplicationContext(), "DID NOT SAVE!",Toast.LENGTH_LONG).show();
+       } 
 
     } 
 	
