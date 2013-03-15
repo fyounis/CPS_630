@@ -99,19 +99,94 @@
                               android:layout_width="match_parent"
                               android:layout_height="match_parent"
                               android:orientation="horizontal" >
-
-                               <ImageButton
+                              
+                                
+                                <ImageButton
                                   android:id="@+id/mono"
                                   android:layout_width="80px"
                                   android:layout_height="80px"
                                   android:text="Mono" />
+                                
+                                 <ImageButton
+                                  android:id="@+id/gstache"
+                                  android:layout_width="80px"
+                                  android:layout_height="80px"
+                                  android:text="gstache" />
+                                
+                                  <ImageButton
+                                  android:id="@+id/lips"
+                                  android:layout_width="80px"
+                                  android:layout_height="80px"
+                                  android:text="lips" />
+                                
+                                 <ImageButton
+                                  android:id="@+id/ceyes"
+                                  android:layout_width="80px"
+                                  android:layout_height="80px"
+                                  android:text="ceyes" />
+                                 
+                                  <ImageButton
+                                  android:id="@+id/eyes"
+                                  android:layout_width="80px"
+                                  android:layout_height="80px"
+                                  android:text="eyes" />
                                
                                 <ImageButton
                                   android:id="@+id/moustache"
                                   android:layout_width="80px"
                                   android:layout_height="80px"
                                   android:text="Moustache" />
+                               
+                                <ImageButton
+                                  android:id="@+id/hat"
+                                  android:layout_width="80px"
+                                  android:layout_height="80px"
+                                  android:text="hat" />
                                 
+                               <ImageButton
+                                  android:id="@+id/glasses"
+                                  android:layout_width="80px"
+                                  android:layout_height="80px"
+                                  android:text="glasses" />
+                               
+                                <ImageButton
+                                  android:id="@+id/mask"
+                                  android:layout_width="80px"
+                                  android:layout_height="80px"
+                                  android:text="mask" />
+                                
+                                 <ImageButton
+                                  android:id="@+id/heart"
+                                  android:layout_width="80px"
+                                  android:layout_height="80px"
+                                  android:text="heart" />
+                                 
+                                 <ImageButton
+                                  android:id="@+id/angry"
+                                  android:layout_width="80px"
+                                  android:layout_height="80px"
+                                  android:text="angry" />
+                                 
+                                  <ImageButton
+                                  android:id="@+id/bird"
+                                  android:layout_width="80px"
+                                  android:layout_height="80px"
+                                  android:text="bird" />
+                                  
+                                  <ImageButton
+                                  android:id="@+id/firew"
+                                  android:layout_width="80px"
+                                  android:layout_height="80px"
+                                  android:text="firew" />
+                                  
+                                  <ImageButton
+                                  android:id="@+id/icream"
+                                  android:layout_width="80px"
+                                  android:layout_height="80px"
+                                  android:text="icream" />
+                                
+                                
+              
                                  <ImageButton
                                   android:id="@+id/octopus"
                                   android:layout_width="80px"
@@ -154,18 +229,26 @@
                                   android:layout_height="80px"
                                   android:text="Thought" />
                                        
-                                        <ImageButton
+                              <ImageButton
                                   android:id="@+id/tongue"
                                   android:layout_width="80px"
                                   android:layout_height="80px"
                                   android:text="Tongue" />
                                         
-                                         <ImageButton
+                              <ImageButton
                                   android:id="@+id/whiteg"
                                   android:layout_width="80px"
                                   android:layout_height="80px"
                                   android:text="Whiteg" />
                               
+                
+                              
+                                <ImageButton
+                                  android:id="@+id/caption"
+                                  android:layout_width="80px"
+                                  android:layout_height="80px"
+                                  android:text="Caption" />
+                            
                               <ImageButton
                                   android:id="@+id/black"
                                   android:layout_width="80px"
