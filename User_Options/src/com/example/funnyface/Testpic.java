@@ -1,6 +1,7 @@
 package com.example.funnyface;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
@@ -15,8 +16,10 @@ import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Path;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
+import android.provider.MediaStore;
 import android.util.Log;
 import android.view.Menu;
 import android.view.View;
@@ -24,6 +27,7 @@ import android.widget.Button;
 import android.widget.HorizontalScrollView;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
 @SuppressLint("SdCardPath")
@@ -40,6 +44,7 @@ public class Testpic extends Activity
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_testpic);
 		view = (CustomView) findViewById(R.id.imageView1);
+		
 		if(Global.mode.equals("Camera"))
 		{
 			try {
@@ -766,31 +771,8 @@ public class Testpic extends Activity
 				Toast.makeText(getApplicationContext(), "Saving ...",Toast.LENGTH_LONG).show();
 				//SAVING
 				//SAVING
-				/*try {
-					fos = new FileOutputStream(new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES), "pic1.png"));
-				CustomView.toDisk.compress(Bitmap.CompressFormat.PNG, 100, fos);
-				fos.flush();
-				fos.close();
-				fos=null;
-				} catch (IOException e) {
-					e.printStackTrace();
-				}
-				finally
-				{
-				    if (fos != null)
-				    {
-				        try
-				        {
-				            fos.close();
-				            fos = null;
-				        }
-				        catch (IOException e)
-				        {
-				            e.printStackTrace();
-				        }
-				    }
-				}*/
 				saveView(view);
+				sendBroadcast(new Intent(Intent.ACTION_MEDIA_MOUNTED, Uri.parse("file://" + Environment.getExternalStorageDirectory())));
 				//SAVING
 				//Toast.makeText(getApplicationContext(), "Image saved to this location" + Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES),Toast.LENGTH_LONG).show();
 				AlertDialog decision = new AlertDialog.Builder(Testpic.this).create();
@@ -871,23 +853,39 @@ public class Testpic extends Activity
     { 
        Bitmap  b = Bitmap.createBitmap( view.getWidth(), view.getHeight 
 (), Bitmap.Config.ARGB_8888); 
-
+       
+       
+       
        Canvas c = new Canvas( b ); 
 
        view.draw( c ); 
 
-       FileOutputStream fos = null; 
+       FileOutputStream fos; 
 
        try {    
-    	   File path = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES), "picture.png");
-    
+    	   File path = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES), "picture112.png");
+    if (path.createNewFile()){
+    	Toast.makeText(getApplicationContext(), "New File Created in " +  path,Toast.LENGTH_LONG).show();
+    }
+
+    if (b==null){
+    	Toast.makeText(getApplicationContext(), "B is null" +  path,Toast.LENGTH_LONG).show();
+
+    }
+    	   
     	   fos = new FileOutputStream(path); 
                 
                 
                        if ( fos != null ) 
                        { 
                     	   	Toast.makeText(getApplicationContext(), "REACHED file out stream! ..." +  path,Toast.LENGTH_LONG).show();
-                               b.compress(Bitmap.CompressFormat.PNG, 90, fos ); 
+                               
+                    	   	b.compress(Bitmap.CompressFormat.PNG, 90, fos ); 
+                    	   	
+
+                            MediaStore.Images.Media.insertImage(getContentResolver(),
+                                    path.getAbsolutePath(), path.getName(), path.getName());
+                    	   	
                                fos.flush();
                                fos.close(); 
                        } 
@@ -900,6 +898,32 @@ public class Testpic extends Activity
                             Toast.makeText(getApplicationContext(), "DID NOT SAVE!",Toast.LENGTH_LONG).show();
                             } 
 
+    	
+  /*  	
+    	   view.setDrawingCacheEnabled(true);
+    	    view.setDrawingCacheQuality(LinearLayout.DRAWING_CACHE_QUALITY_HIGH);
+    	    view.buildDrawingCache();
+    	    Bitmap bmp = null;
+    	    if (view != null) { 
+    	        try {
+    	            bmp = Bitmap.createBitmap(view.getDrawingCache());
+    	        } catch (NullPointerException e) { }
+    	    }
+    	    view.setDrawingCacheEnabled(false);
+    	    view.destroyDrawingCache();
+
+    	    if (bmp != null) {
+    	        String file_path = Environment.getExternalStorageDirectory().getAbsolutePath() + "/";
+    	        File dir = new File(file_path);
+    	        if (!dir.exists()) { 
+    	            dir.mkdirs();
+    	        }
+    	        File file = new File(dir, "screencap.png");
+    	        FileOutputStream fOut = null;
+    	        try { fOut = new FileOutputStream(file); } catch (FileNotFoundException e1) { }
+    	        bmp.compress(Bitmap.CompressFormat.PNG, 85, fOut);
+    	        try { fOut.flush(); fOut.close(); } catch (IOException e1) { }
+    	    }*/
     } 
 	
 	@Override

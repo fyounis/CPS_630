@@ -374,6 +374,8 @@ public class CustomView extends ImageView {
 	protected void onDraw(Canvas canvas) {
 		super.onDraw(canvas);
 
+		
+		
 		this.getDrawingCache(true);
 		Paint paint = new Paint();
 		
