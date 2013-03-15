@@ -44,7 +44,6 @@ public class Testpic extends Activity
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_testpic);
 		view = (CustomView) findViewById(R.id.imageView1);
-		
 		if(Global.mode.equals("Camera"))
 		{
 			try {
@@ -63,8 +62,6 @@ public class Testpic extends Activity
 			} catch (NullPointerException e){}
 		}
 		
-			final ImageButton mono = (ImageButton) findViewById(R.id.mono);
-			mono.setBackgroundResource(R.drawable.mono);
 			final ImageButton moustache = (ImageButton) findViewById(R.id.moustache);
 			moustache.setBackgroundResource(R.drawable.moustache);
 			final ImageButton octopus = (ImageButton) findViewById(R.id.octopus);
@@ -85,21 +82,224 @@ public class Testpic extends Activity
 			tongue.setBackgroundResource(R.drawable.tongue);
 			final ImageButton whiteg = (ImageButton) findViewById(R.id.whiteg);
 			whiteg.setBackgroundResource(R.drawable.whiteg);
-		
-		mono.setOnClickListener(new View.OnClickListener() {
+			final ImageButton hat = (ImageButton) findViewById(R.id.hat);
+			hat.setBackgroundResource(R.drawable.hat);
+			final ImageButton glasses = (ImageButton) findViewById(R.id.glasses);
+			glasses.setBackgroundResource(R.drawable.glasses);
+			final ImageButton mask = (ImageButton) findViewById(R.id.mask);
+			mask.setBackgroundResource(R.drawable.mask);
+			final ImageButton heart = (ImageButton) findViewById(R.id.heart);
+			heart.setBackgroundResource(R.drawable.heart);
+			final ImageButton angry = (ImageButton) findViewById(R.id.angry);
+			angry.setBackgroundResource(R.drawable.angry);
+			final ImageButton bird = (ImageButton) findViewById(R.id.bird);
+			bird.setBackgroundResource(R.drawable.bird);
+			final ImageButton firew = (ImageButton) findViewById(R.id.firew);
+			firew.setBackgroundResource(R.drawable.firew);
+			final ImageButton mono = (ImageButton) findViewById(R.id.mono);
+			mono.setBackgroundResource(R.drawable.mono);
+			final ImageButton ceyes = (ImageButton) findViewById(R.id.ceyes);
+			ceyes.setBackgroundResource(R.drawable.ceyes);
+			final ImageButton icream = (ImageButton) findViewById(R.id.icream);
+			icream.setBackgroundResource(R.drawable.icream);
+			final ImageButton lips = (ImageButton) findViewById(R.id.lips);
+			lips.setBackgroundResource(R.drawable.lips);
+			final ImageButton eyes = (ImageButton) findViewById(R.id.eyes);
+			eyes.setBackgroundResource(R.drawable.eyes);
+			final ImageButton stache_glasses = (ImageButton) findViewById(R.id.gstache);
+			stache_glasses.setBackgroundResource(R.drawable.gstache);
+			final ImageButton Caption = (ImageButton) findViewById(R.id.caption);
+			Caption.setBackgroundResource(R.drawable.caption);
 			
-			@Override
-			public void onClick(View v) {
-				// TODO Auto-generated method stub
-				try {
-					CustomView.mode="add_content";
-					CustomView.bitmap[CustomView.numberOfContents] = new contents(BitmapFactory.decodeResource(getResources(), R.drawable.mono));
-					CustomView.bitmap[CustomView.numberOfContents].originalBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.mono);
-				} catch (NullPointerException e) {
-						
+         
+			
+
+			Caption.setOnClickListener(new View.OnClickListener() {	
+				@Override
+				public void onClick(View v) {
+					// TODO Auto-generated method stub
+					try {
+						CustomView.mode="add_content";
+						CustomView.bitmap[CustomView.numberOfContents] = new contents(BitmapFactory.decodeResource(getResources(), R.drawable.caption));
+						CustomView.bitmap[CustomView.numberOfContents].originalBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.caption);
+					} catch (NullPointerException e) {
+							
+					}
 				}
-			}
-		});
+			});
+			stache_glasses.setOnClickListener(new View.OnClickListener() {	
+				@Override
+				public void onClick(View v) {
+					// TODO Auto-generated method stub
+					try {
+						CustomView.mode="add_content";
+						CustomView.bitmap[CustomView.numberOfContents] = new contents(BitmapFactory.decodeResource(getResources(), R.drawable.gstache));
+						CustomView.bitmap[CustomView.numberOfContents].originalBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.gstache);
+					} catch (NullPointerException e) {
+							
+					}
+				}
+			});
+			eyes.setOnClickListener(new View.OnClickListener() {	
+				@Override
+				public void onClick(View v) {
+					// TODO Auto-generated method stub
+					try {
+						CustomView.mode="add_content";
+						CustomView.bitmap[CustomView.numberOfContents] = new contents(BitmapFactory.decodeResource(getResources(), R.drawable.eyes));
+						CustomView.bitmap[CustomView.numberOfContents].originalBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.eyes);
+					} catch (NullPointerException e) {
+							
+					}
+				}
+			});
+			lips.setOnClickListener(new View.OnClickListener() {	
+				@Override
+				public void onClick(View v) {
+					// TODO Auto-generated method stub
+					try {
+						CustomView.mode="add_content";
+						CustomView.bitmap[CustomView.numberOfContents] = new contents(BitmapFactory.decodeResource(getResources(), R.drawable.lips));
+						CustomView.bitmap[CustomView.numberOfContents].originalBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.lips);
+					} catch (NullPointerException e) {
+							
+					}
+				}
+			});
+			icream.setOnClickListener(new View.OnClickListener() {	
+				@Override
+				public void onClick(View v) {
+					// TODO Auto-generated method stub
+					try {
+						CustomView.mode="add_content";
+						CustomView.bitmap[CustomView.numberOfContents] = new contents(BitmapFactory.decodeResource(getResources(), R.drawable.icream));
+						CustomView.bitmap[CustomView.numberOfContents].originalBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.icream);
+					} catch (NullPointerException e) {
+							
+					}
+				}
+			});
+			ceyes.setOnClickListener(new View.OnClickListener() {	
+				@Override
+				public void onClick(View v) {
+					// TODO Auto-generated method stub
+					try {
+						CustomView.mode="add_content";
+						CustomView.bitmap[CustomView.numberOfContents] = new contents(BitmapFactory.decodeResource(getResources(), R.drawable.ceyes));
+						CustomView.bitmap[CustomView.numberOfContents].originalBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.ceyes);
+					} catch (NullPointerException e) {
+							
+					}
+				}
+			});
+			mono.setOnClickListener(new View.OnClickListener() {	
+				@Override
+				public void onClick(View v) {
+					// TODO Auto-generated method stub
+					try {
+						CustomView.mode="add_content";
+						CustomView.bitmap[CustomView.numberOfContents] = new contents(BitmapFactory.decodeResource(getResources(), R.drawable.mono));
+						CustomView.bitmap[CustomView.numberOfContents].originalBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.mono);
+					} catch (NullPointerException e) {
+							
+					}
+				}
+			});
+			firew.setOnClickListener(new View.OnClickListener() {	
+				@Override
+				public void onClick(View v) {
+					// TODO Auto-generated method stub
+					try {
+						CustomView.mode="add_content";
+						CustomView.bitmap[CustomView.numberOfContents] = new contents(BitmapFactory.decodeResource(getResources(), R.drawable.firew));
+						CustomView.bitmap[CustomView.numberOfContents].originalBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.firew);
+					} catch (NullPointerException e) {
+							
+					}
+				}
+			});
+			bird.setOnClickListener(new View.OnClickListener() {	
+				@Override
+				public void onClick(View v) {
+					// TODO Auto-generated method stub
+					try {
+						CustomView.mode="add_content";
+						CustomView.bitmap[CustomView.numberOfContents] = new contents(BitmapFactory.decodeResource(getResources(), R.drawable.bird));
+						CustomView.bitmap[CustomView.numberOfContents].originalBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.bird);
+					} catch (NullPointerException e) {
+							
+					}
+				}
+			});
+			angry.setOnClickListener(new View.OnClickListener() {	
+				@Override
+				public void onClick(View v) {
+					// TODO Auto-generated method stub
+					try {
+						CustomView.mode="add_content";
+						CustomView.bitmap[CustomView.numberOfContents] = new contents(BitmapFactory.decodeResource(getResources(), R.drawable.angry));
+						CustomView.bitmap[CustomView.numberOfContents].originalBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.angry);
+					} catch (NullPointerException e) {
+							
+					}
+				}
+			});
+			heart.setOnClickListener(new View.OnClickListener() {	
+				@Override
+				public void onClick(View v) {
+					// TODO Auto-generated method stub
+					try {
+						CustomView.mode="add_content";
+						CustomView.bitmap[CustomView.numberOfContents] = new contents(BitmapFactory.decodeResource(getResources(), R.drawable.heart));
+						CustomView.bitmap[CustomView.numberOfContents].originalBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.heart);
+					} catch (NullPointerException e) {
+							
+					}
+				}
+			});
+			mask.setOnClickListener(new View.OnClickListener() {
+				
+				@Override
+				public void onClick(View v) {
+					// TODO Auto-generated method stub
+					try {
+						CustomView.mode="add_content";
+						CustomView.bitmap[CustomView.numberOfContents] = new contents(BitmapFactory.decodeResource(getResources(), R.drawable.mask));
+						CustomView.bitmap[CustomView.numberOfContents].originalBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.mask);
+					} catch (NullPointerException e) {
+							
+					}
+				}
+			});
+            glasses.setOnClickListener(new View.OnClickListener() {
+				
+				@Override
+				public void onClick(View v) {
+					// TODO Auto-generated method stub
+					try {
+						CustomView.mode="add_content";
+						CustomView.bitmap[CustomView.numberOfContents] = new contents(BitmapFactory.decodeResource(getResources(), R.drawable.glasses));
+						CustomView.bitmap[CustomView.numberOfContents].originalBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.glasses);
+					} catch (NullPointerException e) {
+							
+					}
+				}
+			});
+			
+			hat.setOnClickListener(new View.OnClickListener() {
+				
+				@Override
+				public void onClick(View v) {
+					// TODO Auto-generated method stub
+					try {
+						CustomView.mode="add_content";
+						CustomView.bitmap[CustomView.numberOfContents] = new contents(BitmapFactory.decodeResource(getResources(), R.drawable.hat));
+						CustomView.bitmap[CustomView.numberOfContents].originalBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.hat);
+					} catch (NullPointerException e) {
+							
+					}
+				}
+			});
 	
 		moustache.setOnClickListener(new View.OnClickListener() {
 			
@@ -254,7 +454,6 @@ public class Testpic extends Activity
 		
 		final ImageButton blackColor = (ImageButton) findViewById(R.id.black);
 		blackColor.setBackgroundColor(Color.BLACK);
-		//blackColor.setTextColor(Color.WHITE);
 		final ImageButton whiteColor = (ImageButton) findViewById(R.id.white);
 		whiteColor.setBackgroundColor(Color.WHITE);
 		final ImageButton redColor = (ImageButton) findViewById(R.id.red);
@@ -647,15 +846,15 @@ public class Testpic extends Activity
 			     greenColor.setVisibility(view.VISIBLE);
 			     yellowColor.setVisibility(view.VISIBLE);
 			     cyanColor.setVisibility(view.VISIBLE);
-			    // grayColor.setVisibility(view.VISIBLE);
+			     purpleColor.setVisibility(view.VISIBLE);
 			     ThinStroke.setVisibility(view.VISIBLE);
 			     MediumStroke.setVisibility(view.VISIBLE);
 			     ThickStroke.setVisibility(view.VISIBLE);
+			     
+			     
 				 undoButton.setVisibility(view.GONE);
 				 UndoThis.setVisibility(view.GONE); 
 				 ResetButton.setVisibility(view.GONE);
-				 
-				 mono.setVisibility(view.GONE);
 				 moustache.setVisibility(view.GONE);
 				 octopus.setVisibility(view.GONE);
 				 rain.setVisibility(view.GONE);
@@ -666,6 +865,21 @@ public class Testpic extends Activity
 				 thought.setVisibility(view.GONE);
 				 tongue.setVisibility(view.GONE);
 				 whiteg.setVisibility(view.GONE);
+				 hat.setVisibility(view.GONE);
+				 glasses.setVisibility(view.GONE);
+				 mask.setVisibility(view.GONE);
+				 heart.setVisibility(view.GONE);
+				 angry.setVisibility(view.GONE);
+				 bird.setVisibility(view.GONE);
+				 firew.setVisibility(view.GONE);
+				 mono.setVisibility(view.GONE);
+				 ceyes.setVisibility(view.GONE);
+				 icream.setVisibility(view.GONE);
+				 lips.setVisibility(view.GONE);
+				 eyes.setVisibility(view.GONE);
+				 stache_glasses.setVisibility(view.GONE);
+				 Caption.setVisibility(view.GONE);
+				 
 			 }
 			 catch(Exception e){}
 		}
@@ -697,17 +911,30 @@ public class Testpic extends Activity
 			  UndoThis.setVisibility(view.VISIBLE); 
 			  ResetButton.setVisibility(view.VISIBLE);
 			  
-				 mono.setVisibility(view.GONE);
-				 moustache.setVisibility(view.GONE);
-				 octopus.setVisibility(view.GONE);
-				 rain.setVisibility(view.GONE);
-				 rainbow.setVisibility(view.GONE);
-				 rainbow2.setVisibility(view.GONE);
-				 star.setVisibility(view.GONE);
-				 sung.setVisibility(view.GONE);
-				 thought.setVisibility(view.GONE);
-				 tongue.setVisibility(view.GONE);
-				 whiteg.setVisibility(view.GONE);
+			  moustache.setVisibility(view.GONE);
+			  octopus.setVisibility(view.GONE);
+			  rain.setVisibility(view.GONE);
+			  rainbow.setVisibility(view.GONE);
+			  rainbow2.setVisibility(view.GONE);
+			  star.setVisibility(view.GONE);
+			  sung.setVisibility(view.GONE);
+			  thought.setVisibility(view.GONE);
+			  tongue.setVisibility(view.GONE);
+			  whiteg.setVisibility(view.GONE);
+			  hat.setVisibility(view.GONE);
+			  glasses.setVisibility(view.GONE);
+			  mask.setVisibility(view.GONE);
+			  heart.setVisibility(view.GONE);
+			  angry.setVisibility(view.GONE);
+			  bird.setVisibility(view.GONE);
+			  firew.setVisibility(view.GONE);
+			  mono.setVisibility(view.GONE);
+			  ceyes.setVisibility(view.GONE);
+			  icream.setVisibility(view.GONE);
+			  lips.setVisibility(view.GONE);
+			  eyes.setVisibility(view.GONE);
+			  stache_glasses.setVisibility(view.GONE);
+			  Caption.setVisibility(view.GONE);
 			}
 			catch(Exception e){}
 		}
@@ -734,8 +961,7 @@ public class Testpic extends Activity
 			    ThinStroke.setVisibility(view.GONE);
 			    MediumStroke.setVisibility(view.GONE);
 			    ThickStroke.setVisibility(view.GONE);
-				 
-				 mono.setVisibility(view.VISIBLE);
+			    
 				 moustache.setVisibility(view.VISIBLE);
 				 octopus.setVisibility(view.VISIBLE);
 				 rain.setVisibility(view.VISIBLE);
@@ -746,6 +972,20 @@ public class Testpic extends Activity
 				 thought.setVisibility(view.VISIBLE);
 				 tongue.setVisibility(view.VISIBLE);
 				 whiteg.setVisibility(view.VISIBLE);
+				 hat.setVisibility(view.VISIBLE);
+				 glasses.setVisibility(view.VISIBLE);
+				 mask.setVisibility(view.VISIBLE);
+				 heart.setVisibility(view.VISIBLE);
+				 angry.setVisibility(view.VISIBLE);
+				 bird.setVisibility(view.VISIBLE);
+				 firew.setVisibility(view.VISIBLE);
+				 mono.setVisibility(view.VISIBLE);
+				 ceyes.setVisibility(view.VISIBLE);
+				 icream.setVisibility(view.VISIBLE);
+				 lips.setVisibility(view.VISIBLE);
+				 eyes.setVisibility(view.VISIBLE);
+				 stache_glasses.setVisibility(view.VISIBLE);
+				 Caption.setVisibility(view.VISIBLE);
 			}
 			catch(Exception e){}
 			
@@ -771,10 +1011,35 @@ public class Testpic extends Activity
 				Toast.makeText(getApplicationContext(), "Saving ...",Toast.LENGTH_LONG).show();
 				//SAVING
 				//SAVING
+				/*try {
+					fos = new FileOutputStream(new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES), "pic1.png"));
+				CustomView.toDisk.compress(Bitmap.CompressFormat.PNG, 100, fos);
+				fos.flush();
+				fos.close();
+				fos=null;
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+				finally
+				{
+				    if (fos != null)
+				    {
+				        try
+				        {
+				            fos.close();
+				            fos = null;
+				        }
+				        catch (IOException e)
+				        {
+				            e.printStackTrace();
+				        }
+				    }
+				}*/
 				saveView(view);
 				sendBroadcast(new Intent(Intent.ACTION_MEDIA_MOUNTED, Uri.parse("file://" + Environment.getExternalStorageDirectory())));
 				//SAVING
-				//Toast.makeText(getApplicationContext(), "Image saved to this location" + Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES),Toast.LENGTH_LONG).show();
+				   backgroundImage.recycle();
+				Toast.makeText(getApplicationContext(), "Image saved to this location" + Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES),Toast.LENGTH_LONG).show();
 				AlertDialog decision = new AlertDialog.Builder(Testpic.this).create();
 				decision.setTitle("Upload");
 				decision.setMessage("Your Image is being saved, but would you like to upload this image to the database");
@@ -853,9 +1118,7 @@ public class Testpic extends Activity
     { 
        Bitmap  b = Bitmap.createBitmap( view.getWidth(), view.getHeight 
 (), Bitmap.Config.ARGB_8888); 
-       
-       
-       
+
        Canvas c = new Canvas( b ); 
 
        view.draw( c ); 
@@ -867,19 +1130,12 @@ public class Testpic extends Activity
     if (path.createNewFile()){
     	Toast.makeText(getApplicationContext(), "New File Created in " +  path,Toast.LENGTH_LONG).show();
     }
-
-    if (b==null){
-    	Toast.makeText(getApplicationContext(), "B is null" +  path,Toast.LENGTH_LONG).show();
-
-    }
     	   
     	   fos = new FileOutputStream(path); 
                 
                 
                        if ( fos != null ) 
                        { 
-                    	   	Toast.makeText(getApplicationContext(), "REACHED file out stream! ..." +  path,Toast.LENGTH_LONG).show();
-                               
                     	   	b.compress(Bitmap.CompressFormat.PNG, 90, fos ); 
                     	   	
 
@@ -890,7 +1146,6 @@ public class Testpic extends Activity
                                fos.close(); 
                        } 
 
-                       //backgroundImage.recycle();
 
             } catch( Exception e ) 
                             { 
@@ -898,32 +1153,6 @@ public class Testpic extends Activity
                             Toast.makeText(getApplicationContext(), "DID NOT SAVE!",Toast.LENGTH_LONG).show();
                             } 
 
-    	
-  /*  	
-    	   view.setDrawingCacheEnabled(true);
-    	    view.setDrawingCacheQuality(LinearLayout.DRAWING_CACHE_QUALITY_HIGH);
-    	    view.buildDrawingCache();
-    	    Bitmap bmp = null;
-    	    if (view != null) { 
-    	        try {
-    	            bmp = Bitmap.createBitmap(view.getDrawingCache());
-    	        } catch (NullPointerException e) { }
-    	    }
-    	    view.setDrawingCacheEnabled(false);
-    	    view.destroyDrawingCache();
-
-    	    if (bmp != null) {
-    	        String file_path = Environment.getExternalStorageDirectory().getAbsolutePath() + "/";
-    	        File dir = new File(file_path);
-    	        if (!dir.exists()) { 
-    	            dir.mkdirs();
-    	        }
-    	        File file = new File(dir, "screencap.png");
-    	        FileOutputStream fOut = null;
-    	        try { fOut = new FileOutputStream(file); } catch (FileNotFoundException e1) { }
-    	        bmp.compress(Bitmap.CompressFormat.PNG, 85, fOut);
-    	        try { fOut.flush(); fOut.close(); } catch (IOException e1) { }
-    	    }*/
     } 
 	
 	@Override

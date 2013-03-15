@@ -10,7 +10,6 @@ import android.os.Environment;
 import android.provider.MediaStore;
 import android.view.Menu;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
@@ -28,7 +27,7 @@ public class UserPhotoOptions extends Activity
 		
 		//Camera Button
 		ImageButton buttonCamera= (ImageButton) findViewById(R.id.button1);
-		//buttonCamera.setBackgroundResource(R.drawable.choosecamera);
+		buttonCamera.setBackgroundResource(R.drawable.fromcamera);
 		buttonCamera.setOnClickListener(new View.OnClickListener() {
 			
 			//Go to Camera Intent
@@ -56,8 +55,8 @@ public class UserPhotoOptions extends Activity
 		});
 		
 		//Gallery Button
-		ImageButton buttonGallery= (ImageButton) findViewById(R.id.button2);
-		//buttonGallery.setBackgroundResource(R.drawable.choosegallery);
+		final ImageButton buttonGallery= (ImageButton) findViewById(R.id.button2);
+		buttonGallery.setBackgroundResource(R.drawable.fromgallery);
 		buttonGallery.setOnClickListener(new View.OnClickListener() {
 			
 			//Go to Gallery, Implement the Intent that you want to load the image gallery
