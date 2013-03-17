@@ -5,13 +5,24 @@
     android:background="@drawable/homescreen"
     tools:context=".User_Options" >
     
-     <Button
+    <Button
         android:id="@+id/home"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:background="@drawable/mainhome" />
+
+    <Button
+        android:id="@+id/picture"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignTop="@+id/home"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/edit"
+        android:onClick="GotoUserPhotoSelection"
+        tools:ignore="HardcodedText" />
 
     <Button
         android:id="@+id/server"
@@ -22,15 +33,5 @@
         android:background="@drawable/mainserver"
         android:onClick="GoToDatabase"
         tools:ignore="HardcodedText" />
-
-    <Button
-        android:id="@+id/button1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignTop="@+id/home"
-        android:layout_centerHorizontal="true"
-        android:background="@drawable/edit"
-        android:onClick="GotoUserPhotoSelection" />
 
 </RelativeLayout>

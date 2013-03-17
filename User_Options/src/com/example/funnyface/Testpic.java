@@ -61,6 +61,7 @@ public class Testpic extends Activity
 			} catch (NullPointerException e){}
 		}
 		
+		
 			final ImageButton moustache = (ImageButton) findViewById(R.id.moustache);
 			moustache.setBackgroundResource(R.drawable.moustache);
 			final ImageButton octopus = (ImageButton) findViewById(R.id.octopus);
@@ -118,10 +119,35 @@ public class Testpic extends Activity
 				public void onClick(View v) {
 					// TODO Auto-generated method stub
 					try {
+						stache_glasses.getBackground( ).setColorFilter(null);
+						eyes.getBackground( ).setColorFilter(null);
+						lips.getBackground( ).setColorFilter(null);
+						icream.getBackground( ).setColorFilter(null);
+						ceyes.getBackground( ).setColorFilter(null);
+						mono.getBackground( ).setColorFilter(null);
+						firew.getBackground( ).setColorFilter(null);
+						bird.getBackground( ).setColorFilter(null);
+						angry.getBackground( ).setColorFilter(null);
+						heart.getBackground( ).setColorFilter(null);
+						mask.getBackground( ).setColorFilter(null);
+						glasses.getBackground( ).setColorFilter(null);
+						hat.getBackground( ).setColorFilter(null);
+						moustache.getBackground( ).setColorFilter(null);
+						octopus.getBackground( ).setColorFilter(null);
+						rain.getBackground( ).setColorFilter(null);
+						rainbow2.getBackground( ).setColorFilter(null);
+						rainbow.getBackground( ).setColorFilter(null);
+						star.getBackground( ).setColorFilter(null);
+						sung.getBackground( ).setColorFilter(null);
+						thought.getBackground( ).setColorFilter(null);
+						tongue.getBackground( ).setColorFilter(null);
+						whiteg.getBackground( ).setColorFilter(null);
 						imageSelect = Caption; 
 						CustomView.mode="add_content";
+						Caption.getBackground().setColorFilter(Color.BLACK, PorterDuff.Mode.MULTIPLY);
 						CustomView.bitmap[CustomView.numberOfContents] = new contents(BitmapFactory.decodeResource(getResources(), R.drawable.caption));
 						CustomView.bitmap[CustomView.numberOfContents].originalBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.caption);
+						stache_glasses.setColorFilter(null);
 					} catch (NullPointerException e) {
 							
 					}
@@ -132,8 +158,31 @@ public class Testpic extends Activity
 				public void onClick(View v) {
 					// TODO Auto-generated method stub
 					try {
+						Caption.getBackground( ).setColorFilter(null);
+						eyes.getBackground( ).setColorFilter(null);
+						lips.getBackground( ).setColorFilter(null);
+						icream.getBackground( ).setColorFilter(null);
+						ceyes.getBackground( ).setColorFilter(null);
+						mono.getBackground( ).setColorFilter(null);
+						firew.getBackground( ).setColorFilter(null);
+						bird.getBackground( ).setColorFilter(null);
+						angry.getBackground( ).setColorFilter(null);
+						heart.getBackground( ).setColorFilter(null);
+						mask.getBackground( ).setColorFilter(null);
+						glasses.getBackground( ).setColorFilter(null);
+						hat.getBackground( ).setColorFilter(null);
+						moustache.getBackground( ).setColorFilter(null);
+						octopus.getBackground( ).setColorFilter(null);
+						rain.getBackground( ).setColorFilter(null);
+						rainbow2.getBackground( ).setColorFilter(null);
+						rainbow.getBackground( ).setColorFilter(null);
+						star.getBackground( ).setColorFilter(null);
+						sung.getBackground( ).setColorFilter(null);
+						thought.getBackground( ).setColorFilter(null);
+						tongue.getBackground( ).setColorFilter(null);
+						whiteg.getBackground( ).setColorFilter(null);
 						imageSelect = stache_glasses;
-						stache_glasses.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+						stache_glasses.getBackground().setColorFilter(Color.BLACK, PorterDuff.Mode.MULTIPLY);
 						CustomView.mode="add_content";
 						CustomView.bitmap[CustomView.numberOfContents] = new contents(BitmapFactory.decodeResource(getResources(), R.drawable.gstache));
 						CustomView.bitmap[CustomView.numberOfContents].originalBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.gstache);
@@ -147,8 +196,32 @@ public class Testpic extends Activity
 				public void onClick(View v) {
 					// TODO Auto-generated method stub
 					try {
-						
+						Caption.getBackground( ).setColorFilter(null);
+						stache_glasses.getBackground( ).setColorFilter(null);
+						lips.getBackground( ).setColorFilter(null);
+						icream.getBackground( ).setColorFilter(null);
+						ceyes.getBackground( ).setColorFilter(null);
+						mono.getBackground( ).setColorFilter(null);
+						firew.getBackground( ).setColorFilter(null);
+						bird.getBackground( ).setColorFilter(null);
+						angry.getBackground( ).setColorFilter(null);
+						heart.getBackground( ).setColorFilter(null);
+						mask.getBackground( ).setColorFilter(null);
+						glasses.getBackground( ).setColorFilter(null);
+						hat.getBackground( ).setColorFilter(null);
+						moustache.getBackground( ).setColorFilter(null);
+						octopus.getBackground( ).setColorFilter(null);
+						rain.getBackground( ).setColorFilter(null);
+						rainbow2.getBackground( ).setColorFilter(null);
+						rainbow.getBackground( ).setColorFilter(null);
+						star.getBackground( ).setColorFilter(null);
+						sung.getBackground( ).setColorFilter(null);
+						thought.getBackground( ).setColorFilter(null);
+						tongue.getBackground( ).setColorFilter(null);
+						whiteg.getBackground( ).setColorFilter(null);
+	
 						CustomView.mode="add_content";
+						eyes.getBackground().setColorFilter(Color.BLACK, PorterDuff.Mode.MULTIPLY);
 						CustomView.bitmap[CustomView.numberOfContents] = new contents(BitmapFactory.decodeResource(getResources(), R.drawable.eyes));
 						CustomView.bitmap[CustomView.numberOfContents].originalBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.eyes);
 					} catch (NullPointerException e) {
@@ -161,8 +234,32 @@ public class Testpic extends Activity
 				public void onClick(View v) {
 					// TODO Auto-generated method stub
 					try {
-						
+						Caption.getBackground( ).setColorFilter(null);
+						stache_glasses.getBackground( ).setColorFilter(null);
+						eyes.getBackground( ).setColorFilter(null);
+						icream.getBackground( ).setColorFilter(null);
+						ceyes.getBackground( ).setColorFilter(null);
+						mono.getBackground( ).setColorFilter(null);
+						firew.getBackground( ).setColorFilter(null);
+						bird.getBackground( ).setColorFilter(null);
+						angry.getBackground( ).setColorFilter(null);
+						heart.getBackground( ).setColorFilter(null);
+						mask.getBackground( ).setColorFilter(null);
+						glasses.getBackground( ).setColorFilter(null);
+						hat.getBackground( ).setColorFilter(null);
+						moustache.getBackground( ).setColorFilter(null);
+						octopus.getBackground( ).setColorFilter(null);
+						rain.getBackground( ).setColorFilter(null);
+						rainbow2.getBackground( ).setColorFilter(null);
+						rainbow.getBackground( ).setColorFilter(null);
+						star.getBackground( ).setColorFilter(null);
+						sung.getBackground( ).setColorFilter(null);
+						thought.getBackground( ).setColorFilter(null);
+						tongue.getBackground( ).setColorFilter(null);
+						whiteg.getBackground( ).setColorFilter(null);
+						ceyes.getBackground( ).setColorFilter(null);
 						CustomView.mode="add_content";
+						lips.getBackground().setColorFilter(Color.BLACK, PorterDuff.Mode.MULTIPLY);
 						CustomView.bitmap[CustomView.numberOfContents] = new contents(BitmapFactory.decodeResource(getResources(), R.drawable.lips));
 						CustomView.bitmap[CustomView.numberOfContents].originalBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.lips);
 					} catch (NullPointerException e) {
@@ -176,7 +273,30 @@ public class Testpic extends Activity
 				public void onClick(View v) {
 					// TODO Auto-generated method stub
 					try {
-						CustomView.mode="add_content";
+						Caption.getBackground( ).setColorFilter(null);
+						stache_glasses.getBackground( ).setColorFilter(null);
+						eyes.getBackground( ).setColorFilter(null);
+						lips.getBackground( ).setColorFilter(null);
+						ceyes.getBackground( ).setColorFilter(null);
+						mono.getBackground( ).setColorFilter(null);
+						firew.getBackground( ).setColorFilter(null);
+						bird.getBackground( ).setColorFilter(null);
+						angry.getBackground( ).setColorFilter(null);
+						heart.getBackground( ).setColorFilter(null);
+						mask.getBackground( ).setColorFilter(null);
+						glasses.getBackground( ).setColorFilter(null);
+						hat.getBackground( ).setColorFilter(null);
+						moustache.getBackground( ).setColorFilter(null);
+						octopus.getBackground( ).setColorFilter(null);
+						rain.getBackground( ).setColorFilter(null);
+						rainbow2.getBackground( ).setColorFilter(null);
+						rainbow.getBackground( ).setColorFilter(null);
+						star.getBackground( ).setColorFilter(null);
+						sung.getBackground( ).setColorFilter(null);
+						thought.getBackground( ).setColorFilter(null);
+						tongue.getBackground( ).setColorFilter(null);
+						whiteg.getBackground( ).setColorFilter(null);
+						icream.getBackground().setColorFilter(Color.BLACK, PorterDuff.Mode.MULTIPLY);
 						CustomView.bitmap[CustomView.numberOfContents] = new contents(BitmapFactory.decodeResource(getResources(), R.drawable.icream));
 						CustomView.bitmap[CustomView.numberOfContents].originalBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.icream);
 					} catch (NullPointerException e) {
@@ -189,7 +309,32 @@ public class Testpic extends Activity
 				public void onClick(View v) {
 					// TODO Auto-generated method stub
 					try {
+						Caption.getBackground( ).setColorFilter(null);
+						stache_glasses.getBackground( ).setColorFilter(null);
+						eyes.getBackground( ).setColorFilter(null);
+						lips.getBackground( ).setColorFilter(null);
+						icream.getBackground( ).setColorFilter(null);
+						mono.getBackground( ).setColorFilter(null);
+						firew.getBackground( ).setColorFilter(null);
+						bird.getBackground( ).setColorFilter(null);
+						angry.getBackground( ).setColorFilter(null);
+						heart.getBackground( ).setColorFilter(null);
+						mask.getBackground( ).setColorFilter(null);
+						glasses.getBackground( ).setColorFilter(null);
+						hat.getBackground( ).setColorFilter(null);
+						moustache.getBackground( ).setColorFilter(null);
+						octopus.getBackground( ).setColorFilter(null);
+						rain.getBackground( ).setColorFilter(null);
+						rainbow2.getBackground( ).setColorFilter(null);
+						rainbow.getBackground( ).setColorFilter(null);
+						star.getBackground( ).setColorFilter(null);
+						sung.getBackground( ).setColorFilter(null);
+						thought.getBackground( ).setColorFilter(null);
+						tongue.getBackground( ).setColorFilter(null);
+						whiteg.getBackground( ).setColorFilter(null);
+						lips.getBackground( ).clearColorFilter( );
 						CustomView.mode="add_content";
+						ceyes.getBackground().setColorFilter(Color.BLACK, PorterDuff.Mode.MULTIPLY);
 						CustomView.bitmap[CustomView.numberOfContents] = new contents(BitmapFactory.decodeResource(getResources(), R.drawable.ceyes));
 						CustomView.bitmap[CustomView.numberOfContents].originalBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.ceyes);
 					} catch (NullPointerException e) {
@@ -202,7 +347,32 @@ public class Testpic extends Activity
 				public void onClick(View v) {
 					// TODO Auto-generated method stub
 					try {
+						Caption.getBackground( ).setColorFilter(null);
+						stache_glasses.getBackground( ).setColorFilter(null);
+						eyes.getBackground( ).setColorFilter(null);
+						lips.getBackground( ).setColorFilter(null);
+						icream.getBackground( ).setColorFilter(null);
+						ceyes.getBackground( ).setColorFilter(null);
+						firew.getBackground( ).setColorFilter(null);
+						bird.getBackground( ).setColorFilter(null);
+						angry.getBackground( ).setColorFilter(null);
+						heart.getBackground( ).setColorFilter(null);
+						mask.getBackground( ).setColorFilter(null);
+						glasses.getBackground( ).setColorFilter(null);
+						hat.getBackground( ).setColorFilter(null);
+						moustache.getBackground( ).setColorFilter(null);
+						octopus.getBackground( ).setColorFilter(null);
+						rain.getBackground( ).setColorFilter(null);
+						rainbow2.getBackground( ).setColorFilter(null);
+						rainbow.getBackground( ).setColorFilter(null);
+						star.getBackground( ).setColorFilter(null);
+						sung.getBackground( ).setColorFilter(null);
+						thought.getBackground( ).setColorFilter(null);
+						tongue.getBackground( ).setColorFilter(null);
+						whiteg.getBackground( ).setColorFilter(null);
+						stache_glasses.setColorFilter(null);
 						CustomView.mode="add_content";
+						mono.getBackground().setColorFilter(Color.BLACK, PorterDuff.Mode.MULTIPLY);
 						CustomView.bitmap[CustomView.numberOfContents] = new contents(BitmapFactory.decodeResource(getResources(), R.drawable.mono));
 						CustomView.bitmap[CustomView.numberOfContents].originalBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.mono);
 					} catch (NullPointerException e) {
@@ -215,7 +385,31 @@ public class Testpic extends Activity
 				public void onClick(View v) {
 					// TODO Auto-generated method stub
 					try {
+						Caption.getBackground( ).setColorFilter(null);
+						stache_glasses.getBackground( ).setColorFilter(null);
+						eyes.getBackground( ).setColorFilter(null);
+						lips.getBackground( ).setColorFilter(null);
+						icream.getBackground( ).setColorFilter(null);
+						ceyes.getBackground( ).setColorFilter(null);
+						mono.getBackground( ).setColorFilter(null);
+						bird.getBackground( ).setColorFilter(null);
+						angry.getBackground( ).setColorFilter(null);
+						heart.getBackground( ).setColorFilter(null);
+						mask.getBackground( ).setColorFilter(null);
+						glasses.getBackground( ).setColorFilter(null);
+						hat.getBackground( ).setColorFilter(null);
+						moustache.getBackground( ).setColorFilter(null);
+						octopus.getBackground( ).setColorFilter(null);
+						rain.getBackground( ).setColorFilter(null);
+						rainbow2.getBackground( ).setColorFilter(null);
+						rainbow.getBackground( ).setColorFilter(null);
+						star.getBackground( ).setColorFilter(null);
+						sung.getBackground( ).setColorFilter(null);
+						thought.getBackground( ).setColorFilter(null);
+						tongue.getBackground( ).setColorFilter(null);
+						whiteg.getBackground( ).setColorFilter(null);
 						CustomView.mode="add_content";
+						firew.getBackground().setColorFilter(Color.BLACK, PorterDuff.Mode.MULTIPLY);
 						CustomView.bitmap[CustomView.numberOfContents] = new contents(BitmapFactory.decodeResource(getResources(), R.drawable.firew));
 						CustomView.bitmap[CustomView.numberOfContents].originalBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.firew);
 					} catch (NullPointerException e) {
@@ -228,7 +422,31 @@ public class Testpic extends Activity
 				public void onClick(View v) {
 					// TODO Auto-generated method stub
 					try {
+						Caption.getBackground( ).setColorFilter(null);
+						stache_glasses.getBackground( ).setColorFilter(null);
+						eyes.getBackground( ).setColorFilter(null);
+						lips.getBackground( ).setColorFilter(null);
+						icream.getBackground( ).setColorFilter(null);
+						ceyes.getBackground( ).setColorFilter(null);
+						mono.getBackground( ).setColorFilter(null);
+						firew.getBackground( ).setColorFilter(null);
+						angry.getBackground( ).setColorFilter(null);
+						heart.getBackground( ).setColorFilter(null);
+						mask.getBackground( ).setColorFilter(null);
+						glasses.getBackground( ).setColorFilter(null);
+						hat.getBackground( ).setColorFilter(null);
+						moustache.getBackground( ).setColorFilter(null);
+						octopus.getBackground( ).setColorFilter(null);
+						rain.getBackground( ).setColorFilter(null);
+						rainbow2.getBackground( ).setColorFilter(null);
+						rainbow.getBackground( ).setColorFilter(null);
+						star.getBackground( ).setColorFilter(null);
+						sung.getBackground( ).setColorFilter(null);
+						thought.getBackground( ).setColorFilter(null);
+						tongue.getBackground( ).setColorFilter(null);
+						whiteg.getBackground( ).setColorFilter(null);
 						CustomView.mode="add_content";
+						bird.getBackground().setColorFilter(Color.BLACK, PorterDuff.Mode.MULTIPLY);
 						CustomView.bitmap[CustomView.numberOfContents] = new contents(BitmapFactory.decodeResource(getResources(), R.drawable.bird));
 						CustomView.bitmap[CustomView.numberOfContents].originalBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.bird);
 					} catch (NullPointerException e) {
@@ -241,7 +459,31 @@ public class Testpic extends Activity
 				public void onClick(View v) {
 					// TODO Auto-generated method stub
 					try {
+						Caption.getBackground( ).setColorFilter(null);
+						stache_glasses.getBackground( ).setColorFilter(null);
+						eyes.getBackground( ).setColorFilter(null);
+						lips.getBackground( ).setColorFilter(null);
+						icream.getBackground( ).setColorFilter(null);
+						ceyes.getBackground( ).setColorFilter(null);
+						mono.getBackground( ).setColorFilter(null);
+						firew.getBackground( ).setColorFilter(null);
+						bird.getBackground( ).setColorFilter(null);
+						heart.getBackground( ).setColorFilter(null);
+						mask.getBackground( ).setColorFilter(null);
+						glasses.getBackground( ).setColorFilter(null);
+						hat.getBackground( ).setColorFilter(null);
+						moustache.getBackground( ).setColorFilter(null);
+						octopus.getBackground( ).setColorFilter(null);
+						rain.getBackground( ).setColorFilter(null);
+						rainbow2.getBackground( ).setColorFilter(null);
+						rainbow.getBackground( ).setColorFilter(null);
+						star.getBackground( ).setColorFilter(null);
+						sung.getBackground( ).setColorFilter(null);
+						thought.getBackground( ).setColorFilter(null);
+						tongue.getBackground( ).setColorFilter(null);
+						whiteg.getBackground( ).setColorFilter(null);
 						CustomView.mode="add_content";
+						angry.getBackground().setColorFilter(Color.WHITE, PorterDuff.Mode.MULTIPLY);
 						CustomView.bitmap[CustomView.numberOfContents] = new contents(BitmapFactory.decodeResource(getResources(), R.drawable.angry));
 						CustomView.bitmap[CustomView.numberOfContents].originalBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.angry);
 					} catch (NullPointerException e) {
@@ -254,7 +496,31 @@ public class Testpic extends Activity
 				public void onClick(View v) {
 					// TODO Auto-generated method stub
 					try {
+						Caption.getBackground( ).setColorFilter(null);
+						stache_glasses.getBackground( ).setColorFilter(null);
+						eyes.getBackground( ).setColorFilter(null);
+						lips.getBackground( ).setColorFilter(null);
+						icream.getBackground( ).setColorFilter(null);
+						ceyes.getBackground( ).setColorFilter(null);
+						mono.getBackground( ).setColorFilter(null);
+						firew.getBackground( ).setColorFilter(null);
+						bird.getBackground( ).setColorFilter(null);
+						angry.getBackground( ).setColorFilter(null);
+						mask.getBackground( ).setColorFilter(null);
+						glasses.getBackground( ).setColorFilter(null);
+						hat.getBackground( ).setColorFilter(null);
+						moustache.getBackground( ).setColorFilter(null);
+						octopus.getBackground( ).setColorFilter(null);
+						rain.getBackground( ).setColorFilter(null);
+						rainbow2.getBackground( ).setColorFilter(null);
+						rainbow.getBackground( ).setColorFilter(null);
+						star.getBackground( ).setColorFilter(null);
+						sung.getBackground( ).setColorFilter(null);
+						thought.getBackground( ).setColorFilter(null);
+						tongue.getBackground( ).setColorFilter(null);
+						whiteg.getBackground( ).setColorFilter(null);
 						CustomView.mode="add_content";
+						heart.getBackground().setColorFilter(Color.BLACK, PorterDuff.Mode.MULTIPLY);
 						CustomView.bitmap[CustomView.numberOfContents] = new contents(BitmapFactory.decodeResource(getResources(), R.drawable.heart));
 						CustomView.bitmap[CustomView.numberOfContents].originalBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.heart);
 					} catch (NullPointerException e) {
@@ -268,7 +534,31 @@ public class Testpic extends Activity
 				public void onClick(View v) {
 					// TODO Auto-generated method stub
 					try {
+						Caption.getBackground( ).setColorFilter(null);
+						stache_glasses.getBackground( ).setColorFilter(null);
+						eyes.getBackground( ).setColorFilter(null);
+						lips.getBackground( ).setColorFilter(null);
+						icream.getBackground( ).setColorFilter(null);
+						ceyes.getBackground( ).setColorFilter(null);
+						mono.getBackground( ).setColorFilter(null);
+						firew.getBackground( ).setColorFilter(null);
+						bird.getBackground( ).setColorFilter(null);
+						angry.getBackground( ).setColorFilter(null);
+						heart.getBackground( ).setColorFilter(null);
+						glasses.getBackground( ).setColorFilter(null);
+						hat.getBackground( ).setColorFilter(null);
+						moustache.getBackground( ).setColorFilter(null);
+						octopus.getBackground( ).setColorFilter(null);
+						rain.getBackground( ).setColorFilter(null);
+						rainbow2.getBackground( ).setColorFilter(null);
+						rainbow.getBackground( ).setColorFilter(null);
+						star.getBackground( ).setColorFilter(null);
+						sung.getBackground( ).setColorFilter(null);
+						thought.getBackground( ).setColorFilter(null);
+						tongue.getBackground( ).setColorFilter(null);
+						whiteg.getBackground( ).setColorFilter(null);
 						CustomView.mode="add_content";
+						mask.getBackground().setColorFilter(Color.BLACK, PorterDuff.Mode.MULTIPLY);
 						CustomView.bitmap[CustomView.numberOfContents] = new contents(BitmapFactory.decodeResource(getResources(), R.drawable.mask));
 						CustomView.bitmap[CustomView.numberOfContents].originalBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.mask);
 					} catch (NullPointerException e) {
@@ -282,7 +572,31 @@ public class Testpic extends Activity
 				public void onClick(View v) {
 					// TODO Auto-generated method stub
 					try {
+						Caption.getBackground( ).setColorFilter(null);
+						stache_glasses.getBackground( ).setColorFilter(null);
+						eyes.getBackground( ).setColorFilter(null);
+						lips.getBackground( ).setColorFilter(null);
+						icream.getBackground( ).setColorFilter(null);
+						ceyes.getBackground( ).setColorFilter(null);
+						mono.getBackground( ).setColorFilter(null);
+						firew.getBackground( ).setColorFilter(null);
+						bird.getBackground( ).setColorFilter(null);
+						angry.getBackground( ).setColorFilter(null);
+						heart.getBackground( ).setColorFilter(null);
+						mask.getBackground( ).setColorFilter(null);
+						hat.getBackground( ).setColorFilter(null);
+						moustache.getBackground( ).setColorFilter(null);
+						octopus.getBackground( ).setColorFilter(null);
+						rain.getBackground( ).setColorFilter(null);
+						rainbow2.getBackground( ).setColorFilter(null);
+						rainbow.getBackground( ).setColorFilter(null);
+						star.getBackground( ).setColorFilter(null);
+						sung.getBackground( ).setColorFilter(null);
+						thought.getBackground( ).setColorFilter(null);
+						tongue.getBackground( ).setColorFilter(null);
+						whiteg.getBackground( ).setColorFilter(null);
 						CustomView.mode="add_content";
+						glasses.getBackground().setColorFilter(Color.BLACK, PorterDuff.Mode.MULTIPLY);
 						CustomView.bitmap[CustomView.numberOfContents] = new contents(BitmapFactory.decodeResource(getResources(), R.drawable.glasses));
 						CustomView.bitmap[CustomView.numberOfContents].originalBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.glasses);
 					} catch (NullPointerException e) {
@@ -297,9 +611,34 @@ public class Testpic extends Activity
 				public void onClick(View v) {
 					// TODO Auto-generated method stub
 					try {
+						Caption.getBackground( ).setColorFilter(null);
+						stache_glasses.getBackground( ).setColorFilter(null);
+						eyes.getBackground( ).setColorFilter(null);
+						lips.getBackground( ).setColorFilter(null);
+						icream.getBackground( ).setColorFilter(null);
+						ceyes.getBackground( ).setColorFilter(null);
+						mono.getBackground( ).setColorFilter(null);
+						firew.getBackground( ).setColorFilter(null);
+						bird.getBackground( ).setColorFilter(null);
+						angry.getBackground( ).setColorFilter(null);
+						heart.getBackground( ).setColorFilter(null);
+						mask.getBackground( ).setColorFilter(null);
+						glasses.getBackground( ).setColorFilter(null);
+						moustache.getBackground( ).setColorFilter(null);
+						octopus.getBackground( ).setColorFilter(null);
+						rain.getBackground( ).setColorFilter(null);
+						rainbow2.getBackground( ).setColorFilter(null);
+						rainbow.getBackground( ).setColorFilter(null);
+						star.getBackground( ).setColorFilter(null);
+						sung.getBackground( ).setColorFilter(null);
+						thought.getBackground( ).setColorFilter(null);
+						tongue.getBackground( ).setColorFilter(null);
+						whiteg.getBackground( ).setColorFilter(null);
 						CustomView.mode="add_content";
+						hat.getBackground().setColorFilter(Color.BLACK, PorterDuff.Mode.MULTIPLY);
 						CustomView.bitmap[CustomView.numberOfContents] = new contents(BitmapFactory.decodeResource(getResources(), R.drawable.hat));
 						CustomView.bitmap[CustomView.numberOfContents].originalBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.hat);
+						
 					} catch (NullPointerException e) {
 							
 					}
@@ -312,9 +651,34 @@ public class Testpic extends Activity
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
 				try {
+					Caption.getBackground( ).setColorFilter(null);
+					stache_glasses.getBackground( ).setColorFilter(null);
+					eyes.getBackground( ).setColorFilter(null);
+					lips.getBackground( ).setColorFilter(null);
+					icream.getBackground( ).setColorFilter(null);
+					ceyes.getBackground( ).setColorFilter(null);
+					mono.getBackground( ).setColorFilter(null);
+					firew.getBackground( ).setColorFilter(null);
+					bird.getBackground( ).setColorFilter(null);
+					angry.getBackground( ).setColorFilter(null);
+					heart.getBackground( ).setColorFilter(null);
+					mask.getBackground( ).setColorFilter(null);
+					glasses.getBackground( ).setColorFilter(null);
+					hat.getBackground( ).setColorFilter(null);
+					octopus.getBackground( ).setColorFilter(null);
+					rain.getBackground( ).setColorFilter(null);
+					rainbow2.getBackground( ).setColorFilter(null);
+					rainbow.getBackground( ).setColorFilter(null);
+					star.getBackground( ).setColorFilter(null);
+					sung.getBackground( ).setColorFilter(null);
+					thought.getBackground( ).setColorFilter(null);
+					tongue.getBackground( ).setColorFilter(null);
+					whiteg.getBackground( ).setColorFilter(null);
 					CustomView.mode="add_content";
+					moustache.getBackground().setColorFilter(Color.WHITE, PorterDuff.Mode.MULTIPLY);
 					CustomView.bitmap[CustomView.numberOfContents] = new contents(BitmapFactory.decodeResource(getResources(), R.drawable.moustache));
 					CustomView.bitmap[CustomView.numberOfContents].originalBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.moustache);
+					
 				} catch (NullPointerException e) {
 						
 				}
@@ -327,7 +691,31 @@ public class Testpic extends Activity
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
 				try {
+					Caption.getBackground( ).setColorFilter(null);
+					stache_glasses.getBackground( ).setColorFilter(null);
+					eyes.getBackground( ).setColorFilter(null);
+					lips.getBackground( ).setColorFilter(null);
+					icream.getBackground( ).setColorFilter(null);
+					ceyes.getBackground( ).setColorFilter(null);
+					mono.getBackground( ).setColorFilter(null);
+					firew.getBackground( ).setColorFilter(null);
+					bird.getBackground( ).setColorFilter(null);
+					angry.getBackground( ).setColorFilter(null);
+					heart.getBackground( ).setColorFilter(null);
+					mask.getBackground( ).setColorFilter(null);
+					glasses.getBackground( ).setColorFilter(null);
+					hat.getBackground( ).setColorFilter(null);
+					moustache.getBackground( ).setColorFilter(null);
+					rain.getBackground( ).setColorFilter(null);
+					rainbow2.getBackground( ).setColorFilter(null);
+					rainbow.getBackground( ).setColorFilter(null);
+					star.getBackground( ).setColorFilter(null);
+					sung.getBackground( ).setColorFilter(null);
+					thought.getBackground( ).setColorFilter(null);
+					tongue.getBackground( ).setColorFilter(null);
+					whiteg.getBackground( ).setColorFilter(null);
 					CustomView.mode="add_content";
+					octopus.getBackground().setColorFilter(Color.BLACK, PorterDuff.Mode.MULTIPLY);
 					CustomView.bitmap[CustomView.numberOfContents] = new contents(BitmapFactory.decodeResource(getResources(), R.drawable.octopus));
 					CustomView.bitmap[CustomView.numberOfContents].originalBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.octopus);
 				} catch (NullPointerException e) {
@@ -342,7 +730,31 @@ public class Testpic extends Activity
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
 				try {
+					Caption.getBackground( ).setColorFilter(null);
+					stache_glasses.getBackground( ).setColorFilter(null);
+					eyes.getBackground( ).setColorFilter(null);
+					lips.getBackground( ).setColorFilter(null);
+					icream.getBackground( ).setColorFilter(null);
+					ceyes.getBackground( ).setColorFilter(null);
+					mono.getBackground( ).setColorFilter(null);
+					firew.getBackground( ).setColorFilter(null);
+					bird.getBackground( ).setColorFilter(null);
+					angry.getBackground( ).setColorFilter(null);
+					heart.getBackground( ).setColorFilter(null);
+					mask.getBackground( ).setColorFilter(null);
+					glasses.getBackground( ).setColorFilter(null);
+					hat.getBackground( ).setColorFilter(null);
+					moustache.getBackground( ).setColorFilter(null);
+					octopus.getBackground( ).setColorFilter(null);
+					rainbow2.getBackground( ).setColorFilter(null);
+					rainbow.getBackground( ).setColorFilter(null);
+					star.getBackground( ).setColorFilter(null);
+					sung.getBackground( ).setColorFilter(null);
+					thought.getBackground( ).setColorFilter(null);
+					tongue.getBackground( ).setColorFilter(null);
+					whiteg.getBackground( ).setColorFilter(null);
 					CustomView.mode="add_content";
+					rain.getBackground().setColorFilter(Color.BLACK, PorterDuff.Mode.MULTIPLY);
 					CustomView.bitmap[CustomView.numberOfContents] = new contents(BitmapFactory.decodeResource(getResources(), R.drawable.rain));
 					CustomView.bitmap[CustomView.numberOfContents].originalBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.rain);
 				} catch (NullPointerException e) {
@@ -357,7 +769,31 @@ public class Testpic extends Activity
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
 				try {
+					Caption.getBackground( ).setColorFilter(null);
+					stache_glasses.getBackground( ).setColorFilter(null);
+					eyes.getBackground( ).setColorFilter(null);
+					lips.getBackground( ).setColorFilter(null);
+					icream.getBackground( ).setColorFilter(null);
+					ceyes.getBackground( ).setColorFilter(null);
+					mono.getBackground( ).setColorFilter(null);
+					firew.getBackground( ).setColorFilter(null);
+					bird.getBackground( ).setColorFilter(null);
+					angry.getBackground( ).setColorFilter(null);
+					heart.getBackground( ).setColorFilter(null);
+					mask.getBackground( ).setColorFilter(null);
+					glasses.getBackground( ).setColorFilter(null);
+					hat.getBackground( ).setColorFilter(null);
+					moustache.getBackground( ).setColorFilter(null);
+					octopus.getBackground( ).setColorFilter(null);
+					rain.getBackground( ).setColorFilter(null);
+					rainbow2.getBackground( ).setColorFilter(null);
+					star.getBackground( ).setColorFilter(null);
+					sung.getBackground( ).setColorFilter(null);
+					thought.getBackground( ).setColorFilter(null);
+					tongue.getBackground( ).setColorFilter(null);
+					whiteg.getBackground( ).setColorFilter(null);
 					CustomView.mode="add_content";
+					rainbow.getBackground().setColorFilter(Color.BLACK, PorterDuff.Mode.MULTIPLY);
 					CustomView.bitmap[CustomView.numberOfContents] = new contents(BitmapFactory.decodeResource(getResources(), R.drawable.rainbow));
 					CustomView.bitmap[CustomView.numberOfContents].originalBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.rainbow);
 				} catch (NullPointerException e) {
@@ -372,7 +808,31 @@ public class Testpic extends Activity
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
 				try {
+					Caption.getBackground( ).setColorFilter(null);
+					stache_glasses.getBackground( ).setColorFilter(null);
+					eyes.getBackground( ).setColorFilter(null);
+					lips.getBackground( ).setColorFilter(null);
+					icream.getBackground( ).setColorFilter(null);
+					ceyes.getBackground( ).setColorFilter(null);
+					mono.getBackground( ).setColorFilter(null);
+					firew.getBackground( ).setColorFilter(null);
+					bird.getBackground( ).setColorFilter(null);
+					angry.getBackground( ).setColorFilter(null);
+					heart.getBackground( ).setColorFilter(null);
+					mask.getBackground( ).setColorFilter(null);
+					glasses.getBackground( ).setColorFilter(null);
+					hat.getBackground( ).setColorFilter(null);
+					moustache.getBackground( ).setColorFilter(null);
+					octopus.getBackground( ).setColorFilter(null);
+					rain.getBackground( ).setColorFilter(null);
+					rainbow.getBackground( ).setColorFilter(null);
+					star.getBackground( ).setColorFilter(null);
+					sung.getBackground( ).setColorFilter(null);
+					thought.getBackground( ).setColorFilter(null);
+					tongue.getBackground( ).setColorFilter(null);
+					whiteg.getBackground( ).setColorFilter(null);
 					CustomView.mode="add_content";
+					rainbow2.getBackground().setColorFilter(Color.BLACK, PorterDuff.Mode.MULTIPLY);
 					CustomView.bitmap[CustomView.numberOfContents] = new contents(BitmapFactory.decodeResource(getResources(), R.drawable.rainbow2));
 					CustomView.bitmap[CustomView.numberOfContents].originalBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.rainbow2);
 				} catch (NullPointerException e) {
@@ -387,7 +847,31 @@ public class Testpic extends Activity
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
 				try {
+					Caption.getBackground( ).setColorFilter(null);
+					stache_glasses.getBackground( ).setColorFilter(null);
+					eyes.getBackground( ).setColorFilter(null);
+					lips.getBackground( ).setColorFilter(null);
+					icream.getBackground( ).setColorFilter(null);
+					ceyes.getBackground( ).setColorFilter(null);
+					mono.getBackground( ).setColorFilter(null);
+					firew.getBackground( ).setColorFilter(null);
+					bird.getBackground( ).setColorFilter(null);
+					angry.getBackground( ).setColorFilter(null);
+					heart.getBackground( ).setColorFilter(null);
+					mask.getBackground( ).setColorFilter(null);
+					glasses.getBackground( ).setColorFilter(null);
+					hat.getBackground( ).setColorFilter(null);
+					moustache.getBackground( ).setColorFilter(null);
+					octopus.getBackground( ).setColorFilter(null);
+					rain.getBackground( ).setColorFilter(null);
+					rainbow2.getBackground( ).setColorFilter(null);
+					rainbow.getBackground( ).setColorFilter(null);
+					sung.getBackground( ).setColorFilter(null);
+					thought.getBackground( ).setColorFilter(null);
+					tongue.getBackground( ).setColorFilter(null);
+					whiteg.getBackground( ).setColorFilter(null);
 					CustomView.mode="add_content";
+					star.getBackground().setColorFilter(Color.BLACK, PorterDuff.Mode.MULTIPLY);
 					CustomView.bitmap[CustomView.numberOfContents] = new contents(BitmapFactory.decodeResource(getResources(), R.drawable.star));
 					CustomView.bitmap[CustomView.numberOfContents].originalBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.star);
 				} catch (NullPointerException e) {
@@ -402,7 +886,31 @@ public class Testpic extends Activity
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
 				try {
+					Caption.getBackground( ).setColorFilter(null);
+					stache_glasses.getBackground( ).setColorFilter(null);
+					eyes.getBackground( ).setColorFilter(null);
+					lips.getBackground( ).setColorFilter(null);
+					icream.getBackground( ).setColorFilter(null);
+					ceyes.getBackground( ).setColorFilter(null);
+					mono.getBackground( ).setColorFilter(null);
+					firew.getBackground( ).setColorFilter(null);
+					bird.getBackground( ).setColorFilter(null);
+					angry.getBackground( ).setColorFilter(null);
+					heart.getBackground( ).setColorFilter(null);
+					mask.getBackground( ).setColorFilter(null);
+					glasses.getBackground( ).setColorFilter(null);
+					hat.getBackground( ).setColorFilter(null);
+					moustache.getBackground( ).setColorFilter(null);
+					octopus.getBackground( ).setColorFilter(null);
+					rain.getBackground( ).setColorFilter(null);
+					rainbow2.getBackground( ).setColorFilter(null);
+					rainbow.getBackground( ).setColorFilter(null);
+					star.getBackground( ).setColorFilter(null);
+					thought.getBackground( ).setColorFilter(null);
+					tongue.getBackground( ).setColorFilter(null);
+					whiteg.getBackground( ).setColorFilter(null);
 					CustomView.mode="add_content";
+					sung.getBackground().setColorFilter(Color.BLACK, PorterDuff.Mode.MULTIPLY);
 					CustomView.bitmap[CustomView.numberOfContents] = new contents(BitmapFactory.decodeResource(getResources(), R.drawable.sung));
 					CustomView.bitmap[CustomView.numberOfContents].originalBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.sung);
 				} catch (NullPointerException e) {
@@ -417,7 +925,31 @@ public class Testpic extends Activity
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
 				try {
+					Caption.getBackground( ).setColorFilter(null);
+					stache_glasses.getBackground( ).setColorFilter(null);
+					eyes.getBackground( ).setColorFilter(null);
+					lips.getBackground( ).setColorFilter(null);
+					icream.getBackground( ).setColorFilter(null);
+					ceyes.getBackground( ).setColorFilter(null);
+					mono.getBackground( ).setColorFilter(null);
+					firew.getBackground( ).setColorFilter(null);
+					bird.getBackground( ).setColorFilter(null);
+					angry.getBackground( ).setColorFilter(null);
+					heart.getBackground( ).setColorFilter(null);
+					mask.getBackground( ).setColorFilter(null);
+					glasses.getBackground( ).setColorFilter(null);
+					hat.getBackground( ).setColorFilter(null);
+					moustache.getBackground( ).setColorFilter(null);
+					octopus.getBackground( ).setColorFilter(null);
+					rain.getBackground( ).setColorFilter(null);
+					rainbow2.getBackground( ).setColorFilter(null);
+					rainbow.getBackground( ).setColorFilter(null);
+					star.getBackground( ).setColorFilter(null);
+					sung.getBackground( ).setColorFilter(null);
+					tongue.getBackground( ).setColorFilter(null);
+					whiteg.getBackground( ).setColorFilter(null);
 					CustomView.mode="add_content";
+					thought.getBackground().setColorFilter(Color.BLACK, PorterDuff.Mode.MULTIPLY);
 					CustomView.bitmap[CustomView.numberOfContents] = new contents(BitmapFactory.decodeResource(getResources(), R.drawable.thought));
 					CustomView.bitmap[CustomView.numberOfContents].originalBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.thought);
 				} catch (NullPointerException e) {
@@ -432,7 +964,31 @@ public class Testpic extends Activity
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
 				try {
+					Caption.getBackground( ).setColorFilter(null);
+					stache_glasses.getBackground( ).setColorFilter(null);
+					eyes.getBackground( ).setColorFilter(null);
+					lips.getBackground( ).setColorFilter(null);
+					icream.getBackground( ).setColorFilter(null);
+					ceyes.getBackground( ).setColorFilter(null);
+					mono.getBackground( ).setColorFilter(null);
+					firew.getBackground( ).setColorFilter(null);
+					bird.getBackground( ).setColorFilter(null);
+					angry.getBackground( ).setColorFilter(null);
+					heart.getBackground( ).setColorFilter(null);
+					mask.getBackground( ).setColorFilter(null);
+					glasses.getBackground( ).setColorFilter(null);
+					hat.getBackground( ).setColorFilter(null);
+					moustache.getBackground( ).setColorFilter(null);
+					octopus.getBackground( ).setColorFilter(null);
+					rain.getBackground( ).setColorFilter(null);
+					rainbow2.getBackground( ).setColorFilter(null);
+					rainbow.getBackground( ).setColorFilter(null);
+					star.getBackground( ).setColorFilter(null);
+					sung.getBackground( ).setColorFilter(null);
+					thought.getBackground( ).setColorFilter(null);
+					whiteg.getBackground( ).setColorFilter(null);
 					CustomView.mode="add_content";
+					tongue.getBackground().setColorFilter(Color.BLACK, PorterDuff.Mode.MULTIPLY);
 					CustomView.bitmap[CustomView.numberOfContents] = new contents(BitmapFactory.decodeResource(getResources(), R.drawable.tongue));
 					CustomView.bitmap[CustomView.numberOfContents].originalBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.tongue);
 				} catch (NullPointerException e) {
@@ -447,7 +1003,31 @@ public class Testpic extends Activity
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
 				try {
+					Caption.getBackground( ).setColorFilter(null);
+					stache_glasses.getBackground( ).setColorFilter(null);
+					eyes.getBackground( ).setColorFilter(null);
+					lips.getBackground( ).setColorFilter(null);
+					icream.getBackground( ).setColorFilter(null);
+					ceyes.getBackground( ).setColorFilter(null);
+					mono.getBackground( ).setColorFilter(null);
+					firew.getBackground( ).setColorFilter(null);
+					bird.getBackground( ).setColorFilter(null);
+					angry.getBackground( ).setColorFilter(null);
+					heart.getBackground( ).setColorFilter(null);
+					mask.getBackground( ).setColorFilter(null);
+					glasses.getBackground( ).setColorFilter(null);
+					hat.getBackground( ).setColorFilter(null);
+					moustache.getBackground( ).setColorFilter(null);
+					octopus.getBackground( ).setColorFilter(null);
+					rain.getBackground( ).setColorFilter(null);
+					rainbow2.getBackground( ).setColorFilter(null);
+					rainbow.getBackground( ).setColorFilter(null);
+					star.getBackground( ).setColorFilter(null);
+					sung.getBackground( ).setColorFilter(null);
+					thought.getBackground( ).setColorFilter(null);
+					whiteg.getBackground( ).setColorFilter(null);
 					CustomView.mode="add_content";
+					whiteg.getBackground().setColorFilter(Color.BLACK, PorterDuff.Mode.MULTIPLY);
 					CustomView.bitmap[CustomView.numberOfContents] = new contents(BitmapFactory.decodeResource(getResources(), R.drawable.whiteg));
 					CustomView.bitmap[CustomView.numberOfContents].originalBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.whiteg);
 				} catch (NullPointerException e) {
