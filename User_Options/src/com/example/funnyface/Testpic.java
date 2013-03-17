@@ -4,7 +4,7 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-
+import android.graphics.PorterDuff;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -35,6 +35,7 @@ public class Testpic extends Activity
 	private boolean showToolBar=true;
 	private Bitmap backgroundImage;
 	FileOutputStream fos = null;
+	public static ImageButton imageSelect;
 	
 	@SuppressWarnings("deprecation")
 	@Override
@@ -117,6 +118,7 @@ public class Testpic extends Activity
 				public void onClick(View v) {
 					// TODO Auto-generated method stub
 					try {
+						imageSelect = Caption; 
 						CustomView.mode="add_content";
 						CustomView.bitmap[CustomView.numberOfContents] = new contents(BitmapFactory.decodeResource(getResources(), R.drawable.caption));
 						CustomView.bitmap[CustomView.numberOfContents].originalBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.caption);
@@ -130,6 +132,8 @@ public class Testpic extends Activity
 				public void onClick(View v) {
 					// TODO Auto-generated method stub
 					try {
+						imageSelect = stache_glasses;
+						stache_glasses.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
 						CustomView.mode="add_content";
 						CustomView.bitmap[CustomView.numberOfContents] = new contents(BitmapFactory.decodeResource(getResources(), R.drawable.gstache));
 						CustomView.bitmap[CustomView.numberOfContents].originalBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.gstache);
@@ -157,12 +161,14 @@ public class Testpic extends Activity
 				public void onClick(View v) {
 					// TODO Auto-generated method stub
 					try {
+						
 						CustomView.mode="add_content";
 						CustomView.bitmap[CustomView.numberOfContents] = new contents(BitmapFactory.decodeResource(getResources(), R.drawable.lips));
 						CustomView.bitmap[CustomView.numberOfContents].originalBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.lips);
 					} catch (NullPointerException e) {
 							
 					}
+					
 				}
 			});
 			icream.setOnClickListener(new View.OnClickListener() {	
@@ -990,7 +996,6 @@ public class Testpic extends Activity
 		}
     	
     });
-    
 
     
     final Button SaveButton = (Button) findViewById(R.id.save);

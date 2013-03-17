@@ -2,11 +2,15 @@ package com.example.funnyface;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Display;
 import android.view.Menu;
 import android.view.View;
+import android.widget.ImageButton;
 
 public class User_Options extends Activity {
 
+	static int width;
+	static int height;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -21,6 +25,23 @@ public class User_Options extends Activity {
 		return true;
 	}
 	//When user clicks on 'Edit a Picture button'
+	/*
+	@Override
+	public void onWindowFocusChanged(boolean hasFocus)
+	{
+		super.onWindowFocusChanged(hasFocus);
+		Display display = getWindowManager( ).getDefaultDisplay();
+		width = display.getWidth();
+		height = display.getHeight( );
+		int button_Width = (width / 3);
+		final ImageButton db_button = (ImageButton) findViewById(R.id.server);
+		db_button.setMinimumWidth(button_Width);
+		final ImageButton home_button = (ImageButton) findViewById(R.id.home);
+		home_button.setMinimumWidth(button_Width);
+		final ImageButton edit_button = (ImageButton) findViewById(R.id.picture);
+		edit_button.setMinimumWidth(button_Width);
+	}
+	*/
 	public void GotoUserPhotoSelection(View view) 
 	{
 		Intent intent = new Intent(this, UserPhotoOptions.class);
