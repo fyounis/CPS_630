@@ -3,22 +3,26 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/homescreen"
-    tools:context=".User_Options" >
     
+    android:onClick="GoToEmail"
+    android:orientation="horizontal"
+    tools:context=".User_Options" >
+
     <Button
-        android:id="@+id/home"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/Email"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:background="@drawable/mainhome" />
+        android:layout_alignParentRight="true"
+        android:background="@drawable/mainemail"
+        android:onClick="GoToEmail"
+        tools:ignore="HardcodedText" />
 
     <Button
         android:id="@+id/picture"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
         android:layout_alignParentBottom="true"
-        android:layout_alignTop="@+id/home"
         android:layout_centerHorizontal="true"
         android:background="@drawable/edit"
         android:onClick="GotoUserPhotoSelection"
@@ -26,11 +30,11 @@
 
     <Button
         android:id="@+id/server"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
-        android:background="@drawable/mainserver"
+        android:layout_alignParentLeft="true"
+        android:background="@drawable/maindb"
         android:onClick="GoToDatabase"
         tools:ignore="HardcodedText" />
 

@@ -53,4 +53,10 @@ public class User_Options extends Activity {
 		Intent intent = new Intent(this, ViewDataBase.class);
 		startActivity(intent);
 	}
+	
+	public void GoToEmail(View view)
+	{
+		Intent intent = new Intent(this, Email.class);
+		startActivity(intent);
+	}
 }
