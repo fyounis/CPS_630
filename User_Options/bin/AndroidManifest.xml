@@ -84,6 +84,10 @@
             android:screenOrientation="portrait"
             android:label="@string/title_activity_camera_intent" >
         </activity>
+        <activity
+            android:name="com.example.funnyface.Email"
+            android:label="@string/title_activity_email" >
+        </activity>
     </application>
 
 </manifest>

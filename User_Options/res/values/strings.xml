@@ -12,5 +12,6 @@
     <string name="title_activity_photo_editing">PhotoEditing</string>
     <string name="title_activity_testpic">Testpic</string>
     <string name="title_activity_camera_intent">CameraIntent</string>
+    <string name="title_activity_email">Email</string>
 
 </resources>
