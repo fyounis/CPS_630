@@ -164,6 +164,7 @@ public class CustomView extends ImageView {
 							mode="scale";
 							
 						}
+	
 						
 					} catch (NullPointerException e){
 						

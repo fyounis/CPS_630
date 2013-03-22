@@ -1,6 +1,7 @@
 package com.example.funnyface;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -27,6 +28,7 @@ import android.widget.Button;
 import android.widget.HorizontalScrollView;
 import android.widget.ImageButton;
 import android.widget.Toast;
+import com.loopj.android.http.*;
 
 @SuppressLint("SdCardPath")
 public class Testpic extends Activity
@@ -1588,6 +1590,8 @@ public class Testpic extends Activity
 		{
 			try
 			{
+				view.currentContentIndex=-1;
+				view.invalidate();
 				SaveButton.setEnabled(false);
 				OverlaysButton.setEnabled(false);
 				newPictureButton.setEnabled(false);
@@ -1595,11 +1599,11 @@ public class Testpic extends Activity
 				paintButton.setEnabled(false);
 				
 				HorizontalScrollView hs1 =(HorizontalScrollView)findViewById(R.id.horizontalScrollView2);hs1.setVisibility(View.INVISIBLE);
-				Toast.makeText(getApplicationContext(), "Saving ...",Toast.LENGTH_LONG).show();
 				saveView(view);
 				sendBroadcast(new Intent(Intent.ACTION_MEDIA_MOUNTED, Uri.parse("file://" + Environment.getExternalStorageDirectory())));
 				//SAVING
-				   backgroundImage.recycle();
+				backgroundImage.recycle();
+				view.setImageBitmap(null);
 				Toast.makeText(getApplicationContext(), "Image saved to this location" + Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES),Toast.LENGTH_LONG).show();
 				AlertDialog decision = new AlertDialog.Builder(Testpic.this).create();
 				decision.setTitle("Upload");
@@ -1610,13 +1614,13 @@ public class Testpic extends Activity
 					{
 						try
 						{
-							Toast.makeText(getApplicationContext(), "Uploading ...",Toast.LENGTH_LONG).show();
-							//UploadCode
+							postImage();
+							Toast.makeText(getApplicationContext(), "Your Image has been uploaded and is viewable at this web address, http://editmenow.herokuapp.com/users/",Toast.LENGTH_LONG).show();
 							finish( );
 			        		Testpic.this.onDestroy();
-			        		CustomView.backgroundImage.recycle();
-			        		Intent newPic = new Intent(Testpic.this, UserPhotoOptions.class);
-			        		startActivity(newPic);
+			        		backgroundImage.recycle();
+							Intent doneUpload = new Intent(Testpic.this, UserPhotoOptions.class);
+			        		startActivity(doneUpload);
 						}
 						catch(Exception e)
 						{
@@ -1661,20 +1665,13 @@ public class Testpic extends Activity
 		@Override
 		public void onClick(View v) 
 		{
-			try
-			{
-				
-			}
-			catch(Exception e)
-			{
-				
-			}
+				System.out.println("Upload Selected");
 			
 		}
     
 	});
 }
-	
+	static String photoID;
     private void saveView( View view ) 
     { 
        Bitmap  b = Bitmap.createBitmap( view.getWidth(), view.getHeight (), Bitmap.Config.ARGB_8888); 
@@ -1684,7 +1681,7 @@ public class Testpic extends Activity
 
        SimpleDateFormat time = new SimpleDateFormat("yyyyMMdd_HHmmss");
        String  imageID = time.format(new Date());
-       String photoID = "EditMeNow_" + imageID + ".jpg";
+       photoID = "EditMeNow_" + imageID + ".jpg";
        
        
        try 
@@ -1692,7 +1689,7 @@ public class Testpic extends Activity
     	   File path = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES), photoID);
     	   if (path.createNewFile())
     	   {
-    		   Toast.makeText(getApplicationContext(), "New File Created in " +  path,Toast.LENGTH_LONG).show();
+    		   //Toast.makeText(getApplicationContext(), "New File Created in " +  path,Toast.LENGTH_LONG).show();
     	   }
     	   
     	   fos = new FileOutputStream(path);      
@@ -1708,10 +1705,26 @@ public class Testpic extends Activity
        catch( Exception e ) 
        { 
            Log.e("testSaveView", "Exception: " + e.toString() ); 
-           Toast.makeText(getApplicationContext(), "DID NOT SAVE!",Toast.LENGTH_LONG).show();
        } 
 
     } 
+    
+    public static void postImage(){
+        RequestParams params = new RequestParams();
+        params.put("user[name]",photoID);
+        try {
+        params.put("user[attach]",new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES), photoID));
+        }catch (FileNotFoundException e){
+        	Log.e(photoID, "File Not Found");
+        }
+        AsyncHttpClient client = new AsyncHttpClient();
+        client.post("http://editmenow.herokuapp.com/users/", params, new AsyncHttpResponseHandler() {
+            @Override
+            public void onSuccess(String response) {
+                Log.w("async", "success!!!!");
+            }                                                                                                                                                                     
+        }); 
+    }   
 	
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {

@@ -87,7 +87,11 @@ public final class R {
         public static final int whiteg=0x7f020049;
     }
     public static final class id {
+<<<<<<< HEAD
         public static final int Email=0x7f07003e;
+=======
+        public static final int Email=0x7f07003d;
+>>>>>>> Updated Merges, and upload works
         public static final int addphoto=0x7f070003;
         public static final int angry=0x7f070021;
         public static final int bird=0x7f070022;
@@ -127,7 +131,11 @@ public final class R {
         public static final int octopus=0x7f070025;
         public static final int overlays=0x7f070010;
         public static final int paint=0x7f070011;
+<<<<<<< HEAD
         public static final int picture=0x7f07003f;
+=======
+        public static final int picture=0x7f07003e;
+>>>>>>> Updated Merges, and upload works
         public static final int purple=0x7f070035;
         public static final int rain=0x7f070026;
         public static final int rainbow=0x7f070027;
@@ -135,7 +143,11 @@ public final class R {
         public static final int red=0x7f070031;
         public static final int save=0x7f070014;
         public static final int send=0x7f070004;
+<<<<<<< HEAD
         public static final int server=0x7f07003d;
+=======
+        public static final int server=0x7f07003f;
+>>>>>>> Updated Merges, and upload works
         public static final int slidingDrawer1=0x7f07000d;
         public static final int star=0x7f070029;
         public static final int sung=0x7f07002a;
