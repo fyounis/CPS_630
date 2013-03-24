@@ -70,21 +70,22 @@ public final class R {
         public static final int reseting=0x7f020038;
         public static final int save=0x7f020039;
         public static final int saving=0x7f02003a;
-        public static final int star=0x7f02003b;
-        public static final int sung=0x7f02003c;
-        public static final int thick=0x7f02003d;
-        public static final int thickline=0x7f02003e;
-        public static final int thin=0x7f02003f;
-        public static final int thinline=0x7f020040;
-        public static final int thought=0x7f020041;
-        public static final int tongue=0x7f020042;
-        public static final int undo=0x7f020043;
-        public static final int undopoint=0x7f020044;
-        public static final int undoprevious=0x7f020045;
-        public static final int upload=0x7f020046;
-        public static final int uploading=0x7f020047;
-        public static final int white=0x7f020048;
-        public static final int whiteg=0x7f020049;
+        public static final int slidecloud=0x7f02003b;
+        public static final int star=0x7f02003c;
+        public static final int sung=0x7f02003d;
+        public static final int thick=0x7f02003e;
+        public static final int thickline=0x7f02003f;
+        public static final int thin=0x7f020040;
+        public static final int thinline=0x7f020041;
+        public static final int thought=0x7f020042;
+        public static final int tongue=0x7f020043;
+        public static final int undo=0x7f020044;
+        public static final int undopoint=0x7f020045;
+        public static final int undoprevious=0x7f020046;
+        public static final int upload=0x7f020047;
+        public static final int uploading=0x7f020048;
+        public static final int white=0x7f020049;
+        public static final int whiteg=0x7f02004a;
     }
     public static final class id {
         public static final int Email=0x7f07003c;
