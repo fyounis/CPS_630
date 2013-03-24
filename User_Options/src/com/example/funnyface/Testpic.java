@@ -5,11 +5,12 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import android.graphics.PorterDuff;
+
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -17,10 +18,13 @@ import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Path;
+import android.graphics.PorterDuff;
+import android.net.ConnectivityManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
+import android.text.Editable;
 import android.util.Log;
 import android.view.Menu;
 import android.view.View;
@@ -28,7 +32,10 @@ import android.widget.Button;
 import android.widget.HorizontalScrollView;
 import android.widget.ImageButton;
 import android.widget.Toast;
-import com.loopj.android.http.*;
+
+import com.loopj.android.http.AsyncHttpClient;
+import com.loopj.android.http.AsyncHttpResponseHandler;
+import com.loopj.android.http.RequestParams;
 
 @SuppressLint("SdCardPath")
 public class Testpic extends Activity
@@ -38,6 +45,8 @@ public class Testpic extends Activity
 	private Bitmap backgroundImage;
 	FileOutputStream fos = null;
 	public static ImageButton imageSelect;
+	public static Editable uploadUser;
+	public static Editable uploadPhoto;
 	
 	@SuppressWarnings("deprecation")
 	@Override
@@ -1597,37 +1606,53 @@ public class Testpic extends Activity
 				newPictureButton.setEnabled(false);
 				editButton.setEnabled(false);
 				paintButton.setEnabled(false);
-				
 				HorizontalScrollView hs1 =(HorizontalScrollView)findViewById(R.id.horizontalScrollView2);hs1.setVisibility(View.INVISIBLE);
+				
+				
 				saveView(view);
 				sendBroadcast(new Intent(Intent.ACTION_MEDIA_MOUNTED, Uri.parse("file://" + Environment.getExternalStorageDirectory())));
 				//SAVING
-				backgroundImage.recycle();
-				view.setImageBitmap(null);
+				//backgroundImage.recycle();
+				//view.setImageBitmap(null);
 				Toast.makeText(getApplicationContext(), "Image saved to this location" + Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES),Toast.LENGTH_LONG).show();
 				AlertDialog decision = new AlertDialog.Builder(Testpic.this).create();
 				decision.setTitle("Upload");
-				decision.setMessage("Your Image is being saved, but would you like to upload this image to the database");
+				decision.setMessage("Your image is being saved, but would you like to upload this image to the database?");
 				decision.setButton( Dialog.BUTTON_POSITIVE, "Yes", new DialogInterface.OnClickListener()
 				{
 					public void onClick(DialogInterface dialog, int which)
 					{
 						try
 						{
-							postImage();
-							Toast.makeText(getApplicationContext(), "Your Image has been uploaded and is viewable at this web address, http://editmenow.herokuapp.com/users/",Toast.LENGTH_LONG).show();
-							finish( );
-			        		Testpic.this.onDestroy();
-			        		backgroundImage.recycle();
-							Intent doneUpload = new Intent(Testpic.this, UserPhotoOptions.class);
-			        		startActivity(doneUpload);
+							ConnectivityManager connection = (ConnectivityManager)getSystemService(Context.CONNECTIVITY_SERVICE);
+							if(connection.getActiveNetworkInfo( ) != null && connection.getActiveNetworkInfo( ).isAvailable() && connection.getActiveNetworkInfo( ).isConnected( ))
+							{
+								Toast.makeText(getApplicationContext(), "Connecting ...",Toast.LENGTH_LONG).show();
+								postImage();
+								Toast.makeText(getApplicationContext(), "Your Image has been uploaded and is viewable at this web address, http://editmenow.herokuapp.com/users/",Toast.LENGTH_LONG).show();
+								finish( );
+								Testpic.this.onDestroy();
+								backgroundImage.recycle();
+								view.setImageBitmap(null);
+								Intent doneUpload = new Intent(Testpic.this, UserPhotoOptions.class);
+								startActivity(doneUpload);
+							}
+							else
+							{
+								Toast.makeText(getApplicationContext(), "No internet connection, try Again.",Toast.LENGTH_LONG).show();
+								SaveButton.setEnabled(true);
+								OverlaysButton.setEnabled(true);
+								newPictureButton.setEnabled(true);
+								editButton.setEnabled(true);
+								paintButton.setEnabled(true);
+								HorizontalScrollView hs1 =(HorizontalScrollView)findViewById(R.id.horizontalScrollView2);hs1.setVisibility(View.VISIBLE);
+							}
 						}
 						catch(Exception e)
 						{
 							
 						}
-			
-					
+						
 					}
 				});
 				decision.setButton( Dialog.BUTTON_NEGATIVE, "No", new DialogInterface.OnClickListener() 
@@ -1658,19 +1683,7 @@ public class Testpic extends Activity
 		}
     	
     });
-    final Button UploadButton = (Button) findViewById(R.id.upload);
-    UploadButton.setBackgroundDrawable(getResources().getDrawable(R.drawable.uploading));
-    UploadButton.setOnClickListener(new View.OnClickListener(){
-
-		@Override
-		public void onClick(View v) 
-		{
-				System.out.println("Upload Selected");
-			
-		}
-    
-	});
-}
+	}
 	static String photoID;
     private void saveView( View view ) 
     { 
@@ -1726,6 +1739,7 @@ public class Testpic extends Activity
         }); 
     }   
 	
+    
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
