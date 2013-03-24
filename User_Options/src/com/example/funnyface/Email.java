@@ -2,9 +2,12 @@ package com.example.funnyface;
 
 import android.os.Bundle;
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.view.Menu;
 import java.util.ArrayList;
+
+import android.net.ConnectivityManager;
 import android.net.Uri;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -12,6 +15,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.Toast;
 
 public class Email extends Activity {
 	//buttons,views,edittext
@@ -74,20 +78,65 @@ public class Email extends Activity {
 	   intent.putExtra(Intent.EXTRA_SUBJECT, emailSubject); 
 	   intent.putExtra(Intent.EXTRA_TEXT, emailText);
 	   
-	   if(arrayUri.isEmpty()){
-	    //Send email without photo attached
-	    intent.setAction(Intent.ACTION_SEND);
-	    intent.setType("plain/text"); 
-	   }else if(arrayUri.size() == 1){
-	    //Send email with ONE photo attached
-	    intent.setAction(Intent.ACTION_SEND); 
-	    intent.putExtra(Intent.EXTRA_STREAM, arrayUri.get(0));
-	       intent.setType("image/*");
-	   }else{
-	    //Send email with MULTI photo attached
-	    intent.setAction(Intent.ACTION_SEND_MULTIPLE);
-	    intent.putParcelableArrayListExtra(Intent.EXTRA_STREAM, arrayUri);
-	       intent.setType("image/*");
+	   
+	   ConnectivityManager emailConnection = (ConnectivityManager)getSystemService(Context.CONNECTIVITY_SERVICE);
+	   
+	   if(arrayUri.isEmpty())
+	   {
+		   try
+		   {
+			   if(emailConnection.getActiveNetworkInfo( ) != null && emailConnection.getActiveNetworkInfo( ).isAvailable() && emailConnection.getActiveNetworkInfo( ).isConnected( ))
+			   {
+				   //Send email without photo attached
+				   intent.setAction(Intent.ACTION_SEND);
+				   intent.setType("plain/text"); 
+		       }
+			   else
+			   {
+					   Toast.makeText(getApplicationContext(), "No internet connection, try Again.",Toast.LENGTH_LONG).show();
+			   }
+		   }
+		   catch(Exception e){}
+	   }
+	   
+	   
+	   else if(arrayUri.size() == 1)
+	   {
+		   try
+		   {
+			   if(emailConnection.getActiveNetworkInfo( ) != null && emailConnection.getActiveNetworkInfo( ).isAvailable() && emailConnection.getActiveNetworkInfo( ).isConnected( ))
+			   {
+				   	//Send email with ONE photo attached
+				   	intent.setAction(Intent.ACTION_SEND); 
+				   	intent.putExtra(Intent.EXTRA_STREAM, arrayUri.get(0));
+				   	intent.setType("image/*");
+			   }
+			   else
+			   {
+				   Toast.makeText(getApplicationContext(), "No internet connection, try Again.",Toast.LENGTH_LONG).show();
+			   }
+		   }
+		   catch(Exception e)
+		   {
+			   
+		   }
+	   }
+	   else 
+	   {
+		   try
+		   {
+			   if(emailConnection.getActiveNetworkInfo( ) != null && emailConnection.getActiveNetworkInfo( ).isAvailable() && emailConnection.getActiveNetworkInfo( ).isConnected( ))
+			   {
+				   //Send email with MULTI photo attached
+				   intent.setAction(Intent.ACTION_SEND_MULTIPLE);
+				   intent.putParcelableArrayListExtra(Intent.EXTRA_STREAM, arrayUri);
+				   intent.setType("image/*");
+			   }
+		   }
+		   catch(Exception e)
+		   {
+			   
+		   }
 	   }
 	   
 	   startActivity(Intent.createChooser(intent, "Choice App to send email:"));

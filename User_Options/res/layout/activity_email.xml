@@ -2,6 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent" 
+    android:background="@drawable/background"
     android:orientation="vertical">
 
     <TextView
@@ -12,7 +13,7 @@
     <TextView 
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="Enter email address:"/>
+        android:text="Enter e-mail address:"/>
     <EditText 
         android:id="@+id/email_address"
         android:layout_width="fill_parent"
@@ -21,7 +22,7 @@
     <TextView 
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="Enter email Subject:"/>
+        android:text="Enter e-mail Subject:"/>
     <EditText 
         android:id="@+id/email_subject"
         android:layout_width="fill_parent"
@@ -30,7 +31,7 @@
     <TextView 
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="Enter Text:"/>
+        android:text="Enter short description:"/>
     <EditText 
         android:id="@+id/email_text"
         android:layout_width="fill_parent"
@@ -40,7 +41,7 @@
         android:id="@+id/addphoto"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Add photo"/>
+        android:text="Add a photo"/>
     <Button
         android:id="@+id/send"
         android:layout_width="match_parent"
