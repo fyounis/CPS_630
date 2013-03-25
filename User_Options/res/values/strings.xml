@@ -13,5 +13,6 @@
     <string name="title_activity_testpic">Testpic</string>
     <string name="title_activity_camera_intent">CameraIntent</string>
     <string name="title_activity_email">Email</string>
+    <string name="title_activity_twitter">Twitter</string>
 
 </resources>

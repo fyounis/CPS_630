@@ -1,4 +1,7 @@
 package com.example.funnyface;
+
+import com.android.twitter.TwitterActivity;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -57,6 +60,11 @@ public class User_Options extends Activity {
 	public void GoToEmail(View view)
 	{
 		Intent intent = new Intent(this, Email.class);
+		startActivity(intent);
+	}
+	public void GoToTwitter(View view)
+	{
+		Intent intent = new Intent(this, TwitterActivity.class);
 		startActivity(intent);
 	}
 }
