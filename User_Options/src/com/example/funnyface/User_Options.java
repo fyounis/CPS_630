@@ -64,7 +64,9 @@ public class User_Options extends Activity {
 	}
 	public void GoToTwitter(View view)
 	{
+		
 		Intent intent = new Intent(this, TwitterActivity.class);
 		startActivity(intent);
+		
 	}
 }

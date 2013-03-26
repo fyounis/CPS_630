@@ -2,6 +2,7 @@ package com.android.twitter;
 
 import com.twitter.android.TwitterApp;
 import com.twitter.android.TwitterApp.TwDialogListener;
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.os.Bundle;
 import android.os.StrictMode;
@@ -34,13 +35,16 @@ public class TwitterActivity extends Activity implements OnClickListener {
 		SUCCESS, DUPLICATE, FAILED, CANCELLED
 	};
 
+	@SuppressLint("NewApi")
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.main);
+		try {
 		StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder()
 				.permitAll().build();
 		StrictMode.setThreadPolicy(policy);
+		} catch (NoClassDefFoundError e){}
 
 		mTwitter = new TwitterApp(this, CONSUMER_KEY, CONSUMER_SECRET);
 		mBtnTwitter = (Button) findViewById(R.id.mBtnTwitter);
