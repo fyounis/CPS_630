@@ -24,13 +24,14 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
-import android.text.Editable;
 import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.HorizontalScrollView;
 import android.widget.ImageButton;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.loopj.android.http.AsyncHttpClient;
@@ -40,13 +41,13 @@ import com.loopj.android.http.RequestParams;
 @SuppressLint("SdCardPath")
 public class Testpic extends Activity
 {
+	private static final String[] picInfo = null;
 	private CustomView view;
-	private boolean showToolBar=true;
 	private Bitmap backgroundImage;
 	FileOutputStream fos = null;
 	public static ImageButton imageSelect;
-	public static Editable uploadUser;
-	public static Editable uploadPhoto;
+	private static String username;
+	private static String description;
 	
 	@SuppressWarnings("deprecation")
 	@Override
@@ -1624,10 +1625,43 @@ public class Testpic extends Activity
 					{
 						try
 						{
+							//////////////////////////UPLOAD INFO///////////////////////////////
+							AlertDialog imageInfo = new AlertDialog.Builder(Testpic.this).create();   
+							LinearLayout ln = new LinearLayout(Testpic.this);
+					    	imageInfo.setCancelable(false);
+					    	imageInfo.setTitle("Upload Information");
+					    	imageInfo.setMessage("Please enter a username and a description of the image: ");
+					    	final EditText usernameInput = new EditText(Testpic.this);
+					    	ln.addView(usernameInput);
+					    	final EditText photoDescriptionInput = new EditText(Testpic.this);
+					    	ln.addView(photoDescriptionInput);
+					    	imageInfo.setView(ln);
+					    	imageInfo.setButton( Dialog.BUTTON_POSITIVE, "Done", new DialogInterface.OnClickListener()
+					    	{
+								public void onClick(DialogInterface dialog, int whichButton)
+					    		{
+					    			try
+					    			{
+					    				String [] picInfo = new String[2];
+					    				username = usernameInput.getText( ).toString();
+					    				description = photoDescriptionInput.getText( ).toString( );
+					    				picInfo[0] = username;
+					    				picInfo[1] = description;
+					    			}
+					    			catch(Exception e)
+					    			{
+					    				
+					    			}
+					    		}
+					    	});
+					    	imageInfo.show();
+					    	////////////////////////////////UPLOAD INFO////////////////////////////////////
+					    	
 							ConnectivityManager connection = (ConnectivityManager)getSystemService(Context.CONNECTIVITY_SERVICE);
 							if(connection.getActiveNetworkInfo( ) != null && connection.getActiveNetworkInfo( ).isAvailable() && connection.getActiveNetworkInfo( ).isConnected( ))
 							{
 								Toast.makeText(getApplicationContext(), "Connecting ...",Toast.LENGTH_LONG).show();
+								wait(30000);
 								postImage();
 								Toast.makeText(getApplicationContext(), "Your Image has been uploaded and is viewable at this web address, http://editmenow.herokuapp.com/users/",Toast.LENGTH_LONG).show();
 								finish( );
@@ -1722,22 +1756,27 @@ public class Testpic extends Activity
 
     } 
     
-    public static void postImage(){
+    public static void postImage()
+    {
         RequestParams params = new RequestParams();
         params.put("user[name]",photoID);
-        try {
-        params.put("user[attach]",new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES), photoID));
-        }catch (FileNotFoundException e){
+        try 
+        {
+        	params.put("user[attach]",new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES), photoID));
+        }
+        catch (FileNotFoundException e)
+        {
         	Log.e(photoID, "File Not Found");
         }
         AsyncHttpClient client = new AsyncHttpClient();
-        client.post("http://editmenow.herokuapp.com/users/", params, new AsyncHttpResponseHandler() {
+        client.post("http://editmenow.herokuapp.com/users/", params, new AsyncHttpResponseHandler()
+        {
             @Override
             public void onSuccess(String response) {
                 Log.w("async", "success!!!!");
             }                                                                                                                                                                     
         }); 
-    }   
+    }    
 	
     
 	@Override

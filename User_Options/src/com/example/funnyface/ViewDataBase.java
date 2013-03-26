@@ -7,6 +7,7 @@ import android.net.ConnectivityManager;
 import android.os.Bundle;
 import android.view.Menu;
 import android.webkit.WebView;
+import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 public class ViewDataBase extends Activity 
@@ -30,8 +31,9 @@ public class ViewDataBase extends Activity
 				cloudConnection.loadUrl("http://editmenow.herokuapp.com/users");
 			}
 			else
-			{
-					Toast.makeText(getApplicationContext(), "No internet connection, try again.",Toast.LENGTH_LONG).show();
+			{	
+				Toast.makeText(getApplicationContext(), "No Connection, try again.",Toast.LENGTH_LONG).show();
+					
 			}
 		}
 		catch(Exception e)
