@@ -110,6 +110,7 @@ public class Email extends Activity {
 				   	intent.setAction(Intent.ACTION_SEND); 
 				   	intent.putExtra(Intent.EXTRA_STREAM, arrayUri.get(0));
 				   	intent.setType("image/*");
+				   	
 			   }
 			   else
 			   {
@@ -131,6 +132,7 @@ public class Email extends Activity {
 				   intent.setAction(Intent.ACTION_SEND_MULTIPLE);
 				   intent.putParcelableArrayListExtra(Intent.EXTRA_STREAM, arrayUri);
 				   intent.setType("image/*");
+				   
 			   }
 		   }
 		   catch(Exception e)
@@ -139,25 +141,25 @@ public class Email extends Activity {
 		   }
 	   }
 	   
-	   startActivity(Intent.createChooser(intent, "Choice App to send email:"));
-	   
+	   startActivityForResult(Intent.createChooser(intent, "Choose Email Client:"), RQS_SENDEMAIL);
 	  }};
 	  
 	@Override
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-		super.onActivityResult(requestCode,  resultCode, data);
+		//super.onActivityResult(requestCode,  resultCode, data);
 		
-		if (resultCode == RESULT_OK) {
-			switch(requestCode){
-			case RQS_LOADIMAGE:
+		if (requestCode == RQS_LOADIMAGE){
+			if (resultCode == RESULT_OK) {
 			 Uri imageUri = data.getData();
 			 arrayUri.add(imageUri);
 			 myFileListAdapter.notifyDataSetChanged();
-			 break; 
-			case RQS_SENDEMAIL:
-			 break; 
+			 Toast.makeText(getApplicationContext(), "Photo Added", Toast.LENGTH_LONG).show();
 			}
 		}
+		if (requestCode == RQS_SENDEMAIL){
+			Toast.makeText(getApplicationContext(), "Email Send", Toast.LENGTH_LONG).show();
+		}
+		
 	}
 
 	@Override
