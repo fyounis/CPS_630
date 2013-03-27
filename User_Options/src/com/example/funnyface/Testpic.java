@@ -1627,68 +1627,79 @@ public class Testpic extends Activity
 						{
 							//////////////////////////UPLOAD INFO///////////////////////////////
 							AlertDialog imageInfo = new AlertDialog.Builder(Testpic.this).create();   
-							LinearLayout ln = new LinearLayout(Testpic.this);
 					    	imageInfo.setCancelable(false);
 					    	imageInfo.setTitle("Upload Information");
-					    	imageInfo.setMessage("Please enter a username and a description of the image: ");
+					    	imageInfo.setMessage("Please enter a username to upload with photo: ");
 					    	final EditText usernameInput = new EditText(Testpic.this);
-					    	ln.addView(usernameInput);
-					    	final EditText photoDescriptionInput = new EditText(Testpic.this);
-					    	ln.addView(photoDescriptionInput);
-					    	imageInfo.setView(ln);
+					    	imageInfo.setView(usernameInput);
 					    	imageInfo.setButton( Dialog.BUTTON_POSITIVE, "Done", new DialogInterface.OnClickListener()
 					    	{
 								public void onClick(DialogInterface dialog, int whichButton)
 					    		{
 					    			try
 					    			{
-					    				String [] picInfo = new String[2];
 					    				username = usernameInput.getText( ).toString();
-					    				description = photoDescriptionInput.getText( ).toString( );
-					    				picInfo[0] = username;
-					    				picInfo[1] = description;
-					    			}
-					    			catch(Exception e)
-					    			{
 					    				
-					    			}
+					    				AlertDialog imageDescription = new AlertDialog.Builder(Testpic.this).create();   
+					    				imageDescription.setCancelable(false);
+					    				imageDescription.setTitle("Upload Information");
+					    				imageDescription.setMessage("Please enter a description to upload with photo: ");
+								    	final EditText DescriptionInput = new EditText(Testpic.this);
+								    	imageDescription.setView(DescriptionInput);
+								    	
+								    	imageDescription.setButton( Dialog.BUTTON_POSITIVE, "Done", new DialogInterface.OnClickListener()
+								    	{
+											public void onClick(DialogInterface dialog, int whichButton)
+								    		{
+								    			try
+								    			{
+								    				description = DescriptionInput.getText( ).toString();
+								    				ConnectivityManager connection = (ConnectivityManager)getSystemService(Context.CONNECTIVITY_SERVICE);
+										
+								    				if(connection.getActiveNetworkInfo( ) != null && connection.getActiveNetworkInfo( ).isAvailable() && connection.getActiveNetworkInfo( ).isConnected( ))
+								    				{
+								    					Toast.makeText(getApplicationContext(), "Connecting ...",Toast.LENGTH_LONG).show();
+								    					postImage();
+								    					Toast.makeText(getApplicationContext(), "Your Image has been uploaded and is viewable at this web address, http://editmenow.herokuapp.com/users/",Toast.LENGTH_LONG).show();
+								        				finish( );
+								    					Testpic.this.onDestroy();
+								    					backgroundImage.recycle();
+								    					view.setImageBitmap(null);
+								    					Intent doneUpload = new Intent(Testpic.this, UserPhotoOptions.class);
+								    					startActivity(doneUpload);
+								    				}
+								    				else
+								    				{
+								    					Toast.makeText(getApplicationContext(), "No internet connection, try Again.",Toast.LENGTH_LONG).show();
+								    					SaveButton.setEnabled(true);
+								    					OverlaysButton.setEnabled(true);
+								    					newPictureButton.setEnabled(true);
+								    					editButton.setEnabled(true);
+								    					paintButton.setEnabled(true);
+								    					HorizontalScrollView hs1 =(HorizontalScrollView)findViewById(R.id.horizontalScrollView2);hs1.setVisibility(View.VISIBLE);
+								    				}
+								    			}
+								    			catch(Exception e)
+								    			{
+										
+								    			}
+									
+								    		}
+								    	});
+								    	imageDescription.show( );
+					    			}catch(Exception e){}
 					    		}
 					    	});
-					    	imageInfo.show();
-					    	////////////////////////////////UPLOAD INFO////////////////////////////////////
-					    	
-							ConnectivityManager connection = (ConnectivityManager)getSystemService(Context.CONNECTIVITY_SERVICE);
-							if(connection.getActiveNetworkInfo( ) != null && connection.getActiveNetworkInfo( ).isAvailable() && connection.getActiveNetworkInfo( ).isConnected( ))
-							{
-								Toast.makeText(getApplicationContext(), "Connecting ...",Toast.LENGTH_LONG).show();
-								wait(30000);
-								postImage();
-								Toast.makeText(getApplicationContext(), "Your Image has been uploaded and is viewable at this web address, http://editmenow.herokuapp.com/users/",Toast.LENGTH_LONG).show();
-								finish( );
-								Testpic.this.onDestroy();
-								backgroundImage.recycle();
-								view.setImageBitmap(null);
-								Intent doneUpload = new Intent(Testpic.this, UserPhotoOptions.class);
-								startActivity(doneUpload);
-							}
-							else
-							{
-								Toast.makeText(getApplicationContext(), "No internet connection, try Again.",Toast.LENGTH_LONG).show();
-								SaveButton.setEnabled(true);
-								OverlaysButton.setEnabled(true);
-								newPictureButton.setEnabled(true);
-								editButton.setEnabled(true);
-								paintButton.setEnabled(true);
-								HorizontalScrollView hs1 =(HorizontalScrollView)findViewById(R.id.horizontalScrollView2);hs1.setVisibility(View.VISIBLE);
-							}
+							imageInfo.show( );	    	
 						}
-						catch(Exception e)
-						{
-							
-						}
-						
+					    catch(Exception e)
+					    {
+					    				
+					    }
 					}
 				});
+					    	////////////////////////////////UPLOAD INFO////////////////////////////////////
+					    	
 				decision.setButton( Dialog.BUTTON_NEGATIVE, "No", new DialogInterface.OnClickListener() 
 				{
 					public void onClick(DialogInterface dialog, int which)
@@ -1742,7 +1753,7 @@ public class Testpic extends Activity
     	   fos = new FileOutputStream(path);      
            if ( fos != null ) 
            { 
-                b.compress(Bitmap.CompressFormat.PNG, 90, fos ); 
+                b.compress(Bitmap.CompressFormat.PNG, 100, fos ); 
                 MediaStore.Images.Media.insertImage(getContentResolver(),
                 path.getAbsolutePath(), path.getName(), path.getName());
                 fos.flush();
@@ -1759,7 +1770,8 @@ public class Testpic extends Activity
     public static void postImage()
     {
         RequestParams params = new RequestParams();
-        params.put("user[name]",photoID);
+        params.put("user[name]",username);
+        params.put("user[email]", description);
         try 
         {
         	params.put("user[attach]",new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES), photoID));
