@@ -1771,7 +1771,7 @@ public class Testpic extends Activity
     {
         RequestParams params = new RequestParams();
         params.put("user[name]",username);
-        params.put("user[email]", description);
+        params.put("user[description]", description);
         try 
         {
         	params.put("user[attach]",new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES), photoID));
