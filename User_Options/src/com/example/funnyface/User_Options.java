@@ -4,16 +4,22 @@ import com.android.twitter.TwitterActivity;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.util.DisplayMetrics;
 import android.view.Display;
+import android.view.Gravity;
 import android.view.Menu;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
 
 public class User_Options extends Activity {
 
 	static int width;
 	static int height;
+	private int windowWidth;
+	private int windowHeight;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -67,6 +73,22 @@ public class User_Options extends Activity {
 		
 		Intent intent = new Intent(this, TwitterActivity.class);
 		startActivity(intent);
-		
+	}
+	public void onWindowFocusChanged(boolean hasFocus) {
+
+        super.onWindowFocusChanged(hasFocus);
+
+        if(hasFocus) {
+        	DisplayMetrics displaymetrics = new DisplayMetrics();
+        	getWindowManager().getDefaultDisplay().getMetrics(displaymetrics);
+        	windowWidth=displaymetrics.widthPixels;
+        	windowHeight=displaymetrics.heightPixels;
+        	
+        	ImageButton editButton = (ImageButton) findViewById(R.id.edit);
+        	ImageButton emailButton = (ImageButton) findViewById(R.id.email);
+        	ImageButton twitterButton = (ImageButton) findViewById(R.id.twitter);
+        	ImageButton databaseButton = (ImageButton) findViewById(R.id.database);
+        	
+        }
 	}
 }

@@ -8,9 +8,11 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
+import android.util.DisplayMetrics;
 import android.view.Menu;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 public class UserPhotoOptions extends Activity
@@ -18,6 +20,8 @@ public class UserPhotoOptions extends Activity
 	private static final int CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE = 100;
     private static final int RESULT_LOAD_IMAGE= 1888;
 	private Uri outputFileUri;		//Uri Object that'll point to the newly created file
+	private int windowWidth;
+	private int windowHeight;
     
 	@Override
 	protected void onCreate(Bundle savedInstanceState)
@@ -103,6 +107,23 @@ public class UserPhotoOptions extends Activity
 	            startActivity(new Intent(this, Testpic.class));
 	        }
 			
+	}
+	
+	@Override
+	public void onWindowFocusChanged(boolean hasFocus) {
+
+        super.onWindowFocusChanged(hasFocus);
+
+        if(hasFocus) {
+        	DisplayMetrics displaymetrics = new DisplayMetrics();
+        	getWindowManager().getDefaultDisplay().getMetrics(displaymetrics);
+        	windowWidth=displaymetrics.widthPixels;
+        	windowHeight=displaymetrics.heightPixels;
+    
+        	ImageButton cameraButton = (ImageButton) findViewById(R.id.button1);
+        	ImageButton galleryButton = (ImageButton) findViewById(R.id.button2);
+        	
+        }
 	}
 	
 	@Override

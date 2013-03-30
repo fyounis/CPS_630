@@ -4,49 +4,61 @@
     android:layout_height="match_parent"
     android:background="@drawable/homescreen"
     
-    android:onClick="GoToEmail"
+   
     android:orientation="horizontal"
     tools:context=".User_Options" >
 
-    <Button
-        android:id="@+id/Email"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
-        android:background="@drawable/mainemail"
-        android:onClick="GoToEmail"
-        tools:ignore="HardcodedText" />
-
-    <Button
-        android:id="@+id/picture"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
+    <ImageButton
+        android:id="@+id/edit"
+        android:layout_width="200dp"
+        android:layout_height="100dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="80dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="50dp"
         android:background="@drawable/edit"
+        android:baselineAlignBottom="false"
         android:onClick="GotoUserPhotoSelection"
         tools:ignore="HardcodedText" />
 
-    <Button
-        android:id="@+id/server"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:layout_alignParentBottom="true"
+        <ImageButton
+        android:id="@+id/email"
+        android:layout_width="200dp"
+        android:layout_height="100dp"
+        android:layout_alignParentTop="true"
+		android:layout_centerHorizontal="true"
+		android:layout_alignParentLeft="true"
+        android:layout_marginLeft="35dp"
+        android:layout_marginTop="180dp"
+        android:background="@drawable/email"
+        android:onClick="GoToEmail"
+        tools:ignore="HardcodedText" />
+    
+    <ImageButton
+        android:id="@+id/twitter"
+        android:layout_width="200dp"
+        android:layout_height="100dp"
+		android:layout_alignParentTop="true"
+		android:layout_centerHorizontal="true"
+        android:layout_marginTop="280dp"
         android:layout_alignParentLeft="true"
-        android:background="@drawable/maindb"
+        android:layout_marginLeft="60dp"
+        android:background="@drawable/twitter"
+        android:onClick="GoToTwitter"
+        tools:ignore="HardcodedText" />
+
+    <ImageButton
+        android:id="@+id/database"
+        android:layout_width="200dp"
+        android:layout_height="100dp"
+		android:layout_alignParentTop="true"
+		android:layout_centerHorizontal="true"
+        android:layout_marginTop="380dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="40dp"
+        android:background="@drawable/db"
         android:onClick="GoToDatabase"
         tools:ignore="HardcodedText" />
 
-    <Button
-        android:id="@+id/GoTwitter"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="114dp"
-        android:background="@drawable/mainemail"
-        android:onClick="GoToTwitter"
-        tools:ignore="HardcodedText" />
 
 </RelativeLayout>
