@@ -8,58 +8,6 @@
     android:orientation="horizontal"
     tools:context=".User_Options" >
 
-    <ImageButton
-        android:id="@+id/edit"
-        android:layout_width="200dp"
-        android:layout_height="100dp"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="80dp"
-        android:layout_alignParentLeft="true"
-        android:layout_marginLeft="50dp"
-        android:background="@drawable/edit"
-        android:baselineAlignBottom="false"
-        android:onClick="GotoUserPhotoSelection"
-        tools:ignore="HardcodedText" />
-
-        <ImageButton
-        android:id="@+id/email"
-        android:layout_width="200dp"
-        android:layout_height="100dp"
-        android:layout_alignParentTop="true"
-		android:layout_centerHorizontal="true"
-		android:layout_alignParentLeft="true"
-        android:layout_marginLeft="35dp"
-        android:layout_marginTop="180dp"
-        android:background="@drawable/email"
-        android:onClick="GoToEmail"
-        tools:ignore="HardcodedText" />
-    
-    <ImageButton
-        android:id="@+id/twitter"
-        android:layout_width="200dp"
-        android:layout_height="100dp"
-		android:layout_alignParentTop="true"
-		android:layout_centerHorizontal="true"
-        android:layout_marginTop="280dp"
-        android:layout_alignParentLeft="true"
-        android:layout_marginLeft="60dp"
-        android:background="@drawable/twitter"
-        android:onClick="GoToTwitter"
-        tools:ignore="HardcodedText" />
-
-    <ImageButton
-        android:id="@+id/database"
-        android:layout_width="200dp"
-        android:layout_height="100dp"
-		android:layout_alignParentTop="true"
-		android:layout_centerHorizontal="true"
-        android:layout_marginTop="380dp"
-        android:layout_alignParentLeft="true"
-        android:layout_marginLeft="55dp"
-        android:background="@drawable/db"
-        android:onClick="GoToDatabase"
-        tools:ignore="HardcodedText" />
-
     <ImageView
         android:id="@+id/backedit"
         android:layout_width="wrap_content"
@@ -103,5 +51,48 @@
         android:layout_alignRight="@+id/edit"
         android:layout_alignTop="@+id/database"
         android:src="@drawable/back" />
+
+                     <ImageButton
+                         android:id="@+id/edit"
+                         android:layout_width="200dp"
+                         android:layout_height="100dp"
+                         android:layout_above="@+id/backemail"
+                         android:layout_centerHorizontal="true"
+                         android:background="@drawable/edit"
+                         android:baselineAlignBottom="false"
+                         android:onClick="GotoUserPhotoSelection"
+                         tools:ignore="HardcodedText" />
+
+                     <ImageButton
+                         android:id="@+id/email"
+                         android:layout_width="200dp"
+                         android:layout_height="100dp"
+                         android:layout_above="@+id/backtwitter"
+                         android:layout_alignLeft="@+id/backemail"
+                         android:background="@drawable/email"
+                         android:onClick="GoToEmail"
+                         tools:ignore="HardcodedText" />
+
+                     <ImageButton
+                         android:id="@+id/twitter"
+                         android:layout_width="200dp"
+                         android:layout_height="100dp"
+                         android:layout_above="@+id/backdb"
+                         android:layout_alignLeft="@+id/backtwitter"
+                         android:layout_marginLeft="0dp"
+                         android:background="@drawable/twitter"
+                         android:onClick="GoToTwitter"
+                         tools:ignore="HardcodedText" />
+
+                     <ImageButton
+                         android:id="@+id/database"
+                         android:layout_width="200dp"
+                         android:layout_height="100dp"
+                         android:layout_alignLeft="@+id/backdb"
+                         android:layout_alignParentBottom="true"
+                         
+                         android:background="@drawable/db"
+                         android:onClick="GoToDatabase"
+                         tools:ignore="HardcodedText" />
 
 </RelativeLayout>
