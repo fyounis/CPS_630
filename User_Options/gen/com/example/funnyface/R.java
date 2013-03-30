@@ -94,10 +94,6 @@ public final class R {
     public static final class id {
         public static final int addphoto=0x7f070003;
         public static final int angry=0x7f070020;
-        public static final int backdb=0x7f070042;
-        public static final int backedit=0x7f07003f;
-        public static final int backemail=0x7f070040;
-        public static final int backtwitter=0x7f070041;
         public static final int bird=0x7f070021;
         public static final int black=0x7f07002e;
         public static final int blue=0x7f070031;
@@ -128,10 +124,10 @@ public final class R {
         public static final int icream=0x7f070023;
         public static final int imageView1=0x7f07000c;
         public static final int lips=0x7f070018;
-        public static final int mBtnTwitter=0x7f070044;
+        public static final int mBtnTwitter=0x7f070040;
         public static final int mask=0x7f07001e;
         public static final int medium=0x7f070037;
-        public static final int menu_settings=0x7f070045;
+        public static final int menu_settings=0x7f070041;
         public static final int mono=0x7f070016;
         public static final int moustache=0x7f07001b;
         public static final int newpic=0x7f070013;
@@ -158,7 +154,7 @@ public final class R {
         public static final int undoAll=0x7f07003b;
         public static final int undoLast=0x7f070039;
         public static final int undoThis=0x7f07003a;
-        public static final int webView1=0x7f070043;
+        public static final int webView1=0x7f07003f;
         public static final int white=0x7f07002f;
         public static final int whiteg=0x7f07002c;
         public static final int yellow=0x7f070033;
