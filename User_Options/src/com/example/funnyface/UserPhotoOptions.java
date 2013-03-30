@@ -31,7 +31,7 @@ public class UserPhotoOptions extends Activity
 		
 		//Camera Button
 		ImageButton buttonCamera= (ImageButton) findViewById(R.id.button1);
-		buttonCamera.setBackgroundResource(R.drawable.fromcamera);
+		//buttonCamera.setBackgroundResource(R.drawable.fromcamera);
 		buttonCamera.setOnClickListener(new View.OnClickListener() {
 			
 			//Go to Camera Intent
@@ -60,7 +60,7 @@ public class UserPhotoOptions extends Activity
 		
 		//Gallery Button
 		final ImageButton buttonGallery= (ImageButton) findViewById(R.id.button2);
-		buttonGallery.setBackgroundResource(R.drawable.fromgallery);
+		//buttonGallery.setBackgroundResource(R.drawable.fromgallery);
 		buttonGallery.setOnClickListener(new View.OnClickListener() {
 			
 			//Go to Gallery, Implement the Intent that you want to load the image gallery

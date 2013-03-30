@@ -55,10 +55,53 @@
 		android:layout_centerHorizontal="true"
         android:layout_marginTop="380dp"
         android:layout_alignParentLeft="true"
-        android:layout_marginLeft="40dp"
+        android:layout_marginLeft="55dp"
         android:background="@drawable/db"
         android:onClick="GoToDatabase"
         tools:ignore="HardcodedText" />
 
+    <ImageView
+        android:id="@+id/backedit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:scaleType="fitXY"
+        android:layout_alignBottom="@+id/edit"
+        android:layout_alignLeft="@+id/edit"
+        android:layout_alignRight="@+id/edit"
+        android:layout_alignTop="@+id/edit"
+        android:src="@drawable/back" />
+    
+       <ImageView
+        android:id="@+id/backemail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:scaleType="fitXY"
+        android:layout_alignBottom="@+id/email"
+        android:layout_alignLeft="@+id/edit"
+        android:layout_alignRight="@+id/edit"
+        android:layout_alignTop="@+id/email"
+        android:src="@drawable/back" />
+       
+              <ImageView
+        android:id="@+id/backtwitter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:scaleType="fitXY"
+        android:layout_alignBottom="@+id/twitter"
+        android:layout_alignLeft="@+id/edit"
+        android:layout_alignRight="@+id/edit"
+        android:layout_alignTop="@+id/twitter"
+        android:src="@drawable/back" />
+              
+                     <ImageView
+        android:id="@+id/backdb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:scaleType="fitXY"
+        android:layout_alignBottom="@+id/database"
+        android:layout_alignLeft="@+id/edit"
+        android:layout_alignRight="@+id/edit"
+        android:layout_alignTop="@+id/database"
+        android:src="@drawable/back" />
 
 </RelativeLayout>
