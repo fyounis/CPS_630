@@ -94,10 +94,10 @@ public final class R {
     public static final class id {
         public static final int addphoto=0x7f070003;
         public static final int angry=0x7f070020;
-        public static final int backdb=0x7f070041;
-        public static final int backedit=0x7f07003c;
-        public static final int backemail=0x7f07003d;
-        public static final int backtwitter=0x7f07003f;
+        public static final int backdb=0x7f070042;
+        public static final int backedit=0x7f07003f;
+        public static final int backemail=0x7f070040;
+        public static final int backtwitter=0x7f070041;
         public static final int bird=0x7f070021;
         public static final int black=0x7f07002e;
         public static final int blue=0x7f070031;
@@ -108,9 +108,9 @@ public final class R {
         public static final int ceyes=0x7f070019;
         public static final int content=0x7f07000e;
         public static final int cyan=0x7f070035;
-        public static final int database=0x7f070042;
+        public static final int database=0x7f07003e;
         public static final int edit=0x7f070012;
-        public static final int email=0x7f07003e;
+        public static final int email=0x7f07003c;
         public static final int email_address=0x7f070000;
         public static final int email_subject=0x7f070001;
         public static final int email_text=0x7f070002;
@@ -154,7 +154,7 @@ public final class R {
         public static final int thin=0x7f070036;
         public static final int thought=0x7f07002a;
         public static final int tongue=0x7f07002b;
-        public static final int twitter=0x7f070040;
+        public static final int twitter=0x7f07003d;
         public static final int undoAll=0x7f07003b;
         public static final int undoLast=0x7f070039;
         public static final int undoThis=0x7f07003a;

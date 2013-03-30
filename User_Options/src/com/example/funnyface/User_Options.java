@@ -74,7 +74,6 @@ public class User_Options extends Activity {
 		Intent intent = new Intent(this, TwitterActivity.class);
 		startActivity(intent);
 	}
-	@Override
 	public void onWindowFocusChanged(boolean hasFocus) {
 
         super.onWindowFocusChanged(hasFocus);
