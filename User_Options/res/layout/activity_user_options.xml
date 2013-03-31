@@ -29,23 +29,27 @@
                     android:layout_height="match_parent"
                     android:orientation="horizontal" >
 
+
                     <ImageButton
                      android:id="@+id/edit"
                      android:background="@drawable/edit"
                      android:layout_alignParentTop="true"
                  	 android:layout_marginLeft="25dp"
                      android:layout_width="130dp"
-        			 android:layout_height="60dp"
+        			 android:layout_height="80dp"
+        			 android:scaleType="fitXY"
         			 android:onClick="GotoUserPhotoSelection"
         			 tools:ignore="HardcodedText" 
         			 />
-                    
+                                    
+                                        
                     <ImageButton
                      android:id="@+id/email"
                      android:background="@drawable/email"
                      android:layout_alignParentTop="true"
                      android:layout_width="130dp"
-        		     android:layout_height="60dp"
+        		     android:layout_height="80dp"
+        		     android:scaleType="fitXY"
         		     android:onClick="GoToEmail"
         		     tools:ignore="HardcodedText" 
         		     />
@@ -79,7 +83,8 @@
                      android:layout_alignParentTop="true"
                      android:layout_marginLeft="25dp"
                      android:layout_width="130dp"
-        			 android:layout_height="60dp"
+        			 android:layout_height="80dp"
+        			 android:scaleType="fitXY"
         		     android:onClick="GoToTwitter"
         		     tools:ignore="HardcodedText" 
         		     />
@@ -89,7 +94,8 @@
                      android:background="@drawable/db"
                      android:layout_alignParentTop="true"
                      android:layout_width="130dp"
-       			     android:layout_height="60dp"
+       			     android:layout_height="80dp"
+       			     android:scaleType="fitXY"
        			     android:onClick="GoToDatabase"
                      tools:ignore="HardcodedText"
                      />
