@@ -97,7 +97,7 @@ public class Testpic extends Activity
 			final ImageButton hat = (ImageButton) findViewById(R.id.hat);
 			hat.setBackgroundResource(R.drawable.hat);
 			final ImageButton glasses = (ImageButton) findViewById(R.id.glasses);
-			glasses.setBackgroundResource(R.drawable.glasses);
+			glasses.setBackgroundResource(R.drawable.g);
 			final ImageButton mask = (ImageButton) findViewById(R.id.mask);
 			mask.setBackgroundResource(R.drawable.mask);
 			final ImageButton heart = (ImageButton) findViewById(R.id.heart);
@@ -113,7 +113,7 @@ public class Testpic extends Activity
 			final ImageButton ceyes = (ImageButton) findViewById(R.id.ceyes);
 			ceyes.setBackgroundResource(R.drawable.ceyes);
 			final ImageButton icream = (ImageButton) findViewById(R.id.icream);
-			icream.setBackgroundResource(R.drawable.icream);
+			icream.setBackgroundResource(R.drawable.ic);
 			final ImageButton lips = (ImageButton) findViewById(R.id.lips);
 			lips.setBackgroundResource(R.drawable.lips);
 			final ImageButton eyes = (ImageButton) findViewById(R.id.eyes);
@@ -309,8 +309,8 @@ public class Testpic extends Activity
 						tongue.getBackground( ).setColorFilter(null);
 						whiteg.getBackground( ).setColorFilter(null);
 						icream.getBackground().setColorFilter(Color.BLACK, PorterDuff.Mode.MULTIPLY);
-						CustomView.bitmap[CustomView.numberOfContents] = new contents(BitmapFactory.decodeResource(getResources(), R.drawable.icream));
-						CustomView.bitmap[CustomView.numberOfContents].originalBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.icream);
+						CustomView.bitmap[CustomView.numberOfContents] = new contents(BitmapFactory.decodeResource(getResources(), R.drawable.ic));
+						CustomView.bitmap[CustomView.numberOfContents].originalBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.ic);
 					} catch (NullPointerException e) {
 							
 					}
@@ -609,8 +609,8 @@ public class Testpic extends Activity
 						whiteg.getBackground( ).setColorFilter(null);
 						CustomView.mode="add_content";
 						glasses.getBackground().setColorFilter(Color.BLACK, PorterDuff.Mode.MULTIPLY);
-						CustomView.bitmap[CustomView.numberOfContents] = new contents(BitmapFactory.decodeResource(getResources(), R.drawable.glasses));
-						CustomView.bitmap[CustomView.numberOfContents].originalBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.glasses);
+						CustomView.bitmap[CustomView.numberOfContents] = new contents(BitmapFactory.decodeResource(getResources(), R.drawable.g));
+						CustomView.bitmap[CustomView.numberOfContents].originalBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.g);
 					} catch (NullPointerException e) {
 							
 					}
@@ -1066,11 +1066,11 @@ public class Testpic extends Activity
 		final ImageButton cyanColor = (ImageButton) findViewById(R.id.cyan);
 		cyanColor.setBackgroundColor(Color.CYAN);
 		final ImageButton ThinStroke = (ImageButton) findViewById(R.id.thin);
-		ThinStroke.setBackgroundResource(R.drawable.thinline);
+		ThinStroke.setBackgroundResource(R.drawable.thin);
 		final ImageButton MediumStroke = (ImageButton) findViewById(R.id.medium);
-		MediumStroke.setBackgroundResource(R.drawable.mediumline);
+		MediumStroke.setBackgroundResource(R.drawable.medium);
 		final ImageButton ThickStroke = (ImageButton) findViewById(R.id.thick);
-		ThickStroke.setBackgroundResource(R.drawable.thickline);
+		ThickStroke.setBackgroundResource(R.drawable.thick);
 		
 	
 		blackColor.setOnClickListener(new View.OnClickListener() {
@@ -1277,7 +1277,7 @@ public class Testpic extends Activity
 		});
 	 
 		final Button menuButton = (Button) findViewById(R.id.handle);
-		menuButton.setBackgroundDrawable(getResources().getDrawable(R.drawable.amenu));
+		menuButton.setBackgroundDrawable(getResources().getDrawable(R.drawable.menu));
 		menuButton.setOnClickListener(new View.OnClickListener()
 		{
 
@@ -1291,7 +1291,7 @@ public class Testpic extends Activity
 		});
 
 		final Button undoButton = (Button) findViewById(R.id.undoLast);
-		undoButton.setBackgroundDrawable(getResources().getDrawable(R.drawable.undoprevious));
+		undoButton.setBackgroundDrawable(getResources().getDrawable(R.drawable.undo));
 		undoButton.setOnClickListener(new View.OnClickListener() {
 			
 			@Override
@@ -1319,7 +1319,7 @@ public class Testpic extends Activity
 
 
 		final Button UndoThis = (Button) findViewById(R.id.undoThis);
-		UndoThis.setBackgroundDrawable(getResources().getDrawable(R.drawable.undopoint));
+		UndoThis.setBackgroundDrawable(getResources().getDrawable(R.drawable.delete));
 		UndoThis.setOnClickListener(new View.OnClickListener( ) {
 
 			@Override
@@ -1343,7 +1343,7 @@ public class Testpic extends Activity
 	
 	
 	    final Button ResetButton = (Button) findViewById(R.id.undoAll);
-	    ResetButton.setBackgroundDrawable(getResources().getDrawable(R.drawable.reseting));
+	    ResetButton.setBackgroundDrawable(getResources().getDrawable(R.drawable.reset));
         ResetButton.setOnClickListener(new View.OnClickListener() {
 
            @Override
@@ -1427,7 +1427,7 @@ public class Testpic extends Activity
 	
 	
     final Button paintButton = (Button) findViewById(R.id.paint);
-    paintButton.setBackgroundDrawable(getResources().getDrawable(R.drawable.painting));
+    paintButton.setBackgroundDrawable(getResources().getDrawable(R.drawable.paint));
     paintButton.setOnClickListener(new View.OnClickListener(){
 
 		@SuppressWarnings("static-access")
@@ -1537,7 +1537,7 @@ public class Testpic extends Activity
     	
     });
     final Button OverlaysButton = (Button) findViewById(R.id.overlays);
-    OverlaysButton.setBackgroundDrawable(getResources().getDrawable(R.drawable.overlaying));
+    OverlaysButton.setBackgroundDrawable(getResources().getDrawable(R.drawable.components));
     OverlaysButton.setOnClickListener(new View.OnClickListener(){
 
 		@SuppressWarnings("static-access")
@@ -1591,7 +1591,7 @@ public class Testpic extends Activity
 
     
     final Button SaveButton = (Button) findViewById(R.id.save);
-    SaveButton.setBackgroundDrawable(getResources().getDrawable(R.drawable.saving));
+    SaveButton.setBackgroundDrawable(getResources().getDrawable(R.drawable.save));
     SaveButton.setOnClickListener(new View.OnClickListener(){
 
 		@SuppressWarnings("static-access")

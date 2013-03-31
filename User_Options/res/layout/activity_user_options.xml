@@ -32,7 +32,7 @@
 
                     <ImageButton
                      android:id="@+id/edit"
-                     android:background="@drawable/edit"
+                     android:background="@drawable/editselector"
                      android:layout_alignParentTop="true"
                  	 android:layout_marginLeft="25dp"
                      android:layout_width="130dp"
@@ -45,7 +45,7 @@
                                         
                     <ImageButton
                      android:id="@+id/email"
-                     android:background="@drawable/email"
+                     android:background="@drawable/emailselector"
                      android:layout_alignParentTop="true"
                      android:layout_width="130dp"
         		     android:layout_height="80dp"
@@ -79,7 +79,7 @@
 
                     <ImageButton
                      android:id="@+id/twitter"
-                     android:background="@drawable/twitter"
+                     android:background="@drawable/twitterselector"
                      android:layout_alignParentTop="true"
                      android:layout_marginLeft="25dp"
                      android:layout_width="130dp"
@@ -91,7 +91,7 @@
         		     
                     <ImageButton
                      android:id="@+id/database"
-                     android:background="@drawable/db"
+                     android:background="@drawable/dbselector"
                      android:layout_alignParentTop="true"
                      android:layout_width="130dp"
        			     android:layout_height="80dp"

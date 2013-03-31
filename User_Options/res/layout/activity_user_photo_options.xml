@@ -13,7 +13,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="107dp"
         android:text="From camera"
-        android:background="@drawable/fromcamera"
+        android:background="@drawable/fromcameraselector"
         android:onClick="TakePictureFromCamera"
         tools:ignore="HardcodedText" />
 
@@ -26,7 +26,7 @@
         android:layout_below="@+id/button1"
         android:layout_marginTop="107dp"
         android:text="From gallery"
-        android:background="@drawable/fromgallery"
+        android:background="@drawable/fromgalleryselector"
         android:onClick="TakePictureFromGallery"
         tools:ignore="HardcodedText" />
 
