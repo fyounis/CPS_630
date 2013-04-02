@@ -194,7 +194,7 @@ public class Testpic extends Activity
 						tongue.getBackground( ).setColorFilter(null);
 						whiteg.getBackground( ).setColorFilter(null);
 						imageSelect = stache_glasses;
-						stache_glasses.getBackground().setColorFilter(Color.BLACK, PorterDuff.Mode.MULTIPLY);
+						Caption.setBackgroundResource(R.drawable.caption);
 						CustomView.mode="add_content";
 						CustomView.bitmap[CustomView.numberOfContents] = new contents(BitmapFactory.decodeResource(getResources(), R.drawable.gstache));
 						CustomView.bitmap[CustomView.numberOfContents].originalBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.gstache);
@@ -1546,6 +1546,7 @@ public class Testpic extends Activity
 		{
 			try
 			{
+				OverlaysButton.setBackgroundResource(R.drawable.components_clicked);
 				blackColor.setVisibility(view.GONE);
 				whiteColor.setVisibility(view.GONE); 
 				redColor.setVisibility(view.GONE);
