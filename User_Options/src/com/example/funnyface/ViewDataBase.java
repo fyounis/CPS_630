@@ -4,8 +4,11 @@ import java.util.concurrent.TimeUnit;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.os.Bundle;
 import android.os.CountDownTimer;
@@ -32,7 +35,7 @@ public class ViewDataBase extends Activity
 			if(cloudconnection.getActiveNetworkInfo( ) != null && cloudconnection.getActiveNetworkInfo( ).isAvailable() && cloudconnection.getActiveNetworkInfo( ).isConnected( ))
 			{	
 				final ProgressDialog progressDialog = new ProgressDialog(ViewDataBase.this);
-				progressDialog.setMessage("Connecting ...");
+				progressDialog.setMessage("Connecting to the cloud ...");
 				progressDialog.setCancelable(false);
 			    progressDialog.setIndeterminate(true);
 				progressDialog.show();
@@ -52,20 +55,23 @@ public class ViewDataBase extends Activity
 			}
 			else
 			{	
-
-				//cloudConnection.loadUrl("nointernet.html");
-				Toast.makeText(getApplicationContext(), "EditMeNow could not connect to cloud because there is no internet",Toast.LENGTH_LONG).show();
-				new CountDownTimer(10000, 1000)
-				{
-				    public void onTick(long millisUntilFinished) 
-				    {
-				    	Toast.makeText(getApplicationContext(), "EditMeNow could not connect to cloud because there is no internet",Toast.LENGTH_LONG).show();
-				    }
-				    public void onFinish() 
-				    {
-				    	Toast.makeText(getApplicationContext(), "EditMeNow could not connect to cloud because there is no internet",Toast.LENGTH_LONG).show();
-				    }
-				}.start();
+					AlertDialog.Builder noInternet = new AlertDialog.Builder(ViewDataBase.this);
+					noInternet.setTitle("EditMeNow connectivity");
+					noInternet.setIcon(R.drawable.cloudicon);
+					noInternet.setMessage("Access to the cloud requires an internet connection.");
+					noInternet.setCancelable(true);
+					noInternet.setPositiveButton("Ok", new DialogInterface.OnClickListener() 
+					{
+		                public void onClick(DialogInterface dialog, int id)
+		                {  
+		                    dialog.cancel();
+		                    finish( );
+			        		ViewDataBase.this.onDestroy();
+			        		Intent home = new Intent(ViewDataBase.this, User_Options.class);
+			        		startActivity(home);
+		                }
+		            });
+					noInternet.show( );
 				
 			}
 		}

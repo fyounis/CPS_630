@@ -1727,6 +1727,7 @@ public class Testpic extends Activity
 							AlertDialog imageInfo = new AlertDialog.Builder(Testpic.this).create();   
 					    	imageInfo.setCancelable(false);
 					    	imageInfo.setTitle("Upload Information");
+					    	imageInfo.setIcon(R.drawable.cloudicon);
 					    	imageInfo.setMessage("Please enter a username to upload with photo: ");
 					    	final EditText usernameInput = new EditText(Testpic.this);
 					    	imageInfo.setView(usernameInput);
@@ -1741,6 +1742,7 @@ public class Testpic extends Activity
 					    				AlertDialog imageDescription = new AlertDialog.Builder(Testpic.this).create();   
 					    				imageDescription.setCancelable(false);
 					    				imageDescription.setTitle("Upload Information");
+					    				imageDescription.setIcon(R.drawable.cloudicon);
 					    				imageDescription.setMessage("Please enter a description to upload with photo: ");
 								    	final EditText DescriptionInput = new EditText(Testpic.this);
 								    	imageDescription.setView(DescriptionInput);
