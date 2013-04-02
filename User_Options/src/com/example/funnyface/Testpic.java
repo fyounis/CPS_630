@@ -122,9 +122,22 @@ public class Testpic extends Activity
 			stache_glasses.setBackgroundResource(R.drawable.gstache);
 			final ImageButton Caption = (ImageButton) findViewById(R.id.caption);
 			Caption.setBackgroundResource(R.drawable.caption);
-			
-         
-			
+			final Button newPictureButton = (Button) findViewById(R.id.newpic);
+	        newPictureButton.setBackgroundDrawable(getResources().getDrawable(R.drawable.newpicture));
+	        final Button paintButton = (Button) findViewById(R.id.paint);
+	        paintButton.setBackgroundDrawable(getResources().getDrawable(R.drawable.paint));
+	        final Button editButton = (Button) findViewById(R.id.edit);
+	        editButton.setBackgroundDrawable(getResources().getDrawable(R.drawable.editing));
+	        final Button OverlaysButton = (Button) findViewById(R.id.overlays);
+	        OverlaysButton.setBackgroundDrawable(getResources().getDrawable(R.drawable.components));
+	        final Button SaveButton = (Button) findViewById(R.id.save);
+	        SaveButton.setBackgroundDrawable(getResources().getDrawable(R.drawable.save));
+	        final Button undoButton = (Button) findViewById(R.id.undoLast);
+	        undoButton.setBackgroundDrawable(getResources().getDrawable(R.drawable.undo));
+	        final Button UndoThis = (Button) findViewById(R.id.undoThis);
+			UndoThis.setBackgroundDrawable(getResources().getDrawable(R.drawable.delete));
+			final Button ResetButton = (Button) findViewById(R.id.undoAll);
+			ResetButton.setBackgroundDrawable(getResources().getDrawable(R.drawable.reset));
 
 			Caption.setOnClickListener(new View.OnClickListener() {	
 				@Override
@@ -194,7 +207,7 @@ public class Testpic extends Activity
 						tongue.getBackground( ).setColorFilter(null);
 						whiteg.getBackground( ).setColorFilter(null);
 						imageSelect = stache_glasses;
-						stache_glasses.getBackground().setColorFilter(Color.BLACK, PorterDuff.Mode.MULTIPLY);
+						Caption.setBackgroundResource(R.drawable.caption);
 						CustomView.mode="add_content";
 						CustomView.bitmap[CustomView.numberOfContents] = new contents(BitmapFactory.decodeResource(getResources(), R.drawable.gstache));
 						CustomView.bitmap[CustomView.numberOfContents].originalBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.gstache);
@@ -1228,8 +1241,15 @@ public class Testpic extends Activity
 			@Override
 			public void onClick(View v) 
 			{
+				
 				try
 				{
+					ThinStroke.setBackgroundResource(R.drawable.thin_click);
+					MediumStroke.setBackgroundResource(R.drawable.medium);
+					ThickStroke.setBackgroundResource(R.drawable.thick);
+					undoButton.setBackgroundDrawable(getResources().getDrawable(R.drawable.undo));
+					UndoThis.setBackgroundDrawable(getResources().getDrawable(R.drawable.delete));
+					ResetButton.setBackgroundDrawable(getResources().getDrawable(R.drawable.reset));
 					CustomView.strokeSize = "Size1";
 				}
 				catch(Exception e)
@@ -1247,6 +1267,12 @@ public class Testpic extends Activity
 			{
 				try
 				{
+					ThinStroke.setBackgroundResource(R.drawable.thin);
+					MediumStroke.setBackgroundResource(R.drawable.medium_click);
+					ThickStroke.setBackgroundResource(R.drawable.thick);
+					undoButton.setBackgroundDrawable(getResources().getDrawable(R.drawable.undo));
+					UndoThis.setBackgroundDrawable(getResources().getDrawable(R.drawable.delete));
+					ResetButton.setBackgroundDrawable(getResources().getDrawable(R.drawable.reset));
 					CustomView.strokeSize = "Size2";
 				}
 				catch(Exception e)
@@ -1264,7 +1290,12 @@ public class Testpic extends Activity
 			{
 				try
 				{
-					
+					ThinStroke.setBackgroundResource(R.drawable.thin);
+					MediumStroke.setBackgroundResource(R.drawable.medium);
+					ThickStroke.setBackgroundResource(R.drawable.thick_click);
+					undoButton.setBackgroundDrawable(getResources().getDrawable(R.drawable.undo));
+					UndoThis.setBackgroundDrawable(getResources().getDrawable(R.drawable.delete));
+					ResetButton.setBackgroundDrawable(getResources().getDrawable(R.drawable.reset));
 					CustomView.strokeSize = "Size3";
 				}
 				catch(Exception e)
@@ -1290,8 +1321,8 @@ public class Testpic extends Activity
 			
 		});
 
-		final Button undoButton = (Button) findViewById(R.id.undoLast);
-		undoButton.setBackgroundDrawable(getResources().getDrawable(R.drawable.undo));
+		//final Button undoButton = (Button) findViewById(R.id.undoLast);
+		//undoButton.setBackgroundDrawable(getResources().getDrawable(R.drawable.undo));
 		undoButton.setOnClickListener(new View.OnClickListener() {
 			
 			@Override
@@ -1299,6 +1330,9 @@ public class Testpic extends Activity
 			{
 				try
 				{
+							undoButton.setBackgroundDrawable(getResources().getDrawable(R.drawable.undo_click));
+							UndoThis.setBackgroundDrawable(getResources().getDrawable(R.drawable.delete));
+							ResetButton.setBackgroundDrawable(getResources().getDrawable(R.drawable.reset));
 							System.out.println("*****before: " + CustomView.numberOfContents);
 							CustomView.bitmap[CustomView.numberOfContents]=null;
 							CustomView.numberOfContents=CustomView.numberOfContents-1;
@@ -1318,8 +1352,8 @@ public class Testpic extends Activity
 
 
 
-		final Button UndoThis = (Button) findViewById(R.id.undoThis);
-		UndoThis.setBackgroundDrawable(getResources().getDrawable(R.drawable.delete));
+		//final Button UndoThis = (Button) findViewById(R.id.undoThis);
+		//UndoThis.setBackgroundDrawable(getResources().getDrawable(R.drawable.delete));
 		UndoThis.setOnClickListener(new View.OnClickListener( ) {
 
 			@Override
@@ -1327,6 +1361,9 @@ public class Testpic extends Activity
 			{
 				try
 				{
+							UndoThis.setBackgroundDrawable(getResources().getDrawable(R.drawable.delete_click));
+							undoButton.setBackgroundDrawable(getResources().getDrawable(R.drawable.undo));
+							ResetButton.setBackgroundDrawable(getResources().getDrawable(R.drawable.reset));
 							if(CustomView.numberOfContents != 0){
 							   CustomView.bitmap[CustomView.currentContentIndex] = null;
 							   Toast.makeText(getApplicationContext(), "Component Removed", Toast.LENGTH_LONG).show();
@@ -1342,8 +1379,8 @@ public class Testpic extends Activity
 		});
 	
 	
-	    final Button ResetButton = (Button) findViewById(R.id.undoAll);
-	    ResetButton.setBackgroundDrawable(getResources().getDrawable(R.drawable.reset));
+	    //final Button ResetButton = (Button) findViewById(R.id.undoAll);
+	    //ResetButton.setBackgroundDrawable(getResources().getDrawable(R.drawable.reset));
         ResetButton.setOnClickListener(new View.OnClickListener() {
 
            @Override
@@ -1352,6 +1389,9 @@ public class Testpic extends Activity
         	    
                 try
                 {
+                			ResetButton.setBackgroundDrawable(getResources().getDrawable(R.drawable.reset_click));
+                			UndoThis.setBackgroundDrawable(getResources().getDrawable(R.drawable.delete));
+							undoButton.setBackgroundDrawable(getResources().getDrawable(R.drawable.undo));
                 			for(Path p: CustomView.paths)
                 			{
                 					p.reset( ); 
@@ -1379,13 +1419,21 @@ public class Testpic extends Activity
         });
 	
         
-        final Button newPictureButton = (Button) findViewById(R.id.newpic);
-        newPictureButton.setBackgroundDrawable(getResources().getDrawable(R.drawable.newpicture));
+        //final Button newPictureButton = (Button) findViewById(R.id.newpic);
+        //newPictureButton.setBackgroundDrawable(getResources().getDrawable(R.drawable.newpicture));
         newPictureButton.setOnClickListener(new View.OnClickListener()
         {
 			@Override
 			public void onClick(View v)
 			{
+				newPictureButton.setBackgroundDrawable(getResources().getDrawable(R.drawable.newpictureclick));
+				paintButton.setBackgroundDrawable(getResources().getDrawable(R.drawable.paint));
+				editButton.setBackgroundDrawable(getResources().getDrawable(R.drawable.editing));
+				OverlaysButton.setBackgroundDrawable(getResources().getDrawable(R.drawable.components));
+				SaveButton.setBackgroundDrawable(getResources().getDrawable(R.drawable.save));
+				ThinStroke.setBackgroundResource(R.drawable.thin);
+				MediumStroke.setBackgroundResource(R.drawable.medium);
+				ThickStroke.setBackgroundResource(R.drawable.thick);
 				AlertDialog newPic = new AlertDialog.Builder(Testpic.this).create();
 				newPic.setTitle("New Picture");
 				newPic.setMessage("Are you sure you want to exit Editor? Your data will be lost.");
@@ -1426,8 +1474,8 @@ public class Testpic extends Activity
 	
 	
 	
-    final Button paintButton = (Button) findViewById(R.id.paint);
-    paintButton.setBackgroundDrawable(getResources().getDrawable(R.drawable.paint));
+    //final Button paintButton = (Button) findViewById(R.id.paint);
+    //paintButton.setBackgroundDrawable(getResources().getDrawable(R.drawable.paint));
     paintButton.setOnClickListener(new View.OnClickListener(){
 
 		@SuppressWarnings("static-access")
@@ -1436,6 +1484,17 @@ public class Testpic extends Activity
 		{
 			 try
 			 {
+				 newPictureButton.setBackgroundDrawable(getResources().getDrawable(R.drawable.newpicture));
+			     editButton.setBackgroundDrawable(getResources().getDrawable(R.drawable.editing));
+				 OverlaysButton.setBackgroundDrawable(getResources().getDrawable(R.drawable.components));
+				 SaveButton.setBackgroundDrawable(getResources().getDrawable(R.drawable.save));
+				 paintButton.setBackgroundDrawable(getResources().getDrawable(R.drawable.paintclick));
+				 undoButton.setBackgroundDrawable(getResources().getDrawable(R.drawable.undo));
+				 UndoThis.setBackgroundDrawable(getResources().getDrawable(R.drawable.delete));
+				 ResetButton.setBackgroundDrawable(getResources().getDrawable(R.drawable.reset));
+				 ThinStroke.setBackgroundResource(R.drawable.thin);
+				 MediumStroke.setBackgroundResource(R.drawable.medium);
+				 ThickStroke.setBackgroundResource(R.drawable.thick);
 				 blackColor.setVisibility(view.VISIBLE);
 				 whiteColor.setVisibility(view.VISIBLE); 
 				 redColor.setVisibility(view.VISIBLE);
@@ -1482,8 +1541,8 @@ public class Testpic extends Activity
     });
 	
       
-    final Button editButton = (Button) findViewById(R.id.edit);
-    editButton.setBackgroundDrawable(getResources().getDrawable(R.drawable.editing));
+    //final Button editButton = (Button) findViewById(R.id.edit);
+    //editButton.setBackgroundDrawable(getResources().getDrawable(R.drawable.editing));
     editButton.setOnClickListener(new View.OnClickListener(){
 
 		@SuppressWarnings("static-access")
@@ -1492,6 +1551,17 @@ public class Testpic extends Activity
 		{
 			try
 			{
+			  newPictureButton.setBackgroundDrawable(getResources().getDrawable(R.drawable.newpicture));
+			  OverlaysButton.setBackgroundDrawable(getResources().getDrawable(R.drawable.components));
+			  SaveButton.setBackgroundDrawable(getResources().getDrawable(R.drawable.save));
+			  paintButton.setBackgroundDrawable(getResources().getDrawable(R.drawable.paint));
+		      editButton.setBackgroundDrawable(getResources().getDrawable(R.drawable.editingclick));
+		      undoButton.setBackgroundDrawable(getResources().getDrawable(R.drawable.undo));
+			  UndoThis.setBackgroundDrawable(getResources().getDrawable(R.drawable.delete));
+			  ResetButton.setBackgroundDrawable(getResources().getDrawable(R.drawable.reset));
+			  ThinStroke.setBackgroundResource(R.drawable.thin);
+			  MediumStroke.setBackgroundResource(R.drawable.medium);
+			  ThickStroke.setBackgroundResource(R.drawable.thick);
 			  blackColor.setVisibility(view.GONE);
 			  whiteColor.setVisibility(view.GONE); 
 			  redColor.setVisibility(view.GONE);
@@ -1536,8 +1606,8 @@ public class Testpic extends Activity
 		}
     	
     });
-    final Button OverlaysButton = (Button) findViewById(R.id.overlays);
-    OverlaysButton.setBackgroundDrawable(getResources().getDrawable(R.drawable.components));
+   // final Button OverlaysButton = (Button) findViewById(R.id.overlays);
+    //OverlaysButton.setBackgroundDrawable(getResources().getDrawable(R.drawable.components));
     OverlaysButton.setOnClickListener(new View.OnClickListener(){
 
 		@SuppressWarnings("static-access")
@@ -1546,6 +1616,17 @@ public class Testpic extends Activity
 		{
 			try
 			{
+				newPictureButton.setBackgroundDrawable(getResources().getDrawable(R.drawable.newpicture));
+			    editButton.setBackgroundDrawable(getResources().getDrawable(R.drawable.editing));
+				OverlaysButton.setBackgroundDrawable(getResources().getDrawable(R.drawable.componentsclick));
+				SaveButton.setBackgroundDrawable(getResources().getDrawable(R.drawable.save));
+				paintButton.setBackgroundDrawable(getResources().getDrawable(R.drawable.paint));
+				undoButton.setBackgroundDrawable(getResources().getDrawable(R.drawable.undo));
+				UndoThis.setBackgroundDrawable(getResources().getDrawable(R.drawable.delete));
+				ResetButton.setBackgroundDrawable(getResources().getDrawable(R.drawable.reset));
+				ThinStroke.setBackgroundResource(R.drawable.thin);
+				MediumStroke.setBackgroundResource(R.drawable.medium);
+				ThickStroke.setBackgroundResource(R.drawable.thick);
 				blackColor.setVisibility(view.GONE);
 				whiteColor.setVisibility(view.GONE); 
 				redColor.setVisibility(view.GONE);
@@ -1590,8 +1671,8 @@ public class Testpic extends Activity
     });
 
     
-    final Button SaveButton = (Button) findViewById(R.id.save);
-    SaveButton.setBackgroundDrawable(getResources().getDrawable(R.drawable.save));
+    //final Button SaveButton = (Button) findViewById(R.id.save);
+    //SaveButton.setBackgroundDrawable(getResources().getDrawable(R.drawable.save));
     SaveButton.setOnClickListener(new View.OnClickListener(){
 
 		@SuppressWarnings("static-access")
@@ -1600,6 +1681,17 @@ public class Testpic extends Activity
 		{
 			try
 			{
+				newPictureButton.setBackgroundDrawable(getResources().getDrawable(R.drawable.newpicture));
+			    editButton.setBackgroundDrawable(getResources().getDrawable(R.drawable.editing));
+				OverlaysButton.setBackgroundDrawable(getResources().getDrawable(R.drawable.components));
+				paintButton.setBackgroundDrawable(getResources().getDrawable(R.drawable.paint));
+				SaveButton.setBackgroundDrawable(getResources().getDrawable(R.drawable.saveclick));
+				undoButton.setBackgroundDrawable(getResources().getDrawable(R.drawable.undo));
+				UndoThis.setBackgroundDrawable(getResources().getDrawable(R.drawable.delete));
+				ResetButton.setBackgroundDrawable(getResources().getDrawable(R.drawable.reset));
+				ThinStroke.setBackgroundResource(R.drawable.thin);
+				MediumStroke.setBackgroundResource(R.drawable.medium);
+				ThickStroke.setBackgroundResource(R.drawable.thick);
 				view.currentContentIndex=-1;
 				view.invalidate();
 				SaveButton.setEnabled(false);
