@@ -74,6 +74,11 @@ public class User_Options extends Activity {
 		Intent intent = new Intent(this, TwitterActivity.class);
 		startActivity(intent);
 	}
+	public void GoToLogin(View view)
+	{
+		Intent intent = new Intent(this, SignIn.class);
+		startActivity(intent);
+	}
 	public void onWindowFocusChanged(boolean hasFocus) {
 
         super.onWindowFocusChanged(hasFocus);
@@ -88,6 +93,7 @@ public class User_Options extends Activity {
         	ImageButton emailButton = (ImageButton) findViewById(R.id.email);
         	ImageButton twitterButton = (ImageButton) findViewById(R.id.twitter);
         	ImageButton databaseButton = (ImageButton) findViewById(R.id.database);
+        	ImageButton loginButton = (ImageButton) findViewById(R.id.login);
         	
         }
 	}

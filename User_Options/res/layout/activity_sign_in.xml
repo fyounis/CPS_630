@@ -1,0 +1,47 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    tools:context=".SignIn" >
+
+    <EditText
+        android:id="@+id/username"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:hint="Username"
+        android:maxLength="12"
+        android:typeface="serif"
+        android:layout_marginTop="60dp"
+        android:ems="10" >
+        <requestFocus />
+
+    </EditText>
+
+    <TextView
+        android:id="@+id/instruction"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="17dp"
+        android:textStyle="normal|italic"
+        android:text="Enter your username and password to access CloudNow:" />
+
+    <EditText
+        android:id="@+id/password"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/username"
+        android:layout_below="@+id/username"
+        android:hint="Password"
+        android:layout_marginTop="80dp"
+        android:maxLength="12"
+        android:typeface="serif"
+        android:ems="10"
+        android:inputType="textPassword" >
+    </EditText>
+
+</RelativeLayout>
