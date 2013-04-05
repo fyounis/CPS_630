@@ -1,18 +1,27 @@
 package com.example.funnyface;
 
+import com.loopj.android.http.AsyncHttpClient;
+import com.loopj.android.http.AsyncHttpResponseHandler;
+import com.loopj.android.http.RequestParams;
+
 import android.os.Bundle;
 import android.app.Activity;
 import android.graphics.Color;
 import android.text.InputType;
+import android.util.Log;
 import android.view.Menu;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class SignIn extends Activity {
 	
 	private static EditText clouduser;
 	private static EditText cloudpass;
-
+	private static String Username;
+	private static String Password;
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -54,10 +63,41 @@ public class SignIn extends Activity {
 			}
 		});
 		
+		Button SignUp = (Button) findViewById(R.id.signin);
+		SignUp.setOnClickListener(new View.OnClickListener( ){
+
+			@Override
+			public void onClick(View v)
+			{
+				 Toast.makeText(getApplicationContext(), "Checking credentials ...", Toast.LENGTH_LONG).show();	
+				 Username = cloudpass.getText( ).toString();
+				 Password = cloudpass.getText( ).toString();
+				 System.out.println("username: " + Username);
+				 System.out.println("password: " + Password);
+			}
+			
+		});
 		
 		
 	
 	}
+
+/*
+	public static void postCredentials()
+	{
+		RequestParams credentials = new RequestParams();
+        credentials.put("user[username]", Username);
+        credentials.put("user[password]", Password);
+        AsyncHttpClient client = new AsyncHttpClient();
+        client.post("http://editmenow.herokuapp.com/users/", credentials, new AsyncHttpResponseHandler()
+        {
+            @Override
+            public void onSuccess(String response) {
+                Log.w("async", "success!!!!");
+            }                                                                                                                                                                     
+        }); 
+    }    
+*/	
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
