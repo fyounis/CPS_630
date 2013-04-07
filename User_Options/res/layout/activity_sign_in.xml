@@ -28,7 +28,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="17dp"
         android:textStyle="normal|italic"
-        android:text="Enter your username and password to access CloudNow:" />
+        android:text="Enter your username, e-mail and password to CloudNow:" />
 
     <EditText
         android:id="@+id/password"
@@ -91,5 +91,17 @@
         </HorizontalScrollView>
 
     </LinearLayout>
+
+    <TextView
+        android:id="@+id/note"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/password"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="48dp"
+        android:linksClickable="true"
+        android:autoLink="web"
+        android:color="#00e5e5"
+        android:text="Forget your password?" />
 
 </RelativeLayout>

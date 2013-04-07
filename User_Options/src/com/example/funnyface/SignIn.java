@@ -1,18 +1,16 @@
 package com.example.funnyface;
 
-import com.loopj.android.http.AsyncHttpClient;
-import com.loopj.android.http.AsyncHttpResponseHandler;
-import com.loopj.android.http.RequestParams;
-
-import android.os.Bundle;
 import android.app.Activity;
+import android.content.Intent;
 import android.graphics.Color;
+import android.os.Bundle;
 import android.text.InputType;
-import android.util.Log;
+import android.text.util.Linkify;
 import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class SignIn extends Activity {
@@ -63,21 +61,35 @@ public class SignIn extends Activity {
 			}
 		});
 		
-		Button SignUp = (Button) findViewById(R.id.signin);
-		SignUp.setOnClickListener(new View.OnClickListener( ){
+		Button SignIn = (Button) findViewById(R.id.signin);
+		SignIn.setOnClickListener(new View.OnClickListener( ){
 
 			@Override
 			public void onClick(View v)
 			{
 				 Toast.makeText(getApplicationContext(), "Checking credentials ...", Toast.LENGTH_LONG).show();	
-				 Username = cloudpass.getText( ).toString();
+				 Username = clouduser.getText( ).toString();
 				 Password = cloudpass.getText( ).toString();
 				 System.out.println("username: " + Username);
 				 System.out.println("password: " + Password);
+				 //postCredentials( );
 			}
 			
 		});
 		
+		Button SignUp = (Button) findViewById(R.id.signup);
+		SignUp.setOnClickListener(new View.OnClickListener( )
+		{
+			@Override
+			public void onClick(View v) 
+			{
+				// TODO Auto-generated method stub
+				finish( );
+        		SignIn.this.onDestroy();
+        		Intent goToSignUp = new Intent(SignIn.this, SignUp.class);
+        		startActivity(goToSignUp);
+			}	
+		});
 		
 	
 	}

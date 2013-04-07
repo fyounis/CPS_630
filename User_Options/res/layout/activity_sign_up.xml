@@ -4,36 +4,68 @@
     android:layout_height="match_parent"
     android:background="@drawable/background"
     tools:context=".SignUp" >
-
-    <EditText
-        android:id="@+id/editText1"
+       
+    <TextView
+        android:id="@+id/instruction"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="43dp"
-        android:ems="10" >
+        android:layout_marginTop="17dp"
+        android:textStyle="normal|italic"
+        android:text="Enter your username, password and e-mail address to create a CloudNow account:" />
 
-        <requestFocus />
+    <EditText
+        android:id="@+id/userID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="102dp"
+        android:ems="10"
+        android:hint="Username"
+        android:maxLength="12"
+        android:typeface="serif" />
+    	  <requestFocus />
+
+    <EditText
+        android:id="@+id/passwd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/userID"
+        android:layout_below="@+id/userID"
+        android:layout_marginTop="29dp"
+        android:ems="10"
+        android:hint="Password"
+        android:inputType="textPassword"
+        android:maxLength="12"
+        android:typeface="serif" >
+
+  
     </EditText>
 
     <EditText
-        android:id="@+id/editText2"
+        android:id="@+id/emailID"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/editText1"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="48dp"
+        android:layout_alignLeft="@+id/passwd"
+        android:layout_below="@+id/passwd"
+        android:layout_marginTop="38dp"
         android:ems="10"
-        android:inputType="textEmailAddress" />
+        android:hint="E-mail address"
+        android:inputType="textEmailAddress"
+        android:maxLength="30"
+        android:typeface="serif" />
 
-    <EditText
-        android:id="@+id/editText3"
+    <Button
+        android:id="@+id/create_an_account"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/emailID"
+        android:textColor="#ffffff"
+        android:color="#00e5e5"
         android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:ems="10"
-        android:inputType="textPassword" />
+        android:layout_marginTop="63dp"
+        android:text="Create an Account" />
 
 </RelativeLayout>
