@@ -107,6 +107,37 @@
 
         </LinearLayout>
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <HorizontalScrollView
+                android:id="@+id/horizontalScrollView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal" >
+
+                    <ImageButton
+                        android:id="@+id/login"
+                        android:background="@drawable/loginselector"
+                        android:layout_width="130dp"
+                        android:layout_height="80dp"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginLeft="85dp"
+                        android:scaleType="fitXY"
+                        android:onClick="GoToLogin"
+                        tools:ignore="HardcodedText" />
+
+                </LinearLayout>
+
+            </HorizontalScrollView>
+
+        </LinearLayout>
+
     </LinearLayout>
 
 </RelativeLayout>

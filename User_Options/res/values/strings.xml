@@ -14,5 +14,7 @@
     <string name="title_activity_camera_intent">CameraIntent</string>
     <string name="title_activity_email">Email</string>
     <string name="title_activity_twitter">Twitter</string>
+    <string name="title_activity_sign_in">SignIn</string>
+    <string name="title_activity_sign_up">SignUp</string>
 
 </resources>
