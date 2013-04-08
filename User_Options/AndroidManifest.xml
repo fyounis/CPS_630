@@ -92,7 +92,7 @@
             android:label="@string/title_activity_email" >
         </activity>
         <activity
-            android:name="com.android.twitter.TwitterActivity"
+            android:name="com.samir.twitter.MainActivity"
             android:label="@string/title_activity_twitter" >
         </activity>
         <activity
