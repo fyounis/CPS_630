@@ -147,6 +147,8 @@ public final class R {
         public static final int bird=0x7f07002d;
         public static final int black=0x7f07003a;
         public static final int blue=0x7f07003d;
+        public static final int btn=0x7f070051;
+        public static final int btnpost=0x7f070053;
         public static final int btow=0x7f070048;
         public static final int button1=0x7f070006;
         public static final int button2=0x7f070007;
@@ -180,12 +182,12 @@ public final class R {
         public static final int icream=0x7f07002f;
         public static final int imageView1=0x7f070017;
         public static final int instruction=0x7f07000d;
+        public static final int invisibletext=0x7f070054;
         public static final int lips=0x7f070024;
         public static final int login=0x7f07004f;
-        public static final int mBtnTwitter=0x7f070051;
         public static final int mask=0x7f07002a;
         public static final int medium=0x7f070043;
-        public static final int menu_settings=0x7f070052;
+        public static final int menu_settings=0x7f070055;
         public static final int mono=0x7f070022;
         public static final int moustache=0x7f070027;
         public static final int newpic=0x7f07001e;
@@ -215,6 +217,7 @@ public final class R {
         public static final int thought=0x7f070036;
         public static final int tongue=0x7f070037;
         public static final int twitter=0x7f07004c;
+        public static final int twittext=0x7f070052;
         public static final int undoAll=0x7f070047;
         public static final int undoLast=0x7f070045;
         public static final int undoThis=0x7f070046;
@@ -237,6 +240,7 @@ public final class R {
         public static final int activity_user_photo_options=0x7f030007;
         public static final int activity_view_data_base=0x7f030008;
         public static final int main=0x7f030009;
+        public static final int twitt_dialog=0x7f03000a;
     }
     public static final class menu {
         public static final int activity_camera_intent=0x7f060000;
