@@ -75,8 +75,13 @@
                                   android:id="@+id/save"
                                   android:layout_width="wrap_content"
                                   android:layout_height="wrap_content" />
+                              
+                               <Button
+                                  android:id="@+id/filter"
+                                  android:layout_width="wrap_content"
+                                  android:layout_height="wrap_content" />
 
-                            
+           
 
                           </LinearLayout>
                       </HorizontalScrollView>
@@ -324,7 +329,23 @@
                                   android:id="@+id/undoAll"
                                   android:layout_width="wrap_content"
                                   android:layout_height="wrap_content" />
+                                     
+                                      <Button
+                                  android:id="@+id/btow"
+                                  android:layout_width="wrap_content"
+                                  android:layout_height="wrap_content"/>
+                                      
+                                       <Button
+                                  android:id="@+id/pixel"
+                                  android:layout_width="wrap_content"
+                                  android:layout_height="wrap_content"/>
+                                       
+                                        <Button
+                                  android:id="@+id/yuv"
+                                  android:layout_width="wrap_content"
+                                  android:layout_height="wrap_content"/>
 
+                       
                           </LinearLayout>
                       </HorizontalScrollView>
 
