@@ -93,7 +93,7 @@ public class User_Options extends Activity {
         	ImageButton emailButton = (ImageButton) findViewById(R.id.email);
         	ImageButton twitterButton = (ImageButton) findViewById(R.id.twitter);
         	ImageButton databaseButton = (ImageButton) findViewById(R.id.database);
-        	ImageButton loginButton = (ImageButton) findViewById(R.id.login);
+        	Button loginButton =  (Button) findViewById(R.id.login);
         	
         }
 	}

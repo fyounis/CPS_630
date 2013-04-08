@@ -15,7 +15,8 @@ import android.widget.Toast;
 
 import com.example.funnyface.R;
 
-public class TwitterActivity extends Activity implements OnClickListener {
+public class TwitterActivity extends Activity implements OnClickListener 
+{
 	private TwitterApp mTwitter;
 	Button mBtnTwitter;
 	private static final String CONSUMER_KEY = "SGiBBKT7OFKBMQKUGMkcg";
