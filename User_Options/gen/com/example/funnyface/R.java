@@ -186,6 +186,7 @@ public final class R {
         public static final int invisibletext=0x7f070054;
         public static final int lips=0x7f070024;
         public static final int login=0x7f07004f;
+        public static final int loginuser=0x7f070056;
         public static final int mask=0x7f07002a;
         public static final int medium=0x7f070043;
         public static final int menu_settings=0x7f070055;
@@ -248,6 +249,7 @@ public final class R {
         public static final int activity_main=0x7f060001;
         public static final int activity_sign_in=0x7f060002;
         public static final int activity_sign_up=0x7f060003;
+        public static final int menu_options=0x7f060004;
     }
     public static final class string {
         public static final int app_name=0x7f040000;
