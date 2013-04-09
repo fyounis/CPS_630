@@ -378,23 +378,9 @@ public class CustomView extends ImageView {
 		this.getDrawingCache(true);
 		Paint paint = new Paint();
 		
+		paint.setStyle(Paint.Style.STROKE);			
+		paint.setAntiAlias(true);
 		
-		try
-		{
-			//canvas.drawBitmap(backgroundImage, 0, 0,paint);
-			paint.setStyle(Paint.Style.STROKE);			
-			paint.setAntiAlias(true);
-			
-			//Draw Paint
-			for (Path p : paths){
-				paint.setColor(colorsMap.get(p));
-				paint.setStrokeWidth(strokeMap.get(p));
-				canvas.drawPath(p,paint);
-				
-			}	
-			
-		}
-		catch(Exception e){}
 		paint.setStrokeWidth(1);
 		for (int i=0; i<numberOfContents; i++){
 			System.out.println("---index" + i);
@@ -424,6 +410,23 @@ public class CustomView extends ImageView {
 			}
 			catch (NullPointerException e){}
 		}
+		
+		try
+		{
+			//canvas.drawBitmap(backgroundImage, 0, 0,paint);
+			paint.setStyle(Paint.Style.STROKE);			
+			paint.setAntiAlias(true);
+			
+			//Draw Paint
+			for (Path p : paths){
+				paint.setColor(colorsMap.get(p));
+				paint.setStrokeWidth(strokeMap.get(p));
+				canvas.drawPath(p,paint);
+				
+			}	
+			
+		}
+		catch(Exception e){}
 		
 		
 		

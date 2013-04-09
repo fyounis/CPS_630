@@ -14,6 +14,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 
+
 public class User_Options extends Activity {
 
 	static int width;
@@ -93,7 +94,6 @@ public class User_Options extends Activity {
         	ImageButton emailButton = (ImageButton) findViewById(R.id.email);
         	ImageButton twitterButton = (ImageButton) findViewById(R.id.twitter);
         	ImageButton databaseButton = (ImageButton) findViewById(R.id.database);
-        	Button loginButton =  (Button) findViewById(R.id.login);
         	
         }
 	}

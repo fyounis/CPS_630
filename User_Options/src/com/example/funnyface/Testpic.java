@@ -27,6 +27,7 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
@@ -1606,7 +1607,7 @@ public class Testpic extends Activity
 			        		Testpic.this.onDestroy();
 
 			        		CustomView.backgroundImage.recycle();
-			        		Intent newPic = new Intent(Testpic.this, UserPhotoOptions.class);
+			        		Intent newPic = new Intent(Testpic.this, User_Options.class);
 			        		startActivity(newPic);
 			    
 			        	}catch(Exception e){
@@ -1927,7 +1928,7 @@ public class Testpic extends Activity
 								    					Testpic.this.onDestroy();
 								    					backgroundImage.recycle();
 								    					view.setImageBitmap(null);
-								    					Intent doneUpload = new Intent(Testpic.this, UserPhotoOptions.class);
+								    					Intent doneUpload = new Intent(Testpic.this, User_Options.class);
 								    					startActivity(doneUpload);
 								    				}
 								    				else
@@ -1972,7 +1973,7 @@ public class Testpic extends Activity
 			        		Testpic.this.onDestroy();
 			        		
 			        		backgroundImage.recycle();
-			        		Intent newPic = new Intent(Testpic.this, UserPhotoOptions.class);
+			        		Intent newPic = new Intent(Testpic.this, User_Options.class);
 			        		startActivity(newPic);
 						}
 						catch(Exception e)
@@ -2052,6 +2053,17 @@ public class Testpic extends Activity
         }); 
     }    
 	
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event)  {
+          if (keyCode == KeyEvent.KEYCODE_BACK) {
+        	  backgroundImage.recycle();
+        	  
+        	  super.onBackPressed();
+        	  return true;
+          }
+
+       return super.onKeyDown(keyCode, event);
+    }
    
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {

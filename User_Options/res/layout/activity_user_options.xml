@@ -121,14 +121,6 @@
                     android:layout_height="match_parent"
                     android:orientation="horizontal" >
 
-                    <Button
-                        android:id="@+id/login"
-                        android:layout_marginLeft="25dp"
-                        android:layout_width="260dp"
-       			     	android:layout_height="40dp"
-       			     	android:onClick="GoToLogin"
-                        android:text="Login" />
-
                 </LinearLayout>
 
             </HorizontalScrollView>
@@ -136,5 +128,15 @@
         </LinearLayout>
 
     </LinearLayout>
+
+    <ImageButton
+        android:id="@+id/login"
+        android:layout_width="100dp"
+        android:layout_height="40dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="74dp"
+        android:background="@drawable/login"
+        android:onClick="GoToLogin" />
 
 </RelativeLayout>
