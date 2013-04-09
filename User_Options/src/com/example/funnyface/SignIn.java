@@ -6,6 +6,7 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.text.InputType;
 import android.text.util.Linkify;
+import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
@@ -111,6 +112,16 @@ public class SignIn extends Activity {
     }    
 */	
 
+	public boolean onKeyDown(int keyCode, KeyEvent event)  {
+        if (keyCode == KeyEvent.KEYCODE_BACK) {   	 
+          finish( );
+          SignIn.this.onDestroy();
+  	      startActivity(new Intent(this, User_Options.class));
+  	      return true;
+        }
+
+     return super.onKeyDown(keyCode, event);
+  }
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
