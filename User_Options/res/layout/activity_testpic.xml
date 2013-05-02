@@ -23,8 +23,8 @@
 
           <Button
               android:id="@+id/handle"
-              android:layout_width="wrap_content"
-              android:layout_height="wrap_content" />
+              android:layout_width="60dp"
+              android:layout_height="13dp" />
 
           <LinearLayout
               android:id="@+id/content"
@@ -108,85 +108,99 @@
                                   android:id="@+id/mono"
                                   android:layout_width="80px"
                                   android:layout_height="80px"
-                                  android:text="Mono" />
+                                  android:text="Mono" 
+                                  android:visibility="gone"/>
                                 
                                  <ImageButton
                                   android:id="@+id/gstache"
                                   android:layout_width="80px"
                                   android:layout_height="80px"
-                                  android:text="gstache" />
+                                  android:text="gstache"
+                                  android:visibility="gone" />
                                 
                                   <ImageButton
                                   android:id="@+id/lips"
                                   android:layout_width="80px"
                                   android:layout_height="80px"
-                                  android:text="lips" />
+                                  android:text="lips" 
+                                  android:visibility="gone"/>
                                 
                                  <ImageButton
                                   android:id="@+id/ceyes"
                                   android:layout_width="80px"
                                   android:layout_height="80px"
-                                  android:text="ceyes" />
+                                  android:text="ceyes" 
+                                  android:visibility="gone"/>
                                  
                                   <ImageButton
                                   android:id="@+id/eyes"
                                   android:layout_width="80px"
                                   android:layout_height="80px"
-                                  android:text="eyes" />
+                                  android:text="eyes" 
+                                  android:visibility="gone"/>
                                
                                 <ImageButton
                                   android:id="@+id/moustache"
                                   android:layout_width="80px"
                                   android:layout_height="80px"
-                                  android:text="Moustache" />
+                                  android:text="Moustache" 
+                                  android:visibility="gone"/>
                                
                                 <ImageButton
                                   android:id="@+id/hat"
                                   android:layout_width="80px"
                                   android:layout_height="80px"
-                                  android:text="hat" />
+                                  android:text="hat" 
+                                  android:visibility="gone"/>
                                 
                                <ImageButton
                                   android:id="@+id/glasses"
                                   android:layout_width="80px"
                                   android:layout_height="80px"
-                                  android:text="glasses" />
+                                  android:text="glasses" 
+                                  android:visibility="gone"/>
                                
                                 <ImageButton
                                   android:id="@+id/mask"
                                   android:layout_width="80px"
                                   android:layout_height="80px"
-                                  android:text="mask" />
+                                  android:text="mask" 
+                                  android:visibility="gone"/>
                                 
                                  <ImageButton
                                   android:id="@+id/heart"
                                   android:layout_width="80px"
                                   android:layout_height="80px"
-                                  android:text="heart" />
+                                  android:text="heart"
+                                  android:visibility="gone" />
                                  
                                  <ImageButton
                                   android:id="@+id/angry"
                                   android:layout_width="80px"
                                   android:layout_height="80px"
-                                  android:text="angry" />
+                                  android:text="angry"
+                                  android:visibility="gone" />
                                  
                                   <ImageButton
                                   android:id="@+id/bird"
                                   android:layout_width="80px"
                                   android:layout_height="80px"
-                                  android:text="bird" />
+                                  android:text="bird" 
+                                  android:visibility="gone"/>
                                   
                                   <ImageButton
                                   android:id="@+id/firew"
                                   android:layout_width="80px"
                                   android:layout_height="80px"
-                                  android:text="firew" />
+                                  android:text="firew"
+                                  android:visibility="gone" />
                                   
                                   <ImageButton
                                   android:id="@+id/icream"
                                   android:layout_width="80px"
                                   android:layout_height="80px"
-                                  android:text="icream" />
+                                  android:text="icream"
+                                  android:visibility="gone" />
                                 
                                 
               
@@ -194,55 +208,64 @@
                                   android:id="@+id/octopus"
                                   android:layout_width="80px"
                                   android:layout_height="80px"
-                                  android:text="Octopus" />
+                                  android:text="Octopus" 
+                                  android:visibility="gone"/>
                                  
                                   <ImageButton
                                   android:id="@+id/rain"
                                   android:layout_width="80px"
                                   android:layout_height="80px"
-                                  android:text="Rain" />
+                                  android:text="Rain" 
+                                  android:visibility="gone"/>
                                   
                                    <ImageButton
                                   android:id="@+id/rainbow"
                                   android:layout_width="80px"
                                   android:layout_height="80px"
-                                  android:text="Rainbow" />
+                                  android:text="Rainbow"
+                                  android:visibility="gone" />
                                    
                                     <ImageButton
                                   android:id="@+id/rainbow2"
                                   android:layout_width="80px"
                                   android:layout_height="80px"
-                                  android:text="Rainbow2" />
+                                  android:text="Rainbow2"
+                                  android:visibility="gone" />
                                     
                                      <ImageButton
                                   android:id="@+id/star"
                                   android:layout_width="80px"
                                   android:layout_height="80px"
-                                  android:text="Star" />
+                                  android:text="Star" 
+                                  android:visibility="gone"/>
                                      
                                       <ImageButton
                                   android:id="@+id/sung"
                                   android:layout_width="80px"
                                   android:layout_height="80px"
-                                  android:text="Sung" />
+                                  android:text="Sung" 
+                                  android:visibility="gone"/>
                                       
                                        <ImageButton
                                   android:id="@+id/thought"
                                   android:layout_width="80px"
                                   android:layout_height="80px"
-                                  android:text="Thought" />
+                                  android:text="Thought"
+                                  android:visibility="gone" />
                                        
                               <ImageButton
                                   android:id="@+id/tongue"
                                   android:layout_width="80px"
                                   android:layout_height="80px"
-                                  android:text="Tongue" />
+                                  android:text="Tongue" 
+                                  android:visibility="gone"/>
                                         
                               <ImageButton
                                   android:id="@+id/whiteg"
                                   android:layout_width="80px"
                                   android:layout_height="80px"
-                                  android:text="Whiteg" />
+                                  android:text="Whiteg"
+                                  android:visibility="gone" />
                               
                 
                               
@@ -250,101 +273,110 @@
                                   android:id="@+id/caption"
                                   android:layout_width="80px"
                                   android:layout_height="80px"
-                                  android:text="Caption" />
+                                  android:text="Caption" 
+                                  android:visibility="gone"/>
                             
                               <ImageButton
                                   android:id="@+id/black"
                                   android:layout_width="80px"
                                   android:layout_height="80px"
- 								  />
+ 								  android:visibility="gone"/>
 
                               <ImageButton
                                   android:id="@+id/white"
                                	  android:layout_width="80px"
                                   android:layout_height="80px"
-                                   />
+                                  android:visibility="gone" />
 
                               <ImageButton
                                   android:id="@+id/red"
                                    android:layout_width="80px"
                                   android:layout_height="80px"
-                                  />
+                                  android:visibility="gone"/>
 
                               <ImageButton
                                   android:id="@+id/blue"
                                    android:layout_width="80px"
                                   android:layout_height="80px"
-                                  />
+                                 android:visibility="gone" />
 
                               <ImageButton
                                   android:id="@+id/green"
                                    android:layout_width="80px"
                                   android:layout_height="80px"
-                                   />
+                                  android:visibility="gone" />
 
                               <ImageButton
                                   android:id="@+id/yellow"
                                  android:layout_width="80px"
                                   android:layout_height="80px"
-                                 />
+                                 android:visibility="gone"/>
 
                               <ImageButton
                                   android:id="@+id/purple"
                                  android:layout_width="80px"
                                   android:layout_height="80px"
-                                 />
+                                 android:visibility="gone"/>
                               
                                <ImageButton
                                   android:id="@+id/cyan"
                                   android:layout_width="80px"
                                   android:layout_height="80px"
-                                />
+                                android:visibility="gone"/>
                                
                                 <ImageButton
                                   android:id="@+id/thin"
                                   android:layout_width="90px"
-                                  android:layout_height="40px"/>
+                                  android:layout_height="40px"
+                                  android:visibility="gone"/>
                                 
                                  <ImageButton
                                   android:id="@+id/medium"
                                   android:layout_width="90px"
-                                  android:layout_height="40px"/>
+                                  android:layout_height="40px"
+                                  android:visibility="gone"/>
                                  
                                   <ImageButton
                                   android:id="@+id/thick"
                                   android:layout_width="90px"
-                                  android:layout_height="40px"/>
+                                  android:layout_height="40px"
+                                  android:visibility="gone"/>
                                   
                                    <Button
                                   android:id="@+id/undoLast"
                                   android:layout_width="wrap_content"
-                                  android:layout_height="wrap_content"/>
+                                  android:layout_height="wrap_content"
+                                   android:visibility="gone"/>
                                    
                                     <Button
                                   android:id="@+id/undoThis"
                                   android:layout_width="wrap_content"
-                                  android:layout_height="wrap_content"/>
+                                  android:layout_height="wrap_content"
+                                    android:visibility="gone"/>
                                     
                                      <Button
                                   android:id="@+id/undoAll"
                                   android:layout_width="wrap_content"
-                                  android:layout_height="wrap_content" />
+                                  android:layout_height="wrap_content" 
+                                     android:visibility="gone"/>
                                      
                                       <Button
                                   android:id="@+id/btow"
                                   android:layout_width="wrap_content"
-                                  android:layout_height="wrap_content"/>
+                                  android:layout_height="wrap_content"
+                                      android:visibility="gone"/>
                                       
                                        <Button
                                   android:id="@+id/pixel"
                                   android:layout_width="wrap_content"
-                                  android:layout_height="wrap_content"/>
+                                  android:layout_height="wrap_content"
+                                       android:visibility="gone"/>
                                        
                                         <Button
                                   android:id="@+id/yuv"
                                   android:layout_width="wrap_content"
-                                  android:layout_height="wrap_content"/>
-
+                                  android:layout_height="wrap_content"
+								android:visibility="gone"/>
                        
                           </LinearLayout>
                       </HorizontalScrollView>
@@ -355,5 +387,14 @@
 
           </LinearLayout>
       </SlidingDrawer>
+
+      <Button
+          android:id="@+id/scaleButton"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_alignParentLeft="true"
+          android:layout_alignParentTop="true"
+          android:visibility="gone"
+          android:text="Scale" />
 
 </RelativeLayout>

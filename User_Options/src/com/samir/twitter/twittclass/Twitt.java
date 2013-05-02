@@ -33,10 +33,6 @@ public class Twitt {
 			mTwitter.authorize();
 		}
 	}
-	
-	public void logoutTwitter() {
-		mTwitter.resetAccessToken();
-	}
 
 	private void showTwittDialog() {
 

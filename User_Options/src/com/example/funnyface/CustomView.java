@@ -34,7 +34,7 @@ public class CustomView extends ImageView {
 	//private float distanceXfrommXLast,distanceYfrommYLast;		//Distance used to see how far the finger has moved
 	protected static int numberOfContents;		//To store the index of the last content. (number of contents in the array)
 	protected static int currentContentIndex;		//To store the index of the current content selected
-	protected boolean moveContent;			//Boolean to determine whether to move the content or not
+	protected static boolean moveContent;			//Boolean to determine whether to move the content or not
     protected static String colorValue;
     protected static String strokeSize;
 	protected static String mode;
@@ -139,6 +139,59 @@ public class CustomView extends ImageView {
 								moveContent=true;
 						}
 						
+				/*		if (lowerRight.right+10 > xFirst && lowerRight.left-10 < xFirst && lowerRight.top-10 < yFirst && lowerRight.bottom+10 > yFirst){
+							currentContentIndex=i;
+							moveContent=false;
+							mode="scale";
+							
+						}
+						else if (upperRight.right+10 > xFirst && upperRight.left-10 < xFirst && upperRight.top-10 < yFirst && upperRight.bottom+10 > yFirst){
+							currentContentIndex=i;
+							moveContent=false;
+							mode="scale";
+							
+						}
+						
+						else if (lowerLeft.right+10 > xFirst && lowerLeft.left-10 < xFirst && lowerLeft.top-10 < yFirst && lowerLeft.bottom+10 > yFirst){
+							currentContentIndex=i;
+							moveContent=false;
+							mode="scale";
+						
+						}
+						else if (upperLeft.right+10 > xFirst && upperLeft.left-10 < xFirst && upperLeft.top-10 < yFirst && upperLeft.bottom+10 > yFirst){
+							currentContentIndex=i;
+							moveContent=false;
+							mode="scale";
+							
+						}
+						*/
+	
+						
+					} catch (NullPointerException e){
+						
+					}
+				}
+			}
+			
+			//Else, Do Scale
+			else if (mode.equals("scale")){
+				for (int i=0;i<numberOfContents;i++){
+					try {
+						//When getting the x and y coordinates of the content, 
+						//it'll return the middle coordinates of the content.
+						//Must do the following to get xMin, xMax, yMin, and yMax of content
+						float xCoordinateOfBitmap=bitmap[i].getX()-bitmap[i].bitmap.getWidth();		
+						float maxXCoordinateOfBitmap=bitmap[i].getX()+bitmap[i].bitmap.getWidth();
+						float yCoordinateOfBitmap=bitmap[i].getY()-bitmap[i].bitmap.getHeight();
+						float maxYCoordinateOfBitmap=bitmap[i].getY()+bitmap[i].bitmap.getHeight();
+					
+						//If the finger touched the content, then assign it the moveIndex ID
+						if (xCoordinateOfBitmap < xFirst && xFirst < maxXCoordinateOfBitmap &&
+								yCoordinateOfBitmap < yFirst && yFirst < maxYCoordinateOfBitmap){				
+								currentContentIndex=i;
+								
+						}
+						
 						if (lowerRight.right+10 > xFirst && lowerRight.left-10 < xFirst && lowerRight.top-10 < yFirst && lowerRight.bottom+10 > yFirst){
 							currentContentIndex=i;
 							moveContent=false;
@@ -171,6 +224,7 @@ public class CustomView extends ImageView {
 					}
 				}
 			}
+
 			
 			//Else, Do Paint
 			else if (mode.equals("paint")){
@@ -312,7 +366,7 @@ public class CustomView extends ImageView {
 				path = new Path();
 			}
 			else if (mode.equals("scale")){
-				mode="move_content";
+				//mode="move_content";
 			}
 			ptrID1 = INVALID_POINTER_ID;
 			break;		
@@ -393,6 +447,8 @@ public class CustomView extends ImageView {
 						prepareContentToDraw(i);
 						
 						canvas.drawBitmap(bitmap[i].bitmap, null, targetBox, paint);
+						
+						if (mode=="scale"){
 						canvas.drawRect(targetBox, paint);
 						paint.setStyle(Paint.Style.FILL);
 						canvas.drawRect(upperLeft, paint);
@@ -400,6 +456,7 @@ public class CustomView extends ImageView {
 						canvas.drawRect(lowerRight, paint);
 						canvas.drawRect(upperRight, paint);
 						paint.setStyle(Paint.Style.STROKE);
+						}
 					}
 					else {
 						prepareContentToDraw(i);

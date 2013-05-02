@@ -1,16 +1,11 @@
 package com.samir.twitter;
 
-import oauth.signpost.OAuth;
 import android.app.Activity;
 import android.content.Context;
-import android.content.SharedPreferences.Editor;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.view.View;
-import android.webkit.CookieManager;
-import android.webkit.CookieSyncManager;
-import android.widget.Button;
 import android.widget.Toast;
 import com.example.funnyface.R;
 
@@ -24,20 +19,16 @@ public class MainActivity extends Activity {
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.main);
-		final Button TwitButton = (Button) findViewById(R.id.btn);
-		TwitButton.performClick( );
 	}
 
 	public void onClickTwitt(View view) {
 		if (isNetworkAvailable()) {
 			Twitt twitt = new Twitt(MainActivity.this, consumer_key, secret_key);
-			twitt.logoutTwitter();
 			twitt.shareToTwitter("");
 		} else {
 			showToast("No Network Connection Available !!!");
 		}
 	}
-	
 
 	public boolean isNetworkAvailable() {
 		ConnectivityManager connectivity = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
