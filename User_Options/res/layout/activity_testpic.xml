@@ -29,7 +29,7 @@
           <LinearLayout
               android:id="@+id/content"
               android:layout_width="match_parent"
-              android:background="@drawable/cloudsbg"
+              android:background="@drawable/bgcloudsnew"
               android:layout_height="match_parent" >
 
               <LinearLayout
@@ -65,6 +65,12 @@
                                   android:id="@+id/edit"
                                   android:layout_width="wrap_content"
                                   android:layout_height="wrap_content"/>
+                              
+                                <Button
+                                  android:id="@+id/filter"
+                                  android:layout_width="wrap_content"
+                                  android:layout_height="wrap_content"
+                                   />
 
                               <Button
                                   android:id="@+id/newpic"
@@ -76,10 +82,7 @@
                                   android:layout_width="wrap_content"
                                   android:layout_height="wrap_content" />
                               
-                               <Button
-                                  android:id="@+id/filter"
-                                  android:layout_width="wrap_content"
-                                  android:layout_height="wrap_content" />
+                             
 
            
 
@@ -396,25 +399,17 @@
                                   android:layout_height="wrap_content" 
                                      android:visibility="gone"/>
                                      
-                                      <Button
-                                  android:id="@+id/btow"
-                                  android:layout_width="wrap_content"
-                                  android:layout_height="wrap_content"
-                                      android:visibility="gone"/>
-                                      
-                                       <Button
-                                  android:id="@+id/pixel"
-                                  android:layout_width="wrap_content"
-                                  android:layout_height="wrap_content"
-                                       android:visibility="gone"/>
-                                       
-                                        <Button
-                                  android:id="@+id/yuv"
-                                  android:layout_width="wrap_content"
-                                  android:layout_height="wrap_content"
-								android:visibility="gone"/>
-
-                                        
+                           
+                            	  <SeekBar 
+                            	  android:id="@+id/seekbar1"
+                            	  android:thumb="@drawable/saturationbar"
+								  android:layout_width="wrap_content"
+								  android:layout_height="wrap_content"
+								  android:visibility="gone"
+								  android:max="11"
+								  android:minWidth="470px"  />
+                            	  
+                            	
                        
                           </LinearLayout>
                       </HorizontalScrollView>
