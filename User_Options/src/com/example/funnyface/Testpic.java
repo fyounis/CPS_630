@@ -19,8 +19,8 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.ColorMatrix;
 import android.graphics.ColorMatrixColorFilter;
-import android.graphics.Paint;
 import android.graphics.Path;
+import android.graphics.drawable.BitmapDrawable;
 import android.net.ConnectivityManager;
 import android.net.Uri;
 import android.os.Bundle;
@@ -34,6 +34,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.HorizontalScrollView;
 import android.widget.ImageButton;
+import android.widget.SeekBar;
 import android.widget.Toast;
 
 import com.loopj.android.http.AsyncHttpClient;
@@ -51,6 +52,7 @@ public class Testpic extends Activity
 	public static ImageButton imageSelect;
 	private static String username;
 	private static String description;
+	private static int saturationValue;
 	
 	@SuppressWarnings("deprecation")
 	@Override
@@ -79,12 +81,13 @@ public class Testpic extends Activity
 		
 			final Button Filter = (Button) findViewById(R.id.filter);
 			Filter.setBackgroundDrawable(getResources().getDrawable(R.drawable.filterbutton));
-			final Button blacktoWhite = (Button) findViewById(R.id.btow);
-			blacktoWhite.setBackgroundDrawable(getResources().getDrawable(R.drawable.btow));
-			final Button pixelChanger = (Button) findViewById(R.id.pixel);
-			pixelChanger.setBackgroundDrawable(getResources().getDrawable(R.drawable.pixel));
-			final Button yuvChanger = (Button) findViewById(R.id.yuv);
-			yuvChanger.setBackgroundDrawable(getResources().getDrawable(R.drawable.yuv));
+			final SeekBar imageSaturationBar = (SeekBar) findViewById(R.id.seekbar1);
+			//final Button blacktoWhite = (Button) findViewById(R.id.btow);
+			//blacktoWhite.setBackgroundDrawable(getResources().getDrawable(R.drawable.btow));
+			//final Button pixelChanger = (Button) findViewById(R.id.pixel);
+			//pixelChanger.setBackgroundDrawable(getResources().getDrawable(R.drawable.pixel));
+			//final Button yuvChanger = (Button) findViewById(R.id.yuv);
+			//yuvChanger.setBackgroundDrawable(getResources().getDrawable(R.drawable.yuv));
 			final ImageButton moustache = (ImageButton) findViewById(R.id.moustache);
 			moustache.setBackgroundResource(R.drawable.moustache);
 			final ImageButton octopus = (ImageButton) findViewById(R.id.octopus);
@@ -1755,14 +1758,15 @@ public class Testpic extends Activity
 					  paintButton.setBackgroundDrawable(getResources().getDrawable(R.drawable.paintbutton));
 				      editButton.setBackgroundDrawable(getResources().getDrawable(R.drawable.editbutton));
 				      Filter.setBackgroundDrawable(getResources().getDrawable(R.drawable.filterbuttonclik));
-				      blacktoWhite.setBackgroundDrawable(getResources().getDrawable(R.drawable.btow));
-				      yuvChanger.setBackgroundDrawable(getResources().getDrawable(R.drawable.yuv));
-				      pixelChanger.setBackgroundDrawable(getResources().getDrawable(R.drawable.pixel));
+				      //blacktoWhite.setBackgroundDrawable(getResources().getDrawable(R.drawable.btow));
+				      //yuvChanger.setBackgroundDrawable(getResources().getDrawable(R.drawable.yuv));
+				      //pixelChanger.setBackgroundDrawable(getResources().getDrawable(R.drawable.pixel));
 				     
-				      blacktoWhite.setVisibility(view.VISIBLE);
-				      yuvChanger.setVisibility(view.VISIBLE);
-				      pixelChanger.setVisibility(view.VISIBLE);
+				      //blacktoWhite.setVisibility(view.VISIBLE);
+				      //yuvChanger.setVisibility(view.VISIBLE);
+				      //pixelChanger.setVisibility(view.VISIBLE);
 				      
+				      imageSaturationBar.setVisibility(view.VISIBLE);
 					  blackColor.setVisibility(view.GONE);
 					  whiteColor.setVisibility(view.GONE); 
 					  redColor.setVisibility(view.GONE);
@@ -1776,7 +1780,7 @@ public class Testpic extends Activity
 				      ThickStroke.setVisibility(view.GONE);
 				      undoButton.setVisibility(view.GONE);
 					  UndoThis.setVisibility(view.GONE); 
-					  ResetButton.setVisibility(view.VISIBLE);
+					  ResetButton.setVisibility(view.GONE);
 					  moustache.setVisibility(view.GONE);
 					  octopus.setVisibility(view.GONE);
 					  rain.setVisibility(view.GONE);
@@ -1814,6 +1818,36 @@ public class Testpic extends Activity
 			}
 		});
 		
+	
+		imageSaturationBar.setProgress(0); 				
+		imageSaturationBar.incrementProgressBy(1);	  
+		imageSaturationBar.setMax(11);
+		
+		imageSaturationBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener()
+		{
+			@Override
+			public void onProgressChanged(SeekBar imageSaturationBar, int saturationValue, boolean fromUser)
+			{
+				ColorMatrix matrix = new ColorMatrix();
+				matrix.setSaturation(saturationValue);
+				ColorMatrixColorFilter filter = new ColorMatrixColorFilter(matrix);
+				view.setColorFilter(filter);
+				view.invalidate( );
+			}
+			@Override
+			public void onStartTrackingTouch(SeekBar imageSaturationBar)
+			{
+				saturationValue = saturationValue + 5;	
+			}
+			@Override
+			public void onStopTrackingTouch(SeekBar imageSaturationBar) 
+			{
+				
+			}   
+		});
+	
+
+		/*
 		blacktoWhite.setOnClickListener(new View.OnClickListener()
 		{
 			@Override
@@ -1881,7 +1915,7 @@ public class Testpic extends Activity
 				}
 			}
 		});
-		
+		*/
 
 	    //final Button ResetButton = (Button) findViewById(R.id.undoAll);
 	    //ResetButton.setBackgroundDrawable(getResources().getDrawable(R.drawable.reset));
@@ -2015,10 +2049,11 @@ public class Testpic extends Activity
 			     ThinStroke.setVisibility(view.VISIBLE);
 			     MediumStroke.setVisibility(view.VISIBLE);
 			     ThickStroke.setVisibility(view.VISIBLE);
-			     
-			     blacktoWhite.setVisibility(view.GONE);
-			     pixelChanger.setVisibility(view.GONE);
-			     yuvChanger.setVisibility(view.GONE);
+			
+			      imageSaturationBar.setVisibility(view.GONE);
+			     //blacktoWhite.setVisibility(view.GONE);
+			     //pixelChanger.setVisibility(view.GONE);
+			     //yuvChanger.setVisibility(view.GONE);
 				 undoButton.setVisibility(view.GONE);
 				 UndoThis.setVisibility(view.GONE); 
 				 ResetButton.setVisibility(view.GONE);
@@ -2115,9 +2150,10 @@ public class Testpic extends Activity
 		      undoButton.setVisibility(view.VISIBLE);
 			  UndoThis.setVisibility(view.VISIBLE); 
 			  ResetButton.setVisibility(view.VISIBLE);
-			  blacktoWhite.setVisibility(view.GONE);
-			  pixelChanger.setVisibility(view.GONE);
-			  yuvChanger.setVisibility(view.GONE);
+			  //blacktoWhite.setVisibility(view.GONE);
+			  //pixelChanger.setVisibility(view.GONE);
+			  //yuvChanger.setVisibility(view.GONE);
+		      imageSaturationBar.setVisibility(view.GONE);
 			  moustache.setVisibility(view.GONE);
 			  octopus.setVisibility(view.GONE);
 			  rain.setVisibility(view.GONE);
@@ -2185,9 +2221,10 @@ public class Testpic extends Activity
 			    ThinStroke.setVisibility(view.GONE);
 			    MediumStroke.setVisibility(view.GONE);
 			    ThickStroke.setVisibility(view.GONE);
-			    blacktoWhite.setVisibility(view.GONE);
-			    pixelChanger.setVisibility(view.GONE);
-			    yuvChanger.setVisibility(view.GONE);
+			      imageSaturationBar.setVisibility(view.GONE);
+			    //blacktoWhite.setVisibility(view.GONE);
+			    //pixelChanger.setVisibility(view.GONE);
+			    //yuvChanger.setVisibility(view.GONE);
 				 moustache.setVisibility(view.VISIBLE);
 				 octopus.setVisibility(view.VISIBLE);
 				 rain.setVisibility(view.VISIBLE);
@@ -2233,14 +2270,14 @@ public class Testpic extends Activity
 								if (CustomView.mode=="move_content"){
 									CustomView.mode="scale";
 									CustomView.moveContent=false;
-									scaleButton.setText("Move");
+									scaleButton.setBackgroundResource(R.drawable.move);
 									view.invalidate();
 									
 								}
 								else if (CustomView.mode=="scale"){
 									CustomView.mode="move_content";
 									CustomView.moveContent=true;
-									scaleButton.setText("Scale");
+									scaleButton.setBackgroundResource(R.drawable.scale);
 									view.invalidate();
 								}
 							}
