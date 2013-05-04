@@ -117,6 +117,30 @@
                                   android:layout_height="80px"
                                   android:text="gstache"
                                   android:visibility="gone" />
+                                 
+                                 
+                                 <ImageButton
+                                  android:id="@+id/tdglasses"
+                                  android:layout_width="80px"
+                                  android:layout_height="80px"
+                                  android:text="threedglasses"
+                                  android:visibility="gone" />
+                                 
+                                 
+                                 <ImageButton
+                                  android:id="@+id/clown"
+                                  android:layout_width="80px"
+                                  android:layout_height="80px"
+                                  android:text="clown"
+                                  android:visibility="gone" />
+                                 
+                                 
+                                 <ImageButton
+                                  android:id="@+id/som"
+                                  android:layout_width="80px"
+                                  android:layout_height="80px"
+                                  android:text="som"
+                                  android:visibility="gone" />
                                 
                                   <ImageButton
                                   android:id="@+id/lips"
@@ -151,6 +175,13 @@
                                   android:layout_width="80px"
                                   android:layout_height="80px"
                                   android:text="hat" 
+                                  android:visibility="gone"/>
+                                
+                                <ImageButton
+                                  android:id="@+id/noobtag"
+                                  android:layout_width="80px"
+                                  android:layout_height="80px"
+                                  android:text="noobtag" 
                                   android:visibility="gone"/>
                                 
                                <ImageButton
@@ -202,7 +233,12 @@
                                   android:text="icream"
                                   android:visibility="gone" />
                                 
-                                
+                                  <ImageButton
+                                  android:id="@+id/blingbling"
+                                  android:layout_width="80px"
+                                  android:layout_height="80px"
+                                  android:text="bling" 
+                                  android:visibility="gone"/>
               
                                  <ImageButton
                                   android:id="@+id/octopus"
@@ -377,6 +413,8 @@
                                   android:layout_width="wrap_content"
                                   android:layout_height="wrap_content"
 								android:visibility="gone"/>
+
+                                        
                        
                           </LinearLayout>
                       </HorizontalScrollView>
