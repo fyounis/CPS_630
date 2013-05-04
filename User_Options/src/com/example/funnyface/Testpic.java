@@ -89,6 +89,16 @@ public class Testpic extends Activity
 			moustache.setBackgroundResource(R.drawable.moustache);
 			final ImageButton octopus = (ImageButton) findViewById(R.id.octopus);
 			octopus.setBackgroundResource(R.drawable.octopus);
+			final ImageButton sumbraro = (ImageButton) findViewById(R.id.som);
+			sumbraro.setBackgroundResource(R.drawable.sombrero);
+			final ImageButton threedglasses = (ImageButton) findViewById(R.id.tdglasses);
+			threedglasses.setBackgroundResource(R.drawable.threedglasses);
+			final ImageButton clownface = (ImageButton) findViewById(R.id.clown);
+			clownface .setBackgroundResource(R.drawable.clownnose);
+			final ImageButton noob = (ImageButton) findViewById(R.id.noobtag);
+			noob.setBackgroundResource(R.drawable.nametag);
+			final ImageButton chain = (ImageButton) findViewById(R.id.blingbling);
+			chain.setBackgroundResource(R.drawable.bling);
 			final ImageButton rain = (ImageButton) findViewById(R.id.rain);
 			rain.setBackgroundResource(R.drawable.rain);
 			final ImageButton rainbow = (ImageButton) findViewById(R.id.rainbow);
@@ -159,6 +169,11 @@ public class Testpic extends Activity
 						Caption.setBackgroundResource(R.drawable.captionclik);
 						stache_glasses.setBackgroundResource(R.drawable.gstache);
 						eyes.setBackgroundResource(R.drawable.eyes);
+						sumbraro.setBackgroundResource(R.drawable.sombrero);
+						threedglasses.setBackgroundResource(R.drawable.threedglasses);
+						clownface.setBackgroundResource(R.drawable.clownnose);
+						noob.setBackgroundResource(R.drawable.nametag);
+						chain.setBackgroundResource(R.drawable.bling);
 						lips.setBackgroundResource(R.drawable.lips);
 						icream.setBackgroundResource(R.drawable.ic);
 						ceyes.setBackgroundResource(R.drawable.ceyes);
@@ -208,6 +223,11 @@ public class Testpic extends Activity
 						bird.setBackgroundResource(R.drawable.bird);
 						angry.setBackgroundResource(R.drawable.angry);
 						heart.setBackgroundResource(R.drawable.heart);
+						sumbraro.setBackgroundResource(R.drawable.sombrero);
+						threedglasses.setBackgroundResource(R.drawable.threedglasses);
+						clownface.setBackgroundResource(R.drawable.clownnose);
+						noob.setBackgroundResource(R.drawable.nametag);
+						chain.setBackgroundResource(R.drawable.bling);
 						mask.setBackgroundResource(R.drawable.mask);
 						glasses.setBackgroundResource(R.drawable.g);
 						hat.setBackgroundResource(R.drawable.hat);
@@ -229,6 +249,221 @@ public class Testpic extends Activity
 					}
 				}
 			});
+			sumbraro.setOnClickListener(new View.OnClickListener() {	
+				@Override
+				public void onClick(View v) {
+					// TODO Auto-generated method stub
+					try {
+						
+						Caption.setBackgroundResource(R.drawable.caption);
+						stache_glasses.setBackgroundResource(R.drawable.gstache);
+						eyes.setBackgroundResource(R.drawable.eyes);
+						lips.setBackgroundResource(R.drawable.lips);
+						icream.setBackgroundResource(R.drawable.ic);
+						ceyes.setBackgroundResource(R.drawable.ceyes);
+						sumbraro.setBackgroundResource(R.drawable.sombreroclik);
+						threedglasses.setBackgroundResource(R.drawable.threedglasses);
+						clownface.setBackgroundResource(R.drawable.clownnose);
+						noob.setBackgroundResource(R.drawable.nametag);
+						chain.setBackgroundResource(R.drawable.bling);
+						mono.setBackgroundResource(R.drawable.mono);
+						firew.setBackgroundResource(R.drawable.firew);
+						bird.setBackgroundResource(R.drawable.bird);
+						angry.setBackgroundResource(R.drawable.angry);
+						heart.setBackgroundResource(R.drawable.heart);
+						mask.setBackgroundResource(R.drawable.mask);
+						glasses.setBackgroundResource(R.drawable.g);
+						hat.setBackgroundResource(R.drawable.hat);
+						moustache.setBackgroundResource(R.drawable.moustache);
+						octopus.setBackgroundResource(R.drawable.octopus);
+						rain.setBackgroundResource(R.drawable.rain);
+						rainbow2.setBackgroundResource(R.drawable.rainbow2);
+						rainbow.setBackgroundResource(R.drawable.rainbow);
+						star.setBackgroundResource(R.drawable.star);
+						sung.setBackgroundResource(R.drawable.sung);
+						thought.setBackgroundResource(R.drawable.thought);
+						whiteg.setBackgroundResource(R.drawable.whiteg);
+						tongue.setBackgroundResource(R.drawable.tongue);
+						CustomView.mode="add_content";
+						CustomView.bitmap[CustomView.numberOfContents] = new contents(BitmapFactory.decodeResource(getResources(), R.drawable.sombrero));
+						CustomView.bitmap[CustomView.numberOfContents].originalBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.sombrero);
+					} catch (NullPointerException e) {
+							
+					}
+				}
+			});
+			threedglasses.setOnClickListener(new View.OnClickListener() {	
+				@Override
+				public void onClick(View v) {
+					// TODO Auto-generated method stub
+					try {
+						
+						Caption.setBackgroundResource(R.drawable.caption);
+						stache_glasses.setBackgroundResource(R.drawable.gstache);
+						eyes.setBackgroundResource(R.drawable.eyes);
+						lips.setBackgroundResource(R.drawable.lips);
+						icream.setBackgroundResource(R.drawable.ic);
+						ceyes.setBackgroundResource(R.drawable.ceyes);
+						sumbraro.setBackgroundResource(R.drawable.sombrero);
+						threedglasses.setBackgroundResource(R.drawable.threedglassesclik);
+						clownface.setBackgroundResource(R.drawable.clownnose);
+						noob.setBackgroundResource(R.drawable.nametag);
+						chain.setBackgroundResource(R.drawable.bling);
+						mono.setBackgroundResource(R.drawable.mono);
+						firew.setBackgroundResource(R.drawable.firew);
+						bird.setBackgroundResource(R.drawable.bird);
+						angry.setBackgroundResource(R.drawable.angry);
+						heart.setBackgroundResource(R.drawable.heart);
+						mask.setBackgroundResource(R.drawable.mask);
+						glasses.setBackgroundResource(R.drawable.g);
+						hat.setBackgroundResource(R.drawable.hat);
+						moustache.setBackgroundResource(R.drawable.moustache);
+						octopus.setBackgroundResource(R.drawable.octopus);
+						rain.setBackgroundResource(R.drawable.rain);
+						rainbow2.setBackgroundResource(R.drawable.rainbow2);
+						rainbow.setBackgroundResource(R.drawable.rainbow);
+						star.setBackgroundResource(R.drawable.star);
+						sung.setBackgroundResource(R.drawable.sung);
+						thought.setBackgroundResource(R.drawable.thought);
+						whiteg.setBackgroundResource(R.drawable.whiteg);
+						tongue.setBackgroundResource(R.drawable.tongue);
+						CustomView.mode="add_content";
+						CustomView.bitmap[CustomView.numberOfContents] = new contents(BitmapFactory.decodeResource(getResources(), R.drawable.threedglasses));
+						CustomView.bitmap[CustomView.numberOfContents].originalBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.threedglasses);
+					} catch (NullPointerException e) {
+							
+					}
+				}
+			});
+			clownface.setOnClickListener(new View.OnClickListener() {	
+				@Override
+				public void onClick(View v) {
+					// TODO Auto-generated method stub
+					try {
+						
+						Caption.setBackgroundResource(R.drawable.caption);
+						stache_glasses.setBackgroundResource(R.drawable.gstache);
+						eyes.setBackgroundResource(R.drawable.eyes);
+						lips.setBackgroundResource(R.drawable.lips);
+						icream.setBackgroundResource(R.drawable.ic);
+						ceyes.setBackgroundResource(R.drawable.ceyes);
+						sumbraro.setBackgroundResource(R.drawable.sombrero);
+						threedglasses.setBackgroundResource(R.drawable.threedglasses);
+						clownface.setBackgroundResource(R.drawable.clownnoseclik);
+						noob.setBackgroundResource(R.drawable.nametag);
+						chain.setBackgroundResource(R.drawable.bling);
+						mono.setBackgroundResource(R.drawable.mono);
+						firew.setBackgroundResource(R.drawable.firew);
+						bird.setBackgroundResource(R.drawable.bird);
+						angry.setBackgroundResource(R.drawable.angry);
+						heart.setBackgroundResource(R.drawable.heart);
+						mask.setBackgroundResource(R.drawable.mask);
+						glasses.setBackgroundResource(R.drawable.g);
+						hat.setBackgroundResource(R.drawable.hat);
+						moustache.setBackgroundResource(R.drawable.moustache);
+						octopus.setBackgroundResource(R.drawable.octopus);
+						rain.setBackgroundResource(R.drawable.rain);
+						rainbow2.setBackgroundResource(R.drawable.rainbow2);
+						rainbow.setBackgroundResource(R.drawable.rainbow);
+						star.setBackgroundResource(R.drawable.star);
+						sung.setBackgroundResource(R.drawable.sung);
+						thought.setBackgroundResource(R.drawable.thought);
+						whiteg.setBackgroundResource(R.drawable.whiteg);
+						tongue.setBackgroundResource(R.drawable.tongue);
+						CustomView.mode="add_content";
+						CustomView.bitmap[CustomView.numberOfContents] = new contents(BitmapFactory.decodeResource(getResources(), R.drawable.clownnose));
+						CustomView.bitmap[CustomView.numberOfContents].originalBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.clownnose);
+					} catch (NullPointerException e) {
+							
+					}
+				}
+			});
+			noob.setOnClickListener(new View.OnClickListener() {	
+				@Override
+				public void onClick(View v) {
+					// TODO Auto-generated method stub
+					try {
+						
+						Caption.setBackgroundResource(R.drawable.caption);
+						stache_glasses.setBackgroundResource(R.drawable.gstache);
+						eyes.setBackgroundResource(R.drawable.eyes);
+						lips.setBackgroundResource(R.drawable.lips);
+						icream.setBackgroundResource(R.drawable.ic);
+						ceyes.setBackgroundResource(R.drawable.ceyes);
+						sumbraro.setBackgroundResource(R.drawable.sombrero);
+						threedglasses.setBackgroundResource(R.drawable.threedglasses);
+						clownface.setBackgroundResource(R.drawable.clownnose);
+						noob.setBackgroundResource(R.drawable.nametagclik);
+						chain.setBackgroundResource(R.drawable.bling);
+						mono.setBackgroundResource(R.drawable.mono);
+						firew.setBackgroundResource(R.drawable.firew);
+						bird.setBackgroundResource(R.drawable.bird);
+						angry.setBackgroundResource(R.drawable.angry);
+						heart.setBackgroundResource(R.drawable.heart);
+						mask.setBackgroundResource(R.drawable.mask);
+						glasses.setBackgroundResource(R.drawable.g);
+						hat.setBackgroundResource(R.drawable.hat);
+						moustache.setBackgroundResource(R.drawable.moustache);
+						octopus.setBackgroundResource(R.drawable.octopus);
+						rain.setBackgroundResource(R.drawable.rain);
+						rainbow2.setBackgroundResource(R.drawable.rainbow2);
+						rainbow.setBackgroundResource(R.drawable.rainbow);
+						star.setBackgroundResource(R.drawable.star);
+						sung.setBackgroundResource(R.drawable.sung);
+						thought.setBackgroundResource(R.drawable.thought);
+						whiteg.setBackgroundResource(R.drawable.whiteg);
+						tongue.setBackgroundResource(R.drawable.tongue);
+						CustomView.mode="add_content";
+						CustomView.bitmap[CustomView.numberOfContents] = new contents(BitmapFactory.decodeResource(getResources(), R.drawable.nametag));
+						CustomView.bitmap[CustomView.numberOfContents].originalBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.nametag);
+					} catch (NullPointerException e) {
+							
+					}
+				}
+			});
+			chain.setOnClickListener(new View.OnClickListener() {	
+				@Override
+				public void onClick(View v) {
+					// TODO Auto-generated method stub
+					try {
+						
+						Caption.setBackgroundResource(R.drawable.caption);
+						stache_glasses.setBackgroundResource(R.drawable.gstache);
+						eyes.setBackgroundResource(R.drawable.eyes);
+						lips.setBackgroundResource(R.drawable.lips);
+						icream.setBackgroundResource(R.drawable.ic);
+						ceyes.setBackgroundResource(R.drawable.ceyes);
+						sumbraro.setBackgroundResource(R.drawable.sombrero);
+						threedglasses.setBackgroundResource(R.drawable.threedglasses);
+						clownface.setBackgroundResource(R.drawable.clownnose);
+						noob.setBackgroundResource(R.drawable.nametag);
+						chain.setBackgroundResource(R.drawable.blingclik);
+						mono.setBackgroundResource(R.drawable.mono);
+						firew.setBackgroundResource(R.drawable.firew);
+						bird.setBackgroundResource(R.drawable.bird);
+						angry.setBackgroundResource(R.drawable.angry);
+						heart.setBackgroundResource(R.drawable.heart);
+						mask.setBackgroundResource(R.drawable.mask);
+						glasses.setBackgroundResource(R.drawable.g);
+						hat.setBackgroundResource(R.drawable.hat);
+						moustache.setBackgroundResource(R.drawable.moustache);
+						octopus.setBackgroundResource(R.drawable.octopus);
+						rain.setBackgroundResource(R.drawable.rain);
+						rainbow2.setBackgroundResource(R.drawable.rainbow2);
+						rainbow.setBackgroundResource(R.drawable.rainbow);
+						star.setBackgroundResource(R.drawable.star);
+						sung.setBackgroundResource(R.drawable.sung);
+						thought.setBackgroundResource(R.drawable.thought);
+						whiteg.setBackgroundResource(R.drawable.whiteg);
+						tongue.setBackgroundResource(R.drawable.tongue);
+						CustomView.mode="add_content";
+						CustomView.bitmap[CustomView.numberOfContents] = new contents(BitmapFactory.decodeResource(getResources(), R.drawable.bling));
+						CustomView.bitmap[CustomView.numberOfContents].originalBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.bling);
+					} catch (NullPointerException e) {
+							
+					}
+				}
+			});
 			eyes.setOnClickListener(new View.OnClickListener() {	
 				@Override
 				public void onClick(View v) {
@@ -244,6 +479,11 @@ public class Testpic extends Activity
 						mono.setBackgroundResource(R.drawable.mono);
 						firew.setBackgroundResource(R.drawable.firew);
 						bird.setBackgroundResource(R.drawable.bird);
+						sumbraro.setBackgroundResource(R.drawable.sombrero);
+						threedglasses.setBackgroundResource(R.drawable.threedglasses);
+						clownface.setBackgroundResource(R.drawable.clownnose);
+						noob.setBackgroundResource(R.drawable.nametag);
+						chain.setBackgroundResource(R.drawable.bling);
 						angry.setBackgroundResource(R.drawable.angry);
 						heart.setBackgroundResource(R.drawable.heart);
 						mask.setBackgroundResource(R.drawable.mask);
@@ -289,6 +529,11 @@ public class Testpic extends Activity
 						moustache.setBackgroundResource(R.drawable.moustache);
 						octopus.setBackgroundResource(R.drawable.octopus);
 						rain.setBackgroundResource(R.drawable.rain);
+						sumbraro.setBackgroundResource(R.drawable.sombrero);
+						threedglasses.setBackgroundResource(R.drawable.threedglasses);
+						clownface.setBackgroundResource(R.drawable.clownnose);
+						noob.setBackgroundResource(R.drawable.nametag);
+						chain.setBackgroundResource(R.drawable.bling);
 						rainbow2.setBackgroundResource(R.drawable.rainbow2);
 						rainbow.setBackgroundResource(R.drawable.rainbow);
 						star.setBackgroundResource(R.drawable.star);
@@ -323,6 +568,11 @@ public class Testpic extends Activity
 						angry.setBackgroundResource(R.drawable.angry);
 						heart.setBackgroundResource(R.drawable.heart);
 						mask.setBackgroundResource(R.drawable.mask);
+						sumbraro.setBackgroundResource(R.drawable.sombrero);
+						threedglasses.setBackgroundResource(R.drawable.threedglasses);
+						clownface.setBackgroundResource(R.drawable.clownnose);
+						noob.setBackgroundResource(R.drawable.nametag);
+						chain.setBackgroundResource(R.drawable.bling);
 						glasses.setBackgroundResource(R.drawable.g);
 						hat.setBackgroundResource(R.drawable.hat);
 						moustache.setBackgroundResource(R.drawable.moustache);
@@ -371,6 +621,11 @@ public class Testpic extends Activity
 						thought.setBackgroundResource(R.drawable.thought);
 						whiteg.setBackgroundResource(R.drawable.whiteg);
 						tongue.setBackgroundResource(R.drawable.tongue);
+						sumbraro.setBackgroundResource(R.drawable.sombrero);
+						threedglasses.setBackgroundResource(R.drawable.threedglasses);
+						clownface.setBackgroundResource(R.drawable.clownnose);
+						noob.setBackgroundResource(R.drawable.nametag);
+						chain.setBackgroundResource(R.drawable.bling);
 						CustomView.mode="add_content";
 						CustomView.bitmap[CustomView.numberOfContents] = new contents(BitmapFactory.decodeResource(getResources(), R.drawable.ceyes));
 						CustomView.bitmap[CustomView.numberOfContents].originalBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.ceyes);
@@ -407,6 +662,11 @@ public class Testpic extends Activity
 						sung.setBackgroundResource(R.drawable.sung);
 						thought.setBackgroundResource(R.drawable.thought);
 						whiteg.setBackgroundResource(R.drawable.whiteg);
+						sumbraro.setBackgroundResource(R.drawable.sombrero);
+						threedglasses.setBackgroundResource(R.drawable.threedglasses);
+						clownface.setBackgroundResource(R.drawable.clownnose);
+						noob.setBackgroundResource(R.drawable.nametag);
+						chain.setBackgroundResource(R.drawable.bling);
 						tongue.setBackgroundResource(R.drawable.tongue);
 						CustomView.mode="add_content";
 						CustomView.bitmap[CustomView.numberOfContents] = new contents(BitmapFactory.decodeResource(getResources(), R.drawable.mono));
@@ -433,6 +693,11 @@ public class Testpic extends Activity
 						angry.setBackgroundResource(R.drawable.angry);
 						heart.setBackgroundResource(R.drawable.heart);
 						mask.setBackgroundResource(R.drawable.mask);
+						sumbraro.setBackgroundResource(R.drawable.sombrero);
+						threedglasses.setBackgroundResource(R.drawable.threedglasses);
+						clownface.setBackgroundResource(R.drawable.clownnose);
+						noob.setBackgroundResource(R.drawable.nametag);
+						chain.setBackgroundResource(R.drawable.bling);
 						glasses.setBackgroundResource(R.drawable.g);
 						hat.setBackgroundResource(R.drawable.hat);
 						moustache.setBackgroundResource(R.drawable.moustache);
@@ -466,6 +731,11 @@ public class Testpic extends Activity
 						ceyes.setBackgroundResource(R.drawable.ceyes);
 						mono.setBackgroundResource(R.drawable.mono);
 						firew.setBackgroundResource(R.drawable.firew);
+						sumbraro.setBackgroundResource(R.drawable.sombrero);
+						threedglasses.setBackgroundResource(R.drawable.threedglasses);
+						clownface.setBackgroundResource(R.drawable.clownnose);
+						noob.setBackgroundResource(R.drawable.nametag);
+						chain.setBackgroundResource(R.drawable.bling);
 						bird.setBackgroundResource(R.drawable.birdclik);
 						angry.setBackgroundResource(R.drawable.angry);
 						heart.setBackgroundResource(R.drawable.heart);
@@ -503,6 +773,11 @@ public class Testpic extends Activity
 						ceyes.setBackgroundResource(R.drawable.ceyes);
 						mono.setBackgroundResource(R.drawable.mono);
 						firew.setBackgroundResource(R.drawable.firew);
+						sumbraro.setBackgroundResource(R.drawable.sombrero);
+						threedglasses.setBackgroundResource(R.drawable.threedglasses);
+						clownface.setBackgroundResource(R.drawable.clownnose);
+						noob.setBackgroundResource(R.drawable.nametag);
+						chain.setBackgroundResource(R.drawable.bling);
 						bird.setBackgroundResource(R.drawable.bird);
 						angry.setBackgroundResource(R.drawable.angryclik);
 						heart.setBackgroundResource(R.drawable.heart);
@@ -546,6 +821,11 @@ public class Testpic extends Activity
 						mask.setBackgroundResource(R.drawable.mask);
 						glasses.setBackgroundResource(R.drawable.g);
 						hat.setBackgroundResource(R.drawable.hat);
+						sumbraro.setBackgroundResource(R.drawable.sombrero);
+						threedglasses.setBackgroundResource(R.drawable.threedglasses);
+						clownface.setBackgroundResource(R.drawable.clownnose);
+						noob.setBackgroundResource(R.drawable.nametag);
+						chain.setBackgroundResource(R.drawable.bling);
 						moustache.setBackgroundResource(R.drawable.moustache);
 						octopus.setBackgroundResource(R.drawable.octopus);
 						rain.setBackgroundResource(R.drawable.rain);
@@ -588,6 +868,11 @@ public class Testpic extends Activity
 						moustache.setBackgroundResource(R.drawable.moustache);
 						octopus.setBackgroundResource(R.drawable.octopus);
 						rain.setBackgroundResource(R.drawable.rain);
+						sumbraro.setBackgroundResource(R.drawable.sombrero);
+						threedglasses.setBackgroundResource(R.drawable.threedglasses);
+						clownface.setBackgroundResource(R.drawable.clownnose);
+						noob.setBackgroundResource(R.drawable.nametag);
+						chain.setBackgroundResource(R.drawable.bling);
 						rainbow2.setBackgroundResource(R.drawable.rainbow2);
 						rainbow.setBackgroundResource(R.drawable.rainbow);
 						star.setBackgroundResource(R.drawable.star);
@@ -621,6 +906,11 @@ public class Testpic extends Activity
 						angry.setBackgroundResource(R.drawable.angry);
 						heart.setBackgroundResource(R.drawable.heart);
 						mask.setBackgroundResource(R.drawable.mask);
+						sumbraro.setBackgroundResource(R.drawable.sombrero);
+						threedglasses.setBackgroundResource(R.drawable.threedglasses);
+						clownface.setBackgroundResource(R.drawable.clownnose);
+						noob.setBackgroundResource(R.drawable.nametag);
+						chain.setBackgroundResource(R.drawable.bling);
 						glasses.setBackgroundResource(R.drawable.gclik);
 						hat.setBackgroundResource(R.drawable.hat);
 						moustache.setBackgroundResource(R.drawable.moustache);
@@ -659,6 +949,11 @@ public class Testpic extends Activity
 						firew.setBackgroundResource(R.drawable.firew);
 						bird.setBackgroundResource(R.drawable.bird);
 						angry.setBackgroundResource(R.drawable.angry);
+						sumbraro.setBackgroundResource(R.drawable.sombrero);
+						threedglasses.setBackgroundResource(R.drawable.threedglasses);
+						clownface.setBackgroundResource(R.drawable.clownnose);
+						noob.setBackgroundResource(R.drawable.nametag);
+						chain.setBackgroundResource(R.drawable.bling);
 						heart.setBackgroundResource(R.drawable.heart);
 						mask.setBackgroundResource(R.drawable.mask);
 						glasses.setBackgroundResource(R.drawable.g);
@@ -701,6 +996,11 @@ public class Testpic extends Activity
 					angry.setBackgroundResource(R.drawable.angry);
 					heart.setBackgroundResource(R.drawable.heart);
 					mask.setBackgroundResource(R.drawable.mask);
+					sumbraro.setBackgroundResource(R.drawable.sombrero);
+					threedglasses.setBackgroundResource(R.drawable.threedglasses);
+					clownface.setBackgroundResource(R.drawable.clownnose);
+					noob.setBackgroundResource(R.drawable.nametag);
+					chain.setBackgroundResource(R.drawable.bling);
 					glasses.setBackgroundResource(R.drawable.g);
 					hat.setBackgroundResource(R.drawable.hat);
 					moustache.setBackgroundResource(R.drawable.moustacheclik);
@@ -741,6 +1041,11 @@ public class Testpic extends Activity
 					angry.setBackgroundResource(R.drawable.angry);
 					heart.setBackgroundResource(R.drawable.heart);
 					mask.setBackgroundResource(R.drawable.mask);
+					sumbraro.setBackgroundResource(R.drawable.sombrero);
+					threedglasses.setBackgroundResource(R.drawable.threedglasses);
+					clownface.setBackgroundResource(R.drawable.clownnose);
+					noob.setBackgroundResource(R.drawable.nametag);
+					chain.setBackgroundResource(R.drawable.bling);
 					glasses.setBackgroundResource(R.drawable.g);
 					hat.setBackgroundResource(R.drawable.hat);
 					moustache.setBackgroundResource(R.drawable.moustache);
@@ -782,6 +1087,11 @@ public class Testpic extends Activity
 					mask.setBackgroundResource(R.drawable.mask);
 					glasses.setBackgroundResource(R.drawable.g);
 					hat.setBackgroundResource(R.drawable.hat);
+					sumbraro.setBackgroundResource(R.drawable.sombrero);
+					threedglasses.setBackgroundResource(R.drawable.threedglasses);
+					clownface.setBackgroundResource(R.drawable.clownnose);
+					noob.setBackgroundResource(R.drawable.nametag);
+					chain.setBackgroundResource(R.drawable.bling);
 					moustache.setBackgroundResource(R.drawable.moustache);
 					octopus.setBackgroundResource(R.drawable.octopus);
 					rain.setBackgroundResource(R.drawable.rainclik);
@@ -828,6 +1138,11 @@ public class Testpic extends Activity
 					rainbow.setBackgroundResource(R.drawable.rainbowclik);
 					star.setBackgroundResource(R.drawable.star);
 					sung.setBackgroundResource(R.drawable.sung);
+					sumbraro.setBackgroundResource(R.drawable.sombrero);
+					threedglasses.setBackgroundResource(R.drawable.threedglasses);
+					clownface.setBackgroundResource(R.drawable.clownnose);
+					noob.setBackgroundResource(R.drawable.nametag);
+					chain.setBackgroundResource(R.drawable.bling);
 					thought.setBackgroundResource(R.drawable.thought);
 					whiteg.setBackgroundResource(R.drawable.whiteg);
 					tongue.setBackgroundResource(R.drawable.tongue);
@@ -867,6 +1182,11 @@ public class Testpic extends Activity
 					rainbow.setBackgroundResource(R.drawable.rainbow);
 					star.setBackgroundResource(R.drawable.star);
 					sung.setBackgroundResource(R.drawable.sung);
+					sumbraro.setBackgroundResource(R.drawable.sombrero);
+					threedglasses.setBackgroundResource(R.drawable.threedglasses);
+					clownface.setBackgroundResource(R.drawable.clownnose);
+					noob.setBackgroundResource(R.drawable.nametag);
+					chain.setBackgroundResource(R.drawable.bling);
 					thought.setBackgroundResource(R.drawable.thought);
 					whiteg.setBackgroundResource(R.drawable.whiteg);
 					tongue.setBackgroundResource(R.drawable.tongue);
@@ -900,6 +1220,11 @@ public class Testpic extends Activity
 					mask.setBackgroundResource(R.drawable.mask);
 					glasses.setBackgroundResource(R.drawable.g);
 					hat.setBackgroundResource(R.drawable.hat);
+					sumbraro.setBackgroundResource(R.drawable.sombrero);
+					threedglasses.setBackgroundResource(R.drawable.threedglasses);
+					clownface.setBackgroundResource(R.drawable.clownnose);
+					noob.setBackgroundResource(R.drawable.nametag);
+					chain.setBackgroundResource(R.drawable.bling);
 					moustache.setBackgroundResource(R.drawable.moustache);
 					octopus.setBackgroundResource(R.drawable.octopus);
 					rain.setBackgroundResource(R.drawable.rain);
@@ -943,6 +1268,11 @@ public class Testpic extends Activity
 					moustache.setBackgroundResource(R.drawable.moustache);
 					octopus.setBackgroundResource(R.drawable.octopus);
 					rain.setBackgroundResource(R.drawable.rain);
+					sumbraro.setBackgroundResource(R.drawable.sombrero);
+					noob.setBackgroundResource(R.drawable.nametag);
+					chain.setBackgroundResource(R.drawable.bling);
+					threedglasses.setBackgroundResource(R.drawable.threedglasses);
+					clownface.setBackgroundResource(R.drawable.clownnose);
 					rainbow2.setBackgroundResource(R.drawable.rainbow2);
 					rainbow.setBackgroundResource(R.drawable.rainbow);
 					star.setBackgroundResource(R.drawable.star);
@@ -986,6 +1316,11 @@ public class Testpic extends Activity
 					rainbow2.setBackgroundResource(R.drawable.rainbow2);
 					rainbow.setBackgroundResource(R.drawable.rainbow);
 					star.setBackgroundResource(R.drawable.star);
+					sumbraro.setBackgroundResource(R.drawable.sombrero);
+					threedglasses.setBackgroundResource(R.drawable.threedglasses);
+					clownface.setBackgroundResource(R.drawable.clownnose);
+					noob.setBackgroundResource(R.drawable.nametag);
+					chain.setBackgroundResource(R.drawable.bling);
 					sung.setBackgroundResource(R.drawable.sung);
 					thought.setBackgroundResource(R.drawable.thoughtclik);
 					whiteg.setBackgroundResource(R.drawable.whiteg);
@@ -1025,6 +1360,11 @@ public class Testpic extends Activity
 					rain.setBackgroundResource(R.drawable.rain);
 					rainbow2.setBackgroundResource(R.drawable.rainbow2);
 					rainbow.setBackgroundResource(R.drawable.rainbow);
+					sumbraro.setBackgroundResource(R.drawable.sombrero);
+					threedglasses.setBackgroundResource(R.drawable.threedglasses);
+					clownface.setBackgroundResource(R.drawable.clownnose);
+					noob.setBackgroundResource(R.drawable.nametag);
+					chain.setBackgroundResource(R.drawable.bling);
 					star.setBackgroundResource(R.drawable.star);
 					sung.setBackgroundResource(R.drawable.sung);
 					thought.setBackgroundResource(R.drawable.thought);
@@ -1059,6 +1399,11 @@ public class Testpic extends Activity
 					mask.setBackgroundResource(R.drawable.mask);
 					glasses.setBackgroundResource(R.drawable.g);
 					hat.setBackgroundResource(R.drawable.hat);
+					sumbraro.setBackgroundResource(R.drawable.sombrero);
+					threedglasses.setBackgroundResource(R.drawable.threedglasses);
+					clownface.setBackgroundResource(R.drawable.clownnose);
+					noob.setBackgroundResource(R.drawable.nametag);
+					chain.setBackgroundResource(R.drawable.bling);
 					moustache.setBackgroundResource(R.drawable.moustache);
 					octopus.setBackgroundResource(R.drawable.octopus);
 					rain.setBackgroundResource(R.drawable.rain);
@@ -1435,6 +1780,11 @@ public class Testpic extends Activity
 					  moustache.setVisibility(view.GONE);
 					  octopus.setVisibility(view.GONE);
 					  rain.setVisibility(view.GONE);
+					  sumbraro.setVisibility(view.GONE);
+					  threedglasses.setVisibility(view.GONE);
+					  clownface.setVisibility(view.GONE);
+					  noob.setVisibility(view.GONE);
+					  chain.setVisibility(view.GONE);
 					  rainbow.setVisibility(view.GONE);
 					  rainbow2.setVisibility(view.GONE);
 					  star.setVisibility(view.GONE);
@@ -1683,6 +2033,11 @@ public class Testpic extends Activity
 				 tongue.setVisibility(view.GONE);
 				 whiteg.setVisibility(view.GONE);
 				 hat.setVisibility(view.GONE);
+				 sumbraro.setVisibility(view.GONE);
+				 threedglasses.setVisibility(view.GONE);
+				 clownface.setVisibility(view.GONE);
+				 noob.setVisibility(view.GONE);
+				 chain.setVisibility(view.GONE);
 				 glasses.setVisibility(view.GONE);
 				 mask.setVisibility(view.GONE);
 				 heart.setVisibility(view.GONE);
@@ -1766,6 +2121,11 @@ public class Testpic extends Activity
 			  moustache.setVisibility(view.GONE);
 			  octopus.setVisibility(view.GONE);
 			  rain.setVisibility(view.GONE);
+			  sumbraro.setVisibility(view.GONE);
+			  threedglasses.setVisibility(view.GONE);
+			  clownface.setVisibility(view.GONE);
+			  noob.setVisibility(view.GONE);
+			  chain.setVisibility(view.GONE);
 			  rainbow.setVisibility(view.GONE);
 			  rainbow2.setVisibility(view.GONE);
 			  star.setVisibility(view.GONE);
@@ -1834,6 +2194,11 @@ public class Testpic extends Activity
 				 rainbow.setVisibility(view.VISIBLE);
 				 rainbow2.setVisibility(view.VISIBLE);
 				 star.setVisibility(view.VISIBLE);
+				 sumbraro.setVisibility(view.VISIBLE);
+				 threedglasses.setVisibility(view.VISIBLE);
+				 clownface.setVisibility(view.VISIBLE);
+				 noob.setVisibility(view.VISIBLE);
+				 chain.setVisibility(view.VISIBLE);
 				 sung.setVisibility(view.VISIBLE);
 				 thought.setVisibility(view.VISIBLE);
 				 tongue.setVisibility(view.VISIBLE);
