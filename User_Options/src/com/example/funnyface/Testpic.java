@@ -162,6 +162,8 @@ public class Testpic extends Activity
 			UndoThis.setBackgroundDrawable(getResources().getDrawable(R.drawable.deletebutton));
 			final Button ResetButton = (Button) findViewById(R.id.undoAll);
 			ResetButton.setBackgroundDrawable(getResources().getDrawable(R.drawable.resetbutton));
+			final Button scaleButton = (Button) findViewById(R.id.scaleButton);
+			 
 
 			Caption.setOnClickListener(new View.OnClickListener() {	
 				@Override
@@ -1767,6 +1769,7 @@ public class Testpic extends Activity
 				      //pixelChanger.setVisibility(view.VISIBLE);
 				      
 				      imageSaturationBar.setVisibility(view.VISIBLE);
+				      scaleButton.setVisibility(view.GONE);
 					  blackColor.setVisibility(view.GONE);
 					  whiteColor.setVisibility(view.GONE); 
 					  redColor.setVisibility(view.GONE);
@@ -1818,16 +1821,17 @@ public class Testpic extends Activity
 			}
 		});
 		
-	
-		imageSaturationBar.setProgress(0); 				
-		imageSaturationBar.incrementProgressBy(1);	  
+	 			
+		imageSaturationBar.incrementProgressBy(1);
+		imageSaturationBar.setProgress(10);
 		imageSaturationBar.setMax(11);
-		
 		imageSaturationBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener()
-		{
+		{ 
+
 			@Override
 			public void onProgressChanged(SeekBar imageSaturationBar, int saturationValue, boolean fromUser)
 			{
+			
 				ColorMatrix matrix = new ColorMatrix();
 				matrix.setSaturation(saturationValue);
 				ColorMatrixColorFilter filter = new ColorMatrixColorFilter(matrix);
@@ -1842,7 +1846,8 @@ public class Testpic extends Activity
 			@Override
 			public void onStopTrackingTouch(SeekBar imageSaturationBar) 
 			{
-				
+				int diff = 1/2;
+				imageSaturationBar.incrementProgressBy(diff);
 			}   
 		});
 	
@@ -2049,7 +2054,7 @@ public class Testpic extends Activity
 			     ThinStroke.setVisibility(view.VISIBLE);
 			     MediumStroke.setVisibility(view.VISIBLE);
 			     ThickStroke.setVisibility(view.VISIBLE);
-			
+			     scaleButton.setVisibility(view.GONE);
 			      imageSaturationBar.setVisibility(view.GONE);
 			     //blacktoWhite.setVisibility(view.GONE);
 			     //pixelChanger.setVisibility(view.GONE);
@@ -2088,7 +2093,6 @@ public class Testpic extends Activity
 				 Caption.setVisibility(view.GONE);
 				 
 				 final Button scaleButton = (Button) findViewById(R.id.scaleButton);
-				 scaleButton.setText("Select");
 				 
 					scaleButton.setOnClickListener(new View.OnClickListener()
 					{
@@ -2099,7 +2103,6 @@ public class Testpic extends Activity
 							{
 								
 								CustomView.mode="move_content";
-								scaleButton.setText("scale");
 							}
 							catch(Exception e)
 							{
@@ -2150,6 +2153,7 @@ public class Testpic extends Activity
 		      undoButton.setVisibility(view.VISIBLE);
 			  UndoThis.setVisibility(view.VISIBLE); 
 			  ResetButton.setVisibility(view.VISIBLE);
+			  scaleButton.setVisibility(view.GONE);
 			  //blacktoWhite.setVisibility(view.GONE);
 			  //pixelChanger.setVisibility(view.GONE);
 			  //yuvChanger.setVisibility(view.GONE);
@@ -2221,7 +2225,8 @@ public class Testpic extends Activity
 			    ThinStroke.setVisibility(view.GONE);
 			    MediumStroke.setVisibility(view.GONE);
 			    ThickStroke.setVisibility(view.GONE);
-			      imageSaturationBar.setVisibility(view.GONE);
+			    imageSaturationBar.setVisibility(view.GONE);
+			    scaleButton.setVisibility(view.VISIBLE);
 			    //blacktoWhite.setVisibility(view.GONE);
 			    //pixelChanger.setVisibility(view.GONE);
 			    //yuvChanger.setVisibility(view.GONE);
@@ -2258,7 +2263,7 @@ public class Testpic extends Activity
 				 final Button scaleButton = (Button) findViewById(R.id.scaleButton);
 				 scaleButton.setVisibility(view.VISIBLE);
 				 
-				 scaleButton.setText("Scale");
+				
 				 
 				 scaleButton.setOnClickListener(new View.OnClickListener(){
 
