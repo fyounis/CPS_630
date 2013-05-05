@@ -41,6 +41,9 @@ import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.AsyncHttpResponseHandler;
 import com.loopj.android.http.RequestParams;
 
+import android.widget.SeekBar.OnSeekBarChangeListener;
+import android.widget.SeekBar;
+
 @SuppressLint("SdCardPath")
 public class Testpic extends Activity
 {
@@ -1822,10 +1825,10 @@ public class Testpic extends Activity
 		});
 		
 	 			
-		imageSaturationBar.incrementProgressBy(1);
-		imageSaturationBar.setProgress(10);
-		imageSaturationBar.setMax(11);
-		imageSaturationBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener()
+		//imageSaturationBar.incrementProgressBy(1);
+		//imageSaturationBar.setProgress(10);
+		//imageSaturationBar.setMax(11);
+		/*imageSaturationBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener()
 		{ 
 
 			@Override
@@ -1850,7 +1853,30 @@ public class Testpic extends Activity
 				imageSaturationBar.incrementProgressBy(diff);
 			}   
 		});
-	
+	*/
+		
+		imageSaturationBar.setOnSeekBarChangeListener(new OnSeekBarChangeListener()
+			{
+				public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser)
+				{
+					ColorMatrix matrix = new ColorMatrix();
+					matrix.setSaturation(saturationValue);
+					ColorMatrixColorFilter filter = new ColorMatrixColorFilter(matrix);
+					saturationValue = progress/10;
+					view.setColorFilter(filter);
+					view.invalidate( );
+				}
+
+				public void onStartTrackingTouch(SeekBar seekBar)
+				{
+					// TODO Auto-generated method stub
+				}
+
+				public void onStopTrackingTouch(SeekBar seekBar)
+				{
+					// TODO Auto-generated method stub
+				}
+		});
 
 		/*
 		blacktoWhite.setOnClickListener(new View.OnClickListener()
@@ -2093,8 +2119,12 @@ public class Testpic extends Activity
 				 Caption.setVisibility(view.GONE);
 				 
 				 final Button scaleButton = (Button) findViewById(R.id.scaleButton);
+				 final Button moveButton = (Button) findViewById(R.id.moveButton);
 				 
-					scaleButton.setOnClickListener(new View.OnClickListener()
+				 scaleButton.setVisibility(view.GONE);
+				 moveButton.setVisibility(view.GONE);
+				 
+				/*	scaleButton.setOnClickListener(new View.OnClickListener()
 					{
 						@Override
 						public void onClick(View v) 
@@ -2109,7 +2139,7 @@ public class Testpic extends Activity
 								
 							}
 						}
-					});
+					});*/
 				 
 			 }
 			 catch(Exception e){}
@@ -2263,28 +2293,38 @@ public class Testpic extends Activity
 				 final Button scaleButton = (Button) findViewById(R.id.scaleButton);
 				 scaleButton.setVisibility(view.VISIBLE);
 				 
-				
+				 final Button moveButton = (Button) findViewById(R.id.moveButton);
+				 moveButton.setVisibility(view.VISIBLE);
 				 
 				 scaleButton.setOnClickListener(new View.OnClickListener(){
-
 						@Override
 						public void onClick(View v)
 						{
 							try
 							{
-								if (CustomView.mode=="move_content"){
 									CustomView.mode="scale";
 									CustomView.moveContent=false;
-									scaleButton.setBackgroundResource(R.drawable.move);
 									view.invalidate();
-									
-								}
-								else if (CustomView.mode=="scale"){
-									CustomView.mode="move_content";
-									CustomView.moveContent=true;
-									scaleButton.setBackgroundResource(R.drawable.scale);
+
+							}
+							catch(NullPointerException e)
+							{
+								
+							}
+						}
+					});
+				 
+				 moveButton.setOnClickListener(new View.OnClickListener(){
+						@Override
+						public void onClick(View v)
+						{
+							try
+							{
+								 
+								CustomView.mode="move_content";
+								CustomView.moveContent=true;
 									view.invalidate();
-								}
+
 							}
 							catch(NullPointerException e)
 							{

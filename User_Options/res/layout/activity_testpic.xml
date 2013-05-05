@@ -24,7 +24,7 @@
           <Button
               android:id="@+id/handle"
               android:layout_width="60dp"
-              android:layout_height="13dp" />
+              android:layout_height="50dp" />
 
           <LinearLayout
               android:id="@+id/content"
@@ -406,7 +406,8 @@
 								  android:layout_width="wrap_content"
 								  android:layout_height="wrap_content"
 								  android:visibility="gone"
-								  android:max="11"
+								  android:max="100"
+								  android:progress="10"
 								  android:minWidth="470px"  />
                             	  
                             	
@@ -421,14 +422,27 @@
           </LinearLayout>
       </SlidingDrawer>
 
+       <RelativeLayout
+                  android:layout_width="fill_parent"
+                  android:layout_height="wrap_content"
+                  android:orientation="horizontal" >
+              <Button
+          android:id="@+id/moveButton"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:background="@drawable/move"
+          android:visibility="gone"
+          />
+      
       <Button
           android:id="@+id/scaleButton"
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
-          android:layout_alignParentLeft="true"
-          android:layout_alignParentTop="true"
-          android:background="@drawable/move"
+          android:layout_marginLeft="70px"
+          android:background="@drawable/scale"
           android:visibility="gone"
           />
+
+   </RelativeLayout>
 
 </RelativeLayout>
