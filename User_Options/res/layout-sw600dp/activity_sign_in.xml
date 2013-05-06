@@ -1,0 +1,107 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    tools:context=".SignIn" >
+
+    <EditText
+        android:id="@+id/username"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:hint="Username"
+        android:maxLength="12"
+        android:typeface="serif"
+        android:layout_marginTop="60dp"
+        android:ems="10" >
+        <requestFocus />
+
+    </EditText>
+
+    <TextView
+        android:id="@+id/instruction"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="17dp"
+        android:textStyle="normal|italic"
+        android:text="Enter your username, e-mail and password to CloudNow:" />
+
+    <EditText
+        android:id="@+id/password"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/username"
+        android:layout_below="@+id/username"
+        android:hint="Password"
+        android:layout_marginTop="80dp"
+        android:maxLength="12"
+        android:typeface="serif"
+        android:ems="10"
+        android:inputType="textPassword" >
+    </EditText>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="350dp"
+        android:orientation="vertical" >
+
+        <HorizontalScrollView
+            android:id="@+id/horizontalScrollView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal" >
+
+                <Button
+                    android:id="@+id/signin"
+                    android:layout_width="wrap_content"
+                    android:layout_marginLeft="18dp"
+                    android:textColor="#ffffff"
+                    android:color="#00e5e5"
+                    android:layout_height="wrap_content"
+                    android:text="Sign In" />
+
+                <Button
+                    android:id="@+id/signup"
+                    android:layout_width="wrap_content"
+                    android:layout_marginLeft="28dp"
+                    android:textColor="#ffffff"
+                    android:color="#00e5e5"
+                    android:layout_height="wrap_content"
+                    android:text="Sign Up" />
+
+                <Button
+                    android:id="@+id/help"
+                    android:layout_width="wrap_content"
+                    android:layout_marginLeft="25dp"
+                    android:textColor="#ffffff"
+                    android:color="#00e5e5"
+                    android:layout_height="wrap_content"
+                    android:text="Help" />
+
+            </LinearLayout>
+        </HorizontalScrollView>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/note"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/password"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="48dp"
+        android:linksClickable="true"
+        android:autoLink="web"
+        android:color="#00e5e5"
+        android:text="Forget your password?" />
+
+</RelativeLayout>
