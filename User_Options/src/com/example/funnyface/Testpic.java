@@ -3,6 +3,7 @@ package com.example.funnyface;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -19,8 +20,10 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.ColorMatrix;
 import android.graphics.ColorMatrixColorFilter;
+import android.graphics.Matrix;
 import android.graphics.Path;
 import android.graphics.drawable.BitmapDrawable;
+import android.media.ExifInterface;
 import android.net.ConnectivityManager;
 import android.net.Uri;
 import android.os.Bundle;
@@ -66,19 +69,55 @@ public class Testpic extends Activity
 		if(Global.mode.equals("Camera"))
 		{
 			try {
+					ExifInterface exif = new ExifInterface(Global.picturePath);
+					
+					int rotation = exif.getAttributeInt(ExifInterface.TAG_ORIENTATION, ExifInterface.ORIENTATION_NORMAL);  
+					
+					int rotationInDegrees = exifToDegrees(rotation);
+					
+					Matrix matrix = new Matrix();
+					if (rotation != 0f) {
+						matrix.preRotate(rotationInDegrees);
+					}
+					
+					//Bitmap.createBitmap(Bitmap source, int x, int y, int width, int height, Matrix m, boolean filter)
+					Bitmap sourceBitmap=BitmapFactory.decodeFile(Global.picturePath);
+					Bitmap backgroundImage = Bitmap.createBitmap(sourceBitmap, 0, 0, sourceBitmap.getWidth(), sourceBitmap.getHeight(), matrix, true);
+					view.setImageBitmap(backgroundImage);
+				
+	        	
+				
 				//CustomView.backgroundImage=BitmapFactory.decodeFile(Global.picturePath);
-				backgroundImage=BitmapFactory.decodeFile(Global.picturePath);
-				view.setImageBitmap(backgroundImage);
-			} catch (NullPointerException e){}
+				//backgroundImage=BitmapFactory.decodeFile(Global.picturePath);
+				//view.setImageBitmap(backgroundImage);
+			} catch (IOException e){}
 			
 		}
 		else if(Global.mode.equals("Gallery"))
 		{
 			try {
-			//CustomView.backgroundImage=BitmapFactory.decodeFile(Global.picturePath);
-				backgroundImage=BitmapFactory.decodeFile(Global.picturePath);
+				ExifInterface exif = new ExifInterface(Global.picturePath);
+				
+				int rotation = exif.getAttributeInt(ExifInterface.TAG_ORIENTATION, ExifInterface.ORIENTATION_NORMAL);  
+				
+				int rotationInDegrees = exifToDegrees(rotation);
+				
+				Matrix matrix = new Matrix();
+				if (rotation != 0f) {
+					matrix.preRotate(rotationInDegrees);
+				}
+				
+				//Bitmap.createBitmap(Bitmap source, int x, int y, int width, int height, Matrix m, boolean filter)
+				Bitmap sourceBitmap=BitmapFactory.decodeFile(Global.picturePath);
+				Bitmap backgroundImage = Bitmap.createBitmap(sourceBitmap, 0, 0, sourceBitmap.getWidth(), sourceBitmap.getHeight(), matrix, true);
 				view.setImageBitmap(backgroundImage);
-			} catch (NullPointerException e){}
+			
+        	
+				
+			//CustomView.backgroundImage=BitmapFactory.decodeFile(Global.picturePath);
+			//	backgroundImage=BitmapFactory.decodeFile(Global.picturePath);
+			//	view.setImageBitmap(backgroundImage);
+			} catch (IOException e){}
 		}
 		
 		
@@ -2554,6 +2593,13 @@ public class Testpic extends Activity
         }); 
     }    
 	
+	private static int exifToDegrees(int exifOrientation) {        
+	    if (exifOrientation == ExifInterface.ORIENTATION_ROTATE_90) { return 90; } 
+	    else if (exifOrientation == ExifInterface.ORIENTATION_ROTATE_180) {  return 180; } 
+	    else if (exifOrientation == ExifInterface.ORIENTATION_ROTATE_270) {  return 270; }            
+	    return 0;    
+	 }
+    
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event)  {
           if (keyCode == KeyEvent.KEYCODE_BACK) {

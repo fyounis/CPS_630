@@ -1,14 +1,21 @@
 package com.example.funnyface;
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
 
 import android.app.Activity;
 import android.content.Intent;
 import android.database.Cursor;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.Matrix;
+import android.media.ExifInterface;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
 import android.util.DisplayMetrics;
+import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 import android.widget.ImageButton;
@@ -79,6 +86,7 @@ public class UserPhotoOptions extends Activity
 		});
 	}
 	
+	
 	public void onActivityResult(int requestCode, int resultCode, Intent data)
 	{
 			super.onActivityResult(requestCode, resultCode, data);
@@ -87,9 +95,44 @@ public class UserPhotoOptions extends Activity
 		        	// Image captured and saved to fileUri specified in the Intent 
 		        	// Notify User where the image was saved
 		        	Global.picturePath=outputFileUri.getPath();
+		        	
 		        	Toast.makeText(this, "Image saved to:\n" +
 		        			  outputFileUri.getPath(), Toast.LENGTH_LONG).show();
 		        	 
+		        	/*
+		        	 try {
+		        	        File f = new File(Global.picturePath);
+		        	        ExifInterface exif = new ExifInterface(f.getPath());
+		        	        int orientation = exif.getAttributeInt(ExifInterface.TAG_ORIENTATION, ExifInterface.ORIENTATION_NORMAL);
+
+		        	        int angle = 0;
+
+		        	        if (orientation == ExifInterface.ORIENTATION_ROTATE_90) {
+		        	            angle = 90;
+		        	        } 
+		        	        else if (orientation == ExifInterface.ORIENTATION_ROTATE_180) {
+		        	            angle = 180;
+		        	        } 
+		        	        else if (orientation == ExifInterface.ORIENTATION_ROTATE_270) {
+		        	            angle = 270;
+		        	        }
+
+		        	        Matrix mat = new Matrix();
+		        	        mat.postRotate(angle);
+
+		        	        Bitmap bmp = BitmapFactory.decodeStream(new FileInputStream(f), null, null);
+		        	        Bitmap correctBmp = Bitmap.createBitmap(bmp, 0, 0, bmp.getWidth(), bmp.getHeight(), mat, true);                 
+		        	    }
+		        	    catch (IOException e) {
+		        	        Log.w("TAG", "-- Error in setting image");
+		        	    }   
+		        	    catch(OutOfMemoryError oom) {
+		        	        Log.w("TAG", "-- OOM Error in setting image");
+		        	    }
+		        	*/
+		        	
+		        	
+		        	
 		        	//Start the Testpic Activity (which will being it to the editor page)
 		            startActivity(new Intent(this, Testpic.class));
 		        }
