@@ -17,14 +17,15 @@
           android:layout_height="match_parent"
           android:layout_centerHorizontal="true"
           android:layout_alignParentTop="true"
-          android:layout_marginTop="280dp"
+          android:layout_marginTop="750dp"
           android:content="@+id/content"
           android:handle="@+id/handle" >
 
           <Button
               android:id="@+id/handle"
               android:layout_width="60dp"
-              android:layout_height="50dp" />
+              android:layout_height="50dp" 
+              android:background="@drawable/menubuttontablet"/>
 
           <LinearLayout
               android:id="@+id/content"
@@ -53,34 +54,34 @@
 
                               <Button
                                   android:id="@+id/overlays"
-                                  android:layout_width="wrap_content"
-                                  android:layout_height="wrap_content" />
+                                  android:layout_width="80px"
+                                  android:layout_height="80px" />
 
                               <Button
                                   android:id="@+id/paint"
-                                  android:layout_width="wrap_content"
-                                  android:layout_height="wrap_content"/>
+                                  android:layout_width="80px"
+                                  android:layout_height="80px"/>
 
                               <Button
                                   android:id="@+id/edit"
-                                  android:layout_width="wrap_content"
-                                  android:layout_height="wrap_content"/>
+                                  android:layout_width="80px"
+                                  android:layout_height="80px"/>
                               
                                 <Button
                                   android:id="@+id/filter"
-                                  android:layout_width="wrap_content"
-                                  android:layout_height="wrap_content"
+                                  android:layout_width="80px"
+                                  android:layout_height="80px"
                                    />
 
                               <Button
                                   android:id="@+id/newpic"
-                                  android:layout_width="wrap_content"
-                                  android:layout_height="wrap_content"/>
+                                  android:layout_width="80px"
+                                  android:layout_height="80px"/>
 
                               <Button
                                   android:id="@+id/save"
-                                  android:layout_width="wrap_content"
-                                  android:layout_height="wrap_content" />
+                                  android:layout_width="80px"
+                                  android:layout_height="80px" />
                               
                              
 
@@ -383,21 +384,21 @@
                                   
                                    <Button
                                   android:id="@+id/undoLast"
-                                  android:layout_width="wrap_content"
-                                  android:layout_height="wrap_content"
+                                  android:layout_width="70px"
+                                  android:layout_height="70px"
                                    android:visibility="gone"/>
                                    
                                     <Button
                                   android:id="@+id/undoThis"
-                                  android:layout_width="wrap_content"
-                                  android:layout_height="wrap_content"
+                                  android:layout_width="70px"
+                                  android:layout_height="70px"
                                     android:visibility="gone"/>
                                     
                                      <Button
                                   android:id="@+id/undoAll"
-                                  android:layout_width="wrap_content"
-                                  android:layout_height="wrap_content" 
-                                     android:visibility="gone"/>
+                                  android:layout_width="70px"
+                                  android:layout_height="70px" 
+                                  android:visibility="gone"/>
                                      
                            
                             	  <SeekBar 
@@ -407,7 +408,8 @@
 								  android:layout_height="wrap_content"
 								  android:visibility="gone"
 								  android:max="100"
-								  android:progress="10"
+								  android:progress="10" 
+								  android:paddingTop="20px" 
 								  android:minWidth="470px"  />
                             	  
                             	

@@ -89,11 +89,13 @@
         <activity
             android:name="com.example.funnyface.Email"
             android:configChanges="orientation|screenSize"
+            android:screenOrientation="portrait"
             android:label="@string/title_activity_email" >
         </activity>
         <activity
             android:name="com.samir.twitter.MainActivity"
             android:configChanges="orientation|screenSize"
+            android:screenOrientation="portrait"
             android:label="@string/title_activity_twitter" >
         </activity>
         <activity

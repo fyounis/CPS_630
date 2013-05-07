@@ -3,33 +3,32 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/picscreen"
-    tools:context=".UserPhotoOptions" >
-
-    <ImageButton
-        android:id="@+id/button1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="150dp"
-        android:text="From camera"
-        android:background="@drawable/fromcameraselector"
-        android:onClick="TakePictureFromCamera"
-        tools:ignore="HardcodedText" />
+    tools:context=".UserPhotoOptions"
+    >
 
     <ImageButton
         android:id="@+id/button2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="175dp"
+        android:layout_height="175dp"
         android:layout_alignLeft="@+id/button1"
-        android:layout_alignRight="@+id/button1"
-        android:layout_below="@+id/button1"
-        android:layout_marginTop="75dp"
-        android:text="From gallery"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="133dp"
         android:background="@drawable/fromgalleryselector"
         android:onClick="TakePictureFromGallery"
+        android:text="From gallery"
         tools:ignore="HardcodedText" />
 
-
+    <ImageButton
+        android:id="@+id/button1"
+        android:layout_width="175dp"
+        android:layout_height="175dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginRight="220dp"
+        android:layout_marginTop="312dp"
+        android:background="@drawable/fromcameraselector"
+        android:onClick="TakePictureFromCamera"
+        android:text="From camera"
+        tools:ignore="HardcodedText" />
 
 </RelativeLayout>

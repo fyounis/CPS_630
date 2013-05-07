@@ -1717,7 +1717,7 @@ public class Testpic extends Activity
 		});
 	 
 		final Button menuButton = (Button) findViewById(R.id.handle);
-		menuButton.setBackgroundDrawable(getResources().getDrawable(R.drawable.menu));
+		menuButton.setBackgroundDrawable(getResources().getDrawable(R.drawable.menubutton));
 		menuButton.setOnClickListener(new View.OnClickListener()
 		{
 
